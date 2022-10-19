@@ -1,0 +1,20 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{4}{c}}
+\hline\hline
+                &\multicolumn{1}{c}{taxes\_paid}&\multicolumn{1}{c}{taxes\_paid\_amt}&\multicolumn{1}{c}{taxes\_paid}&\multicolumn{1}{c}{taxes\_paid\_amt}\\
+\hline
+Dist. btw collectors home and nbhd&   -0.006\sym{***}&  -12.584\sym{**} &                  &                  \\
+                &  (0.002)         &  (5.754)         &                  &                  \\
+dist\_chief      &                  &                  &   -0.005         &    3.071         \\
+                &                  &                  &  (0.019)         & (62.236)         \\
+Time FE         &      Yes         &      Yes         &      Yes         &      Yes         \\
+House FE        &      Yes         &      Yes         &      Yes         &      Yes         \\
+\hline
+\(R^{2}\)       &    0.014         &    0.023         &    0.005         &    0.016         \\
+Observations    &    22398         &    22398         &    13880         &    13880         \\
+Clusters        &      183         &      183         &      107         &      107         \\
+Mean            &     .066         &  172.966         &     .094         &  251.686         \\
+\hline\hline
+\end{tabular}
+}

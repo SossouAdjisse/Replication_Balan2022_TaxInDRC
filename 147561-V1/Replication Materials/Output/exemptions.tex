@@ -1,0 +1,28 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{8}{c}}
+\hline\hline
+                &\multicolumn{1}{c}{Exempted}&\multicolumn{1}{c}{Enum agrees}&\multicolumn{1}{c}{Senior}&\multicolumn{1}{c}{Widow}&\multicolumn{1}{c}{Gov Pension}&\multicolumn{1}{c}{Handicap}&\multicolumn{1}{c}{Exempted}&\multicolumn{1}{c}{Exempted}\\
+\hline
+Local           &    0.039\sym{*}  &   -0.012         &    0.041\sym{***}&   -0.006         &    0.005         &    0.003\sym{**} &    0.041         &   -0.026         \\
+                &  (0.021)         &  (0.007)         &  (0.014)         &  (0.012)         &  (0.003)         &  (0.001)         &  (0.032)         &  (0.024)         \\
+t\_lXtribe\_match &                  &                  &                  &                  &                  &                  &    0.041         &                  \\
+                &                  &                  &                  &                  &                  &                  &  (0.040)         &                  \\
+Co-ethnic       &                  &                  &                  &                  &                  &                  &   -0.080\sym{***}&                  \\
+                &                  &                  &                  &                  &                  &                  &  (0.030)         &                  \\
+t\_lXknow\_eachother&                  &                  &                  &                  &                  &                  &                  &    0.067\sym{*}  \\
+                &                  &                  &                  &                  &                  &                  &                  &  (0.038)         \\
+Knows Colllector&                  &                  &                  &                  &                  &                  &                  &    0.064\sym{**} \\
+                &                  &                  &                  &                  &                  &                  &                  &  (0.031)         \\
+Time FE         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+House FE        &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+Stratum FE      &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+\hline
+\(R^{2}\)       &    0.055         &    0.020         &    0.042         &    0.029         &    0.016         &    0.006         &    0.065         &    0.064         \\
+Observations    &    13772         &    13771         &    13772         &    13772         &    13772         &    13772         &     7288         &    13772         \\
+Clusters        &      213         &      213         &      213         &      213         &      213         &      213         &      207         &      213         \\
+Mean            &     .264         &.9560000000000001         &     .126         &     .112         &     .013         &     .004         &     .314         &     .031         \\
+\hline\hline
+\multicolumn{9}{l}{\footnotesize \scriptsize{Standard errors clustered by polygon. $^* p<0.1, ^{**} p<0.05, ^{***} p<0.01$.}}\\
+\end{tabular}
+}

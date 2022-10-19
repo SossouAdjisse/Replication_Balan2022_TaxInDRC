@@ -1,0 +1,23 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{3}{c}}
+\hline\hline
+                &\multicolumn{1}{c}{HQ Revenues}&\multicolumn{1}{c}{Inc Revenues}&\multicolumn{1}{c}{Liq Revenues}\\
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         \\
+\hline
+Local           &  121.651\sym{***}&   90.690         &  106.947         \\
+                & (23.516)         & (75.542)         & (81.553)         \\
+t\_lXhetmargin   &  -24.687         &  -38.534         &  -57.080         \\
+                & (28.456)         & (87.068)         & (92.835)         \\
+hetmargin       &   87.670\sym{***}&   92.759         &  102.466\sym{*}  \\
+                & (20.038)         & (57.610)         & (56.979)         \\
+Month FE        &      Yes         &      Yes         &      Yes         \\
+House FE        &      Yes         &      Yes         &      Yes         \\
+Stratum FE      &      Yes         &      Yes         &      Yes         \\
+\hline
+Observations    &    17519         &     2236         &     2238         \\
+Clusters        &      174         &      212         &      212         \\
+Mean            &   96.541         &  115.385         &  115.385         \\
+\hline\hline
+\end{tabular}
+}

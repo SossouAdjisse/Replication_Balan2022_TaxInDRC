@@ -1,0 +1,23 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{4}{c}}
+\hline\hline
+                &\multicolumn{1}{c}{Salongo (Midline)}&\multicolumn{1}{c}{Salongo Amt (Midline)}&\multicolumn{1}{c}{Salongo (Endline)}&\multicolumn{1}{c}{Salongo Amt (Endline)}\\
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         \\
+\hline
+Local           &   -0.026         &   -0.207         &    0.000         &    0.490         \\
+                &  (0.032)         &  (0.254)         &  (0.030)         &  (0.454)         \\
+t\_lXtaxes\_paid  &   -0.075\sym{**} &   -0.262         &   -0.051         &   -1.387         \\
+                &  (0.035)         &  (0.226)         &  (0.070)         &  (1.039)         \\
+taxes\_paid      &    0.061\sym{**} &   -0.128         &    0.038         &    0.757         \\
+                &  (0.029)         &  (0.167)         &  (0.052)         &  (0.796)         \\
+Time FE         &      Yes         &      Yes         &       No         &       No         \\
+House FE        &      Yes         &      Yes         &      Yes         &      Yes         \\
+Stratum FE      &      Yes         &      Yes         &      Yes         &      Yes         \\
+\hline
+Observations    &    13953         &    13569         &     2330         &     2278         \\
+Clusters        &      206         &      205         &      221         &      221         \\
+Mean            &     .372         &    1.685         &     .406         &    4.008         \\
+\hline\hline
+\end{tabular}
+}

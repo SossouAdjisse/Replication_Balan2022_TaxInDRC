@@ -1,0 +1,20 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0x000000010c839e77, pid=10237, tid=259
+#
+# JRE version: OpenJDK Runtime Environment Zulu11.54+23-CA (11.0.14+9) (build 11.0.14+9-LTS)
+# Java VM: OpenJDK 64-Bit Server VM Zulu11.54+23-CA (11.0.14+9-LTS, mixed mode, tiered, compressed oops, g1 gc, bsd-amd64)
+# Problematic frame:
+# C  [StataSE+0x44ae77]
+#
+# No core dump will be written. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please visit:
+#   http://www.azul.com/support/
+# The crash happened outside the Java Virtual Machine in native code.
+# See problematic frame for where to report the bug.
+#
+
+---------------  S U M M A R Y ------------
+

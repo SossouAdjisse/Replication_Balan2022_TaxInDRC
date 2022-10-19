@@ -1,0 +1,22 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{4}{c}}
+\hline\hline
+                &\multicolumn{1}{c}{All properties}&\multicolumn{1}{c}{All properties}&\multicolumn{1}{c}{Received Flier}&\multicolumn{1}{c}{Message Read}\\
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         \\
+\hline
+Local           &    0.052\sym{**} &    0.054\sym{**} &  179.273\sym{**} &  196.565\sym{**} \\
+                &  (0.017)         &  (0.018)         & (53.603)         & (60.449)         \\
+central\_deterrence&    0.008         &    0.008         &   17.214         &   16.158         \\
+                &  (0.007)         &  (0.007)         & (13.942)         & (14.137)         \\
+LocalXcentral\_deterrence&    0.008         &    0.010         &   44.815         &   51.255         \\
+                &  (0.015)         &  (0.016)         & (66.115)         & (71.207)         \\
+House FE        &      Yes         &      Yes         &      Yes         &      Yes         \\
+Time FE         &       No         &      Yes         &       No         &      Yes         \\
+Strata FE       &      Yes         &      Yes         &      Yes         &      Yes         \\
+\hline
+Observations    &     1675         &     1580         &     1675         &     1580         \\
+Mean            &     .034         &     .035         &   95.343         &   98.544         \\
+\hline\hline
+\end{tabular}
+}

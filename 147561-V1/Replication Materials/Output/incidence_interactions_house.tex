@@ -1,0 +1,22 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{2}{c}}
+\hline\hline
+                &\multicolumn{1}{c}{Compliance}&\multicolumn{1}{c}{Revenues}\\
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         \\
+\hline
+Local           &    0.037\sym{***}&   77.607\sym{***}\\
+                &  (0.008)         & (17.844)         \\
+Local X High-Value Band&   -0.029\sym{**} &  -73.065         \\
+                &  (0.013)         & (96.963)         \\
+High-Value Band &   -0.014         &  398.778\sym{***}\\
+                &  (0.009)         & (69.284)         \\
+Month FE        &      Yes         &      Yes         \\
+Stratum FE      &      Yes         &      Yes         \\
+\hline
+Observations    &    27764         &    27764         \\
+Clusters        &      213         &      213         \\
+Mean            &     .064         &  133.152         \\
+\hline\hline
+\end{tabular}
+}

@@ -1,0 +1,23 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{3}{c}}
+\hline\hline
+                &\multicolumn{1}{c}{HQ Compliance}&\multicolumn{1}{c}{Inc Compliance}&\multicolumn{1}{c}{Liq Compliance}\\
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         \\
+\hline
+Local           &    0.053\sym{***}&    0.017         &    0.019         \\
+                &  (0.009)         &  (0.031)         &  (0.031)         \\
+Local X Above Median&   -0.004         &    0.013         &    0.011         \\
+                &  (0.011)         &  (0.036)         &  (0.036)         \\
+Above Median    &    0.034\sym{***}&    0.022         &    0.023         \\
+                &  (0.006)         &  (0.025)         &  (0.025)         \\
+Month FE        &      Yes         &      Yes         &      Yes         \\
+House FE        &      Yes         &      Yes         &      Yes         \\
+Stratum FE      &      Yes         &      Yes         &      Yes         \\
+\hline
+Observations    &    17519         &     2236         &     2238         \\
+Clusters        &      174         &      212         &      212         \\
+Mean            &     .045         &      .06         &      .06         \\
+\hline\hline
+\end{tabular}
+}

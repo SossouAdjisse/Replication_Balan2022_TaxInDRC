@@ -1,0 +1,48 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{7}{c}}
+\hline\hline
+                &\multicolumn{1}{c}{Tax Compliance}&\multicolumn{6}{c}{Tax Amount}                                                                                   \\
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         &\multicolumn{1}{c}{(6)}         &\multicolumn{1}{c}{(7)}         \\
+\hline
+Central Plus Local Info&    0.047         &   78.373         &    0.040         &    0.042         &    0.032         &    0.046         &   73.929         \\
+                &  (0.192)         &  (0.397)         &  (0.648)         &  (0.778)         &  (0.669)         &  (0.197)         &  (0.422)         \\
+No confidence at all&    0.000         &    0.000         &    0.000         &    0.000         &    0.000         &    0.000         &    0.000         \\
+                &      (.)         &      (.)         &      (.)         &      (.)         &      (.)         &      (.)         &      (.)         \\
+Not very much confidence&    0.016         &  176.423         &    0.008         &    0.074         &    0.067         &    0.011         &  149.437         \\
+                &  (0.645)         &  (0.430)         &  (0.924)         &  (0.663)         &  (0.466)         &  (0.763)         &  (0.482)         \\
+Some confidence &    0.045\sym{**} &   35.637         &    0.032         &    0.049         &    0.066         &    0.047\sym{**} &   50.305         \\
+                &  (0.042)         &  (0.656)         &  (0.634)         &  (0.698)         &  (0.266)         &  (0.029)         &  (0.540)         \\
+A lot of confidence&    0.008         &   28.619         &    0.083         &    0.108         &    0.034         &    0.003         &   24.685         \\
+                &  (0.684)         &  (0.734)         &  (0.204)         &  (0.396)         &  (0.520)         &  (0.889)         &  (0.769)         \\
+No confidence at all $\times$ Central Plus Local Info&    0.000         &    0.000         &    0.000         &    0.000         &    0.000         &    0.000         &    0.000         \\
+                &      (.)         &      (.)         &      (.)         &      (.)         &      (.)         &      (.)         &      (.)         \\
+Not very much confidence $\times$ Central Plus Local Info&   -0.017         & -174.082         &   -0.077         &   -0.162         &    0.013         &   -0.002         & -137.633         \\
+                &  (0.799)         &  (0.493)         &  (0.595)         &  (0.507)         &  (0.935)         &  (0.972)         &  (0.569)         \\
+Some confidence $\times$ Central Plus Local Info&   -0.023         &   18.076         &    0.008         &    0.014         &   -0.006         &   -0.020         &   20.513         \\
+                &  (0.596)         &  (0.869)         &  (0.937)         &  (0.935)         &  (0.953)         &  (0.646)         &  (0.852)         \\
+A lot of confidence $\times$ Central Plus Local Info&   -0.017         &  -46.521         &   -0.201\sym{**} &   -0.259         &   -0.026         &   -0.014         &  -50.185         \\
+                &  (0.686)         &  (0.670)         &  (0.027)         &  (0.109)         &  (0.766)         &  (0.726)         &  (0.644)         \\
+Local           &                  &                  &                  &                  &                  &    0.103\sym{**} &  297.811\sym{**} \\
+                &                  &                  &                  &                  &                  &  (0.001)         &  (0.011)         \\
+No confidence at all $\times$ Local&                  &                  &                  &                  &                  &    0.000         &    0.000         \\
+                &                  &                  &                  &                  &                  &      (.)         &      (.)         \\
+Not very much confidence $\times$ Local&                  &                  &                  &                  &                  &   -0.068         & -374.124         \\
+                &                  &                  &                  &                  &                  &  (0.186)         &  (0.121)         \\
+Some confidence $\times$ Local&                  &                  &                  &                  &                  &   -0.090\sym{**} & -239.836\sym{*}  \\
+                &                  &                  &                  &                  &                  &  (0.022)         &  (0.062)         \\
+A lot of confidence $\times$ Local&                  &                  &                  &                  &                  &   -0.047         & -172.147         \\
+                &                  &                  &                  &                  &                  &  (0.178)         &  (0.192)         \\
+Constant        &    0.126\sym{*}  &  254.072         &    0.459\sym{***}&    0.627\sym{***}&    0.295\sym{**} &    0.111\sym{**} &  219.515\sym{*}  \\
+                &  (0.075)         &  (0.128)         &  (0.000)         &  (0.000)         &  (0.009)         &  (0.034)         &  (0.091)         \\
+Time FE         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+House FE        &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+Stratum FE      &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+\hline
+Observations    &     1656         &     1656         &     1271         &     1271         &      568         &     2750         &     2750         \\
+Clusters        &      162         &      162         &      159         &      159         &      148         &      264         &      264         \\
+Mean            &     .051         &  150.714         &     .387         &     .497         &     .097         &     .052         &     .052         \\
+CLIvC\_p         &                  &                  &                  &                  &                  &.181896764015032         &.0423273132808241         \\
+\hline\hline
+\end{tabular}
+}

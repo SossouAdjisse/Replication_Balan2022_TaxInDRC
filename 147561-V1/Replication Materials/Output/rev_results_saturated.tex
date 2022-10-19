@@ -1,0 +1,19 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{6}{c}}
+\hline\hline
+                &\multicolumn{1}{c}{Revenues}&\multicolumn{1}{c}{Revenues}&\multicolumn{1}{c}{Revenues}&\multicolumn{1}{c}{Revenues}&\multicolumn{1}{c}{Revenues}&\multicolumn{1}{c}{Revenues}\\
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         &\multicolumn{1}{c}{(6)}         \\
+\hline
+Local           &   68.855\sym{***}&   68.923\sym{***}&   75.294\sym{**} &   81.797\sym{***}&   72.674\sym{**} &   76.723\sym{**} \\
+                & (20.560)         & (20.562)         & (23.838)         & (23.626)         & (22.119)         & (28.482)         \\
+Time FE         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+House FE        &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+Stratum FE      &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+\hline
+Observations    &    27764         &    27764         &    27764         &    23618         &    23618         &    23618         \\
+Clusters        &      213         &      213         &      213         &      213         &      213         &      213         \\
+Mean            &  182.236         &  182.236         &  182.236         &  196.263         &  196.263         &  196.263         \\
+\hline\hline
+\end{tabular}
+}

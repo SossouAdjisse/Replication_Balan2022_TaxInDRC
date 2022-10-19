@@ -1,0 +1,33 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{9}{c}}
+\hline\hline
+                &\multicolumn{1}{c}{taxes\_paid}&\multicolumn{1}{c}{taxes\_paid}&\multicolumn{1}{c}{taxes\_paid}&\multicolumn{1}{c}{taxes\_paid}&\multicolumn{1}{c}{taxes\_paid}&\multicolumn{1}{c}{taxes\_paid}&\multicolumn{1}{c}{taxes\_paid}&\multicolumn{1}{c}{taxes\_paid}&\multicolumn{1}{c}{taxes\_paid}\\
+\hline
+Local           &   0.0331\sym{***}&   0.0378\sym{**} &   0.0374\sym{***}&   0.0435\sym{***}&   0.0340\sym{***}&   0.0338\sym{***}&   0.0328\sym{***}&   0.0358\sym{***}&   0.0456\sym{**} \\
+                & (0.0072)         & (0.0166)         & (0.0073)         & (0.0081)         & (0.0078)         & (0.0085)         & (0.0091)         & (0.0082)         & (0.0207)         \\
+Age             &                  &  -0.0002         &                  &                  &                  &                  &                  &                  &   0.0001         \\
+                &                  & (0.0005)         &                  &                  &                  &                  &                  &                  & (0.0005)         \\
+Number of possessions&                  &                  &   0.0059         &                  &                  &                  &                  &                  &   0.0058         \\
+                &                  &                  & (0.0042)         &                  &                  &                  &                  &                  & (0.0048)         \\
+Years of education&                  &                  &                  &   0.0032\sym{**} &                  &                  &                  &                  &   0.0032\sym{**} \\
+                &                  &                  &                  & (0.0013)         &                  &                  &                  &                  & (0.0014)         \\
+Trust in government (mean)&                  &                  &                  &                  &   0.0030         &                  &                  &                  &   0.0050         \\
+                &                  &                  &                  &                  & (0.0049)         &                  &                  &                  & (0.0053)         \\
+Taxes important &                  &                  &                  &                  &                  &  -0.0009         &                  &                  &  -0.0039         \\
+                &                  &                  &                  &                  &                  & (0.0078)         &                  &                  & (0.0080)         \\
+Tax ministry important&                  &                  &                  &                  &                  &                  &  -0.0000         &                  &   0.0003         \\
+                &                  &                  &                  &                  &                  &                  & (0.0062)         &                  & (0.0069)         \\
+Progressiveness (mean)&                  &                  &                  &                  &                  &                  &                  &   0.0052         &   0.0104         \\
+                &                  &                  &                  &                  &                  &                  &                  & (0.0120)         & (0.0130)         \\
+House FE        &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+Stratum FE      &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+Time FE         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+\hline
+\(R^{2}\)       &    0.023         &    0.023         &    0.024         &    0.025         &    0.024         &    0.024         &    0.023         &    0.024         &    0.025         \\
+Observations    &    27764         &    26497         &    27453         &    27031         &    26489         &    27152         &    26361         &    27152         &    25443         \\
+Clusters        &      213         &      203         &      210         &      207         &      203         &      208         &      202         &      208         &      194         \\
+Mean            &     .075         &     .075         &     .075         &     .075         &     .075         &     .075         &     .075         &     .075         &     .075         \\
+\hline\hline
+\end{tabular}
+}

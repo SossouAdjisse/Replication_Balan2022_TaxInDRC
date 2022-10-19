@@ -1,0 +1,22 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{3}{c}}
+\hline\hline
+                &\multicolumn{1}{c}{Baseline to Endline Attrition}&\multicolumn{1}{c}{Baseline Replacement}&\multicolumn{1}{c}{Midline Attrition}\\
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         \\
+\hline
+central         &   -0.024         &   -0.015         &   -0.047         \\
+                &  (0.051)         &  (0.041)         &  (0.056)         \\
+local           &   -0.040         &   -0.004         &   -0.026         \\
+                &  (0.051)         &  (0.040)         &  (0.058)         \\
+centralwinfo    &   -0.045         &   -0.007         &   -0.058         \\
+                &  (0.051)         &  (0.041)         &  (0.056)         \\
+centralxlocal   &   -0.064         &    0.002         &   -0.103\sym{*}  \\
+                &  (0.051)         &  (0.046)         &  (0.058)         \\
+\hline
+Observations    &     4246         &     3483         &    45162         \\
+Clusters        &      356         &      356         &      356         \\
+Mean            &     .133         &     .174         &     .256         \\
+\hline\hline
+\end{tabular}
+}

@@ -1,0 +1,39 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{8}{c}}
+\hline\hline
+                &\multicolumn{1}{c}{Tax Compliance}&\multicolumn{1}{c}{Tax Compliance}&\multicolumn{1}{c}{Tax Compliance}&\multicolumn{5}{c}{Tax Compliance}                                                            \\
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         &\multicolumn{1}{c}{(6)}         &\multicolumn{1}{c}{(7)}         &\multicolumn{1}{c}{(8)}         \\
+\hline
+Local           &    0.033\sym{***}&    0.030\sym{**} &    0.035\sym{***}&    0.029\sym{*}  &    0.033\sym{***}&    0.033\sym{***}&    0.034\sym{**} &    0.034\sym{**} \\
+                &  (0.007)         &  (0.013)         &  (0.009)         &  (0.016)         &  (0.008)         &  (0.010)         &  (0.012)         &  (0.012)         \\
+t\_lXn\_other\_tmt\_strict&                  &    0.003         &                  &                  &                  &                  &                  &                  \\
+                &                  &  (0.008)         &                  &                  &                  &                  &                  &                  \\
+(sum) other\_tmt\_strict&    0.004         &    0.003         &                  &                  &                  &                  &                  &                  \\
+                &  (0.005)         &  (0.008)         &                  &                  &                  &                  &                  &                  \\
+t\_lXn\_other\_tmt\_broad&                  &                  &                  &    0.003         &                  &                  &                  &                  \\
+                &                  &                  &                  &  (0.006)         &                  &                  &                  &                  \\
+(sum) other\_tmt\_broad&                  &                  &   -0.001         &   -0.003         &                  &                  &                  &                  \\
+                &                  &                  &  (0.004)         &  (0.005)         &                  &                  &                  &                  \\
+t\_lXother\_tmt\_strict\_border&                  &                  &                  &                  &                  &   -0.002         &                  &                  \\
+                &                  &                  &                  &                  &                  &  (0.030)         &                  &                  \\
+(sum) other\_tmt\_strict\_border&                  &                  &                  &                  &    0.007         &    0.008         &                  &                  \\
+                &                  &                  &                  &                  &  (0.015)         &  (0.029)         &                  &                  \\
+t\_lXother\_tmt\_broad\_border&                  &                  &                  &                  &                  &                  &    0.004         &    0.004         \\
+                &                  &                  &                  &                  &                  &                  &  (0.018)         &  (0.018)         \\
+(sum) other\_tmt\_broad\_border&                  &                  &                  &                  &                  &                  &   -0.012         &   -0.012         \\
+                &                  &                  &                  &                  &                  &                  &  (0.020)         &  (0.020)         \\
+(max) nbr\_count &   -0.001         &   -0.001         &    0.001         &    0.001         &                  &                  &                  &                  \\
+                &  (0.003)         &  (0.003)         &  (0.003)         &  (0.003)         &                  &                  &                  &                  \\
+(max) border\_tot&                  &                  &                  &                  &    0.002         &    0.001         &    0.006         &    0.006         \\
+                &                  &                  &                  &                  &  (0.008)         &  (0.008)         &  (0.009)         &  (0.009)         \\
+Time FE         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+House FE        &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+Stratum FE      &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+\hline
+Observations    &    27764         &    27764         &    27764         &    27764         &    27764         &    27764         &    27764         &    27764         \\
+Clusters        &      213         &      213         &      213         &      213         &      213         &      213         &      213         &      213         \\
+Mean            &     .068         &     .068         &     .068         &     .068         &     .068         &     .068         &     .068         &     .068         \\
+\hline\hline
+\end{tabular}
+}

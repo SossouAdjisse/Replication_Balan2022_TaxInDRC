@@ -1,0 +1,23 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{4}{c}}
+\hline\hline
+                &\multicolumn{1}{c}{Taxes Paid}&\multicolumn{1}{c}{Taxes Paid}&\multicolumn{1}{c}{Taxes Paid}&\multicolumn{1}{c}{Taxes Paid}\\
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         \\
+\hline
+Local           &    0.021\sym{**} &    0.027\sym{**} &    0.028\sym{**} &    0.029\sym{**} \\
+                &  (0.009)         &  (0.009)         &  (0.009)         &  (0.009)         \\
+t\_lXpresent\_sensi&    0.001         &    0.005         &    0.005         &    0.014         \\
+                &  (0.009)         &  (0.009)         &  (0.009)         &  (0.010)         \\
+IS THERE AN ADULT WHO LIVES ON THE COMPOUND PRESENT RIGHT NOW TO RECEIVE THE INF&    0.039\sym{***}&    0.033\sym{***}&    0.035\sym{***}&    0.051\sym{***}\\
+                &  (0.007)         &  (0.006)         &  (0.007)         &  (0.008)         \\
+Time FE         &       No         &      Yes         &      Yes         &      Yes         \\
+House FE        &       No         &       No         &      Yes         &      Yes         \\
+Stratum FE      &      Yes         &      Yes         &      Yes         &      Yes         \\
+\hline
+Observations    &    28875         &    27767         &    27767         &    23805         \\
+Clusters        &      221         &      213         &      213         &      213         \\
+Mean            &     .036         &     .035         &     .035         &     .035         \\
+\hline\hline
+\end{tabular}
+}

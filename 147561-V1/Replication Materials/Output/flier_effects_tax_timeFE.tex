@@ -1,0 +1,29 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{6}{c}}
+\hline\hline
+                &\multicolumn{1}{c}{Central Vs Local}&\multicolumn{1}{c}{Messages vs Controls}&\multicolumn{1}{c}{Messages vs Controls}&\multicolumn{1}{c}{Central Vs Local}&\multicolumn{1}{c}{Messages vs Controls}&\multicolumn{1}{c}{Messages vs Controls}\\
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         &\multicolumn{1}{c}{(6)}         \\
+\hline
+Local           &    0.036\sym{***}&                  &                  &  107.822\sym{***}&                  &                  \\
+                &  (0.008)         &                  &                  & (31.185)         &                  &                  \\
+central\_deterrence&                  &    0.013\sym{*}  &    0.014\sym{*}  &                  &   42.705         &   43.318\sym{*}  \\
+                &                  &  (0.007)         &  (0.007)         &                  & (25.976)         & (25.713)         \\
+local\_deterrence&                  &    0.010         &    0.012\sym{*}  &                  &   12.997         &   16.819         \\
+                &                  &  (0.007)         &  (0.007)         &                  & (20.260)         & (20.118)         \\
+central\_pub\_goods&                  &    0.005         &    0.005         &                  &    7.552         &    7.263         \\
+                &                  &  (0.007)         &  (0.007)         &                  & (20.788)         & (20.351)         \\
+local\_pub\_goods &                  &    0.006         &    0.008         &                  &   30.102         &   34.208         \\
+                &                  &  (0.007)         &  (0.007)         &                  & (25.280)         & (24.843)         \\
+trust\_message   &                  &    0.010         &    0.011         &                  &   28.547         &   30.866         \\
+                &                  &  (0.007)         &  (0.007)         &                  & (22.949)         & (22.850)         \\
+House FE        &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+Time FE         &      Yes         &       No         &       No         &      Yes         &       No         &       No         \\
+Strata FE       &      Yes         &       No         &       No         &      Yes         &       No         &       No         \\
+Neighborhood FE &       No         &       No         &      Yes         &       No         &       No         &      Yes         \\
+\hline
+Observations    &     4783         &     6796         &     6796         &     4783         &     6796         &     6796         \\
+Mean            &     .012         &     .024         &     .024         &   30.326         &    59.64         &    59.64         \\
+\hline\hline
+\end{tabular}
+}

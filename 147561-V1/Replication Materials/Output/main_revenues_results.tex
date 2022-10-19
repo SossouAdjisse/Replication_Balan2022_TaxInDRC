@@ -1,0 +1,19 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{5}{c}}
+\toprule
+                &\multicolumn{1}{c}{Revenues}&\multicolumn{1}{c}{Revenues}&\multicolumn{1}{c}{Revenues}&\multicolumn{1}{c}{Revenues}&\multicolumn{1}{c}{Revenues}\\
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         \\
+\midrule
+Local           &57.627377\sym{**} &79.639810\sym{***}&81.830495\sym{**} &68.855292\sym{***}&81.991300\sym{***}\\
+                &(0.025869)         &(0.000599)         &(0.035557)         &(0.000960)         &(0.000609)         \\
+Month FE        &       No         &      Yes         &      Yes         &      Yes         &      Yes         \\
+House FE        &       No         &       No         &       No         &      Yes         &      Yes         \\
+Stratum FE      &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+\midrule
+Observations    &    28872         &    27764         &      213         &    27764         &    23803         \\
+Clusters        &      221         &      213         &                  &      213         &      213         \\
+Mean            &  192.891         &  182.236         &  210.134         &  182.236         &  208.568         \\
+\bottomrule
+\end{tabular}
+}
