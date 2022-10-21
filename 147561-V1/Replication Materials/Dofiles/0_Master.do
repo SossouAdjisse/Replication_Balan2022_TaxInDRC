@@ -20,7 +20,7 @@
 * 1. Set up your user specific root directory to Replication Materials folder
 
 		* gl stem "Your Directory/Replication Materials"
-		 gl stem "/Users/sossousimpliceadjisse/Documents/myfiles/Paul Moussa Replication/147561-V1/Replication Materials"
+		 gl stem "/Users/sossousimpliceadjisse/Documents/myfiles/PaulMoussaReplicationProject/147561-V1/Replication Materials"
 		
 	
 * 3. Route file paths
