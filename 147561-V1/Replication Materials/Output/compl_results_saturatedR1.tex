@@ -1,0 +1,25 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{6}{c}}
+\toprule
+                &\multicolumn{1}{c}{Tax Compliance}&\multicolumn{1}{c}{Tax Compliance}&\multicolumn{1}{c}{Tax Compliance}&\multicolumn{1}{c}{Tax Compliance}&\multicolumn{1}{c}{Tax Compliance}&\multicolumn{1}{c}{Tax Compliance}\\
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         &\multicolumn{1}{c}{(6)}         \\
+\midrule
+Local           &    0.027\sym{*}  &    0.028\sym{*}  &    0.050         &    0.033\sym{*}  &    0.039         &    0.082\sym{*}  \\
+                &  (0.062)         &  (0.060)         &  (0.115)         &  (0.073)         &  (0.219)         &  (0.095)         \\
+Not very much confidence&   -0.021         &   -0.020         &   -0.021         &   -0.023         &   -0.023         &   -0.024         \\
+                &  (0.428)         &  (0.436)         &  (0.412)         &  (0.498)         &  (0.497)         &  (0.471)         \\
+Some confidence &    0.009         &    0.008         &    0.008         &    0.001         &    0.001         &   -0.002         \\
+                &  (0.662)         &  (0.708)         &  (0.711)         &  (0.955)         &  (0.964)         &  (0.950)         \\
+A lot of confidence&   -0.019         &   -0.018         &   -0.018         &   -0.024         &   -0.025         &   -0.024         \\
+                &  (0.269)         &  (0.312)         &  (0.304)         &  (0.267)         &  (0.264)         &  (0.265)         \\
+Time FE         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+House FE        &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+Stratum FE      &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+\midrule
+Observations    &     2231         &     2231         &     2231         &     1682         &     1682         &     1682         \\
+Clusters        &      213         &      213         &      213         &      212         &      212         &      212         \\
+Mean            &     .063         &     .063         &     .063         &     .068         &     .068         &     .068         \\
+\bottomrule
+\end{tabular}
+}

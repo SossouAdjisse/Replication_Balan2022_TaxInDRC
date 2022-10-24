@@ -1,0 +1,27 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{6}{c}}
+\toprule
+                &\multicolumn{1}{c}{Revenues}&\multicolumn{1}{c}{Revenues}&\multicolumn{1}{c}{Revenues}&\multicolumn{1}{c}{Revenues}&\multicolumn{1}{c}{Revenues}&\multicolumn{1}{c}{Revenues}\\
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         &\multicolumn{1}{c}{(6)}         \\
+\midrule
+Local           &   54.920         &   54.102         &   51.380         &   56.093         &   56.614         &   68.288\sym{**} \\
+                &  (0.210)         &  (0.236)         &  (0.268)         &  (0.204)         &  (0.200)         &  (0.001)         \\
+Not very much confidence&  -64.581         &  -65.870         &  -70.262         &  -46.603         &  -47.866         &                  \\
+                &  (0.554)         &  (0.545)         &  (0.510)         &  (0.664)         &  (0.656)         &                  \\
+Some confidence &  -40.712         &  -42.402         &  -36.276         &  -40.480         &  -41.307         &                  \\
+                &  (0.523)         &  (0.506)         &  (0.569)         &  (0.522)         &  (0.515)         &                  \\
+A lot of confidence&  -32.345         &  -32.219         &  -29.456         &  -40.774         &  -39.984         &                  \\
+                &  (0.596)         &  (0.597)         &  (0.631)         &  (0.503)         &  (0.512)         &                  \\
+trust\_chief\_mean&                  &                  &                  &                  &                  &  -12.623         \\
+                &                  &                  &                  &                  &                  &  (0.628)         \\
+Month FE        &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+House FE        &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &       No         \\
+Stratum FE      &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+\midrule
+Observations    &     2231         &     2231         &     2231         &     2231         &     2225         &      213         \\
+Clusters        &      213         &      213         &      213         &      213         &      212         &                  \\
+Mean            &    182.3         &    182.3         &    182.3         &  181.525         &    182.3         &  182.416         \\
+\bottomrule
+\end{tabular}
+}

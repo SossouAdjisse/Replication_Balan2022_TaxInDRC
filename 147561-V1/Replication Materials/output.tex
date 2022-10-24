@@ -245,8 +245,8 @@ Properties  & 14,489  & 14,383  & 9,422 & 6,071  & 797 \tabularnewline
 \begin{table}[H]
 	\textbf{\caption*{\label{Table_CvL_Compliance_edited_R2} Table \ref{Table_CvL_Compliance_edited} $\rightarrow$ Controling for Trust in Chief}}
 	\centering
-	\small{\input{Output/main_compliance_resultsR2.tex}}
-	\small{\input{Output/main_revenues_resultsR2.tex}}
+\resizebox{14cm}{!}{\input{Output/main_compliance_resultsR2.tex}}
+\resizebox{14cm}{!}{\input{Output/main_revenues_resultsR2.tex}}
 	\usebox{\tablebox}\\[1ex]
 	\parbox{6in}{\footnotesize \textit{Notes}: Table 4 Replicated .}
 \end{table}
@@ -260,6 +260,15 @@ Properties  & 14,489  & 14,383  & 9,422 & 6,071  & 797 \tabularnewline
 	\usebox{\tablebox}\\[1ex]
 	\parbox{6in}{\footnotesize \textit{Notes}: Table 4 Replicated .}
 \end{table}
+
+%\begin{table}[H]
+%	\textbf{\caption*{\label{Table_CvL_Compliance_edited_R4} Table \ref{Table_CvL_Compliance_edited} $\rightarrow$ Using Central, and Controling for Trust in Chief, and Local x Trust Chief}}
+%	\centering
+%	\small{\input{Output/main_compliance_resultsR4.tex}}
+%	\small{\input{Output/main_revenues_resultsR4.tex}}
+%	\usebox{\tablebox}\\[1ex]
+%	\parbox{6in}{\footnotesize \textit{Notes}: Table 4 Replicated .}
+%\end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{landscape}
@@ -677,6 +686,16 @@ Compliance & Revenues\\
 \parbox{6in}{\footnotesize \textit{Notes}: This table reports estimates from Equation \ref{equation_cvl}, comparing property tax outcomes in Local and Central (the excluded category). The panels show the estimates from separate regressions with the outcome an indicator for compliance (Panel A) and revenues (Panel B), respectively. All regressions include fixed effects for house, time period, and randomization strata, and they cluster standard errors at the neighborhood level. Column 1 shows the preferred specification, including no additional controls.  Column 2 includes dummies for tax rate abatement groups.  Column 3 adds interactions between the abatement group dummies and the Local indicator. Column 4 includes dummies for collector bonus type.  Column 5 adds interactions between the collector bonus type dummies and the Local indicator. Column 6 includes abatement  and collector bonus dummies and interactions with the Local indicator. \cite{bergeron2019} provides details on abatement and collector bonus treatment groups. We discuss these results in Section \ref{results_discussion}.}
 \end{table}
 
+
+\begin{table}[H]
+	\textbf{\caption*{\label{Table_CvL_RobustSaturated_R1} Table \ref{Table_CvL_RobustSaturated} $\rightarrow$ Controlling for Trust in Chief }}
+	\centering
+	\resizebox{16cm}{!}{\input{Output/compl_results_saturatedR1.tex}}
+	\resizebox{15cm}{!}{\input{Output/rev_results_saturatedR1.tex}}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}: .}
+\end{table}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{table}[H]
@@ -686,6 +705,16 @@ Compliance & Revenues\\
 \normalsize{\input{Output/rev_results_controls.tex}}
 \usebox{\tablebox}\\[1ex]
 \parbox{6in}{\footnotesize \textit{Notes}: This table reports estimates from Equation \ref{equation_cvl}, comparing property tax outcomes in Local and Central (the excluded category). The panels show the estimates from separate regressions with the outcome an indicator for compliance (Panel A) and revenues (Panel B), respectively. All regressions include fixed effects for house, time period, and randomization strata, and they cluster standard errors at the neighborhood level. Column 1 includes controls for age, age-squared, and gender, measured in midline survey. Column 2 adds a control for distance from schools (the one imbalanced covariate when comparing Local to Central in Table \ref{tab:balance_tests_F}). Column 3 adds controls for having any job, a salaried job, and a government job, a family member with a government job, and belonging to the majority tribe. When including controls, we replace missing values in control variables with the mean for the entire sample and include a separate dummy (for each control variable) for the value being missing. Column 4 includes pilot neighborhoods, with time period and stratum values that reflect its implementation several months before the campaign and in a remote neighborhood. Column 5 excludes the neighborhood misassigned from CXL to Local during the campaign. Column 6 displays estimates from a regression on mean outcomes at the neighborhood-level, winsorizing the top 10\% of neighborhoods, using robust standard errors, and assigning the minimum value for time period fixed effects to a neighborhood. We discuss these results in Section \ref{results_discussion}.}
+\end{table}
+
+
+\begin{table}[H]
+	\textbf{\caption*{\label{Table_CvL_RobustControls_R1} Table \ref{Table_CvL_RobustControls} $\rightarrow$ Using Trust in Chief }}
+	\centering
+\resizebox{16cm}{!}{\input{Output/compl_results_controlsR1.tex}}
+	\resizebox{14cm}{!}{\input{Output/rev_results_controlsR1.tex}}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}: .}
 \end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

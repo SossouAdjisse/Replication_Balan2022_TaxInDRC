@@ -7,7 +7,7 @@
 *          Local Information to Increase Tax Compliance in the D.R. Congo" by
 *		   Balan et al. (2021).
 ********************************************************************************
-// test 
+
 	clear all
 	set more off
 	
