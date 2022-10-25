@@ -12,6 +12,7 @@
 
 	* use clean baseline data 
 	use "${repldir}/Data/01_base/survey_data/baseline_noPII.dta", clear
+	gen baseline = 1
 	keep if tot_complete==1 
 	drop possessions
 
@@ -64,7 +65,7 @@
 		
 	global TrustChiefFromBaseline "trust_chief" // Added by Sossou
 
-	keep code a7 edu_yrs age male elect1 possessions possessions_norm lg_inc_mo inc_mo lg_transport transport fence trust_chief trust_nat_gov trust_prov_gov trust_tax_min tax1 tax11 tax12 tax13 tax14 tax15 tax17
+	keep code a7 edu_yrs age male elect1 possessions possessions_norm lg_inc_mo inc_mo lg_transport transport fence trust_chief trust_nat_gov trust_prov_gov trust_tax_min tax1 tax11 tax12 tax13 tax14 tax15 tax17 baseline
 		
 	* tempfile 
 	tempfile bl

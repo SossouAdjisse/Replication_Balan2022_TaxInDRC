@@ -60,8 +60,8 @@
 	
 	esttab r1 r2 r3 r4 using "${reploutdir}/main_visits_resultsR2.tex", ///
 	replace label b(%9.3f) p(%9.3f) booktabs ///
-	keep (t_l 2.trust_chief 3.trust_chief 4.trust_chief trust_chief_mean) ///
-	order(t_l 2.trust_chief 3.trust_chief 4.trust_chief trust_chief_mean) ///
+	keep (t_l 2.trust_chief 3.trust_chief 4.trust_chief) ///
+	order(t_l 2.trust_chief 3.trust_chief 4.trust_chief) ///
 	scalar(Clusters Mean) sfmt(0 3 3) ///
 	nomtitles ///
 	mgroups("Visited Post Carto" "Visits Post Carto" "Visited Other Contact"  "Visits Other Contact", pattern(1 1 1 1) prefix(\multicolumn{@span}{c}{) suffix(}) span) ///

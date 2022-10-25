@@ -457,13 +457,7 @@ merge m:1 a7 using "${repldir}/Data/01_base/admin_data/campaign_collector_info.d
 	foreach index in chief_chars chief_strength chief_political chief_views chief_worried_sanctions neighborhood_chars{
 	foreach var in $`index'{
 	g lX`var' = `var'*t_l
-	eststo: reg `depvar' i.tmt lX`var'   `var' i.stratum i.house i.time_FE_tdm_2mo_CvL if inlist(tmt,1,2), vce(cl a7)
-	
-	ritest tmt _b[lX`var'], reps(20) seed(125) cluster(a7) strata(stratum): `e(cmdline)'
-	matrix pvalues = r(p) // save the p-values from ritest
-	mat colnames pvalues = lX`var'
-	*mat colnames pvalues = lX`var'  // name p-values so that esttab knows to which coefficient they belong
-
+	eststo: reg `depvar' t_l lX`var'   `var' i.stratum i.house i.time_FE_tdm_2mo_CvL if inlist(tmt,1,2), vce(cl a7)
 	di in red "Round `i': `var'"
 	local beta1 = round(_b[t_l],.00001)
 	di "Beta1: `beta1'"
@@ -495,15 +489,15 @@ merge m:1 a7 using "${repldir}/Data/01_base/admin_data/campaign_collector_info.d
 	drop lX`var'
 	
 	if `i' == 1 { 
-		mat input reg = (`beta1', `se1', `beta2', `se2', `beta3',`pvalues',  `se3',`obs', `depvarmean') 
+		mat input reg = (`beta1', `se1', `beta2', `se2', `beta3',  `se3',`obs', `depvarmean') 
 		mat rownames reg = `var' 
-		mat colnames reg = beta1 SE1 beta2 SE2 beta3 pvalues SE3 N 	Depvarmean
+		mat colnames reg = beta1 SE1 beta2 SE2 beta3 SE3 N 	Depvarmean
 	}
 	
 	if `i' > 1 { 
-		mat input reg`i' = (`beta1', `se1', `beta2', `se2', `beta3', `pvalues',  `se3',`obs', `depvarmean') 
+		mat input reg`i' = (`beta1', `se1', `beta2', `se2', `beta3',  `se3',`obs', `depvarmean') 
 		mat rownames reg`i' = `var' 
-		mat colnames reg`i' = beta1 SE1 beta2 SE2 beta3 pvalues SE3 N 	Depvarmean 	 
+		mat colnames reg`i' = beta1 SE1 beta2 SE2 beta3 SE3 N 	Depvarmean 	 
 		mat reg = (reg \ reg`i' )
 	}
 		local i = `i'+1
