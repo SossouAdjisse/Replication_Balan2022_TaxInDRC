@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  24 OCT 2022 16:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  31 OCT 2022 17:30
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1422,609 +1422,610 @@ put line 429.
 (./Output/chiefs_info_payeaseR.tex) (./Output/chiefs_info_wtpR.tex) [14
 
 ]
-[15]
-<Output/chars_visited.pdf, id=261, 433.62pt x 289.08pt>
+(./Output/chiefs_info_payeaseR2.tex) (./Output/chiefs_info_wtpR2.tex) [15]
+[16]
+<Output/chars_visited.pdf, id=268, 433.62pt x 289.08pt>
 File: Output/chars_visited.pdf Graphic file (type pdf)
 <use Output/chars_visited.pdf>
-Package pdftex.def Info: Output/chars_visited.pdf  used on input line 456.
+Package pdftex.def Info: Output/chars_visited.pdf  used on input line 468.
 (pdftex.def)             Requested size: 268.84161pt x 179.22774pt.
-<Output/chars_PEXHQ.pdf, id=262, 433.62pt x 289.08pt>
+<Output/chars_PEXHQ.pdf, id=269, 433.62pt x 289.08pt>
 File: Output/chars_PEXHQ.pdf Graphic file (type pdf)
 <use Output/chars_PEXHQ.pdf>
-Package pdftex.def Info: Output/chars_PEXHQ.pdf  used on input line 458.
+Package pdftex.def Info: Output/chars_PEXHQ.pdf  used on input line 470.
 (pdftex.def)             Requested size: 346.89647pt x 231.2643pt.
 
 
-LaTeX Warning: Reference `targeting_discussion' on page 16 undefined on input l
-ine 461.
+LaTeX Warning: Reference `targeting_discussion' on page 17 undefined on input l
+ine 473.
 
 
-LaTeX Warning: Reference `targeting_discussion' on page 16 undefined on input l
-ine 461.
+LaTeX Warning: Reference `targeting_discussion' on page 17 undefined on input l
+ine 473.
 
 (./Output/main_incidence_results.tex)
 
-LaTeX Warning: Reference `equation_cvl' on page 16 undefined on input line 475.
+LaTeX Warning: Reference `equation_cvl' on page 17 undefined on input line 487.
 
 
 
-LaTeX Warning: Reference `estimation' on page 16 undefined on input line 475.
+LaTeX Warning: Reference `estimation' on page 17 undefined on input line 487.
 
 
-LaTeX Warning: Reference `incidence_discussion' on page 16 undefined on input l
-ine 475.
+LaTeX Warning: Reference `incidence_discussion' on page 17 undefined on input l
+ine 487.
 
-[16
+[17
 
  <./Output/chars_visited.pdf> <./Output/chars_PEXHQ.pdf>]
-(./Output/main_incidence_resultsR.tex) [17] [18]
+(./Output/main_incidence_resultsR.tex) [18] [19]
 \c@ttl@toc@default=\count185
-<Documents/flier3000control.png, id=313, 826.58812pt x 500.87125pt>
+<Documents/flier3000control.png, id=320, 826.58812pt x 500.87125pt>
 File: Documents/flier3000control.png Graphic file (type png)
 <use Documents/flier3000control.png>
-Package pdftex.def Info: Documents/flier3000control.png  used on input line 537
+Package pdftex.def Info: Documents/flier3000control.png  used on input line 549
 .
 (pdftex.def)             Requested size: 413.29305pt x 250.435pt.
 
 
-LaTeX Warning: Reference `mechanics' on page 19 undefined on input line 539.
+LaTeX Warning: Reference `mechanics' on page 20 undefined on input line 551.
 
 
-LaTeX Warning: Reference `persuasion' on page 19 undefined on input line 539.
+LaTeX Warning: Reference `persuasion' on page 20 undefined on input line 551.
 
-<Documents/polygons.png, id=316, 325.71687pt x 222.33063pt>
+<Documents/polygons.png, id=323, 325.71687pt x 222.33063pt>
 File: Documents/polygons.png Graphic file (type png)
 <use Documents/polygons.png>
-Package pdftex.def Info: Documents/polygons.png  used on input line 550.
+Package pdftex.def Info: Documents/polygons.png  used on input line 562.
 (pdftex.def)             Requested size: 293.14246pt x 200.09569pt.
-[19
+[20
 
  <./Documents/flier3000control.png>]
-<Documents/strata.png, id=324, 471.26062pt x 365.11406pt>
+<Documents/strata.png, id=331, 471.26062pt x 365.11406pt>
 File: Documents/strata.png Graphic file (type png)
 <use Documents/strata.png>
-Package pdftex.def Info: Documents/strata.png  used on input line 559.
+Package pdftex.def Info: Documents/strata.png  used on input line 571.
 (pdftex.def)             Requested size: 329.88019pt x 255.5781pt.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/sc' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 560.
+(Font)              Font shape `OT1/ptm/b/sc' tried instead on input line 572.
  (./Output/collector_summary.tex)
 
-LaTeX Warning: Reference `treatment_arms' on page 20 undefined on input line 57
-4.
+LaTeX Warning: Reference `treatment_arms' on page 21 undefined on input line 58
+6.
 
-[20 <./Documents/polygons.png> <./Documents/strata.png>]
-<Output/taxes_paid_DGRKOC_educ_lvl.pdf, id=334, 433.62pt x 289.08pt>
+[21 <./Documents/polygons.png> <./Documents/strata.png>]
+<Output/taxes_paid_DGRKOC_educ_lvl.pdf, id=342, 433.62pt x 289.08pt>
 File: Output/taxes_paid_DGRKOC_educ_lvl.pdf Graphic file (type pdf)
 <use Output/taxes_paid_DGRKOC_educ_lvl.pdf>
 Package pdftex.def Info: Output/taxes_paid_DGRKOC_educ_lvl.pdf  used on input l
-ine 585.
+ine 597.
 (pdftex.def)             Requested size: 216.80946pt x 144.53964pt.
-<Output/taxes_paid_chief_educ_lvl.pdf, id=335, 433.62pt x 289.08pt>
+<Output/taxes_paid_chief_educ_lvl.pdf, id=343, 433.62pt x 289.08pt>
 File: Output/taxes_paid_chief_educ_lvl.pdf Graphic file (type pdf)
 <use Output/taxes_paid_chief_educ_lvl.pdf>
 Package pdftex.def Info: Output/taxes_paid_chief_educ_lvl.pdf  used on input li
-ne 585.
+ne 597.
 (pdftex.def)             Requested size: 216.80946pt x 144.53964pt.
-<Output/taxes_paid_DGRKOC_educ_yrs.pdf, id=336, 433.62pt x 289.08pt>
+<Output/taxes_paid_DGRKOC_educ_yrs.pdf, id=344, 433.62pt x 289.08pt>
 File: Output/taxes_paid_DGRKOC_educ_yrs.pdf Graphic file (type pdf)
 <use Output/taxes_paid_DGRKOC_educ_yrs.pdf>
 Package pdftex.def Info: Output/taxes_paid_DGRKOC_educ_yrs.pdf  used on input l
-ine 587.
+ine 599.
 (pdftex.def)             Requested size: 216.80946pt x 144.53964pt.
-<Output/taxes_paid_chief_educ_yrs.pdf, id=337, 433.62pt x 289.08pt>
+<Output/taxes_paid_chief_educ_yrs.pdf, id=345, 433.62pt x 289.08pt>
 File: Output/taxes_paid_chief_educ_yrs.pdf Graphic file (type pdf)
 <use Output/taxes_paid_chief_educ_yrs.pdf>
 Package pdftex.def Info: Output/taxes_paid_chief_educ_yrs.pdf  used on input li
-ne 587.
+ne 599.
 (pdftex.def)             Requested size: 216.80946pt x 144.53964pt.
-<Output/taxes_paid_DGRKOC_possessions_nb.pdf, id=338, 433.62pt x 289.08pt>
+<Output/taxes_paid_DGRKOC_possessions_nb.pdf, id=346, 433.62pt x 289.08pt>
 File: Output/taxes_paid_DGRKOC_possessions_nb.pdf Graphic file (type pdf)
 <use Output/taxes_paid_DGRKOC_possessions_nb.pdf>
 Package pdftex.def Info: Output/taxes_paid_DGRKOC_possessions_nb.pdf  used on i
-nput line 589.
+nput line 601.
 (pdftex.def)             Requested size: 216.80946pt x 144.53964pt.
-<Output/taxes_paid_chief_possessions_nb.pdf, id=339, 433.62pt x 289.08pt>
+<Output/taxes_paid_chief_possessions_nb.pdf, id=347, 433.62pt x 289.08pt>
 File: Output/taxes_paid_chief_possessions_nb.pdf Graphic file (type pdf)
 <use Output/taxes_paid_chief_possessions_nb.pdf>
 Package pdftex.def Info: Output/taxes_paid_chief_possessions_nb.pdf  used on in
-put line 589.
+put line 601.
 (pdftex.def)             Requested size: 216.80946pt x 144.53964pt.
 
-Overfull \hbox (16.7715pt too wide) in paragraph at lines 582--591
+Overfull \hbox (16.7715pt too wide) in paragraph at lines 594--603
  [][] 
  []
 
 
-LaTeX Warning: Reference `treatment_arms' on page 21 undefined on input line 59
-1.
+LaTeX Warning: Reference `treatment_arms' on page 22 undefined on input line 60
+3.
 
 
-LaTeX Warning: Reference `treatment_arms' on page 21 undefined on input line 59
-1.
+LaTeX Warning: Reference `treatment_arms' on page 22 undefined on input line 60
+3.
 
-[21] (./Output/balance_Ftest_nbhdvars.tex)
+[22] (./Output/balance_Ftest_nbhdvars.tex)
 (./Output/balance_Ftest_baselinevars.tex)
 (./Output/balance_Ftest_baselinevars.tex)
 
-LaTeX Warning: Reference `balance' on page 22 undefined on input line 604.
+LaTeX Warning: Reference `balance' on page 23 undefined on input line 616.
 
-[22 <./Output/taxes_paid_DGRKOC_educ_lvl.pdf> <./Output/taxes_paid_chief_educ_l
+[23 <./Output/taxes_paid_DGRKOC_educ_lvl.pdf> <./Output/taxes_paid_chief_educ_l
 vl.pdf> <./Output/taxes_paid_DGRKOC_educ_yrs.pdf> <./Output/taxes_paid_chief_ed
 uc_yrs.pdf> <./Output/taxes_paid_DGRKOC_possessions_nb.pdf> <./Output/taxes_pai
 d_chief_possessions_nb.pdf>] (./Output/attrition_wcontrol.tex)
 
-LaTeX Warning: Reference `balance' on page 23 undefined on input line 618.
+LaTeX Warning: Reference `balance' on page 24 undefined on input line 630.
 
-[23] (./Output/balance_midline_missing.tex) [24]
-<Output/compliance_over_time.pdf, id=413, 433.62pt x 289.08pt>
+[24] (./Output/balance_midline_missing.tex) [25]
+<Output/compliance_over_time.pdf, id=420, 433.62pt x 289.08pt>
 File: Output/compliance_over_time.pdf Graphic file (type pdf)
 <use Output/compliance_over_time.pdf>
-Package pdftex.def Info: Output/compliance_over_time.pdf  used on input line 64
-9.
+Package pdftex.def Info: Output/compliance_over_time.pdf  used on input line 66
+1.
 (pdftex.def)             Requested size: 390.2544pt x 260.16959pt.
 
 
-LaTeX Warning: Reference `time_imbalance' on page 25 undefined on input line 65
-0.
+LaTeX Warning: Reference `time_imbalance' on page 26 undefined on input line 66
+2.
 
 
-LaTeX Warning: Reference `time_imbalance' on page 25 undefined on input line 65
-0.
+LaTeX Warning: Reference `time_imbalance' on page 26 undefined on input line 66
+2.
 
-[25] [26 <./Output/compliance_over_time.pdf>]
+[26] [27 <./Output/compliance_over_time.pdf>]
 (./Output/compl_CvL_results_timeimbal.tex)
 (./Output/rev_CvL_results_timeimbal.tex)
 
-LaTeX Warning: Reference `estimation' on page 27 undefined on input line 669.
+LaTeX Warning: Reference `estimation' on page 28 undefined on input line 681.
 
 
-LaTeX Warning: Reference `estimation' on page 27 undefined on input line 669.
+LaTeX Warning: Reference `estimation' on page 28 undefined on input line 681.
 
 
-LaTeX Warning: Reference `results_discussion' on page 27 undefined on input lin
-e 669.
+LaTeX Warning: Reference `results_discussion' on page 28 undefined on input lin
+e 681.
 
 (./Output/compl_CvL_results_timeimbalR.tex)
-(./Output/rev_CvL_results_timeimbal.tex) [27
+(./Output/rev_CvL_results_timeimbal.tex) [28
 
-] [28]
-<Output/shiftFE_compl_CvL.pdf, id=456, 397.485pt x 289.08pt>
+] [29]
+<Output/shiftFE_compl_CvL.pdf, id=463, 397.485pt x 289.08pt>
 File: Output/shiftFE_compl_CvL.pdf Graphic file (type pdf)
 <use Output/shiftFE_compl_CvL.pdf>
-Package pdftex.def Info: Output/shiftFE_compl_CvL.pdf  used on input line 693.
+Package pdftex.def Info: Output/shiftFE_compl_CvL.pdf  used on input line 705.
 (pdftex.def)             Requested size: 178.8666pt x 130.0848pt.
-<Output/shiftFE_rev_CvL.pdf, id=457, 433.62pt x 289.08pt>
+<Output/shiftFE_rev_CvL.pdf, id=464, 433.62pt x 289.08pt>
 File: Output/shiftFE_rev_CvL.pdf Graphic file (type pdf)
 <use Output/shiftFE_rev_CvL.pdf>
-Package pdftex.def Info: Output/shiftFE_rev_CvL.pdf  used on input line 693.
+Package pdftex.def Info: Output/shiftFE_rev_CvL.pdf  used on input line 705.
 (pdftex.def)             Requested size: 195.1272pt x 130.0848pt.
-<Output/shiftFE_compl_CvCLI.pdf, id=458, 433.62pt x 289.08pt>
+<Output/shiftFE_compl_CvCLI.pdf, id=465, 433.62pt x 289.08pt>
 File: Output/shiftFE_compl_CvCLI.pdf Graphic file (type pdf)
 <use Output/shiftFE_compl_CvCLI.pdf>
-Package pdftex.def Info: Output/shiftFE_compl_CvCLI.pdf  used on input line 696
+Package pdftex.def Info: Output/shiftFE_compl_CvCLI.pdf  used on input line 708
 .
 (pdftex.def)             Requested size: 195.1272pt x 130.0848pt.
-<Output/shiftFE_rev_CvCLI.pdf, id=459, 433.62pt x 289.08pt>
+<Output/shiftFE_rev_CvCLI.pdf, id=466, 433.62pt x 289.08pt>
 File: Output/shiftFE_rev_CvCLI.pdf Graphic file (type pdf)
 <use Output/shiftFE_rev_CvCLI.pdf>
-Package pdftex.def Info: Output/shiftFE_rev_CvCLI.pdf  used on input line 696.
+Package pdftex.def Info: Output/shiftFE_rev_CvCLI.pdf  used on input line 708.
 (pdftex.def)             Requested size: 195.1272pt x 130.0848pt.
 
 
-LaTeX Warning: Reference `results_discussion' on page 29 undefined on input lin
-e 699.
+LaTeX Warning: Reference `results_discussion' on page 30 undefined on input lin
+e 711.
 
 (./Output/compl_results_saturated.tex) (./Output/rev_results_saturated.tex)
 
-LaTeX Warning: Reference `equation_cvl' on page 29 undefined on input line 710.
+LaTeX Warning: Reference `equation_cvl' on page 30 undefined on input line 722.
 
 
 
-LaTeX Warning: Reference `results_discussion' on page 29 undefined on input lin
-e 710.
+LaTeX Warning: Reference `results_discussion' on page 30 undefined on input lin
+e 722.
 
-[29
+[30
 
  <./Output/shiftFE_compl_CvL.pdf> <./Output/shiftFE_rev_CvL.pdf> <./Output/shif
 tFE_compl_CvCLI.pdf> <./Output/shiftFE_rev_CvCLI.pdf>]
 (./Output/compl_results_saturatedR1.tex) (./Output/rev_results_saturatedR1.tex)
 
-Overfull \hbox (14.40556pt too wide) in paragraph at lines 717--719
+Overfull \hbox (14.40556pt too wide) in paragraph at lines 729--731
  [][] 
  []
 
-[30] (./Output/compl_results_controls.tex) (./Output/rev_results_controls.tex)
+[31] (./Output/compl_results_controls.tex) (./Output/rev_results_controls.tex)
 
-LaTeX Warning: Reference `equation_cvl' on page 31 undefined on input line 731.
+LaTeX Warning: Reference `equation_cvl' on page 32 undefined on input line 743.
 
 
 
-LaTeX Warning: Reference `results_discussion' on page 31 undefined on input lin
-e 731.
+LaTeX Warning: Reference `results_discussion' on page 32 undefined on input lin
+e 743.
 
-[31] (./Output/compl_results_controlsR1.tex)
+[32] (./Output/compl_results_controlsR1.tex)
 (./Output/rev_results_controlsR1.tex)
-Overfull \hbox (14.40556pt too wide) in paragraph at lines 738--740
+Overfull \hbox (14.40556pt too wide) in paragraph at lines 750--752
  [][] 
  []
 
-[32] [33] (./Output/cvl_collector_differences_control.tex)
+[33] [34] (./Output/cvl_collector_differences_control.tex)
 
-LaTeX Warning: Reference `equation_cvl' on page 34 undefined on input line 759.
+LaTeX Warning: Reference `equation_cvl' on page 35 undefined on input line 771.
 
 
 
-LaTeX Warning: Reference `results_discussion' on page 34 undefined on input lin
-e 759.
+LaTeX Warning: Reference `results_discussion' on page 35 undefined on input lin
+e 771.
 
 (./Output/exemptions.tex)
 
-LaTeX Warning: Reference `estimation' on page 34 undefined on input line 773.
+LaTeX Warning: Reference `estimation' on page 35 undefined on input line 785.
 
 
-LaTeX Warning: Reference `results_discussion' on page 34 undefined on input lin
-e 773.
+LaTeX Warning: Reference `results_discussion' on page 35 undefined on input lin
+e 785.
 
-[34
+[35
 
-] [35] (./Output/awareness_other_tmts.tex)
+] [36] (./Output/awareness_other_tmts.tex)
 
-LaTeX Warning: Reference `estimation' on page 36 undefined on input line 795.
+LaTeX Warning: Reference `estimation' on page 37 undefined on input line 807.
 
 
-LaTeX Warning: Reference `results_discussion' on page 36 undefined on input lin
-e 795.
+LaTeX Warning: Reference `results_discussion' on page 37 undefined on input lin
+e 807.
 
 (./Output/fiscal_externalities.tex)
 
-LaTeX Warning: Reference `equation_cvl' on page 36 undefined on input line 809.
+LaTeX Warning: Reference `equation_cvl' on page 37 undefined on input line 821.
 
 
 
-LaTeX Warning: Reference `estimation' on page 36 undefined on input line 809.
+LaTeX Warning: Reference `estimation' on page 37 undefined on input line 821.
 
 
-LaTeX Warning: Reference `salongo_discussion' on page 36 undefined on input lin
-e 809.
+LaTeX Warning: Reference `salongo_discussion' on page 37 undefined on input lin
+e 821.
 
-[36
+[37
 
 
 ] (./Output/salongo_tax_actual.tex) (./Output/salongo_tax_predicted.tex)
 
-LaTeX Warning: Reference `equation_cvl' on page 37 undefined on input line 820.
+LaTeX Warning: Reference `equation_cvl' on page 38 undefined on input line 832.
 
 
 
-LaTeX Warning: Reference `info_adv' on page 37 undefined on input line 820.
+LaTeX Warning: Reference `info_adv' on page 38 undefined on input line 832.
 
 
-LaTeX Warning: Reference `estimation' on page 37 undefined on input line 820.
+LaTeX Warning: Reference `estimation' on page 38 undefined on input line 832.
 
 
-LaTeX Warning: Reference `salongo_discussion' on page 37 undefined on input lin
-e 820.
+LaTeX Warning: Reference `salongo_discussion' on page 38 undefined on input lin
+e 832.
 
-(./Output/cvl_total_tax_burden.tex) [37] [38]
+(./Output/cvl_total_tax_burden.tex) [38] [39]
 (./Output/bribe_chief_worried_sanctions_col4-6.tex)
 (./Output/bribe_chief_worried_sanctions_col1-3.tex)
 
-LaTeX Warning: Reference `bribe_discussion' on page 39 undefined on input line 
-861.
+LaTeX Warning: Reference `bribe_discussion' on page 40 undefined on input line 
+873.
 
-[39
+[40
 
 
 ] (./Output/bribe_chief_het_condensed.tex)
 
-LaTeX Warning: Reference `bribe_discussion' on page 40 undefined on input line 
-881.
+LaTeX Warning: Reference `bribe_discussion' on page 41 undefined on input line 
+893.
 
 (./Output/predicted_bribe_p75.tex) (./Output/predicted_bribe_p90.tex)
 
-LaTeX Warning: Reference `bribe_discussion' on page 40 undefined on input line 
-894.
+LaTeX Warning: Reference `bribe_discussion' on page 41 undefined on input line 
+906.
 
 
-LaTeX Warning: Reference `bribe_discussion' on page 40 undefined on input line 
-894.
+LaTeX Warning: Reference `bribe_discussion' on page 41 undefined on input line 
+906.
 
-[40
+[41
 
 ] (./Output/visits_results_nohouseFE.tex)
-Overfull \hbox (25.65431pt too wide) in paragraph at lines 911--911
+Overfull \hbox (25.65431pt too wide) in paragraph at lines 923--923
  [][] 
  []
 
 
-LaTeX Warning: Reference `equation_cvl' on page 41 undefined on input line 912.
+LaTeX Warning: Reference `equation_cvl' on page 42 undefined on input line 924.
 
 
 
-LaTeX Warning: Reference `estimation' on page 41 undefined on input line 912.
+LaTeX Warning: Reference `estimation' on page 42 undefined on input line 924.
 
 
-LaTeX Warning: Reference `visits_discussion' on page 41 undefined on input line
- 912.
+LaTeX Warning: Reference `visits_discussion' on page 42 undefined on input line
+ 924.
 
-[41] [42] (./Output/compl_CvCLI_results_timeimbal.tex)
+[42] [43] (./Output/compl_CvCLI_results_timeimbal.tex)
 (./Output/rev_CvCLI_results_timeimbal.tex)
 
-LaTeX Warning: Reference `estimation' on page 43 undefined on input line 931.
+LaTeX Warning: Reference `estimation' on page 44 undefined on input line 943.
 
 
-LaTeX Warning: Reference `cli_discussion' on page 43 undefined on input line 93
-1.
+LaTeX Warning: Reference `cli_discussion' on page 44 undefined on input line 94
+3.
 
-[43
+[44
 
 
 ] (./Output/centralwinfo_controls.tex) (./Output/centralwinfo_nohouseFE.tex)
 
-LaTeX Warning: Reference `cli_discussion' on page 44 undefined on input line 94
-7.
+LaTeX Warning: Reference `cli_discussion' on page 45 undefined on input line 95
+9.
 
-[44
+[45
 
 ] (./Output/owner_present_reg.tex)
 
-LaTeX Warning: Reference `equation_cvl' on page 45 undefined on input line 966.
+LaTeX Warning: Reference `equation_cvl' on page 46 undefined on input line 978.
 
 
 
-LaTeX Warning: Reference `estimation' on page 45 undefined on input line 966.
+LaTeX Warning: Reference `estimation' on page 46 undefined on input line 978.
 
 
-LaTeX Warning: Reference `cli_discussion' on page 45 undefined on input line 96
-6.
+LaTeX Warning: Reference `cli_discussion' on page 46 undefined on input line 97
+8.
 
-[45
+[46
 
 ] (./Output/chiefs_info_payease_nohouseFE.tex)
 (./Output/chiefs_info_wtp_nohouseFE.tex)
 
-LaTeX Warning: Reference `info_adv' on page 46 undefined on input line 982.
+LaTeX Warning: Reference `info_adv' on page 47 undefined on input line 994.
 
 
-LaTeX Warning: Reference `predictiveness_discussion' on page 46 undefined on in
-put line 982.
+LaTeX Warning: Reference `predictiveness_discussion' on page 47 undefined on in
+put line 994.
 
 (./Output/chiefs_info_payease_interact.tex)
 (./Output/chiefs_info_wtp_interact.tex)
 
-LaTeX Warning: Reference `predictiveness_discussion' on page 46 undefined on in
-put line 995.
+LaTeX Warning: Reference `predictiveness_discussion' on page 47 undefined on in
+put line 1007.
 
 
-LaTeX Warning: Reference `predictiveness_discussion' on page 46 undefined on in
-put line 995.
+LaTeX Warning: Reference `predictiveness_discussion' on page 47 undefined on in
+put line 1007.
 
-[46
+[47
 
 ]
-<Output/visits_chefknowindex_L_binned.pdf, id=615, 433.62pt x 289.08pt>
+<Output/visits_chefknowindex_L_binned.pdf, id=622, 433.62pt x 289.08pt>
 File: Output/visits_chefknowindex_L_binned.pdf Graphic file (type pdf)
 <use Output/visits_chefknowindex_L_binned.pdf>
 Package pdftex.def Info: Output/visits_chefknowindex_L_binned.pdf  used on inpu
-t line 1007.
+t line 1019.
 (pdftex.def)             Requested size: 216.80946pt x 144.53964pt.
-<Output/taxes_paid_chefknowindex_L_binned.pdf, id=616, 433.62pt x 289.08pt>
+<Output/taxes_paid_chefknowindex_L_binned.pdf, id=623, 433.62pt x 289.08pt>
 File: Output/taxes_paid_chefknowindex_L_binned.pdf Graphic file (type pdf)
 <use Output/taxes_paid_chefknowindex_L_binned.pdf>
 Package pdftex.def Info: Output/taxes_paid_chefknowindex_L_binned.pdf  used on 
-input line 1007.
+input line 1019.
 (pdftex.def)             Requested size: 216.80946pt x 144.53964pt.
-<Output/visits_chefknowindex_CwI_binned.pdf, id=617, 433.62pt x 289.08pt>
+<Output/visits_chefknowindex_CwI_binned.pdf, id=624, 433.62pt x 289.08pt>
 File: Output/visits_chefknowindex_CwI_binned.pdf Graphic file (type pdf)
 <use Output/visits_chefknowindex_CwI_binned.pdf>
 Package pdftex.def Info: Output/visits_chefknowindex_CwI_binned.pdf  used on in
-put line 1009.
+put line 1021.
 (pdftex.def)             Requested size: 216.80946pt x 144.53964pt.
-<Output/taxes_paid_chefknowindex_CwI_binned.pdf, id=618, 433.62pt x 289.08pt>
+<Output/taxes_paid_chefknowindex_CwI_binned.pdf, id=625, 433.62pt x 289.08pt>
 File: Output/taxes_paid_chefknowindex_CwI_binned.pdf Graphic file (type pdf)
 <use Output/taxes_paid_chefknowindex_CwI_binned.pdf>
 Package pdftex.def Info: Output/taxes_paid_chefknowindex_CwI_binned.pdf  used o
-n input line 1009.
+n input line 1021.
 (pdftex.def)             Requested size: 216.80946pt x 144.53964pt.
-<Output/taxes_paid_chefknowindex_C_binned.pdf, id=619, 433.62pt x 289.08pt>
+<Output/taxes_paid_chefknowindex_C_binned.pdf, id=626, 433.62pt x 289.08pt>
 File: Output/taxes_paid_chefknowindex_C_binned.pdf Graphic file (type pdf)
 <use Output/taxes_paid_chefknowindex_C_binned.pdf>
 Package pdftex.def Info: Output/taxes_paid_chefknowindex_C_binned.pdf  used on 
-input line 1011.
+input line 1023.
 (pdftex.def)             Requested size: 216.80946pt x 144.53964pt.
-<Output//visits_chefknowindex_C_binned.pdf, id=620, 433.62pt x 289.08pt>
+<Output//visits_chefknowindex_C_binned.pdf, id=627, 433.62pt x 289.08pt>
 File: Output//visits_chefknowindex_C_binned.pdf Graphic file (type pdf)
 <use Output//visits_chefknowindex_C_binned.pdf>
 Package pdftex.def Info: Output//visits_chefknowindex_C_binned.pdf  used on inp
-ut line 1011.
+ut line 1023.
 (pdftex.def)             Requested size: 216.80946pt x 144.53964pt.
 
-Overfull \hbox (16.7715pt too wide) in paragraph at lines 1004--1014
+Overfull \hbox (16.7715pt too wide) in paragraph at lines 1016--1026
  [][] 
  []
 
 
-LaTeX Warning: Reference `predictiveness_discussion' on page 47 undefined on in
-put line 1014.
+LaTeX Warning: Reference `predictiveness_discussion' on page 48 undefined on in
+put line 1026.
 
-
-LaTeX Warning: Reference `predictiveness_discussion' on page 47 undefined on in
-put line 1014.
-
-[47] (./Output/tablechefknowindex.tex)
 
 LaTeX Warning: Reference `predictiveness_discussion' on page 48 undefined on in
-put line 1028.
+put line 1026.
+
+[48] (./Output/tablechefknowindex.tex)
+
+LaTeX Warning: Reference `predictiveness_discussion' on page 49 undefined on in
+put line 1040.
 
 (./Output/dist_collectors.tex)
 
-LaTeX Warning: Reference `estimation' on page 48 undefined on input line 1042.
+LaTeX Warning: Reference `estimation' on page 49 undefined on input line 1054.
 
 
-LaTeX Warning: Reference `predictiveness_discussion' on page 48 undefined on in
-put line 1042.
+LaTeX Warning: Reference `predictiveness_discussion' on page 49 undefined on in
+put line 1054.
 
-[48 <./Output/visits_chefknowindex_L_binned.pdf> <./Output/taxes_paid_chefknowi
+[49 <./Output/visits_chefknowindex_L_binned.pdf> <./Output/taxes_paid_chefknowi
 ndex_L_binned.pdf> <./Output/visits_chefknowindex_CwI_binned.pdf> <./Output/tax
 es_paid_chefknowindex_CwI_binned.pdf> <./Output/taxes_paid_chefknowindex_C_binn
-ed.pdf> <./Output//visits_chefknowindex_C_binned.pdf>] [49]
+ed.pdf> <./Output//visits_chefknowindex_C_binned.pdf>] [50]
 (./Output/collectors_C_near_home.tex) (./Output/collectors_C_CLI_near_home.tex)
 
-LaTeX Warning: Reference `equation_cvl' on page 50 undefined on input line 1057
+LaTeX Warning: Reference `equation_cvl' on page 51 undefined on input line 1069
 .
 
 
-LaTeX Warning: Reference `estimation' on page 50 undefined on input line 1057.
+LaTeX Warning: Reference `estimation' on page 51 undefined on input line 1069.
 
 
-LaTeX Warning: Reference `predictiveness_discussion' on page 50 undefined on in
-put line 1057.
+LaTeX Warning: Reference `predictiveness_discussion' on page 51 undefined on in
+put line 1069.
 
-[50
+[51
 
 ] (./Output/pay_registration.tex)
 
-LaTeX Warning: Reference `equation_cvl' on page 51 undefined on input line 1077
+LaTeX Warning: Reference `equation_cvl' on page 52 undefined on input line 1089
 .
 
 
-LaTeX Warning: Reference `estimation' on page 51 undefined on input line 1077.
+LaTeX Warning: Reference `estimation' on page 52 undefined on input line 1089.
 
 
-LaTeX Warning: Reference `persuasion' on page 51 undefined on input line 1077.
+LaTeX Warning: Reference `persuasion' on page 52 undefined on input line 1089.
 
-(./Output/pay_registrationR.tex) [51
+(./Output/pay_registrationR.tex) [52
 
 
-] [52]
+] [53]
 
 pdfTeX warning: /Library/TeX/texbin/pdflatex (file ./Documents/property_registr
 ation_path.pdf): PDF inclusion: found PDF version <1.6>, but at most version <1
 .5> allowed
-<Documents/property_registration_path.pdf, id=708, 1589.94pt x 1228.59pt>
+<Documents/property_registration_path.pdf, id=715, 1589.94pt x 1228.59pt>
 File: Documents/property_registration_path.pdf Graphic file (type pdf)
 <use Documents/property_registration_path.pdf>
 Package pdftex.def Info: Documents/property_registration_path.pdf  used on inpu
-t line 1104.
+t line 1116.
 (pdftex.def)             Requested size: 476.98569pt x 368.57985pt.
 
-LaTeX Warning: Reference `persuasion' on page 53 undefined on input line 1105.
+LaTeX Warning: Reference `persuasion' on page 54 undefined on input line 1117.
 
 
-LaTeX Warning: Reference `persuasion' on page 53 undefined on input line 1105.
+LaTeX Warning: Reference `persuasion' on page 54 undefined on input line 1117.
 
-[53
+[54
 
 
  <./Documents/property_registration_path.pdf>]
 (./Output/taxes_paid_chief_het_condensed.tex)
 
-LaTeX Warning: Reference `persuasion' on page 54 undefined on input line 1125.
+LaTeX Warning: Reference `persuasion' on page 55 undefined on input line 1137.
 
-[54
+[55
 
 ] (./Output/flier_effects_tax_timeFE.tex)
 
-LaTeX Warning: Reference `estimation' on page 55 undefined on input line 1147.
+LaTeX Warning: Reference `estimation' on page 56 undefined on input line 1159.
 
 
-LaTeX Warning: Reference `persuasion' on page 55 undefined on input line 1147.
+LaTeX Warning: Reference `persuasion' on page 56 undefined on input line 1159.
 
-(./Output/flier_effects_tax_timeFER.tex) [55
+(./Output/flier_effects_tax_timeFER.tex) [56
 
 
-] [56]
+] [57]
 (./Output/flier_PanelA_timeFE.tex) (./Output/flier_PanelB_timeFE.tex)
 (./Output/flier_PanelC_timeFE.tex) (./Output/flier_PanelD_timeFE.tex)
 (./Output/flier_PanelE_timeFE.tex)
 
-LaTeX Warning: Reference `equation_cvl' on page 57 undefined on input line 1179
+LaTeX Warning: Reference `equation_cvl' on page 58 undefined on input line 1191
 .
 
 
-LaTeX Warning: Reference `estimation' on page 57 undefined on input line 1179.
+LaTeX Warning: Reference `estimation' on page 58 undefined on input line 1191.
 
 
-LaTeX Warning: Reference `persuasion' on page 57 undefined on input line 1179.
+LaTeX Warning: Reference `persuasion' on page 58 undefined on input line 1191.
 
 (./Output/flier_PanelA_timeFER.tex) (./Output/flier_PanelB_timeFER.tex)
 (./Output/flier_PanelC_timeFER.tex) (./Output/flier_PanelD_timeFER.tex)
-(./Output/flier_PanelE_timeFER.tex) [57
+(./Output/flier_PanelE_timeFER.tex) [58
 
 ]
 Overfull \vbox (37.55962pt too high) has occurred while \output is active []
 
 
-[58] (./Output/flier_PanelA_timeFE_LHet.tex)
+[59] (./Output/flier_PanelA_timeFE_LHet.tex)
 (./Output/flier_PanelB_timeFE_LHet.tex) (./Output/flier_PanelC_timeFE_LHet.tex)
 (./Output/flier_PanelD_timeFE_LHet.tex) (./Output/flier_PanelE_timeFE_LHet.tex)
 
-LaTeX Warning: Reference `estimation' on page 59 undefined on input line 1208.
+LaTeX Warning: Reference `estimation' on page 60 undefined on input line 1220.
 
 File: Output/chars_PEXHQ.pdf Graphic file (type pdf)
 <use Output/chars_PEXHQ.pdf>
-Package pdftex.def Info: Output/chars_PEXHQ.pdf  used on input line 1229.
+Package pdftex.def Info: Output/chars_PEXHQ.pdf  used on input line 1241.
 (pdftex.def)             Requested size: 303.53192pt x 202.35461pt.
-<Output/chars_PEXHQ_bytmt.pdf, id=1065, 433.62pt x 289.08pt>
+<Output/chars_PEXHQ_bytmt.pdf, id=1072, 433.62pt x 289.08pt>
 File: Output/chars_PEXHQ_bytmt.pdf Graphic file (type pdf)
 <use Output/chars_PEXHQ_bytmt.pdf>
-Package pdftex.def Info: Output/chars_PEXHQ_bytmt.pdf  used on input line 1229.
+Package pdftex.def Info: Output/chars_PEXHQ_bytmt.pdf  used on input line 1241.
 
 (pdftex.def)             Requested size: 303.53192pt x 202.35461pt.
 
-LaTeX Warning: Reference `targeting_discussion' on page 59 undefined on input l
-ine 1231.
+LaTeX Warning: Reference `targeting_discussion' on page 60 undefined on input l
+ine 1243.
 
 
-LaTeX Warning: Reference `targeting_discussion' on page 59 undefined on input l
-ine 1231.
+LaTeX Warning: Reference `targeting_discussion' on page 60 undefined on input l
+ine 1243.
 
-[59]
-<Output/chars_visited_nohouseFE.pdf, id=1071, 433.62pt x 289.08pt>
+[60]
+<Output/chars_visited_nohouseFE.pdf, id=1079, 433.62pt x 289.08pt>
 File: Output/chars_visited_nohouseFE.pdf Graphic file (type pdf)
 <use Output/chars_visited_nohouseFE.pdf>
 Package pdftex.def Info: Output/chars_visited_nohouseFE.pdf  used on input line
- 1243.
+ 1255.
 (pdftex.def)             Requested size: 303.53192pt x 202.35461pt.
-<Output/chars_PEXHQ_nohouseFE.pdf, id=1072, 433.62pt x 289.08pt>
+<Output/chars_PEXHQ_nohouseFE.pdf, id=1080, 433.62pt x 289.08pt>
 File: Output/chars_PEXHQ_nohouseFE.pdf Graphic file (type pdf)
 <use Output/chars_PEXHQ_nohouseFE.pdf>
 Package pdftex.def Info: Output/chars_PEXHQ_nohouseFE.pdf  used on input line 1
-245.
+257.
 (pdftex.def)             Requested size: 303.53192pt x 202.35461pt.
 
 
-LaTeX Warning: Reference `targeting_discussion' on page 60 undefined on input l
-ine 1248.
+LaTeX Warning: Reference `targeting_discussion' on page 61 undefined on input l
+ine 1260.
 
 
-LaTeX Warning: Reference `targeting_discussion' on page 60 undefined on input l
-ine 1248.
+LaTeX Warning: Reference `targeting_discussion' on page 61 undefined on input l
+ine 1260.
 
-[60 <./Output/chars_PEXHQ_bytmt.pdf>]
-<Output/chars_visited_nonbhdmean.pdf, id=1087, 433.62pt x 289.08pt>
+[61 <./Output/chars_PEXHQ_bytmt.pdf>]
+<Output/chars_visited_nonbhdmean.pdf, id=1094, 433.62pt x 289.08pt>
 File: Output/chars_visited_nonbhdmean.pdf Graphic file (type pdf)
 <use Output/chars_visited_nonbhdmean.pdf>
 Package pdftex.def Info: Output/chars_visited_nonbhdmean.pdf  used on input lin
-e 1265.
+e 1277.
 (pdftex.def)             Requested size: 303.53192pt x 202.35461pt.
-<Output/chars_PEXHQ_nonbhdmean.pdf, id=1088, 433.62pt x 289.08pt>
+<Output/chars_PEXHQ_nonbhdmean.pdf, id=1095, 433.62pt x 289.08pt>
 File: Output/chars_PEXHQ_nonbhdmean.pdf Graphic file (type pdf)
 <use Output/chars_PEXHQ_nonbhdmean.pdf>
 Package pdftex.def Info: Output/chars_PEXHQ_nonbhdmean.pdf  used on input line 
-1265.
+1277.
 (pdftex.def)             Requested size: 303.53192pt x 202.35461pt.
 
 
-LaTeX Warning: Reference `targeting_discussion' on page 61 undefined on input l
-ine 1267.
+LaTeX Warning: Reference `targeting_discussion' on page 62 undefined on input l
+ine 1279.
 
 
-LaTeX Warning: Reference `targeting_discussion' on page 61 undefined on input l
-ine 1267.
+LaTeX Warning: Reference `targeting_discussion' on page 62 undefined on input l
+ine 1279.
 
-[61 <./Output/chars_visited_nohouseFE.pdf> <./Output/chars_PEXHQ_nohouseFE.pdf>
-] [62 <./Output/chars_visited_nonbhdmean.pdf> <./Output/chars_PEXHQ_nonbhdmean.
+[62 <./Output/chars_visited_nohouseFE.pdf> <./Output/chars_PEXHQ_nohouseFE.pdf>
+] [63 <./Output/chars_visited_nonbhdmean.pdf> <./Output/chars_PEXHQ_nonbhdmean.
 pdf>]
 
 Package geometry Warning: `verbose': not available in `\newgeometry'; skipped.
@@ -2061,33 +2062,33 @@ Package geometry Warning: `verbose': not available in `\newgeometry'; skipped.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<Output/chief_indices_CvL.pdf, id=1131, 433.62pt x 289.08pt>
+<Output/chief_indices_CvL.pdf, id=1138, 433.62pt x 289.08pt>
 File: Output/chief_indices_CvL.pdf Graphic file (type pdf)
 <use Output/chief_indices_CvL.pdf>
-Package pdftex.def Info: Output/chief_indices_CvL.pdf  used on input line 1283.
+Package pdftex.def Info: Output/chief_indices_CvL.pdf  used on input line 1295.
 
 (pdftex.def)             Requested size: 238.49173pt x 158.99448pt.
-<Output/chief_indices_LvCLI.pdf, id=1132, 433.62pt x 289.08pt>
+<Output/chief_indices_LvCLI.pdf, id=1139, 433.62pt x 289.08pt>
 File: Output/chief_indices_LvCLI.pdf Graphic file (type pdf)
 <use Output/chief_indices_LvCLI.pdf>
-Package pdftex.def Info: Output/chief_indices_LvCLI.pdf  used on input line 128
-5.
-(pdftex.def)             Requested size: 238.49173pt x 158.99448pt.
-<Output/chief_indices_bytmt.pdf, id=1133, 433.62pt x 289.08pt>
-File: Output/chief_indices_bytmt.pdf Graphic file (type pdf)
-<use Output/chief_indices_bytmt.pdf>
-Package pdftex.def Info: Output/chief_indices_bytmt.pdf  used on input line 128
+Package pdftex.def Info: Output/chief_indices_LvCLI.pdf  used on input line 129
 7.
 (pdftex.def)             Requested size: 238.49173pt x 158.99448pt.
+<Output/chief_indices_bytmt.pdf, id=1140, 433.62pt x 289.08pt>
+File: Output/chief_indices_bytmt.pdf Graphic file (type pdf)
+<use Output/chief_indices_bytmt.pdf>
+Package pdftex.def Info: Output/chief_indices_bytmt.pdf  used on input line 129
+9.
+(pdftex.def)             Requested size: 238.49173pt x 158.99448pt.
 
-LaTeX Warning: Reference `targeting_discussion' on page 63 undefined on input l
-ine 1290.
+LaTeX Warning: Reference `targeting_discussion' on page 64 undefined on input l
+ine 1302.
 
 
-LaTeX Warning: Reference `targeting_discussion' on page 63 undefined on input l
-ine 1290.
+LaTeX Warning: Reference `targeting_discussion' on page 64 undefined on input l
+ine 1302.
 
-[63
+[64
 
  <./Output/chief_indices_CvL.pdf> <./Output/chief_indices_LvCLI.pdf> <./Output/
 chief_indices_bytmt.pdf>]
@@ -2128,171 +2129,171 @@ Package geometry Warning: `verbose': not available in `\newgeometry'; skipped.
 
 (./Output/ethnicity_interaction.tex)
 
-LaTeX Warning: Reference `equation_cvl' on page 64 undefined on input line 1317
+LaTeX Warning: Reference `equation_cvl' on page 65 undefined on input line 1329
 .
 
 
-LaTeX Warning: Reference `estimation' on page 64 undefined on input line 1317.
+LaTeX Warning: Reference `estimation' on page 65 undefined on input line 1329.
 
 
-LaTeX Warning: Reference `targeting_discussion' on page 64 undefined on input l
-ine 1317.
+LaTeX Warning: Reference `targeting_discussion' on page 65 undefined on input l
+ine 1329.
 
-[64
+[65
 
 
 
 ] (./Output/incidence_results_nohouseFE.tex)
 
-LaTeX Warning: Reference `equation_cvl' on page 65 undefined on input line 1336
+LaTeX Warning: Reference `equation_cvl' on page 66 undefined on input line 1348
 .
 
 
-LaTeX Warning: Reference `estimation' on page 65 undefined on input line 1336.
+LaTeX Warning: Reference `estimation' on page 66 undefined on input line 1348.
 
 
-LaTeX Warning: Reference `incidence_discussion' on page 65 undefined on input l
-ine 1336.
+LaTeX Warning: Reference `incidence_discussion' on page 66 undefined on input l
+ine 1348.
 
 (./Output/incidence_results_nonbhdmean.tex)
-Overfull \hbox (14.40063pt too wide) in paragraph at lines 1349--1349
+Overfull \hbox (14.40063pt too wide) in paragraph at lines 1361--1361
  [][] 
  []
 
 
-LaTeX Warning: Reference `estimation' on page 65 undefined on input line 1350.
+LaTeX Warning: Reference `estimation' on page 66 undefined on input line 1362.
 
 
-LaTeX Warning: Reference `incidence_discussion' on page 65 undefined on input l
-ine 1350.
+LaTeX Warning: Reference `incidence_discussion' on page 66 undefined on input l
+ine 1362.
 
 (./Output/incidence_interactions_house.tex)
 
-LaTeX Warning: Reference `equation_cvl' on page 65 undefined on input line 1366
-.
-
-
-LaTeX Warning: Reference `incidence_discussion' on page 65 undefined on input l
-ine 1366.
-
-[65
-
-] (./Output/incidence_interactions_compl.tex)
-(./Output/incidence_interactions_rev.tex)
-
-LaTeX Warning: Reference `equation_cvl' on page 66 undefined on input line 1380
+LaTeX Warning: Reference `equation_cvl' on page 66 undefined on input line 1378
 .
 
 
 LaTeX Warning: Reference `incidence_discussion' on page 66 undefined on input l
-ine 1380.
+ine 1378.
 
-[66]
-<Output/dist_housequal_visited.pdf, id=1181, 433.62pt x 289.08pt>
-File: Output/dist_housequal_visited.pdf Graphic file (type pdf)
-<use Output/dist_housequal_visited.pdf>
-Package pdftex.def Info: Output/dist_housequal_visited.pdf  used on input line 
-1391.
-(pdftex.def)             Requested size: 238.49173pt x 158.99448pt.
-<Output/dist_housequal_taxpayers.pdf, id=1182, 433.62pt x 289.08pt>
-File: Output/dist_housequal_taxpayers.pdf Graphic file (type pdf)
-<use Output/dist_housequal_taxpayers.pdf>
-Package pdftex.def Info: Output/dist_housequal_taxpayers.pdf  used on input lin
-e 1391.
-(pdftex.def)             Requested size: 238.49173pt x 158.99448pt.
-<Output/dist_inc_visited.pdf, id=1183, 433.62pt x 289.08pt>
-File: Output/dist_inc_visited.pdf Graphic file (type pdf)
-<use Output/dist_inc_visited.pdf>
-Package pdftex.def Info: Output/dist_inc_visited.pdf  used on input line 1393.
-(pdftex.def)             Requested size: 238.49173pt x 158.99448pt.
-<Output/dist_inc_taxpayers.pdf, id=1184, 433.62pt x 289.08pt>
-File: Output/dist_inc_taxpayers.pdf Graphic file (type pdf)
-<use Output/dist_inc_taxpayers.pdf>
-Package pdftex.def Info: Output/dist_inc_taxpayers.pdf  used on input line 1393
+[66
+
+] (./Output/incidence_interactions_compl.tex)
+(./Output/incidence_interactions_rev.tex)
+
+LaTeX Warning: Reference `equation_cvl' on page 67 undefined on input line 1392
 .
-(pdftex.def)             Requested size: 238.49173pt x 158.99448pt.
-<Output/dist_liq_visited.pdf, id=1185, 433.62pt x 289.08pt>
-File: Output/dist_liq_visited.pdf Graphic file (type pdf)
-<use Output/dist_liq_visited.pdf>
-Package pdftex.def Info: Output/dist_liq_visited.pdf  used on input line 1395.
-(pdftex.def)             Requested size: 238.49173pt x 158.99448pt.
-<Output/dist_liq_taxpayers.pdf, id=1186, 433.62pt x 289.08pt>
-File: Output/dist_liq_taxpayers.pdf Graphic file (type pdf)
-<use Output/dist_liq_taxpayers.pdf>
-Package pdftex.def Info: Output/dist_liq_taxpayers.pdf  used on input line 1395
-.
-(pdftex.def)             Requested size: 238.49173pt x 158.99448pt.
 
 
 LaTeX Warning: Reference `incidence_discussion' on page 67 undefined on input l
-ine 1398.
+ine 1392.
 
-[67] [68 <./Output/dist_housequal_visited.pdf> <./Output/dist_housequal_taxpaye
+[67]
+<Output/dist_housequal_visited.pdf, id=1188, 433.62pt x 289.08pt>
+File: Output/dist_housequal_visited.pdf Graphic file (type pdf)
+<use Output/dist_housequal_visited.pdf>
+Package pdftex.def Info: Output/dist_housequal_visited.pdf  used on input line 
+1403.
+(pdftex.def)             Requested size: 238.49173pt x 158.99448pt.
+<Output/dist_housequal_taxpayers.pdf, id=1189, 433.62pt x 289.08pt>
+File: Output/dist_housequal_taxpayers.pdf Graphic file (type pdf)
+<use Output/dist_housequal_taxpayers.pdf>
+Package pdftex.def Info: Output/dist_housequal_taxpayers.pdf  used on input lin
+e 1403.
+(pdftex.def)             Requested size: 238.49173pt x 158.99448pt.
+<Output/dist_inc_visited.pdf, id=1190, 433.62pt x 289.08pt>
+File: Output/dist_inc_visited.pdf Graphic file (type pdf)
+<use Output/dist_inc_visited.pdf>
+Package pdftex.def Info: Output/dist_inc_visited.pdf  used on input line 1405.
+(pdftex.def)             Requested size: 238.49173pt x 158.99448pt.
+<Output/dist_inc_taxpayers.pdf, id=1191, 433.62pt x 289.08pt>
+File: Output/dist_inc_taxpayers.pdf Graphic file (type pdf)
+<use Output/dist_inc_taxpayers.pdf>
+Package pdftex.def Info: Output/dist_inc_taxpayers.pdf  used on input line 1405
+.
+(pdftex.def)             Requested size: 238.49173pt x 158.99448pt.
+<Output/dist_liq_visited.pdf, id=1192, 433.62pt x 289.08pt>
+File: Output/dist_liq_visited.pdf Graphic file (type pdf)
+<use Output/dist_liq_visited.pdf>
+Package pdftex.def Info: Output/dist_liq_visited.pdf  used on input line 1407.
+(pdftex.def)             Requested size: 238.49173pt x 158.99448pt.
+<Output/dist_liq_taxpayers.pdf, id=1193, 433.62pt x 289.08pt>
+File: Output/dist_liq_taxpayers.pdf Graphic file (type pdf)
+<use Output/dist_liq_taxpayers.pdf>
+Package pdftex.def Info: Output/dist_liq_taxpayers.pdf  used on input line 1407
+.
+(pdftex.def)             Requested size: 238.49173pt x 158.99448pt.
+
+
+LaTeX Warning: Reference `incidence_discussion' on page 68 undefined on input l
+ine 1410.
+
+[68] [69 <./Output/dist_housequal_visited.pdf> <./Output/dist_housequal_taxpaye
 rs.pdf> <./Output/dist_inc_visited.pdf> <./Output/dist_inc_taxpayers.pdf> <./Ou
 tput/dist_liq_visited.pdf> <./Output/dist_liq_taxpayers.pdf>]
-<Output/chars_visited_LvCLI.pdf, id=1243, 433.62pt x 289.08pt>
+<Output/chars_visited_LvCLI.pdf, id=1251, 433.62pt x 289.08pt>
 File: Output/chars_visited_LvCLI.pdf Graphic file (type pdf)
 <use Output/chars_visited_LvCLI.pdf>
-Package pdftex.def Info: Output/chars_visited_LvCLI.pdf  used on input line 142
-1.
+Package pdftex.def Info: Output/chars_visited_LvCLI.pdf  used on input line 143
+3.
 (pdftex.def)             Requested size: 303.53192pt x 202.35461pt.
 
 
-LaTeX Warning: Reference `targeting_discussion' on page 69 undefined on input l
-ine 1424.
+LaTeX Warning: Reference `targeting_discussion' on page 70 undefined on input l
+ine 1436.
 
-[69
+[70
 
 
  <./Output/chars_visited_LvCLI.pdf>] (./Output/wellbeing_tax.tex)
 (./Output/wellbeing_instrtax.tex) (./Output/wellbeing_instrtaxbribe.tex)
 
-LaTeX Warning: Reference `equation_cvl' on page 70 undefined on input line 1446
+LaTeX Warning: Reference `equation_cvl' on page 71 undefined on input line 1458
 .
 
 
-LaTeX Warning: Reference `policy' on page 70 undefined on input line 1446.
-
-[70
-
-
-] (./Output/views_tax.tex) (./Output/views_bribe.tex)
-
-LaTeX Warning: Reference `equation_cvl' on page 71 undefined on input line 1469
-.
-
-
-LaTeX Warning: Reference `policy' on page 71 undefined on input line 1469.
+LaTeX Warning: Reference `policy' on page 71 undefined on input line 1458.
 
 [71
 
 
+] (./Output/views_tax.tex) (./Output/views_bribe.tex)
+
+LaTeX Warning: Reference `equation_cvl' on page 72 undefined on input line 1481
+.
+
+
+LaTeX Warning: Reference `policy' on page 72 undefined on input line 1481.
+
+[72
+
+
 
 ]
-<Output/return_by_day_central_month1-2_bin.pdf, id=1270, 433.62pt x 289.08pt>
+<Output/return_by_day_central_month1-2_bin.pdf, id=1278, 433.62pt x 289.08pt>
 File: Output/return_by_day_central_month1-2_bin.pdf Graphic file (type pdf)
 <use Output/return_by_day_central_month1-2_bin.pdf>
 Package pdftex.def Info: Output/return_by_day_central_month1-2_bin.pdf  used on
- input line 1489.
+ input line 1501.
 (pdftex.def)             Requested size: 325.2142pt x 216.80946pt.
-<Output/return_by_visits_central_month1-2_bin.pdf, id=1271, 433.62pt x 289.08pt
+<Output/return_by_visits_central_month1-2_bin.pdf, id=1279, 433.62pt x 289.08pt
 >
 File: Output/return_by_visits_central_month1-2_bin.pdf Graphic file (type pdf)
 <use Output/return_by_visits_central_month1-2_bin.pdf>
 Package pdftex.def Info: Output/return_by_visits_central_month1-2_bin.pdf  used
- on input line 1491.
+ on input line 1503.
 (pdftex.def)             Requested size: 325.2142pt x 216.80946pt.
 
 
-LaTeX Warning: Reference `info_adv' on page 72 undefined on input line 1494.
+LaTeX Warning: Reference `info_adv' on page 73 undefined on input line 1506.
 
-[72
+[73
 
 
  <./Output/return_by_day_central_month1-2_bin.pdf> <./Output/return_by_visits_c
 entral_month1-2_bin.pdf>]
 
-LaTeX Warning: Reference `persuasion' on page 73 undefined on input line 1640.
+LaTeX Warning: Reference `persuasion' on page 74 undefined on input line 1652.
 
 
 (/usr/local/texlive/2019/texmf-dist/tex/generic/pgf/frontendlayer/tikz/librarie
@@ -2300,80 +2301,80 @@ s/tikzlibrarycalc.code.tex
 File: tikzlibrarycalc.code.tex 2019/04/04 v3.1.2 (3.1.2)
 )
 
-LaTeX Warning: Reference `info_adv' on page 73 undefined on input line 1696.
+LaTeX Warning: Reference `info_adv' on page 74 undefined on input line 1708.
 
-[73
+[74
 
-] [74]
-<Output/compliance_over_time_CXL.pdf, id=1309, 433.62pt x 289.08pt>
+] [75]
+<Output/compliance_over_time_CXL.pdf, id=1316, 433.62pt x 289.08pt>
 File: Output/compliance_over_time_CXL.pdf Graphic file (type pdf)
 <use Output/compliance_over_time_CXL.pdf>
 Package pdftex.def Info: Output/compliance_over_time_CXL.pdf  used on input lin
-e 1715.
+e 1727.
 (pdftex.def)             Requested size: 325.2142pt x 216.80946pt.
  (./Output/centralxlocal_results.tex)
 
-LaTeX Warning: Reference `estimation' on page 75 undefined on input line 1731.
+LaTeX Warning: Reference `estimation' on page 76 undefined on input line 1743.
 
-(./Output/CvL_Teamwork_TeamComp_a7.tex) [75
+(./Output/CvL_Teamwork_TeamComp_a7.tex) [76
 
  <./Output/compliance_over_time_CXL.pdf>] (./Output/visits_time_deciles.tex) (.
 /Output/demoralization_checks.tex)
 (./Output/centralwinfo_exposure.tex)
 (./Output/endline_collector_traits_small.tex)
-(./Output/collector_amotivation.tex) [76] [77] [78]
-<Output/KnowsIndex_C_vs_L_NonCollectorChiefs.pdf, id=1358, 433.62pt x 289.08pt>
+(./Output/collector_amotivation.tex) [77] [78] [79]
+<Output/KnowsIndex_C_vs_L_NonCollectorChiefs.pdf, id=1365, 433.62pt x 289.08pt>
 
 File: Output/KnowsIndex_C_vs_L_NonCollectorChiefs.pdf Graphic file (type pdf)
 <use Output/KnowsIndex_C_vs_L_NonCollectorChiefs.pdf>
 Package pdftex.def Info: Output/KnowsIndex_C_vs_L_NonCollectorChiefs.pdf  used 
-on input line 1836.
+on input line 1848.
 (pdftex.def)             Requested size: 433.61894pt x 289.07928pt.
 
 
-LaTeX Warning: Reference `info_adv' on page 79 undefined on input line 1838.
+LaTeX Warning: Reference `info_adv' on page 80 undefined on input line 1850.
 
 
-Overfull \hbox (4.7715pt too wide) in paragraph at lines 1834--1839
+Overfull \hbox (4.7715pt too wide) in paragraph at lines 1846--1851
  [][] 
  []
 
-<Output/time_collection_CvLvCLI.pdf, id=1359, 433.62pt x 289.08pt>
+<Output/time_collection_CvLvCLI.pdf, id=1366, 433.62pt x 289.08pt>
 File: Output/time_collection_CvLvCLI.pdf Graphic file (type pdf)
 <use Output/time_collection_CvLvCLI.pdf>
 Package pdftex.def Info: Output/time_collection_CvLvCLI.pdf  used on input line
- 1850.
+ 1862.
 (pdftex.def)             Requested size: 390.2544pt x 260.16959pt.
 
-LaTeX Warning: Reference `info_adv' on page 79 undefined on input line 1852.
+LaTeX Warning: Reference `info_adv' on page 80 undefined on input line 1864.
 
-[79
+[80
 
  <./Output/KnowsIndex_C_vs_L_NonCollectorChiefs.pdf>]
-<Output/costs_by_treatment.pdf, id=1373, 433.62pt x 289.08pt>
+<Output/costs_by_treatment.pdf, id=1380, 433.62pt x 289.08pt>
 File: Output/costs_by_treatment.pdf Graphic file (type pdf)
 <use Output/costs_by_treatment.pdf>
-Package pdftex.def Info: Output/costs_by_treatment.pdf  used on input line 1866
+Package pdftex.def Info: Output/costs_by_treatment.pdf  used on input line 1878
 .
 (pdftex.def)             Requested size: 346.89647pt x 231.2643pt.
-<Output/Appdx_PaperFigure_marginal_revenue_hypothetical.pdf, id=1374, 433.62pt 
+<Output/Appdx_PaperFigure_marginal_revenue_hypothetical.pdf, id=1381, 433.62pt 
 x 289.08pt>
 File: Output/Appdx_PaperFigure_marginal_revenue_hypothetical.pdf Graphic file (
 type pdf)
 <use Output/Appdx_PaperFigure_marginal_revenue_hypothetical.pdf>
 Package pdftex.def Info: Output/Appdx_PaperFigure_marginal_revenue_hypothetical
-.pdf  used on input line 1869.
+.pdf  used on input line 1881.
 (pdftex.def)             Requested size: 346.89647pt x 231.2643pt.
- [80 <./Output/time_collection_CvLvCLI.pdf>]
-<Output/scatter_benefit_cost_dist_center_CvsL.pdf, id=1389, 433.62pt x 289.08pt
+ [81 <./Output/time_collection_CvLvCLI.pdf>]
+<Output/scatter_benefit_cost_dist_center_CvsL.pdf, id=1396, 433.62pt x 289.08pt
 >
 File: Output/scatter_benefit_cost_dist_center_CvsL.pdf Graphic file (type pdf)
 <use Output/scatter_benefit_cost_dist_center_CvsL.pdf>
 Package pdftex.def Info: Output/scatter_benefit_cost_dist_center_CvsL.pdf  used
- on input line 1878.
+ on input line 1890.
 (pdftex.def)             Requested size: 346.89647pt x 231.2643pt.
- [81 <./Output/costs_by_treatment.pdf> <./Output/Appdx_PaperFigure_marginal_rev
-enue_hypothetical.pdf>] [82 <./Output/scatter_benefit_cost_dist_center_CvsL.pdf
+ [82 <./Output/costs_by_treatment.pdf> <./Output/Appdx_PaperFigure_marginal_rev
+enue_hypothetical.pdf>] [83 <./Output/scatter_benefit_cost_dist_center_CvsL.pdf
 >] (./Documents/central_v_local_paper_20210810.bbl
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.00002> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 8.
@@ -2382,7 +2383,7 @@ Underfull \hbox (badness 7203) in paragraph at lines 116--119
 [][]\OT1/ptm/b/n/10.00002 , Pe-dro Bessone, Gabriel Tourek, and
  []
 
-[83
+[84
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 189--192
@@ -2400,7 +2401,7 @@ Underfull \hbox (badness 7415) in paragraph at lines 245--249
 \OT1/ptm/b/n/10.00002 Lily Med-ina, Jef-frey F Tim-mons, and
  []
 
-[84]
+[85]
 Underfull \hbox (badness 10000) in paragraph at lines 263--266
 []\OT1/ptm/b/n/10.00002 Dunning, Thad, Fe-lipe Mon-estier, Rafael
  []
@@ -2426,7 +2427,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 356--359
 \OT1/ptm/m/n/10.00002 trepreneurs us-ing com-mu-nity in-for-ma-tion:
  []
 
-[85]
+[86]
 Underfull \hbox (badness 10000) in paragraph at lines 384--387
 []\OT1/ptm/b/n/10.00002 Jibao, Samuel S, Wil-son Prichard, and
  []
@@ -2443,7 +2444,7 @@ Underfull \hbox (badness 6510) in paragraph at lines 438--440
  , ``Tax
  []
 
-[86]
+[87]
 LaTeX Font Info:    Try loading font information for OT1+lmtt on input line 591
 .
  (/usr/local/texlive/2019/texmf-dist/tex/latex/lm/ot1lmtt.fd
@@ -2475,15 +2476,15 @@ Underfull \hbox (badness 10000) in paragraph at lines 590--594
 \OT1/lmtt/m/n/10.00002 worldbank . org / en / 888211594267968803 /
  []
 
-[87])
+[88])
 \tf@ptc=\write6
 \openout6 = `output.ptc'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1909.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1909.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1921.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1921.
  (./output.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1909.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1909.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1921.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1921.
 
 Package rerunfilecheck Info: File `output.out' has not changed.
 (rerunfilecheck)             Checksum: 6EA045F8DA040C3A452A6DD7D4E5CA23;7387.
@@ -2497,10 +2498,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 37201 strings out of 492616
- 834291 string characters out of 6129482
- 1097911 words of memory out of 5000000
- 39787 multiletter control sequences out of 15000+600000
+ 37210 strings out of 492616
+ 834503 string characters out of 6129482
+ 1098012 words of memory out of 5000000
+ 39788 multiletter control sequences out of 15000+600000
  92798 words of font info for 132 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,14n,103p,2558b,2214s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -2528,10 +2529,10 @@ t/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type
 tino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8
 a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></us
 r/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on output.pdf (88 pages, 11034274 bytes).
+Output written on output.pdf (89 pages, 11036127 bytes).
 PDF statistics:
- 1716 PDF objects out of 1728 (max. 8388607)
- 1288 compressed objects within 13 object streams
- 330 named destinations out of 1000 (max. 500000)
+ 1724 PDF objects out of 1728 (max. 8388607)
+ 1294 compressed objects within 13 object streams
+ 332 named destinations out of 1000 (max. 500000)
  483 words of extra memory for PDF output out of 10000 (max. 10000000)
 
