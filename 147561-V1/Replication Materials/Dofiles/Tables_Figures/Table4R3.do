@@ -39,7 +39,7 @@ use "${repldir}/Data/03_clean_combined/analysis_data_Sossou1.dta", clear
 	estadd scalar Observations = `e(N)'
 	estadd scalar Clusters = `e(N_clust)'
 	
-	/* Month FE - Compliance - No house FE - Polygon Mean
+	* Month FE - Compliance - No house FE - Polygon Mean
 	preserve
 		drop if time_FE_tdm_2mo_CvL==.
 		collapse (mean) taxes_paid trust_chief (min) time_FE_tdm_2mo_CvL (max) t_l t_c stratum,by(a7 tmt)
@@ -49,7 +49,7 @@ use "${repldir}/Data/03_clean_combined/analysis_data_Sossou1.dta", clear
 		estadd scalar Observations = `e(N)'
 		*estadd scalar Clusters = `e(N_clust)'
 	restore
-	*/
+	
 	
 	* Month FE - Compliance - House FE
 	eststo: reg taxes_paid t_l trust_chief interaction i.stratum i.house i.time_FE_tdm_2mo_CvL if inlist(tmt,1,2), cl(a7)
