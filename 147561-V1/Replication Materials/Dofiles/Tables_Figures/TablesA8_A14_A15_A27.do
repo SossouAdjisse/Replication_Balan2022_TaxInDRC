@@ -438,12 +438,12 @@ merge m:1 a7 using "${repldir}/Data/01_base/admin_data/campaign_collector_info.d
 	g `var'_hi = `var'>`r(p50)'
 	}
 	
-	preserve
-			 ** Saving the data used to extract chiefs characteristics for Table 8R3
-			 duplicates drop code, force
-			save "/Users/sossousimpliceadjisse/Documents/myfiles/PaulMoussaReplicationProject/147561-V1/Replication Materials/Data/03_clean_combined/combined_data_ChiefChars_SossouModified.dta", replace
-			
-	restore
+preserve
+** Saving the data used to extract chiefs characteristics for Table 8R3
+drop if compound1 == .
+duplicates drop compound1, force
+save "/Users/sossousimpliceadjisse/Documents/myfiles/PaulMoussaReplicationProject/147561-V1/Replication Materials/Data/03_clean_combined/combined_data_ChiefChars_SossouModified.dta", replace	
+restore
 
 	global chief_chars = "age_chef_hi possessions_nb_chef_hi educ_yrs_chef_hi chef_minority_ethnic"
 	global chief_strength = "chef_locality chef_established chef_fam remoteness_hi chefferie"

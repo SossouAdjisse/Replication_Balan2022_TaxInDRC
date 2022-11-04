@@ -75,7 +75,7 @@ lab val tmt tmt
 
 * Save Dataset
 compress
-sa "${repldir}/data/02_intermediate/assignment.dta",replace 
+save "${repldir}/data/02_intermediate/assignment.dta",replace 
 
 
 ***********************************
@@ -171,13 +171,13 @@ replace month_carto=12 if month_str_carto=="dec"
 
 * Save Dataset
 compress
-sa "${repldir}/data/02_intermediate/registration_cleaned.dta",replace
+save "${repldir}/data/02_intermediate/registration_cleaned.dta",replace
 
 *******************
 * Repertoire Data *
 ******************* 
 
-u "${repldir}/data/01_base/admin_data/taxroll_noPII.dta", clear
+use "${repldir}/data/01_base/admin_data/taxroll_noPII.dta", clear
 gen bonus_FC=regexs(2) if regexm(Bonus, "^([^0-9]*)([0-9]+)([^0-9]*)$")
 compress
 save "${repldir}/data/02_intermediate/taxroll_cleaned.dta", replace
@@ -187,7 +187,7 @@ save "${repldir}/data/02_intermediate/taxroll_cleaned.dta", replace
 ******************* 
 
 * use Monitoring Clean
-u "${repldir}/data/01_base/survey_data/midline_noPII.dta",clear
+use "${repldir}/data/01_base/survey_data/midline_noPII.dta",clear
 drop tmt pilot
 rename compound compound1 
 rename today today_monitoring
@@ -220,7 +220,7 @@ save "${repldir}/data/02_intermediate/midline_cleaned.dta", replace
 **********************
 
 * Use final TDM Clean data 
-u "${repldir}/data/01_base/admin_data/tax_payments_noPII.dta",clear
+use "${repldir}/data/01_base/admin_data/tax_payments_noPII.dta",clear
 cap drop _merge
 rename date date_TDM
 rename colcode colcode_TDM 
