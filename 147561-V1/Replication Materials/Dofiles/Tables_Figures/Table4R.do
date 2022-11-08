@@ -21,19 +21,6 @@ use "${repldir}/Data/03_clean_combined/analysis_data.dta", clear
 	eststo clear
 	label var t_l "Local"
 	
-	/*
-		0	Control (4)
-		1	Central (0)
-		2	Local   (1)
-		3	Central	+	Chief	Info (2)
-		4	Central	X	Local       (3)
-	
-	
-	 recode tmt (1 = 0 "Central") (2 = 1 "Local") (3 = 2 "Central + Chief Info") (4 = 3 "CentralXLocal") (0 = 4 "Control")  , gen(tmt1)
-	 label var tmt1 "tmt1"
-	 gen t_c1 = (tmt1 == 0)
-	 label var t_c1 "Central"
-	 */
 
 	* Normal - Compliance - No house FE
 	eststo r11: reg taxes_paid i.tmt i.stratum if inlist(tmt,1,2), cl(a7)  

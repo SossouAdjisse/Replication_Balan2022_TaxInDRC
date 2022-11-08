@@ -256,24 +256,14 @@
 	label var salongo "Any Salongo"
 	label var salongo_hours "Hours of Salongo"
 	label var move_ave "Years on Avenue"
-	
+
+	// ##################################
 	drop _merge
 	
 	duplicates drop compound_code, force 
 	rename  compound_code compound1
 	drop if compound1 == .
 	
-	/*
-	
-		global chief_chars = "age_chef_hi possessions_nb_chef_hi educ_yrs_chef_hi chef_minority_ethnic"
-	global chief_strength = "chef_locality chef_established chef_fam remoteness_hi chefferie"
-	global chief_political = "chef_party chef_pprd chef_udps chef_gov_job"
-	global chief_views = "chef_trust_gov_hi chef_trust_dgrkoc_hi col_view_gov_gen_hi col_view_gov_nbhd_hi col_gov_integrity_hi"
-	global chief_worried_sanctions = "chef_know_fired chef_know_2016tax tmt_2016"
-	global neighborhood_chars = "evaluation_hi connections_hi activity_hi "
-
-	
-	*/
 	merge m:1 compound1 using "/Users/sossousimpliceadjisse/Documents/myfiles/PaulMoussaReplicationProject/147561-V1/Replication Materials/Data/03_clean_combined/combined_data_ChiefChars_SossouModified.dta", ///
 	keepusing(age_chef possessions_nb_chef educ_yrs_chef educ_lvl chef_locality chef_minority_ethnic chef_know_2016tax chef_pprd chef_party chef_udps col_gov_integrity col_view_gov_gen col_view_gov_nbhd  col_trust_dgrkoc col_trust_gov  chef_know_fired chef_gov_job chef_tenure chef_established chef_fam age_chef_hi possessions_nb_chef_hi educ_yrs_chef_hi chef_minority_ethnic chef_locality chef_established chef_fam remoteness_hi chefferie chef_party chef_pprd chef_udps chef_gov_job chef_trust_gov_hi chef_trust_dgrkoc_hi col_view_gov_gen_hi col_view_gov_nbhd_hi col_gov_integrity_hi chef_know_fired chef_know_2016tax tmt_2016 evaluation_hi connections_hi activity_hi) update replace force
 	
@@ -295,12 +285,6 @@ chef_type hh_head born_kga compound_chef compound_assis edu2 work_gov salongo_ac
 	global chief_chars = "age_chef_hi possessions_nb_chef_hi educ_yrs_chef_hi remoteness_hi chef_trust_gov_hi chef_trust_dgrkoc_hi col_view_gov_gen_hi col_view_gov_nbhd_hi col_gov_integrity_hi tmt_2016 chef_fam chef_tenure_hi"
 	*global chief_chars2 = "chef_minority_ethnic chef_locality chef_established chef_fam chef_party chef_pprd chef_udps chef_gov_job chef_know_fired chef_know_2016tax"
 	
-	//global chief_strength = ""
-	//global chief_political = ""
-	//global chief_views = ""
-	//global chief_worried_sanctions = ""
-	//global neighborhood_chars = "evaluation_hi connections_hi activity_hi"
-//$covs_addition $chief_chars
 	
 	drop p_pay_ease* p_willingness*
 	eststo clear
@@ -314,27 +298,6 @@ chef_type hh_head born_kga compound_chef compound_assis edu2 work_gov salongo_ac
 		estadd local Mean=abs(round(`r(mean)',.001))
 		estadd scalar Observations = `e(N)'
 		estadd scalar Clusters = `e(N_clust)'
-	/*
-	eststo: xi: oprobit `depvar' $covs_basic $covs_addition i.tribe i.house  i.stratum i.time_FE_tdm_2mo_CvCLI if t_cli==1,cluster(a7)
-		predict pp`depvar'*  if inlist(tmt,1,2,3)
-		gen p_`depvar'2 = 0 if (pp`depvar'1 != .) & (pp`depvar'2!=.) & (pp`depvar'3!=.)
-		replace p_`depvar'2 = 1 if (pp`depvar'2 > pp`depvar'1) & (pp`depvar'2 > pp`depvar'3) & (pp`depvar'2!=.)
-		replace p_`depvar'2 = 2 if (pp`depvar'3 > pp`depvar'1) & (pp`depvar'3 > pp`depvar'2) & (pp`depvar'3!=.)
-		sum `depvar' if t_cli==1
-		estadd local Mean=abs(round(`r(mean)',.001))
-		estadd scalar Observations = `e(N)'
-		estadd scalar Clusters = `e(N_clust)'
-	
-	eststo: xi: oprobit `depvar' $covs_basic $covs_addition $chief_chars i.tribe i.house  i.stratum i.time_FE_tdm_2mo_CvCLI if t_cli==1,cluster(a7)
-		predict ppp`depvar'*  if inlist(tmt,1,2,3)
-		gen p_`depvar'3 = 0 if (ppp`depvar'1 != .) & (ppp`depvar'2!=.) & (ppp`depvar'3!=.)
-		replace p_`depvar'3 = 1 if (ppp`depvar'2 > ppp`depvar'1) & (ppp`depvar'2 > ppp`depvar'3) & (ppp`depvar'2!=.)
-		replace p_`depvar'3 = 2 if (ppp`depvar'3 > ppp`depvar'1) & (ppp`depvar'3 > ppp`depvar'2) & (ppp`depvar'3!=.)
-		sum `depvar' if t_cli==1
-		estadd local Mean=abs(round(`r(mean)',.001))
-		estadd scalar Observations = `e(N)'
-		estadd scalar Clusters = `e(N_clust)'
-		*/
 	}
 	
 ***********
