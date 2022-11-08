@@ -1051,6 +1051,19 @@ E: Central --- Tax Visits & F:  Central --- Compliance    \\
 \parbox{6in}{\footnotesize \textit{Notes}: This table shows the relationship between city chiefs' knowledge of the inhabitants of the neighborhood and (\textit{i}) the percent of property owners who received a tax visit after registration (Columns 1, 3, and 5), and (\textit{ii}) the level of tax compliance (Columns 2, 4, and 6). Chiefs' knowledge of the inhabitants of the neighborhood is measured by the percentage of correct answers when asked to provide the name, education level, and occupation of a randomly selected group property owners. We show these relationships for neighborhoods assigned to (\textit{i}) Central (Columns 1--2), where state collectors did not consult with chiefs --- a placebo check --- (\textit{ii}) Central + Local Information (Columns 3--4), where state collectors did consult with chiefs, and (\textit{iii}) Local (Columns 5--6), where chiefs themselves collected taxes. We discuss these results in Section \ref{predictiveness_discussion}.}
 \end{table}
 
+
+\begin{table}[ht]
+	\textbf{\caption*{\label{chief_knowl_by_tmt_tableR1} Table \ref{chief_knowl_by_tmt_table} Controlling for Chiefs Characteristics }}
+	\centerfloat
+	\begin{lrbox}{\tablebox}
+		\resizebox{16cm}{!}{
+			\input{Output/tablechefknowindexR1.tex}
+		}
+	\end{lrbox}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}: \ref{predictiveness_discussion}.}
+\end{table}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{table}[ht]
@@ -1065,6 +1078,18 @@ E: Central --- Tax Visits & F:  Central --- Compliance    \\
 \parbox{6in}{\footnotesize \textit{Notes}: This table estimates the relationship between tax compliance (Columns 1 and 3) or tax revenue (Columns 2 and 4) and the distance between collectors' houses and the neighborhoods in which they worked. We estimate this relationship for state collectors in Central and CLI by calculating the average distance for the two randomly assigned collectors (Columns 1 and 2). The relationship for chief collectors is reported in Columns 3 and 4 for completeness, though there is little variation for chief collectors who hailed from the neighborhoods in which they taxed.  All regressions include house type and randomization stratum fixed effects as well as the time fixed effects described in Section \ref{estimation}. We cluster standard errors at the neighborhood level. We discuss these results in Section \ref{predictiveness_discussion}.}
 \end{table}
 
+
+\begin{table}[ht]
+	\textbf{\caption*{\label{dist_DGRKOC_R1} Table \ref{dist_DGRKOC} Controlling for Chiefs characterics}}
+	\centerfloat
+	\begin{lrbox}{\tablebox}
+		\resizebox{16cm}{!}{
+			\input{Output/dist_collectorsR1.tex}
+		}
+	\end{lrbox}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}: \ref{predictiveness_discussion}.}
+\end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \clearpage
@@ -1080,6 +1105,15 @@ E: Central --- Tax Visits & F:  Central --- Compliance    \\
 \parbox{6in}{\footnotesize \textit{Notes}: This table estimates Equation \ref{equation_cvl} using as the dependent variable whether households paid the property tax (Columns 1 and 3) and the amount of revenues collected (Columns 2 and 4). It includes state collectors in Central (Panel A) and in Central and CLI (Panel B) as the comparison group. We include Panel B, lumping Central and CLI, to increase the number of state collectors randomly assigned to work near their homes in the analysis. Columns 1 and 2 compare chief collection to state tax collection in cases where at least one assigned state collector lived nearby. We define ``near'' as the maximum distance between a chief's house and the neighborhood in which they taxed, which is 1.59 km in the data. Columns 3 and 4 compare chief collection to state tax collection in cases where no assigned state collector lived nearby.  All regressions include house type and the time fixed effects described in Section \ref{estimation} and cluster standard errors at the neighborhood level. We do not include fixed effects for randomization strata as a large share of strata do not contain a neighborhood from each comparison group (49\% of strata include only one treatment when comparing Local to Central near home, 30\% include only one when comparing Local to Central and CLI near home). We discuss these results in Section \ref{predictiveness_discussion}.}
 \end{table}
 
+
+\begin{table}[ht]
+	\textbf{\caption*{\label{CvsL_collector_close_R1} Table \ref{CvsL_collector_close} Controlling for Chiefs characteristics}}
+	\centerfloat
+	\resizebox{16cm}{!}{	\input{Output/collectors_C_near_homeR1.tex}}\\
+	\resizebox{16cm}{!}{	\input{Output/collectors_C_CLI_near_homeR1.tex}}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}:  \ref{predictiveness_discussion}.}
+\end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \clearpage

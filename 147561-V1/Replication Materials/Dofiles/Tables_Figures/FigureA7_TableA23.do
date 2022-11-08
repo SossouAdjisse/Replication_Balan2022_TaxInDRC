@@ -164,6 +164,8 @@ eststo clear
 
 * CLI
 use "${repldir}/Data/03_clean_combined/analysis_data.dta", clear
+
+
 keep if tmt==3
 collapse (mean) taxes_paid visit_post_carto stratum  (rawsum) taxes_paid_amt , by(a7)
 
