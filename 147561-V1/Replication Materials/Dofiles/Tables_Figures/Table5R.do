@@ -60,7 +60,7 @@
 	sa `midline'
 		
 	* Merge endline not on compound code
-**# Bookmark #1
+
 		use "${repldir}/Data/01_base/survey_data/endline_round1_noPII.dta", clear
 		keep if tot_complete==1 
 		replace compound_code=compound_code_prev if (compound_code_prev!=. & compound_code_prev!=3)

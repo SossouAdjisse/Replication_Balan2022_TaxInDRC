@@ -319,6 +319,19 @@ Properties  & 14,489  & 14,383  & 9,422 & 6,071  & 797 \tabularnewline
 
 
 \begin{table}[H]
+	\textbf{\caption*{\label{Table_CvL_Visits_edited_baseline} Table \ref{Table_CvL_Visits_edited} $\rightarrow$ Restricted to Baseline Sample only }}
+	\centering
+	\begin{lrbox}{\tablebox}
+		\scalebox{0.8}{
+			\input{Output/main_visits_results_baseline.tex}
+		}
+	\end{lrbox}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}: Table \ref{Table_CvL_Visits_edited} .}
+\end{table}
+
+
+\begin{table}[H]
 	\textbf{\caption*{\label{Table_CvL_Visits_edited_Replicated} Table \ref{Table_CvL_Visits_edited} $\rightarrow$ Replicated using  Randomization Inference Approach}}
 	\centering
 	\begin{lrbox}{\tablebox}
@@ -362,12 +375,12 @@ Properties  & 14,489  & 14,383  & 9,422 & 6,071  & 797 \tabularnewline
 
 
 \begin{table}[H]
-	\textbf{\caption*{\label{Table_CvCLI_Test}  Table \ref{Table_CvCLI} $\rightarrow$ Using analysis\_data\_Sossou1.dta}}
+	\textbf{\caption*{\label{main_centralwinfo_results_baseline}  Table \ref{Table_CvCLI} $\rightarrow$ Restricted to Only Baseline Sample}}
 	\centering
 	\begin{lrbox}{\tablebox}
 		
 		\resizebox{14cm}{!}{
-			\input{Output/main_centralwinfo_resultsTest.tex}
+			\input{Output/main_centralwinfo_results_baseline.tex}
 		}
 	\end{lrbox}
 	\usebox{\tablebox}\\[1ex]
@@ -388,7 +401,7 @@ Properties  & 14,489  & 14,383  & 9,422 & 6,071  & 797 \tabularnewline
 \end{table}
 
 \begin{table}[H]
-	\textbf{\caption*{\label{Table_CvCLI_Replicated2}  Table \ref{Table_CvCLI} $\rightarrow$ Replicated Replacing House FE by Trust the Chief}}
+	\textbf{\caption*{\label{Table_CvCLI_Replicated2}  Table \ref{Table_CvCLI} $\rightarrow$ Controlling for Trust the Chief}}
 	\centering
 	\begin{lrbox}{\tablebox}
 		
@@ -427,6 +440,16 @@ Properties  & 14,489  & 14,383  & 9,422 & 6,071  & 797 \tabularnewline
 \tiny{\input{Output/chiefs_info_wtp.tex}}
 \usebox{\tablebox}\\[1ex]
 \parbox{6in}{\footnotesize \textit{Notes}: This table explores the extent to which chiefs' recommendations in Central + Local Information (CLI) predict tax visits after registration and tax payment. Columns 1--5 show correlations in CLI between chiefs' recommendations and outcomes. Columns 6--9 report correlations between predicted propensity measures described in Section \ref{info_adv} and outcomes in Local (Columns 6 and 7) and Central (Columns 8 and 9).  Columns 1, 3, 6, and 8 show correlations between propensity and tax visits; Columns 2, 4, 5, 7, and 9 show correlations between propensity and compliance. Column 5 shows correlations with compliance conditional on receiving a visit after registration. All regressions include house type and randomization stratum fixed effects and cluster standard errors at the neighborhood level. Columns 3, 4, and 6--8 include controls for visible household characteristics. We show results excluding house fixed effects in Table \ref{validation_cli_control_NoHouseFE}. We discuss these results in Section \ref{predictiveness_discussion}.}
+\end{table}
+
+\begin{table}[H]
+	\textbf{\caption*{Table \ref{validation_cli_control} $\rightarrow$  Restricted to Only Baseline \label{validation_cli_control_baseline}}}
+	\centering
+	\centerfloat
+	\tiny{\input{Output/chiefs_info_payease_baseline.tex}} \newline 
+	\tiny{\input{Output/chiefs_info_wtp_baseline.tex}}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}: }
 \end{table}
 
 

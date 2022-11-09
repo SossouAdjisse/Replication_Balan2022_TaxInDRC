@@ -1,0 +1,25 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{6}{c}}
+\toprule
+                &\multicolumn{1}{c}{Tax Compliance}&\multicolumn{5}{c}{Tax Amount}                   \\
+                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}\\
+                &b/p/pvalues&b/p/pvalues&b/p/pvalues&b/p/pvalues&b/p/pvalues&b/p/pvalues\\
+\midrule
+Central + Chief Info&0.0315989& 47.18103&-0.0611301&-0.0901536&0.0152325&0.0330964\\
+                & (0.0498)&  (0.178)&  (0.127)&  (0.200)&  (0.632)& (0.0334)\\
+                &[0.104000]&[0.323000]&[0.167000]&[0.233000]&[0.876000]&[0.060000]\\
+Local           &         &         &         &         &         &0.0495041\\
+                &         &         &         &         &         &(0.000344)\\
+                &         &         &         &         &         &         \\
+Time FE         &      Yes&      Yes&      Yes&      Yes&      Yes&      Yes\\
+House FE        &      Yes&      Yes&      Yes&      Yes&      Yes&      Yes\\
+Stratum FE      &      Yes&      Yes&      Yes&      Yes&      Yes&      Yes\\
+\midrule
+Observations    &     1662&     1662&     1274&     1274&      571&     2760\\
+Clusters        &      162&      162&      159&      159&      149&      264\\
+Mean            &     .069&  197.819&     .458&     .627&     .114&      .07\\
+CLIvC\_p         &         &         &         &         &         &.0333508007870326\\
+\bottomrule
+\end{tabular}
+}

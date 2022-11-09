@@ -563,4 +563,4 @@ global balancevars_ml "sex_prop age_prop main_tribe employed salaried work_gov j
 	star(* 0.10 ** 0.05 *** 0.001) ///
 	nogaps nonotes compress
 
-save "${repldir}/data/03_clean_combined/analysis_data_Sossou1.dta", replace
+save "${repldir}/data/03_clean_combined/analysis_data_FromTableA2.dta", replace

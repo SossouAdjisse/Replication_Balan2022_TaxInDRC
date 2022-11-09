@@ -2,7 +2,7 @@
 * Table 4 *
 ***********
 
-use "${repldir}/Data/03_clean_combined/analysis_data_Sossou1.dta", clear
+use "${repldir}/Data/03_clean_combined/analysis_data_FromTableA2.dta", clear
 keep if baseline == 1
 
 	keep if tmt==1 | tmt==2 | tmt==3
