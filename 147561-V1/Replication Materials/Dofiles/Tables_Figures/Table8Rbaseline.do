@@ -183,8 +183,8 @@
 	// Merge in consult data
 	preserve
 		u "${repldir}/Data/01_base/survey_data/chief_consultations.dta",clear
-		keep compound_code pay_ease willingness
-		//ren compound1 compound_code
+		keep compound1 pay_ease willingness
+		ren compound1 compound_code
 		tempfile consult
 		sa `consult'
 	restore
