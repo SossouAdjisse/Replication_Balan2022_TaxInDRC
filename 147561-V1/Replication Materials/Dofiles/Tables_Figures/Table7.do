@@ -71,12 +71,12 @@
 	estadd local CLIvC_p = `p_CLIvC'
 	
 	esttab r1 r2 r3 r4 r5 r6 using "${reploutdir}/main_centralwinfo_results.tex", ///
-	replace label b(%9.3f) p(%9.3f) ///
+	replace label b(%9.3f) p(%9.3f) booktabs ///
 	keep (t_cli t_l) ///
 	order(t_cli t_l) ///
 	scalar(Clusters Mean CLIvC_p) sfmt(0 3 3 3 3) ///
 	nomtitles ///
-	mgroups("Tax Compliance" "Tax Amount" "Visited" "Visits" "Compliance" "Compliance", pattern(1 1) prefix(\multicolumn{@span}{c}{) suffix(}) span) ///
+	mgroups("Tax Compliance" "Tax Amount" "Visited" "Visits" "Compliance" "Compliance", pattern(1 1 1 1 1 1) prefix(\multicolumn{@span}{c}{) suffix(}) span) ///
 	indicate("Time FE = *2mo*""House FE = *house*""Stratum FE = *stratum*") ///
 	star(* 0.10 ** 0.05 *** 0.001) ///
 	nogaps nonotes compress

@@ -304,6 +304,7 @@ merge m:1 a7 using "${repldir}/Data/01_base/admin_data/campaign_collector_info.d
 		foreach var in remoteness{
 		su `var'_norm, d
 		g `var'_hi = `var'_norm>`r(p50)'
+		g `var'_av = `r(mean)' // Added by Sossou
 		}
 	
 	// Baseline information
@@ -414,6 +415,7 @@ merge m:1 a7 using "${repldir}/Data/01_base/admin_data/campaign_collector_info.d
 		foreach var in evaluation connections activity{
 		su `var'_norm, d
 		g `var'_hi = `var'_norm>`r(p50)'
+		g `var'_av = `r(mean)'
 		}
 		
 		tempfile baseline
@@ -436,14 +438,17 @@ merge m:1 a7 using "${repldir}/Data/01_base/admin_data/campaign_collector_info.d
 	foreach var in chef_trust_gov chef_trust_dgrkoc col_view_gov_gen col_view_gov_nbhd col_gov_integrity age_chef possessions_nb_chef educ_yrs_chef{
 	su `var', d
 	g `var'_hi = `var'>`r(p50)'
+	g `var'_av = `r(mean)'  // Added by Sossou
 	}
 	
+* Added by Sossou 
 preserve
-** Saving the data used to extract chiefs characteristics for Table 8R3
+* Saving the data used to extract chiefs characteristics for Table 8R3
 drop if compound1 == .
 duplicates drop compound1, force
-save "/Users/sossousimpliceadjisse/Documents/myfiles/PaulMoussaReplicationProject/147561-V1/Replication Materials/Data/03_clean_combined/combined_data_ChiefChars_SossouModified.dta", replace	
+save "/Users/sossousimpliceadjisse/Documents/myfiles/PaulMoussaReplicationProject/147561-V1/Replication Materials/Data/03_clean_combined/combined_data_ChiefChars_FromTableA8_A14_A15_A27.dta", replace	
 restore
+
 
 	global chief_chars = "age_chef_hi possessions_nb_chef_hi educ_yrs_chef_hi chef_minority_ethnic"
 	global chief_strength = "chef_locality chef_established chef_fam remoteness_hi chefferie"

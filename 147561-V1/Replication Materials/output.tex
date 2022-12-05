@@ -15,6 +15,9 @@
 \newsavebox{\tablebox}
 \usepackage{placeins}
 \usepackage{color}
+
+\usepackage{csquotes}
+
 \usepackage{titletoc}
 \usepackage{mathptmx}
 \usepackage{bm}
@@ -146,7 +149,7 @@
 \onehalfspacing
 \normalsize
 
-\section{Main Tables and Figures}
+\section{Main Tables and Figures Replicated}
 
 \begin{table}[ht]
 \textbf{\caption{\label{table_activities} Components of the Tax Campaign and its Evaluation}} 
@@ -233,47 +236,47 @@ Properties  & 14,489  & 14,383  & 9,422 & 6,071  & 797 \tabularnewline
 
 
 \begin{table}[H]
-	\textbf{\caption*{\label{Table_CvL_Compliance_edited_Rbaseline} Table \ref{Table_CvL_Compliance_edited} $\rightarrow$ Restricted to only baseline }}
+	\textbf{\caption *{\label{Table_CvL_Compliance_edited_Rbaseline} Table 4 Replicated: $\rightarrow$ Restricted to Baseline Only + Randomization Inference }}
 	\centering
 	\small{\input{Output/main_compliance_results_baseline.tex}}
 	\small{\input{Output/main_revenues_results_baseline.tex}}
 	\usebox{\tablebox}\\[1ex]
-	\parbox{6in}{\footnotesize \textit{Notes}: Table 4 repliacted by restricting to only the respondents in the baseline sample. There are two p-values: the first is parenthesis is the one from the roiginal regression and the second in square brackets is from the randomized inference estimation. }
+	\parbox{6in}{\footnotesize \textit{Notes}: Table 4 repliacted by restricting to respondents in the baseline sample. There are two p-values reported. The first one in parenthesis is from the simple regression. The second one  in square brackets is from the randomization inference estimation using the ritest command in Stata. The RI was repeated 1000 with seed 125. All other controls are the same as the ones used by the authors in the original table. The dofile of this table is name \enquote{Table4Rbaseline.do}}
 \end{table}
 
 \begin{table}[H]
-	\textbf{\caption*{\label{Table_CvL_Compliance_edited_Replicated} Table \ref{Table_CvL_Compliance_edited} $\rightarrow$ Replicated  using Randomization Inference Approach}}
+	\textbf{\caption*{\label{Table_CvL_Compliance_edited_Replicated} Table 4 Replicated:  $\rightarrow$  Randomization Inference}}
 	\centering
 	\small{\input{Output/main_compliance_resultsR.tex}}
 	\small{\input{Output/main_revenues_resultsR.tex}}
 	\usebox{\tablebox}\\[1ex]
-	\parbox{6in}{\footnotesize \textit{Notes}: Table 4 Replicated .}
+	\parbox{6in}{\footnotesize \textit{Notes}: Table 4 repliacted  using randomization inference on the sample that the authors used. There are two p-values reported. The first one in parenthesis is from the simple regression. The second one  in square brackets is from the randomization inference estimation using the ritest command in Stata. The RI was repeated 1000 with seed 125. All other controls are the same as the ones used by the authors in the original table. The dofile of this table is name \enquote{Table4RI.do}}
 \end{table}
-
-
-\begin{table}[H]
-	\textbf{\caption*{\label{Table_CvL_Compliance_edited_R2} Table \ref{Table_CvL_Compliance_edited} $\rightarrow$ Controling for Trust in Chief}}
-	\centering
-\resizebox{14cm}{!}{\input{Output/main_compliance_resultsR2.tex}}
-\resizebox{14cm}{!}{\input{Output/main_revenues_resultsR2.tex}}
-	\usebox{\tablebox}\\[1ex]
-	\parbox{6in}{\footnotesize \textit{Notes}: Table 4 Replicated .}
-\end{table}
-
-
-\begin{table}[H]
-	\textbf{\caption*{\label{Table_CvL_Compliance_edited_R3} Table \ref{Table_CvL_Compliance_edited} $\rightarrow$ Controling for Trust in Chief, and Local x Trust Chief}}
-	\centering
-	\small{\input{Output/main_compliance_resultsR3.tex}}
-	\small{\input{Output/main_revenues_resultsR3.tex}}
-	\usebox{\tablebox}\\[1ex]
-	\parbox{6in}{\footnotesize \textit{Notes}: Table 4 Replicated .}
-\end{table}
-
-
 
 
 %\begin{table}[H]
+%	\textbf{\caption*{\label{Table_CvL_Compliance_edited_R2} Table 4 Replicated:  $\rightarrow$ Controling for Trust in Chief}}
+%	\centering
+%\resizebox{14cm}{!}{\input{Output/main_compliance_resultsR2.tex}}
+%\resizebox{14cm}{!}{\input{Output/main_revenues_resultsR2.tex}}
+%	\usebox{\tablebox}\\[1ex]
+%	\parbox{6in}{\footnotesize \textit{Notes}: Table 4 repliacted  on the sample that the authors used by controlling \enquote{ Trust in Chief}.  All other controls are the same as the ones used by the authors in the original table. The dofile of this table is name \enquote{Table4R2.do}}
+%\end{table}
+%
+%
+%\begin{table}[H]
+%	\textbf{\caption*{\label{Table_CvL_Compliance_edited_R3} Table \ref{Table_CvL_Compliance_edited} $\rightarrow$ Controling for Trust in Chief, and Local x Trust Chief}}
+%	\centering
+%	\small{\input{Output/main_compliance_resultsR3.tex}}
+%	\small{\input{Output/main_revenues_resultsR3.tex}}
+%	\usebox{\tablebox}\\[1ex]
+%	\parbox{6in}{\footnotesize \textit{Notes}: Table 4 Replicated .}
+%\end{table}
+%
+%
+%
+%
+%%\begin{table}[H]
 %	\textbf{\caption*{\label{Table_CvL_Compliance_edited_R4} Table \ref{Table_CvL_Compliance_edited} $\rightarrow$ Using Central, and Controling for Trust in Chief, and Local x Trust Chief}}
 %	\centering
 %	\small{\input{Output/main_compliance_resultsR4.tex}}
@@ -296,14 +299,16 @@ Properties  & 14,489  & 14,383  & 9,422 & 6,071  & 797 \tabularnewline
 	\parbox{6in}{\footnotesize \textit{Notes}: Each row summarizes an OLS estimation of Equation \ref{equation_cvl}, comparing Local and Central, with the dependent variable noted in the first column. $\hat{\beta}$ is the coefficient on the treatment indicator, followed by the cluster-robust standard error, $R^2$, number of observations, and $\bar{x}_{Central}$ the Central group mean. In Panel A, row 1 shows differences in whether the collector designated the property exempt from taxes. Properties owned by the elderly, widows, government pensioners, and handicapped individuals, among others, are legally supposed to be exempt. Row 2 shows differences in whether an independent enumerator disagreed (in either direction) with the exemption status of a given property. Row 3 shows differences in whether a property was assigned to the high-value category, and row 4 shows whether enumerators' independent evaluations diverged with the collectors' designation. In Panel B, the outcomes in rows 5 and 7 are self-reported bribe payment as measured during the midline and endline surveys, respectively. The outcome in row 6 indicates property owners who reported paying the tax but who were not recorded as having paid in the administrative data. The outcome in row 8 is self-reported payment of any informal fees at endline. We discuss the results from Panels A and B in Section \ref{assessments}. In Panels C and D, for endline outcomes we also measured at baseline --- all variables except for \textit{Perceived tax compliance} and \textit{Fairness of property taxation} --- we control for the baseline value. Each dependent variable, described briefly in Section \ref{survey_variables} and in detail in Section \ref{variable_descriptions}, is standardized to facilitate interpretation of coefficient magnitude.  We discuss the results in Panels C and D in Section \ref{attitudes_discussion}. In all panels, regressions include fixed effects for randomization strata, and cluster standard errors at the neighborhood level. Regressions estimating effects on midline and property assessment outcomes include time period fixed effects described in Section \ref{estimation} and house type fixed effects. We do not include house type fixed effects for endline outcomes to maximize the analysis sample, as discussed in Section \ref{estimation}. The number of observations varies across regressions due to (\textit{i}) outcomes being drawn from different surveys, and (\textit{ii}) non-response for specific survey questions. }
 \end{table}
 
-\begin{table}[H]
-\textbf{\caption*{\label{bribesviewsR} Table \ref{bribesviews} $\rightarrow$ Add p-value, Bribe Amounst (Midline and Endline)} }
-\centering
-\input{Output/assessment_bribesR.tex}
-\input{Output/attitudes.tex}
-\usebox{\tablebox}\\[1ex]
-\parbox{6in}{\footnotesize \textit{Notes}: }
-\end{table}
+% Table 5 Replicated: Bribe Amount
+
+%\begin{table}[H]
+%\textbf{\caption*{\label{bribesviewsR} Table \ref{bribesviews} $\rightarrow$ Add p-value, Bribe Amounst (Midline and Endline)} }
+%\centering
+%\input{Output/assessment_bribesR.tex}
+%\input{Output/attitudes.tex}
+%\usebox{\tablebox}\\[1ex]
+%\parbox{6in}{\footnotesize \textit{Notes}: }
+%\end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -345,18 +350,19 @@ Properties  & 14,489  & 14,383  & 9,422 & 6,071  & 797 \tabularnewline
 	\parbox{6in}{\footnotesize \textit{Notes}: Table \ref{Table_CvL_Visits_edited_Replicated} replicated using the ritest command.}
 \end{table}
 
+% Table 6 Replicated: Controlling for Trust In Chief
 
-\begin{table}[H]
-	\textbf{\caption*{\label{Table_CvL_Visits_edited_R2} Table \ref{Table_CvL_Visits_edited} $\rightarrow$ Controlling for Trust in Chiefs }}
-	\centering
-	\begin{lrbox}{\tablebox}
-		\scalebox{0.8}{
-			\input{Output/main_visits_resultsR2.tex}
-		}
-	\end{lrbox}
-	\usebox{\tablebox}\\[1ex]
-	\parbox{6in}{\footnotesize \textit{Notes}: Table \ref{Table_CvL_Visits_edited} .}
-\end{table}
+%\begin{table}[H]
+%	\textbf{\caption*{\label{Table_CvL_Visits_edited_R2} Table \ref{Table_CvL_Visits_edited} $\rightarrow$ Controlling for Trust in Chiefs }}
+%	\centering
+%	\begin{lrbox}{\tablebox}
+%		\scalebox{0.8}{
+%			\input{Output/main_visits_resultsR2.tex}
+%		}
+%	\end{lrbox}
+%	\usebox{\tablebox}\\[1ex]
+%	\parbox{6in}{\footnotesize \textit{Notes}: Table \ref{Table_CvL_Visits_edited} .}
+%\end{table}
 
 
 
@@ -444,8 +450,20 @@ Properties  & 14,489  & 14,383  & 9,422 & 6,071  & 797 \tabularnewline
 \parbox{6in}{\footnotesize \textit{Notes}: This table explores the extent to which chiefs' recommendations in Central + Local Information (CLI) predict tax visits after registration and tax payment. Columns 1--5 show correlations in CLI between chiefs' recommendations and outcomes. Columns 6--9 report correlations between predicted propensity measures described in Section \ref{info_adv} and outcomes in Local (Columns 6 and 7) and Central (Columns 8 and 9).  Columns 1, 3, 6, and 8 show correlations between propensity and tax visits; Columns 2, 4, 5, 7, and 9 show correlations between propensity and compliance. Column 5 shows correlations with compliance conditional on receiving a visit after registration. All regressions include house type and randomization stratum fixed effects and cluster standard errors at the neighborhood level. Columns 3, 4, and 6--8 include controls for visible household characteristics. We show results excluding house fixed effects in Table \ref{validation_cli_control_NoHouseFE}. We discuss these results in Section \ref{predictiveness_discussion}.}
 \end{table}
 
+
 \begin{table}[H]
-	\textbf{\caption*{Table \ref{validation_cli_control} $\rightarrow$  Restricted to Only Baseline \label{validation_cli_control_baseline}}}
+	\textbf{\caption*{Table 8 Replicated:  $\rightarrow$  Controlling for Chiefs Characteristics \label{chiefs_info_payeaseR5}}}
+	\centering
+	\centerfloat
+	\tiny{\input{Output/chiefs_info_payeaseR5.tex}} \newline 
+	\tiny{\input{Output/chiefs_info_wtpR5.tex}}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}: This is a replication of Table 8 where we controlled for walls quality, roof quality, erosion threat, and chiefs characteristics in columns 1 and 2. The chiefs characteristics consist of  above-median dummies for  age,  possessions,  education,  remoteness,  tenure, dynsty, trust in government, and more. The dofile for this table is named \enquote{Table8R5.do}
+	}
+\end{table}
+
+\begin{table}[H]
+	\textbf{\caption*{Table 8 Replicated: $\rightarrow$  Restricted to Only Baseline Respondents\label{validation_cli_control_baseline}}}
 	\centering
 	\centerfloat
 	\tiny{\input{Output/chiefs_info_payease_baseline.tex}} \newline 
@@ -483,6 +501,17 @@ Properties  & 14,489  & 14,383  & 9,422 & 6,071  & 797 \tabularnewline
 	\centerfloat
 	\tiny{\input{Output/chiefs_info_payeaseR3.tex}} \newline 
 	\tiny{\input{Output/chiefs_info_wtpR3.tex}}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}: }
+\end{table}
+
+
+\begin{table}[H]
+	\textbf{\caption*{Table \ref{validation_cli_control} $\rightarrow$  Oprobit + More Controls + Chiefs Average Characteristics \label{validation_cli_control_R4}}}
+	\centering
+	\centerfloat
+	\tiny{\input{Output/chiefs_info_payeaseR4.tex}} \newline 
+	\tiny{\input{Output/chiefs_info_wtpR4.tex}}
 	\usebox{\tablebox}\\[1ex]
 	\parbox{6in}{\footnotesize \textit{Notes}: }
 \end{table}

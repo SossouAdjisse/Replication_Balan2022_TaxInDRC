@@ -12,8 +12,18 @@
 
 	* use clean baseline data 
 	use "${repldir}/Data/01_base/survey_data/baseline_noPII.dta", clear
-	gen baseline = 1
+	
+	preserve 
+	
+	gen baseline = 1 // Added by Sossou
 	keep if tot_complete==1 
+	keep baseline compound_code
+	gen compound1 = compound_code
+	duplicates drop
+	save "${repldir}/data/03_clean_combined/baseline_noPII.dta_FromTableA2.dta", replace
+	
+	restore
+	
 	drop possessions
 
 	* Education variables

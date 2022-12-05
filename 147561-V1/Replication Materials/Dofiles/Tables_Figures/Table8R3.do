@@ -264,7 +264,7 @@
 	rename  compound_code compound1
 	drop if compound1 == .
 	
-	merge m:1 compound1 using "/Users/sossousimpliceadjisse/Documents/myfiles/PaulMoussaReplicationProject/147561-V1/Replication Materials/Data/03_clean_combined/combined_data_ChiefChars_SossouModified.dta", ///
+	merge m:1 compound1 using "/Users/sossousimpliceadjisse/Documents/myfiles/PaulMoussaReplicationProject/147561-V1/Replication Materials/Data/03_clean_combined/combined_data_ChiefChars_FromTableA8_A14_A15_A27.dta", ///
 	keepusing(age_chef possessions_nb_chef educ_yrs_chef educ_lvl chef_locality chef_minority_ethnic chef_know_2016tax chef_pprd chef_party chef_udps col_gov_integrity col_view_gov_gen col_view_gov_nbhd  col_trust_dgrkoc col_trust_gov  chef_know_fired chef_gov_job chef_tenure chef_established chef_fam age_chef_hi possessions_nb_chef_hi educ_yrs_chef_hi chef_minority_ethnic chef_locality chef_established chef_fam remoteness_hi chefferie chef_party chef_pprd chef_udps chef_gov_job chef_trust_gov_hi chef_trust_dgrkoc_hi col_view_gov_gen_hi col_view_gov_nbhd_hi col_gov_integrity_hi chef_know_fired chef_know_2016tax tmt_2016 evaluation_hi connections_hi activity_hi) update replace force
 	
 keep if _merge > 2
@@ -275,17 +275,19 @@ gen chef_tenure_hi  = chef_tenure > 10
 chef_type hh_head born_kga compound_chef compound_assis edu2 work_gov salongo_acceptability hh_size hh_size_bl know_dgrkoc renters_bl read_language name_know NbrLoc date periph_vs_mm_p chef_steal trust_police chef_imp dgrkoc_imp i.today_monitoring 
 	*/
 	
+	
 	drop if visits == 99999
 
 	global covs_basic = "age_prop sex_prop employed salaried work_gov"
 	*global covs_basic2 = "walls_final roof_final ravine_final  i.lang i.job i.visited visits i.job_gov i.status i.know_eachother tenants salongo salongo_hours i.crieur hh_size_bl_orig i.elect1_bl inc_mo_bl i.status"
+	
 	global covs_addition = "pubgoods sanctions"
 	*global covs_addition2 = "i.gov_perform i.chef_perform i.trust_gov i.trust_dgrkoc i.trust_chef" // Few observation 
 	
 	global chief_chars = "age_chef_hi possessions_nb_chef_hi educ_yrs_chef_hi remoteness_hi chef_trust_gov_hi chef_trust_dgrkoc_hi col_view_gov_gen_hi col_view_gov_nbhd_hi col_gov_integrity_hi tmt_2016 chef_fam chef_tenure_hi"
 	*global chief_chars2 = "chef_minority_ethnic chef_locality chef_established chef_fam chef_party chef_pprd chef_udps chef_gov_job chef_know_fired chef_know_2016tax"
 	
-	
+		
 	drop p_pay_ease* p_willingness*
 	eststo clear
 	foreach depvar in pay_ease willingness{
