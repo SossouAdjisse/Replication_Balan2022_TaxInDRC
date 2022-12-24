@@ -446,7 +446,7 @@ preserve
 * Saving the data used to extract chiefs characteristics for Table 8R3
 drop if compound1 == .
 duplicates drop compound1, force
-save "/Users/sossousimpliceadjisse/Documents/myfiles/PaulMoussaReplicationProject/147561-V1/Replication Materials/Data/03_clean_combined/combined_data_ChiefChars_FromTableA8_A14_A15_A27.dta", replace	
+save "${repldir}/Data/03_clean_combined/combined_data_ChiefChars_FromTableA8_A14_A15_A27.dta", replace	
 restore
 
 

@@ -1,10 +1,11 @@
 ***********
 * Table 6 *
 ***********
-
+quietly{
 	* Load data and define variables
-	use "${repldir}/Data/03_clean_combined/analysis_data_Sossou1.dta", clear
-	keep if tmt==1 | tmt==2 | tmt==3
+	use "${repldir}/Data/03_clean_combined/analysis_data_FromTableA2.dta", clear
+	//keep if tmt==1 | tmt==2 | tmt==3
+	keep if baseline == 1
 
 	cap drop visit_post_carto
 	gen visit_post_carto=0 if visited==0 | (visits!=0 & visits!=.)
@@ -31,28 +32,52 @@
 	label var t_l "Local"
 	
 	* Visits - Extensive CvL
-	eststo r1: reg visit_post_carto t_l i.trust_chief i.house i.stratum i.time_FE_tdm_2mo_CvL if inlist(tmt,1,2), cl(a7)
+	eststo r1: reg visit_post_carto i.tmt i.house i.stratum i.time_FE_tdm_2mo_CvL if inlist(tmt,1,2), cl(a7)
+		ritest tmt _b[2.tmt], reps(1000) seed(125) cluster(a7) strata(stratum): `e(cmdline)'
+		matrix pvalues = r(p) 
+		mat colnames pvalues = 2.tmt  
+		est restore r1 
+		estadd matrix pvalues = pvalues
+		esttab r1, cells(b p(par) pvalues(par([ ])))
 	su visit_post_carto if t_c==1 & time_FE_tdm_2mo_CvL!=.
 	estadd local Mean=abs(round(`r(mean)',.001))
 	estadd scalar Observations = `e(N)'
 	estadd scalar Clusters = `e(N_clust)'
 	
 	* Visits - Intensive CvL
-	eststo r2: reg nb_visit_post_carto t_l i.trust_chief i.house i.stratum i.time_FE_tdm_2mo_CvL if inlist(tmt,1,2), cl(a7)
+	eststo r2: reg nb_visit_post_carto i.tmt i.house i.stratum i.time_FE_tdm_2mo_CvL if inlist(tmt,1,2), cl(a7)
+		ritest tmt _b[2.tmt], reps(1000) seed(125) cluster(a7) strata(stratum): `e(cmdline)'
+		matrix pvalues = r(p) 
+		mat colnames pvalues = 2.tmt  
+		est restore r2 
+		estadd matrix pvalues = pvalues
+		esttab r2, cells(b p(par) pvalues(par([ ])))
 	su nb_visit_post_carto if t_c==1 & time_FE_tdm_2mo_CvL!=.
 	estadd local Mean=abs(round(`r(mean)',.001))
 	estadd scalar Observations = `e(N)'
 	estadd scalar Clusters = `e(N_clust)'
 	
 	* Visits Other Contact - Extensive CvL
-	eststo r3: reg visits_other_dummy t_l i.trust_chief i.house i.stratum i.time_FE_tdm_2mo_CvL if inlist(tmt,1,2), cl(a7)
+	eststo r3: reg visits_other_dummy i.tmt i.house i.stratum i.time_FE_tdm_2mo_CvL if inlist(tmt,1,2), cl(a7)
+		ritest tmt _b[2.tmt], reps(1000) seed(125) cluster(a7) strata(stratum): `e(cmdline)'
+		matrix pvalues = r(p) 
+		mat colnames pvalues = 2.tmt  
+		est restore r3 
+		estadd matrix pvalues = pvalues
+		esttab r3, cells(b p(par) pvalues(par([ ])))
 	su visits_other_dummy if t_c==1 & time_FE_tdm_2mo_CvL!=.
 	estadd local Mean=abs(round(`r(mean)',.001))
 	estadd scalar Observations = `e(N)'
 	estadd scalar Clusters = `e(N_clust)'
 	
 	* Visits Other Contact - Intensive CvL
-	eststo r4: reg visits_other_nb t_l i.trust_chief i.house i.stratum i.time_FE_tdm_2mo_CvL if inlist(tmt,1,2), cl(a7)
+	eststo r4: reg visits_other_nb i.tmt i.house i.stratum i.time_FE_tdm_2mo_CvL if inlist(tmt,1,2), cl(a7)
+		ritest tmt _b[2.tmt], reps(1000) seed(125) cluster(a7) strata(stratum): `e(cmdline)'
+		matrix pvalues = r(p) 
+		mat colnames pvalues = 2.tmt  
+		est restore r4
+		estadd matrix pvalues = pvalues
+		esttab r4, cells(b p(par) pvalues(par([ ])))
 	su visits_other_nb if t_c==1 & time_FE_tdm_2mo_CvL!=.
 	estadd local Mean=abs(round(`r(mean)',.001))
 	estadd scalar Observations = `e(N)'
@@ -60,8 +85,9 @@
 	
 	esttab r1 r2 r3 r4 using "${reploutdir}/main_visits_resultsR2.tex", ///
 	replace label b(%9.3f) p(%9.3f) booktabs ///
-	keep (t_l 2.trust_chief 3.trust_chief 4.trust_chief) ///
-	order(t_l 2.trust_chief 3.trust_chief 4.trust_chief) ///
+	keep (2.tmt) ///
+	order(2.tmt) ///
+	cells("b(fmt(a6))"  "p(fmt(a3) par)" "pvalues(fmt(%9.6f) par([ ]))") /// 
 	scalar(Clusters Mean) sfmt(0 3 3) ///
 	nomtitles ///
 	mgroups("Visited Post Carto" "Visits Post Carto" "Visited Other Contact"  "Visits Other Contact", pattern(1 1 1 1) prefix(\multicolumn{@span}{c}{) suffix(}) span) ///
@@ -69,5 +95,5 @@
 	star(* 0.10 ** 0.05 *** 0.001) ///
 	nogaps nonotes compress
 
-
+}
 	

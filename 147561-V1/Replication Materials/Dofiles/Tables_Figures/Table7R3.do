@@ -1,7 +1,7 @@
 ***********
 * Table 7 *
 ***********
-	
+	quietly{
 	// CvCLI Compliance and revenues
 
 	use "${repldir}/Data/03_clean_combined/analysis_data_FromTableA2.dta", clear // this data was saved from TableA2 dofile
@@ -97,6 +97,6 @@
 	star(* 0.10 ** 0.05 *** 0.001) ///
 	nogaps nonotes compress
 	
-	
+	}
 	
 

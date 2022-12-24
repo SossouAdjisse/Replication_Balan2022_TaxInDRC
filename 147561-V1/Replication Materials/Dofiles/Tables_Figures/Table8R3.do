@@ -324,6 +324,18 @@ chef_type hh_head born_kga compound_chef compound_assis edu2 work_gov salongo_ac
 	lab var walls_final "Wall quality"
 	lab var roof_final "Roof quality"
 	
+	* Added by Sossou
+	preserve
+		keep compound1 pay_ease willingness p_pay_ease p_willingness
+		rename compound1 compound_code
+		rename  (p_pay_ease p_willingness)(p_oprob_cc_pay_ease p_oprob_cc_willingness)
+		label var p_oprob_cc_pay_ease "prediction of pay_ease from ordered probit + chiefs characteristics"
+		label var p_oprob_cc_willingness "prediction of willingness from ordered probit + chiefs characteristics"
+		duplicates drop compound_code, force
+		save "${repldir}/Data/03_clean_combined/predictions_FromTable8R3.dta", replace	
+	restore
+
+	
 		// Panel  A - Pay Ease
 		
 		eststo clear

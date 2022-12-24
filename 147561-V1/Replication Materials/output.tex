@@ -178,6 +178,13 @@
 \parbox{6in}{\footnotesize \textit{Notes}: N = number of observations, J = number of clusters (neighborhoods). The property register has more observations per neighborhood than the midline survey because the former includes information on all compounds, including (exempt) government buildings, churches, and empty lots, while the midline survey was only conducted with privately owned plots liable for the property tax. The primary tax outcomes result from merging official property tax records with data from the property register. The mechanics of the tax campaign and data sources are discussed, respectively, in Sections \ref{mechanics} and \ref{data}.} 
 \end{table}
 
+
+\begin{center}
+%	\textbf{\caption*{\label{Table_CvL_Compliance_edited_Replicated} }}
+	\tiny{\input{Output/campaign_components.tex}}
+\end{center}
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{table}[H]
@@ -236,22 +243,23 @@ Properties  & 14,489  & 14,383  & 9,422 & 6,071  & 797 \tabularnewline
 
 
 \begin{table}[H]
-	\textbf{\caption *{\label{Table_CvL_Compliance_edited_Rbaseline} Table 4 Replicated: $\rightarrow$ Restricted to Baseline Only + Randomization Inference }}
+	\textbf{\caption*{\label{Table_CvL_Compliance_edited_Replicated} Table 4R1:  $\rightarrow$  Randomization Inference}}
 	\centering
-	\small{\input{Output/main_compliance_results_baseline.tex}}
-	\small{\input{Output/main_revenues_results_baseline.tex}}
+	\small{\input{Output/main_compliance_resultsR1.tex}}
+	\small{\input{Output/main_revenues_resultsR1.tex}}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}: Table 4 repliacted  using randomization inference on the sample that the authors used. There are two p-values reported. The first one in parenthesis is from the simple regression. The second one  in square brackets is from the randomization inference estimation using the ritest command in Stata. The RI was repeated 1000 with seed 125. All other controls are the same as the ones used by the authors in the original table. The dofile of this table is name \enquote{Table4RI.do}}
+\end{table}
+
+\begin{table}[H]
+	\textbf{\caption *{\label{Table_CvL_Compliance_edited_Rbaseline} Table 4R2: $\rightarrow$ Restricted to Baseline Only + Randomization Inference }}
+	\centering
+	\small{\input{Output/main_compliance_resultsR2.tex}}
+	\small{\input{Output/main_revenues_resultsR2.tex}}
 	\usebox{\tablebox}\\[1ex]
 	\parbox{6in}{\footnotesize \textit{Notes}: Table 4 repliacted by restricting to respondents in the baseline sample. There are two p-values reported. The first one in parenthesis is from the simple regression. The second one  in square brackets is from the randomization inference estimation using the ritest command in Stata. The RI was repeated 1000 with seed 125. All other controls are the same as the ones used by the authors in the original table. The dofile of this table is name \enquote{Table4Rbaseline.do}}
 \end{table}
 
-\begin{table}[H]
-	\textbf{\caption*{\label{Table_CvL_Compliance_edited_Replicated} Table 4 Replicated:  $\rightarrow$  Randomization Inference}}
-	\centering
-	\small{\input{Output/main_compliance_resultsR.tex}}
-	\small{\input{Output/main_revenues_resultsR.tex}}
-	\usebox{\tablebox}\\[1ex]
-	\parbox{6in}{\footnotesize \textit{Notes}: Table 4 repliacted  using randomization inference on the sample that the authors used. There are two p-values reported. The first one in parenthesis is from the simple regression. The second one  in square brackets is from the randomization inference estimation using the ritest command in Stata. The RI was repeated 1000 with seed 125. All other controls are the same as the ones used by the authors in the original table. The dofile of this table is name \enquote{Table4RI.do}}
-\end{table}
 
 
 %\begin{table}[H]
@@ -299,16 +307,16 @@ Properties  & 14,489  & 14,383  & 9,422 & 6,071  & 797 \tabularnewline
 	\parbox{6in}{\footnotesize \textit{Notes}: Each row summarizes an OLS estimation of Equation \ref{equation_cvl}, comparing Local and Central, with the dependent variable noted in the first column. $\hat{\beta}$ is the coefficient on the treatment indicator, followed by the cluster-robust standard error, $R^2$, number of observations, and $\bar{x}_{Central}$ the Central group mean. In Panel A, row 1 shows differences in whether the collector designated the property exempt from taxes. Properties owned by the elderly, widows, government pensioners, and handicapped individuals, among others, are legally supposed to be exempt. Row 2 shows differences in whether an independent enumerator disagreed (in either direction) with the exemption status of a given property. Row 3 shows differences in whether a property was assigned to the high-value category, and row 4 shows whether enumerators' independent evaluations diverged with the collectors' designation. In Panel B, the outcomes in rows 5 and 7 are self-reported bribe payment as measured during the midline and endline surveys, respectively. The outcome in row 6 indicates property owners who reported paying the tax but who were not recorded as having paid in the administrative data. The outcome in row 8 is self-reported payment of any informal fees at endline. We discuss the results from Panels A and B in Section \ref{assessments}. In Panels C and D, for endline outcomes we also measured at baseline --- all variables except for \textit{Perceived tax compliance} and \textit{Fairness of property taxation} --- we control for the baseline value. Each dependent variable, described briefly in Section \ref{survey_variables} and in detail in Section \ref{variable_descriptions}, is standardized to facilitate interpretation of coefficient magnitude.  We discuss the results in Panels C and D in Section \ref{attitudes_discussion}. In all panels, regressions include fixed effects for randomization strata, and cluster standard errors at the neighborhood level. Regressions estimating effects on midline and property assessment outcomes include time period fixed effects described in Section \ref{estimation} and house type fixed effects. We do not include house type fixed effects for endline outcomes to maximize the analysis sample, as discussed in Section \ref{estimation}. The number of observations varies across regressions due to (\textit{i}) outcomes being drawn from different surveys, and (\textit{ii}) non-response for specific survey questions. }
 \end{table}
 
-% Table 5 Replicated: Bribe Amount
+ Table 5 Replicated: Bribe Amount
 
-%\begin{table}[H]
-%\textbf{\caption*{\label{bribesviewsR} Table \ref{bribesviews} $\rightarrow$ Add p-value, Bribe Amounst (Midline and Endline)} }
-%\centering
-%\input{Output/assessment_bribesR.tex}
-%\input{Output/attitudes.tex}
-%\usebox{\tablebox}\\[1ex]
-%\parbox{6in}{\footnotesize \textit{Notes}: }
-%\end{table}
+\begin{table}[H]
+\textbf{\caption*{\label{bribesviewsR} Table 5R1:  $\rightarrow$ Add p-value, Bribe Amounst (Midline and Endline)} }
+\centering
+\input{Output/assessment_bribesR.tex}
+\input{Output/attitudes.tex}
+\usebox{\tablebox}\\[1ex]
+\parbox{6in}{\footnotesize \textit{Notes}: }
+\end{table}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -326,11 +334,24 @@ Properties  & 14,489  & 14,383  & 9,422 & 6,071  & 797 \tabularnewline
 
 
 \begin{table}[H]
-	\textbf{\caption*{\label{Table_CvL_Visits_edited_baseline} Table \ref{Table_CvL_Visits_edited} $\rightarrow$ Restricted to Baseline Sample only }}
+	\textbf{\caption*{\label{Table_CvL_Visits_edited_R1} Table 6R1: $\rightarrow$ Randomization Inference}}
 	\centering
 	\begin{lrbox}{\tablebox}
 		\scalebox{0.8}{
-			\input{Output/main_visits_results_baseline.tex}
+			\input{Output/main_visits_resultsR1.tex}
+		}
+	\end{lrbox}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}: Table \ref{Table_CvL_Visits_edited_Replicated} replicated using the ritest command in Stata .}
+\end{table}
+
+
+\begin{table}[H]
+	\textbf{\caption*{\label{Table_CvL_Visits_editedR2} Table 6R2: $\rightarrow$ Restricted to Baseline Sample }}
+	\centering
+	\begin{lrbox}{\tablebox}
+		\scalebox{0.8}{
+			\input{Output/main_visits_resultsR2.tex}
 		}
 	\end{lrbox}
 	\usebox{\tablebox}\\[1ex]
@@ -338,17 +359,6 @@ Properties  & 14,489  & 14,383  & 9,422 & 6,071  & 797 \tabularnewline
 \end{table}
 
 
-\begin{table}[H]
-	\textbf{\caption*{\label{Table_CvL_Visits_edited_Replicated} Table \ref{Table_CvL_Visits_edited} $\rightarrow$ Replicated using  Randomization Inference Approach}}
-	\centering
-	\begin{lrbox}{\tablebox}
-		\scalebox{0.8}{
-			\input{Output/main_visits_resultsR.tex}
-		}
-	\end{lrbox}
-	\usebox{\tablebox}\\[1ex]
-	\parbox{6in}{\footnotesize \textit{Notes}: Table \ref{Table_CvL_Visits_edited_Replicated} replicated using the ritest command.}
-\end{table}
 
 % Table 6 Replicated: Controlling for Trust In Chief
 
@@ -383,33 +393,21 @@ Properties  & 14,489  & 14,383  & 9,422 & 6,071  & 797 \tabularnewline
 
 
 \begin{table}[H]
-	\textbf{\caption*{\label{main_centralwinfo_results_baseline}  Table \ref{Table_CvCLI} $\rightarrow$ Restricted to Only Baseline Sample}}
+	\textbf{\caption*{\label{Table_CvCLI_Replicated}  Table 7R1: $\rightarrow$ Randomization Inference}}
 	\centering
 	\begin{lrbox}{\tablebox}
 		
 		\resizebox{14cm}{!}{
-			\input{Output/main_centralwinfo_results_baseline.tex}
+			\input{Output/main_centralwinfo_resultsR1.tex}
 		}
 	\end{lrbox}
 	\usebox{\tablebox}\\[1ex]
 	\parbox{6in}{\footnotesize \textit{Notes}: }
 \end{table}
 
-\begin{table}[H]
-	\textbf{\caption*{\label{Table_CvCLI_Replicated}  Table \ref{Table_CvCLI} $\rightarrow$ Replicated using  Randomization Inference Approach}}
-	\centering
-	\begin{lrbox}{\tablebox}
-		
-		\resizebox{14cm}{!}{
-			\input{Output/main_centralwinfo_resultsR.tex}
-		}
-	\end{lrbox}
-	\usebox{\tablebox}\\[1ex]
-	\parbox{6in}{\footnotesize \textit{Notes}: }
-\end{table}
 
 \begin{table}[H]
-	\textbf{\caption*{\label{Table_CvCLI_Replicated2}  Table \ref{Table_CvCLI} $\rightarrow$ Controlling for Trust the Chief}}
+	\textbf{\caption*{\label{Table_CvCLI_Replicated2}  Table 7R2: $\rightarrow$ Controlling for Trust the Chief}}
 	\centering
 	\begin{lrbox}{\tablebox}
 		
@@ -422,7 +420,7 @@ Properties  & 14,489  & 14,383  & 9,422 & 6,071  & 797 \tabularnewline
 \end{table}
 
 \begin{table}[H]
-	\textbf{\caption*{\label{Table_CvCLI_Replicated3}  Table \ref{Table_CvCLI} $\rightarrow$ Interacting CLI and Local with Trust the Chief}}
+	\textbf{\caption*{\label{Table_CvCLI_Replicated3}  Table 7R3: $\rightarrow$ Interacting CLI and Local with Trust the Chief}}
 	\centering
 	\begin{lrbox}{\tablebox}
 		
@@ -433,6 +431,20 @@ Properties  & 14,489  & 14,383  & 9,422 & 6,071  & 797 \tabularnewline
 	\usebox{\tablebox}\\[1ex]
 	\parbox{6in}{\footnotesize \textit{Notes}: }
 \end{table}
+
+\begin{table}[H]
+	\textbf{\caption*{\label{main_centralwinfo_results_baseline}  Table 7R4: $\rightarrow$ Restricted to Baseline Sample}}
+	\centering
+	\begin{lrbox}{\tablebox}
+		
+		\resizebox{14cm}{!}{
+			\input{Output/main_centralwinfo_resultsR4.tex}
+		}
+	\end{lrbox}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}: }
+\end{table}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -451,19 +463,70 @@ Properties  & 14,489  & 14,383  & 9,422 & 6,071  & 797 \tabularnewline
 \end{table}
 
 
+%\begin{table}[H]
+%	\textbf{\caption*{Table 8R0: $\rightarrow$  Willingness and its prediction on the same scale 1 to 3  \label{validation_cli_control_R0}}}
+%	\centering
+%	\centerfloat
+%	\tiny{\input{Output/chiefs_info_payeaseR0.tex}} \newline 
+%	\tiny{\input{Output/chiefs_info_wtpR0.tex}}
+%	\usebox{\tablebox}\\[1ex]
+%	\parbox{6in}{\footnotesize \textit{Notes}: This table reports the results of table 8}
+%\end{table}
+
 \begin{table}[H]
-	\textbf{\caption*{Table 8 Replicated:  $\rightarrow$  Controlling for Chiefs Characteristics \label{chiefs_info_payeaseR5}}}
+	\textbf{\caption*{Table 8R1: $\rightarrow$  Randomization Inference  \label{validation_cli_control_R1}}}
 	\centering
 	\centerfloat
-	\tiny{\input{Output/chiefs_info_payeaseR5.tex}} \newline 
-	\tiny{\input{Output/chiefs_info_wtpR5.tex}}
+	\tiny{\input{Output/chiefs_info_payeaseR1.tex}} \newline 
+	\tiny{\input{Output/chiefs_info_wtpR1.tex}}
 	\usebox{\tablebox}\\[1ex]
-	\parbox{6in}{\footnotesize \textit{Notes}: This is a replication of Table 8 where we controlled for walls quality, roof quality, erosion threat, and chiefs characteristics in columns 1 and 2. The chiefs characteristics consist of  above-median dummies for  age,  possessions,  education,  remoteness,  tenure, dynsty, trust in government, and more. The dofile for this table is named \enquote{Table8R5.do}
-	}
+	\parbox{6in}{\footnotesize \textit{Notes}: This table reports the results of table 8 using randomization inference in the  regressions of panels A and B. The prediction stage is the same as in the table 8 with regard to method and variables. There are two p-values reported:  between parenthesis is the p-value for the original equation and the one in square brackets is for the randomization  inference.}
 \end{table}
 
 \begin{table}[H]
-	\textbf{\caption*{Table 8 Replicated: $\rightarrow$  Restricted to Only Baseline Respondents\label{validation_cli_control_baseline}}}
+	\textbf{\caption*{Table 8R2: $\rightarrow$  Using Oprobit to predict the ease and willingness to pay \label{validation_cli_control_R2}}}
+	\centering
+	\centerfloat
+	\tiny{\input{Output/chiefs_info_payeaseR2.tex}} \newline 
+	\tiny{\input{Output/chiefs_info_wtpR2.tex}}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}:  This table reports the results of table 8 using ordered probit at the prediction stage. Everything else is the same as in the code that generated table 8.}
+\end{table}
+
+\begin{table}[H]
+	\textbf{\caption*{Table 8R3: $\rightarrow$  Using Oprobit + Chiefs Controls \label{validation_cli_control_R3}}}
+	\centering
+	\centerfloat
+	\tiny{\input{Output/chiefs_info_payeaseR3.tex}} \newline 
+	\tiny{\input{Output/chiefs_info_wtpR3.tex}}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}: This table reports the results of table 8 using ordered probit and controlling for chiefs characteristics at the prediction stage. Chiefs characteristics is a set of above-the-median binaries which includes trust in provincial government, trust in tax ministry, number of possessions, age, chiefs tenure greater than 10 years, etc. Everything else is the same as in the code that generated table 8.}
+\end{table}
+
+
+\begin{table}[H]
+	\textbf{\caption*{Table 8R4: $\rightarrow$   Oprobit + More Controls + Chiefs Average Characteristics \label{validation_cli_control_R4}}}
+	\centering
+	\centerfloat
+	\tiny{\input{Output/chiefs_info_payeaseR4.tex}} \newline 
+	\tiny{\input{Output/chiefs_info_wtpR4.tex}}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}: }
+\end{table}
+
+%\begin{table}[H]
+%	\textbf{\caption*{Table 8R5: $\rightarrow$  Controlling for Chiefs Characteristics \label{chiefs_info_payeaseR5}}}
+%	\centering
+%	\centerfloat
+%	\tiny{\input{Output/chiefs_info_payeaseR5.tex}} \newline 
+%	\tiny{\input{Output/chiefs_info_wtpR5.tex}}
+%	\usebox{\tablebox}\\[1ex]
+%	\parbox{6in}{\footnotesize \textit{Notes}: This is a replication of Table 8 where we controlled for walls quality, roof quality, erosion threat, and chiefs characteristics in columns 1 and 2. The chiefs characteristics consist of  above-median dummies for  age,  possessions,  education,  remoteness,  tenure, dynsty, trust in government, and more. The dofile for this table is named \enquote{Table8R5.do}
+%	}
+%\end{table}
+
+\begin{table}[H]
+	\textbf{\caption*{Table 8R5: $\rightarrow$  Restricted to Only Baseline Respondents\label{validation_cli_control_baseline}}}
 	\centering
 	\centerfloat
 	\tiny{\input{Output/chiefs_info_payease_baseline.tex}} \newline 
@@ -473,48 +536,8 @@ Properties  & 14,489  & 14,383  & 9,422 & 6,071  & 797 \tabularnewline
 \end{table}
 
 
-\begin{table}[H]
-	\textbf{\caption*{Table \ref{validation_cli_control} $\rightarrow$  Replicated using RI Approach  \label{validation_cli_control_Replicated}}}
-	\centering
-	\centerfloat
-	\tiny{\input{Output/chiefs_info_payeaseR.tex}} \newline 
-	\tiny{\input{Output/chiefs_info_wtpR.tex}}
-	\usebox{\tablebox}\\[1ex]
-	\parbox{6in}{\footnotesize \textit{Notes}: }
-\end{table}
 
 
-\begin{table}[H]
-	\textbf{\caption*{Table \ref{validation_cli_control} $\rightarrow$  Oprobit \label{validation_cli_control_R2}}}
-	\centering
-	\centerfloat
-	\tiny{\input{Output/chiefs_info_payeaseR2.tex}} \newline 
-	\tiny{\input{Output/chiefs_info_wtpR2.tex}}
-	\usebox{\tablebox}\\[1ex]
-	\parbox{6in}{\footnotesize \textit{Notes}: }
-\end{table}
-
-
-\begin{table}[H]
-	\textbf{\caption*{Table \ref{validation_cli_control} $\rightarrow$  Oprobit + More Controls\label{validation_cli_control_R3}}}
-	\centering
-	\centerfloat
-	\tiny{\input{Output/chiefs_info_payeaseR3.tex}} \newline 
-	\tiny{\input{Output/chiefs_info_wtpR3.tex}}
-	\usebox{\tablebox}\\[1ex]
-	\parbox{6in}{\footnotesize \textit{Notes}: }
-\end{table}
-
-
-\begin{table}[H]
-	\textbf{\caption*{Table \ref{validation_cli_control} $\rightarrow$  Oprobit + More Controls + Chiefs Average Characteristics \label{validation_cli_control_R4}}}
-	\centering
-	\centerfloat
-	\tiny{\input{Output/chiefs_info_payeaseR4.tex}} \newline 
-	\tiny{\input{Output/chiefs_info_wtpR4.tex}}
-	\usebox{\tablebox}\\[1ex]
-	\parbox{6in}{\footnotesize \textit{Notes}: }
-\end{table}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

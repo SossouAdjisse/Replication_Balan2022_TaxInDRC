@@ -315,6 +315,17 @@
 	lab var walls_final "Wall quality"
 	lab var roof_final "Roof quality"
 	
+	* Added by Sossou
+	preserve
+		keep compound_code pay_ease willingness p_pay_ease p_willingness
+		rename  (p_pay_ease p_willingness)(p_oprob_pay_ease p_oprob_willingness)
+		label var p_oprob_pay_ease "prediction of pay_ease from ordered probit"
+		label var p_oprob_willingness "prediction of willingness from ordered probit"
+		duplicates drop compound_code, force
+		save "${repldir}/Data/03_clean_combined/predictions_FromTable8R2.dta", replace	
+	restore
+
+	
 		// Panel  A - Pay Ease
 		
 		eststo clear
