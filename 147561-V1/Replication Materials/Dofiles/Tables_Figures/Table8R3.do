@@ -206,6 +206,13 @@
 	
 	// For prediction and appendix table (also show alternate definition with different dummies)
 	
+	 * Added by Sossou
+	recode willingness (1=0 "Pas du tout")(2=1 "Un peu")(3=2 "Beaucoup")(else=.), gen(willingness1)
+	drop willingness
+	rename willingness1 willingness
+
+
+	
 	cap drop p_*
 	
 	eststo clear

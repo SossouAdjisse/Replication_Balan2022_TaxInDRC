@@ -187,6 +187,7 @@
 	cap drop _merge
 	merge m:1 compound_code using `consult'
 	
+	
 	g pay_ease_dum = 0 if pay_ease!=.
 	replace pay_ease_dum = 1 if pay_ease==2
 	
@@ -203,6 +204,8 @@
 	lab var work_gov "Work Govt"
 	lab var main_tribe "Main Tribe"
 	lab var house_quality "House quality index"
+	
+
 	
 	// For prediction and appendix table (also show alternate definition with different dummies)
 	
@@ -261,6 +264,12 @@
 	global covs_addition = "pubgoods sanctions salongo salongo_hours"
 	global house_chars = "walls_final roof_final ravine_final"
 	
+	* Added by Sossou
+	recode willingness (1=0 "Pas du tout")(2=1 "Un peu")(3=2 "Beaucoup")(else=.), gen(willingness1)
+	drop willingness
+	rename willingness1 willingness
+
+	
 	drop p_pay_ease* p_willingness*
 	eststo clear
 	foreach depvar in pay_ease willingness{
@@ -296,9 +305,9 @@
 		replace p_pay_ease = 2 if p_pay_ease_orig>(4/3) & p_pay_ease_orig<.
 		
 		ren p_willingness p_willingness_orig
-		g p_willingness = 1 if p_willingness_orig<=(1+2/3)
-		replace p_willingness = 2 if p_willingness_orig>(1+2/3) & p_willingness_orig<=(1+4/3)
-		replace p_willingness = 3 if p_willingness_orig>(1+4/3) & p_willingness_orig<.
+		g p_willingness = 0 if p_willingness_orig<=(2/3)
+		replace p_willingness = 1 if p_willingness_orig>(2/3) & p_willingness_orig<=(4/3)
+		replace p_willingness = 2 if p_willingness_orig>(4/3) & p_willingness_orig<.
 	
 	lab var p_pay_ease "Predicted Ease of payment"
 	lab var p_willingness "Predicted Willingness to pay"

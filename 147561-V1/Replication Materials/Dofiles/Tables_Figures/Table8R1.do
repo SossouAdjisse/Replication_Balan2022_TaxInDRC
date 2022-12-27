@@ -204,6 +204,12 @@ quietly{
 	lab var main_tribe "Main Tribe"
 	lab var house_quality "House quality index"
 	
+		* Added by Sossou
+	recode willingness (1=0 "Pas du tout")(2=1 "Un peu")(3=2 "Beaucoup")(else=.), gen(willingness1)
+	drop willingness
+	rename willingness1 willingness
+
+	
 	// For prediction and appendix table (also show alternate definition with different dummies)
 	
 	cap drop p_*
@@ -299,9 +305,9 @@ quietly{
 		replace p_pay_ease = 2 if p_pay_ease_orig>(4/3) & p_pay_ease_orig<.
 		
 		ren p_willingness p_willingness_orig
-		g p_willingness = 0 if p_willingness_orig<=(1+2/3)
-		replace p_willingness = 1 if p_willingness_orig>(1+2/3) & p_willingness_orig<=(1+4/3)
-		replace p_willingness = 2 if p_willingness_orig>(1+4/3) & p_willingness_orig<.
+		g p_willingness = 0 if p_willingness_orig<=(2/3)
+		replace p_willingness = 1 if p_willingness_orig>(2/3) & p_willingness_orig<=(4/3)
+		replace p_willingness = 2 if p_willingness_orig>(4/3) & p_willingness_orig<.
 	
 	lab var p_pay_ease "Predicted Ease of payment"
 	lab var p_willingness "Predicted Willingness to pay"
