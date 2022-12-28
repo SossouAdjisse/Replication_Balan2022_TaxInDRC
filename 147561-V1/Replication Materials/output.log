@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  27 DEC 2022 13:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  28 DEC 2022 13:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1426,7 +1426,7 @@ LaTeX Warning: Reference `info_adv' on page 12 undefined on input line 462.
 LaTeX Warning: Reference `predictiveness_discussion' on page 12 undefined on in
 put line 462.
 
-(./Output/PredictPerformance.tex) [12
+(./Output/PredictPerformance_m.tex) [12
 
 ] (./Output/chiefs_info_payeaseR1.tex)
 (./Output/chiefs_info_wtpR1.tex) [13]
@@ -2562,11 +2562,11 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 37819 strings out of 492616
- 845023 string characters out of 6129482
+ 37820 strings out of 492616
+ 845036 string characters out of 6129482
  1114948 words of memory out of 5000000
  40346 multiletter control sequences out of 15000+600000
- 92798 words of font info for 132 fonts, out of 8000000 for 9000
+ 93934 words of font info for 133 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  62i,14n,103p,2558b,2217s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2019/texmf-dist/fonts/enc/dvips/lm/lm-rmtt.enc}{/usr/loca
@@ -2593,7 +2593,7 @@ t/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type
 tino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8
 a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></us
 r/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on output.pdf (96 pages, 11156858 bytes).
+Output written on output.pdf (96 pages, 11157337 bytes).
 PDF statistics:
  1780 PDF objects out of 2073 (max. 8388607)
  1338 compressed objects within 14 object streams
