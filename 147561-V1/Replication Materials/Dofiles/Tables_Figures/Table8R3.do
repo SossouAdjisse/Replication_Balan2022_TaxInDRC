@@ -331,7 +331,7 @@ chef_type hh_head born_kga compound_chef compound_assis edu2 work_gov salongo_ac
 	lab var walls_final "Wall quality"
 	lab var roof_final "Roof quality"
 	
-	* Added by Sossou
+	* Saving the data which will be used for the performance table -- Added by Sossou
 	preserve
 		keep compound1 pay_ease willingness p_pay_ease p_willingness
 		rename compound1 compound_code
@@ -343,149 +343,149 @@ chef_type hh_head born_kga compound_chef compound_assis edu2 work_gov salongo_ac
 	restore
 
 	
-		// Panel  A - Pay Ease
-		
-		eststo clear
-			
-		// Actual pay ease predicting visits and compliance in CLI
-		eststo: reg visit_post_carto pay_ease p_pay_ease i.house i.stratum if t_cli==1,cluster(a7)
-			estadd scalar Clusters = `e(N_clust)'
-			sum visit_post_carto if t_cli==1 & pay_ease!=.
-			estadd local Mean=abs(round(`r(mean)',.001))
-			estadd scalar Observations = `e(N)'
-		eststo: reg taxes_paid pay_ease  p_pay_ease i.house i.stratum if t_cli==1,cluster(a7)
-			estadd scalar Clusters = `e(N_clust)'
-			sum taxes_paid if t_cli==1 & pay_ease!=.
-			estadd local Mean=abs(round(`r(mean)',.001))
-			estadd scalar Observations = `e(N)'
-			
-		// Actual pay ease predicting visits and compliance in CLI - controlling for observables
-		
-		eststo: reg visit_post_carto pay_ease p_pay_ease walls_final roof_final ravine_final i.house i.stratum if t_cli==1,cluster(a7)
-			estadd scalar Clusters = `e(N_clust)'
-			sum visit_post_carto if t_cli==1 & pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
-			estadd local Mean=abs(round(`r(mean)',.001))
-			estadd scalar Observations = `e(N)'
-		eststo: reg taxes_paid pay_ease  p_pay_ease walls_final roof_final ravine_final i.house i.stratum if t_cli==1,cluster(a7)
-			estadd scalar Clusters = `e(N_clust)'
-			sum taxes_paid if t_cli==1 & pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
-			estadd local Mean=abs(round(`r(mean)',.001))
-			estadd scalar Observations = `e(N)'
-			
-		// Predicted pay ease function predicting visits/payment in C and L
-		eststo: reg visit_post_carto p_pay_ease  walls_final roof_final ravine_final i.house i.stratum if t_l==1,cluster(a7)
-			estimates store L_visit_pay_ease
-			estadd scalar Clusters = `e(N_clust)'
-			sum visit_post_carto if t_l==1 & p_pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
-			estadd local Mean=abs(round(`r(mean)',.001))
-			estadd scalar Observations = `e(N)'
-		eststo: reg taxes_paid p_pay_ease  walls_final roof_final ravine_final i.house i.stratum if t_l==1,cluster(a7)
-			estimates store L_compl_pay_ease
-			estadd scalar Clusters = `e(N_clust)'
-			sum taxes_paid if t_l==1 & p_pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
-			estadd local Mean=abs(round(`r(mean)',.001))
-			estadd scalar Observations = `e(N)'
-		eststo: reg visit_post_carto p_pay_ease  walls_final roof_final ravine_final i.house i.stratum if t_c==1,cluster(a7)
-			estimates store C_visit_pay_ease
-			estadd scalar Clusters = `e(N_clust)'
-			sum visit_post_carto if t_c==1 & p_pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
-			estadd local Mean=abs(round(`r(mean)',.001))
-			estadd scalar Observations = `e(N)'
-		eststo: reg taxes_paid p_pay_ease  walls_final roof_final ravine_final i.house i.stratum if t_c==1,cluster(a7)
-			estimates store C_compl_pay_ease
-			estadd scalar Clusters = `e(N_clust)'
-			sum taxes_paid if t_c==1 & p_pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
-			estadd local Mean=abs(round(`r(mean)',.001))
-			estadd scalar Observations = `e(N)'
-			
-		esttab using "${reploutdir}/chiefs_info_payeaseR3.tex", ///
-		replace label b(%9.3f) p(%9.3f) booktabs ///
-		keep (pay_ease p_pay_ease walls_final roof_final ravine_final) ///
-		order(pay_ease p_pay_ease walls_final roof_final ravine_final) ///
-		scalar(Clusters Mean) sfmt(0 0 3) ///
-		nomtitles ///
-		mgroups("Visited Post Carto" "Compliance" "Visited Post Carto" "Compliance" "Visited Post Carto" "Compliance" "Visited Post Carto"  "Compliance", pattern(1 1 1 1 1 1  1 1) prefix(\multicolumn{@span}{c}{) suffix(}) span) ///
-		indicate("House FE = *house*""Stratum FE = *stratum*") ///
-		star(* 0.10 ** 0.05 *** 0.001) ///
-		nogaps nonotes compress
+	// Panel  A - Pay Ease
 
-		* Magnitudes
-		bysort p_pay_ease: su taxes_paid if t_c==1 & time_FE_tdm_2mo_CvL !=.
-		su taxes_paid if t_c==1 & visit_post_carto==1 & p_pay_ease==0
-		local compliance_low = `r(mean)'
-		su taxes_paid if t_c==1 & visit_post_carto==1 & p_pay_ease==1|p_pay_ease==2
-		local compliance_high = `r(mean)'		
-		local diff = `compliance_high'-`compliance_low'
+	eststo clear
 		
-		di in red "Difference in compliance: `diff'"
+	// Actual pay ease predicting visits and compliance in CLI
+	eststo: reg visit_post_carto pay_ease p_pay_ease i.house i.stratum if t_cli==1,cluster(a7)
+		estadd scalar Clusters = `e(N_clust)'
+		sum visit_post_carto if t_cli==1 & pay_ease!=.
+		estadd local Mean=abs(round(`r(mean)',.001))
+		estadd scalar Observations = `e(N)'
+	eststo: reg taxes_paid pay_ease  p_pay_ease i.house i.stratum if t_cli==1,cluster(a7)
+		estadd scalar Clusters = `e(N_clust)'
+		sum taxes_paid if t_cli==1 & pay_ease!=.
+		estadd local Mean=abs(round(`r(mean)',.001))
+		estadd scalar Observations = `e(N)'
 		
-***********
-* Panel B *
-***********
+	// Actual pay ease predicting visits and compliance in CLI - controlling for observables
+
+	eststo: reg visit_post_carto pay_ease p_pay_ease walls_final roof_final ravine_final i.house i.stratum if t_cli==1,cluster(a7)
+		estadd scalar Clusters = `e(N_clust)'
+		sum visit_post_carto if t_cli==1 & pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
+		estadd local Mean=abs(round(`r(mean)',.001))
+		estadd scalar Observations = `e(N)'
+	eststo: reg taxes_paid pay_ease  p_pay_ease walls_final roof_final ravine_final i.house i.stratum if t_cli==1,cluster(a7)
+		estadd scalar Clusters = `e(N_clust)'
+		sum taxes_paid if t_cli==1 & pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
+		estadd local Mean=abs(round(`r(mean)',.001))
+		estadd scalar Observations = `e(N)'
 		
-		eststo clear
-			
-		// Actual willingness predicting visits and compliance in CLI
-		eststo: reg visit_post_carto willingness p_willingness i.house i.stratum if t_cli==1,cluster(a7)
-			estadd scalar Clusters = `e(N_clust)'
-			sum visit_post_carto if t_cli==1 & willingness!=.
-			estadd local Mean=abs(round(`r(mean)',.001))
-			estadd scalar Observations = `e(N)'
-		eststo: reg taxes_paid willingness p_willingness i.house i.stratum if t_cli==1,cluster(a7)
-			estadd scalar Clusters = `e(N_clust)'
-			sum taxes_paid if t_cli==1 & willingness!=.
-			estadd local Mean=abs(round(`r(mean)',.001))
-			estadd scalar Observations = `e(N)'
-			
-		// Actual willingness predicting visits and compliance in CLI - controlling for observables
+	// Predicted pay ease function predicting visits/payment in C and L
+	eststo: reg visit_post_carto p_pay_ease  walls_final roof_final ravine_final i.house i.stratum if t_l==1,cluster(a7)
+		estimates store L_visit_pay_ease
+		estadd scalar Clusters = `e(N_clust)'
+		sum visit_post_carto if t_l==1 & p_pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
+		estadd local Mean=abs(round(`r(mean)',.001))
+		estadd scalar Observations = `e(N)'
+	eststo: reg taxes_paid p_pay_ease  walls_final roof_final ravine_final i.house i.stratum if t_l==1,cluster(a7)
+		estimates store L_compl_pay_ease
+		estadd scalar Clusters = `e(N_clust)'
+		sum taxes_paid if t_l==1 & p_pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
+		estadd local Mean=abs(round(`r(mean)',.001))
+		estadd scalar Observations = `e(N)'
+	eststo: reg visit_post_carto p_pay_ease  walls_final roof_final ravine_final i.house i.stratum if t_c==1,cluster(a7)
+		estimates store C_visit_pay_ease
+		estadd scalar Clusters = `e(N_clust)'
+		sum visit_post_carto if t_c==1 & p_pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
+		estadd local Mean=abs(round(`r(mean)',.001))
+		estadd scalar Observations = `e(N)'
+	eststo: reg taxes_paid p_pay_ease  walls_final roof_final ravine_final i.house i.stratum if t_c==1,cluster(a7)
+		estimates store C_compl_pay_ease
+		estadd scalar Clusters = `e(N_clust)'
+		sum taxes_paid if t_c==1 & p_pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
+		estadd local Mean=abs(round(`r(mean)',.001))
+		estadd scalar Observations = `e(N)'
 		
-		sum ravine
-		cap g ravine_final = (ravine-`r(mean)')/(`r(sd)') //standardize
+	esttab using "${reploutdir}/chiefs_info_payeaseR3.tex", ///
+	replace label b(%9.3f) p(%9.3f) booktabs ///
+	keep (pay_ease p_pay_ease walls_final roof_final ravine_final) ///
+	order(pay_ease p_pay_ease walls_final roof_final ravine_final) ///
+	scalar(Clusters Mean) sfmt(0 0 3) ///
+	nomtitles ///
+	mgroups("Visited Post Carto" "Compliance" "Visited Post Carto" "Compliance" "Visited Post Carto" "Compliance" "Visited Post Carto"  "Compliance", pattern(1 1 1 1 1 1  1 1) prefix(\multicolumn{@span}{c}{) suffix(}) span) ///
+	indicate("House FE = *house*""Stratum FE = *stratum*") ///
+	star(* 0.10 ** 0.05 *** 0.001) ///
+	nogaps nonotes compress
+
+	* Magnitudes
+	bysort p_pay_ease: su taxes_paid if t_c==1 & time_FE_tdm_2mo_CvL !=.
+	su taxes_paid if t_c==1 & visit_post_carto==1 & p_pay_ease==0
+	local compliance_low = `r(mean)'
+	su taxes_paid if t_c==1 & visit_post_carto==1 & p_pay_ease==1|p_pay_ease==2
+	local compliance_high = `r(mean)'		
+	local diff = `compliance_high'-`compliance_low'
+
+	di in red "Difference in compliance: `diff'"
+
+	***********
+	* Panel B *
+	***********
+
+	eststo clear
 		
-		eststo: reg visit_post_carto willingness p_willingness walls_final roof_final ravine_final i.house i.stratum if t_cli==1,cluster(a7)
-			estadd scalar Clusters = `e(N_clust)'
-			sum visit_post_carto if t_cli==1 & willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=.
-			estadd local Mean=abs(round(`r(mean)',.001))
-			estadd scalar Observations = `e(N)'
-		eststo: reg taxes_paid willingness p_willingness walls_final roof_final ravine_final i.house i.stratum if t_cli==1,cluster(a7)
-			estadd scalar Clusters = `e(N_clust)'
-			sum taxes_paid if t_cli==1 & willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=.
-			estadd local Mean=abs(round(`r(mean)',.001))
-			estadd scalar Observations = `e(N)'
-			
-		// Predicted willingness function predicting visits/payment in C and L
-		eststo: reg visit_post_carto p_willingness  walls_final roof_final ravine_final i.house i.stratum if t_l==1,cluster(a7)
-			estimates store L_visit_wtp
-			estadd scalar Clusters2 = `e(N_clust)'
-			sum visit_post_carto if t_l==1 & p_willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=.
-			estadd local Mean2=abs(round(`r(mean)',.001))
-			estadd scalar Observations = `e(N)'
-		eststo: reg taxes_paid p_willingness  walls_final roof_final ravine_final i.house i.stratum if t_l==1,cluster(a7)
-			estimates store L_compl_wtp
-			estadd scalar Clusters2 = `e(N_clust)'
-			sum taxes_paid if t_l==1 & p_willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=.
-			estadd local Mean2=abs(round(`r(mean)',.001))
-			estadd scalar Observations = `e(N)'
-		eststo: reg visit_post_carto p_willingness walls_final roof_final ravine_final i.house i.stratum if t_c==1,cluster(a7)
-			estimates store C_visit_wtp
-			estadd scalar Clusters2 = `e(N_clust)'
-			sum visit_post_carto if t_c==1 & p_willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=.
-			estadd local Mean2=abs(round(`r(mean)',.001))
-			estadd scalar Observations = `e(N)'
-		eststo: reg taxes_paid p_willingness walls_final roof_final ravine_final i.house i.stratum if t_c==1,cluster(a7)
-			estimates store C_compl_wtp
-			estadd scalar Clusters2 = `e(N_clust)'
-			sum taxes_paid if t_c==1 & p_willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=.
-			estadd local Mean2=abs(round(`r(mean)',.001))
-			estadd scalar Observations = `e(N)'
-			
-		esttab using "${reploutdir}/chiefs_info_wtpR3.tex", ///
-		replace label b(%9.3f) p(%9.3f) booktabs ///
-		keep (willingness p_willingness walls_final roof_final ravine_final) ///
-		order(willingness p_willingness walls_final roof_final ravine_final) ///
-		scalar(Clusters Mean  Clusters2 Mean2) sfmt(0 0 3 0 3) ///
-		nomtitles ///
-		mgroups("Visited Post Carto" "Compliance" "Visited Post Carto" "Compliance" "Visited Post Carto"  "Compliance" "Visited Post Carto" "Compliance", pattern(1 1 1 1 1 1 1 1) prefix(\multicolumn{@span}{c}{) suffix(}) span) ///
-		indicate("House FE = *house*""Stratum FE = *stratum*") ///
-		star(* 0.10 ** 0.05 *** 0.001) ///
-		nogaps nonotes compress
+	// Actual willingness predicting visits and compliance in CLI
+	eststo: reg visit_post_carto willingness p_willingness i.house i.stratum if t_cli==1,cluster(a7)
+		estadd scalar Clusters = `e(N_clust)'
+		sum visit_post_carto if t_cli==1 & willingness!=.
+		estadd local Mean=abs(round(`r(mean)',.001))
+		estadd scalar Observations = `e(N)'
+	eststo: reg taxes_paid willingness p_willingness i.house i.stratum if t_cli==1,cluster(a7)
+		estadd scalar Clusters = `e(N_clust)'
+		sum taxes_paid if t_cli==1 & willingness!=.
+		estadd local Mean=abs(round(`r(mean)',.001))
+		estadd scalar Observations = `e(N)'
+		
+	// Actual willingness predicting visits and compliance in CLI - controlling for observables
+
+	sum ravine
+	cap g ravine_final = (ravine-`r(mean)')/(`r(sd)') //standardize
+
+	eststo: reg visit_post_carto willingness p_willingness walls_final roof_final ravine_final i.house i.stratum if t_cli==1,cluster(a7)
+		estadd scalar Clusters = `e(N_clust)'
+		sum visit_post_carto if t_cli==1 & willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=.
+		estadd local Mean=abs(round(`r(mean)',.001))
+		estadd scalar Observations = `e(N)'
+	eststo: reg taxes_paid willingness p_willingness walls_final roof_final ravine_final i.house i.stratum if t_cli==1,cluster(a7)
+		estadd scalar Clusters = `e(N_clust)'
+		sum taxes_paid if t_cli==1 & willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=.
+		estadd local Mean=abs(round(`r(mean)',.001))
+		estadd scalar Observations = `e(N)'
+		
+	// Predicted willingness function predicting visits/payment in C and L
+	eststo: reg visit_post_carto p_willingness  walls_final roof_final ravine_final i.house i.stratum if t_l==1,cluster(a7)
+		estimates store L_visit_wtp
+		estadd scalar Clusters2 = `e(N_clust)'
+		sum visit_post_carto if t_l==1 & p_willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=.
+		estadd local Mean2=abs(round(`r(mean)',.001))
+		estadd scalar Observations = `e(N)'
+	eststo: reg taxes_paid p_willingness  walls_final roof_final ravine_final i.house i.stratum if t_l==1,cluster(a7)
+		estimates store L_compl_wtp
+		estadd scalar Clusters2 = `e(N_clust)'
+		sum taxes_paid if t_l==1 & p_willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=.
+		estadd local Mean2=abs(round(`r(mean)',.001))
+		estadd scalar Observations = `e(N)'
+	eststo: reg visit_post_carto p_willingness walls_final roof_final ravine_final i.house i.stratum if t_c==1,cluster(a7)
+		estimates store C_visit_wtp
+		estadd scalar Clusters2 = `e(N_clust)'
+		sum visit_post_carto if t_c==1 & p_willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=.
+		estadd local Mean2=abs(round(`r(mean)',.001))
+		estadd scalar Observations = `e(N)'
+	eststo: reg taxes_paid p_willingness walls_final roof_final ravine_final i.house i.stratum if t_c==1,cluster(a7)
+		estimates store C_compl_wtp
+		estadd scalar Clusters2 = `e(N_clust)'
+		sum taxes_paid if t_c==1 & p_willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=.
+		estadd local Mean2=abs(round(`r(mean)',.001))
+		estadd scalar Observations = `e(N)'
+		
+	esttab using "${reploutdir}/chiefs_info_wtpR3.tex", ///
+	replace label b(%9.3f) p(%9.3f) booktabs ///
+	keep (willingness p_willingness walls_final roof_final ravine_final) ///
+	order(willingness p_willingness walls_final roof_final ravine_final) ///
+	scalar(Clusters Mean  Clusters2 Mean2) sfmt(0 0 3 0 3) ///
+	nomtitles ///
+	mgroups("Visited Post Carto" "Compliance" "Visited Post Carto" "Compliance" "Visited Post Carto"  "Compliance" "Visited Post Carto" "Compliance", pattern(1 1 1 1 1 1 1 1) prefix(\multicolumn{@span}{c}{) suffix(}) span) ///
+	indicate("House FE = *house*""Stratum FE = *stratum*") ///
+	star(* 0.10 ** 0.05 *** 0.001) ///
+	nogaps nonotes compress

@@ -462,6 +462,25 @@ Properties  & 14,489  & 14,383  & 9,422 & 6,071  & 797 \tabularnewline
 \parbox{6in}{\footnotesize \textit{Notes}: This table explores the extent to which chiefs' recommendations in Central + Local Information (CLI) predict tax visits after registration and tax payment. Columns 1--5 show correlations in CLI between chiefs' recommendations and outcomes. Columns 6--9 report correlations between predicted propensity measures described in Section \ref{info_adv} and outcomes in Local (Columns 6 and 7) and Central (Columns 8 and 9).  Columns 1, 3, 6, and 8 show correlations between propensity and tax visits; Columns 2, 4, 5, 7, and 9 show correlations between propensity and compliance. Column 5 shows correlations with compliance conditional on receiving a visit after registration. All regressions include house type and randomization stratum fixed effects and cluster standard errors at the neighborhood level. Columns 3, 4, and 6--8 include controls for visible household characteristics. We show results excluding house fixed effects in Table \ref{validation_cli_control_NoHouseFE}. We discuss these results in Section \ref{predictiveness_discussion}.}
 \end{table}
 
+\begin{table}[H]
+	\textbf{\caption*{Table 8LCC: $\rightarrow$  Linear Regression + Chiefs Characteristics  \label{validation_cli_control_LC}}}
+	\centering
+	\centerfloat
+	\tiny{\input{Output/chiefs_info_payeaseLC.tex}} \newline 
+	\tiny{\input{Output/chiefs_info_wtpLC.tex}}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6.8in}{\footnotesize \textit{Notes}: This table is a replication of the results in table 8 using linear regression + chiefs characteristics. Chiefs characteristics is a set of above-the-median binaries which includes age, number of  possessions, education, how far do chiefs live to their tax collection compounds, chiefs trust in the national  and the provincial governments, trust in tax ministry, chiefs tenure greater than 10 years, dynasty status (whether chiefs have inherited the position from a family memenber),  the treatment status of 2016 etc. Everything elese at the prediction stage is the same as in the table 8 with regard to method and variables. There are two p-values reported:  between parenthesis is the p-value for the original linear regression  and the one in square brackets is from the randomization  inference.}
+\end{table}
+
+\begin{table}[H]
+	\textbf{\caption*{Table 8LCR1: $\rightarrow$  Replication of  \ref{validation_cli_control_LC} with Randomization Inference Approach \label{validation_cli_control_LCR1}}}
+	\centering
+	\centerfloat
+	\tiny{\input{Output/chiefs_info_payeaseLC_R1.tex}} \newline 
+	\tiny{\input{Output/chiefs_info_wtpLC_R1.tex}}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}: This table is a replication of the results in Table \ref{validation_cli_control_LC} using Randomization inference approach. Everything else is the same as in Table \ref{validation_cli_control_LC}. There are two p-values reported:  between parenthesis is the p-value for the original linear regression  and the one in square brackets is from the randomization  inference.}
+\end{table}
 
 %\begin{table}[H]
 %	\textbf{\caption*{Table 8R0: $\rightarrow$  Willingness and its prediction on the same scale 1 to 3  \label{validation_cli_control_R0}}}
@@ -494,7 +513,7 @@ Properties  & 14,489  & 14,383  & 9,422 & 6,071  & 797 \tabularnewline
 	\tiny{\input{Output/chiefs_info_payeaseR1.tex}} \newline 
 	\tiny{\input{Output/chiefs_info_wtpR1.tex}}
 	\usebox{\tablebox}\\[1ex]
-	\parbox{6in}{\footnotesize \textit{Notes}: This table reports the results of table 8 using randomization inference in the  regressions of panels A and B. The prediction stage is the same as in the table 8 with regard to method and variables. There are two p-values reported:  between parenthesis is the p-value for the original equation and the one in square brackets is for the randomization  inference.}
+	\parbox{6in}{\footnotesize \textit{Notes}: This table is a replication of the results in table 8 using randomization inference. The prediction stage is the same as in the table 8 with regard to method and variables. There are two p-values reported:  between parenthesis is the p-value for the original linear regression  and the one in square brackets is from the randomization  inference.}
 \end{table}
 
 \begin{table}[H]

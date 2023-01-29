@@ -3,24 +3,29 @@
 \caption*{Table 8P: Prediction Performance}
 \centering
 \centerfloat
-\begin{tabular}{|l|l|l|l|}\hline  
- \textbf{Outcome and Model}& \textbf{Accuracy}  & \textbf{MSE}  & \textbf{MAE}  \\ \hline  
- \multicolumn{4}{c}{ } \\
- \multicolumn{4}{c}{\textbf{Against The True Value}} \\\hline
-Pay Ease - Linear Regression & 57.056 & .49472001 & .45120001 \\ \hline 
-Pay Ease - Ordered Probit & 57.568001 & .46847999 & .43904001 \\ \hline 
-Pay Ease - Ordered Probit + Chiefs Characteristics  & 58.635052 & .4520987 & .42646587 \\ \hline 
-Willingness - Linear Regression & 53.150185 & .55860806 & .4985348 \\ \hline 
-Willingness - Ordered Probit & 52.930405 & .56520146 & .5021978 \\ \hline 
-Willingness - Ordered Probit + Chiefs Characteristics   & 55.201466 & .54798537 & .48131868 \\ \hline
+\begin{tabular}{|l|l|l|l|l|}\hline  
+\textbf{No} & \textbf{Outcome and Model}& \textbf{Accuracy}  & \textbf{MSE}  & \textbf{MAE}  \\ \hline  
+ \multicolumn{5}{c}{ } \\
+ \multicolumn{5}{c}{\textbf{Against The True Value}} \\\hline
+01&Pay Ease - Linear Regression (PE-LR)  & 57.056 & .49472001 & .45120001 \\ \hline 
+02&Pay Ease - Linear Regression + Chiefs Characteristics (PE-LRCC) & 57.641781 & .48606217 & .44440883 \\ \hline 
+03&Pay Ease - Ordered Probit (PE-OP) & 57.577698 & .46843961 & .43896186 \\ \hline 
+04&Pay Ease - Ordered Probit + Chiefs Characteristics (PE-OPCC) & 58.635052 & .4520987 & .42646587 \\ \hline 
+05&Willingness - Linear Regression (W-LR) & 53.150185 & .55860806 & .4985348 \\ \hline 
+06&Willingness - Linear Regression + Chiefs Characteristics (W-LRCC)  & 55.201466 & .54358977 & .47985348 \\ \hline 
+07&Willingness - Ordered Probit (W-OP)& 52.930405 & .56520146 & .5021978 \\ \hline 
+08&Willingness - Ordered Probit + Chiefs Characteristics (W-OPCC) & 55.201466 & .54798537 & .48131868 \\ \hline 
 
- \multicolumn{4}{c}{ } \\
- \multicolumn{4}{c}{\textbf{Against The Prediction From Linear Regression }} \\\hline
-Pay Ease - Ordered Probit  & 90.915749 & .09084249 & .09084249 \\ \hline 
-Pay Ease - Ordered Probit + Chiefs Characteristics & 87.655678 & .12344322 & .12344322 \\ \hline 
-Willingness - Ordered Probit & 96.849815 & .03150183 & .03150183 \\ \hline 
-Willingness - Ordered Probit + Chiefs Characteristics & 85.384613 & .14615385 & .14615385 \\ \hline 
+ \multicolumn{5}{c}{ } \\
+\multicolumn{5}{c}{\textbf{Against The Prediction From Linear Regression }} \\\hline
+
+09&PE-LRCC versus PE-LR  & 87.435898 & .12564103 & .12564103 \\ \hline 
+10&PE-OP versus PE-LR  & 90.915749 & .09084249 & .09084249 \\ \hline 
+11&PE-OPCC versus PE-LR  & 87.655678 & .12344322 & .12344322 \\ \hline 
+12&W-LRCC versus W-LR  & 85.824173 & .14175825 & .14175825 \\ \hline 
+13&W-OP versus W-LR  & 96.849815 & .03150183 & .03150183 \\ \hline 
+14&W-OPCC versus W-LR  & 85.384613 & .14615385 & .14615385 \\ \hline 
   \end{tabular}
 \usebox{\tablebox}\\[1ex]
-\parbox{6in}{\small \textit{Notes}: This table reports the performance metrics of Odered Probit to the Linear Regression predictions. The first panel compare the predictions to the true value of paye ease and willingness. The second panel compares the ordered probit to the one from the linear regression.}
+\parbox{7.5in}{\small \textit{Notes}: This table reports the Pay Easerformance metrics of the predictions from ordered probit to the one from a linear regression and arbitratry thresholds. The first panel compare all the predictions to the true value of  \enquote{pay ease} and \enquote{willingness}. The second panel compares the ordered probit predictions  to the prediction from the linear regression and arbitrary thresholds.}
 \end{table}
