@@ -1,0 +1,13 @@
+Table 6R1,,,,
+,(1),(2),(3),(4)
+,Visited Post Carto,Visits Post Carto,Visited Other Contact,Visits Other Contact
+,b/se/pvalues,b/se/pvalues,b/se/pvalues,b/se/pvalues
+Local,-0.00901,0.0138,0.00819,0.0187
+,(0.0258),(0.0459),(0.00673),(0.0125)
+,[0.739],[0.773],[0.295],[0.215]
+Month FE ,Yes,Yes,Yes,Yes
+House FE ,Yes,Yes,Yes,Yes
+Stratum FE ,Yes,Yes,Yes,Yes
+Observations,18162,18151,3513,3513
+Clusters,209,209,206,206
+Mean,.417,.552,.025,.039

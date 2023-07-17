@@ -1,0 +1,25 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{6}{c}}
+\toprule
+                &\multicolumn{1}{c}{Tax Compliance}&\multicolumn{1}{c}{Tax Amount}&\multicolumn{1}{c}{Visited}&\multicolumn{1}{c}{Visits}&\multicolumn{1}{c}{Compliance}&\multicolumn{1}{c}{Compliance}\\
+                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}&\multicolumn{1}{c}{(6)}\\
+                &b/se/pvalues&b/se/pvalues&b/se/pvalues&b/se/pvalues&b/se/pvalues&b/se/pvalues\\
+\midrule
+Central + Chief Info&   0.0242&    46.57&  -0.0162&  -0.0255&   0.0264&   0.0221\\
+                &(0.00914)&  (21.20)& (0.0279)& (0.0441)& (0.0140)&(0.00909)\\
+                &  [0.032]&  [0.083]&  [0.622]&  [0.619]&  [0.851]&  [0.024]\\
+Local           &         &         &         &         &         &   0.0462\\
+                &         &         &         &         &         &(0.00688)\\
+                &         &         &         &         &         &         \\
+Time FE         &      Yes&      Yes&      Yes&      Yes&      Yes&      Yes\\
+House FE        &      Yes&      Yes&      Yes&      Yes&      Yes&      Yes\\
+Stratum FE      &      Yes&      Yes&      Yes&      Yes&      Yes&      Yes\\
+\midrule
+Observations    &    20636&    20636&    13884&    13877&     5283&    33746\\
+Clusters        &      165&      165&      163&      163&      161&      267\\
+Mean            &     .051&   150.66&     .387&     .497&     .097&     .052\\
+CLIvC\_p         &         &         &         &         &         &.0073865172467853\\
+\bottomrule
+\end{tabular}
+}

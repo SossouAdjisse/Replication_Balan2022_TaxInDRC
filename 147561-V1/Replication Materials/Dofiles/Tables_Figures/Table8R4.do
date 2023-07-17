@@ -263,8 +263,15 @@
 	duplicates drop compound_code, force 
 	rename  compound_code compound1
 	drop if compound1 == .
+
+preserve
+	quietly do "$repldodir//Tables_Figures/combined_data_ChiefChars_FromTableA8_A14_A15_A27.do"
+	tempfile ChiefCharsTableA8
+	save `ChiefCharsTableA8'
+restore
+
 	
-	merge m:1 compound1 using "/Users/sossousimpliceadjisse/Documents/myfiles/PaulMoussaReplicationProject/147561-V1/Replication Materials/Data/03_clean_combined/combined_data_ChiefChars_FromTableA8_A14_A15_A27.dta", ///
+	merge m:1 compound1 using `ChiefCharsTableA8', ///
 	keepusing(age_chef possessions_nb_chef educ_yrs_chef educ_lvl chef_locality chef_minority_ethnic chef_know_2016tax chef_pprd chef_party chef_udps col_gov_integrity col_view_gov_gen col_view_gov_nbhd  col_trust_dgrkoc col_trust_gov  chef_know_fired chef_gov_job chef_tenure chef_established chef_fam age_chef_hi possessions_nb_chef_hi educ_yrs_chef_hi chef_minority_ethnic chef_locality chef_established chef_fam remoteness_hi chefferie chef_party chef_pprd chef_udps chef_gov_job chef_trust_gov_hi chef_trust_dgrkoc_hi col_view_gov_gen_hi col_view_gov_nbhd_hi col_gov_integrity_hi chef_know_fired chef_know_2016tax tmt_2016 evaluation_hi connections_hi activity_hi) update replace force
 	
 keep if _merge > 2

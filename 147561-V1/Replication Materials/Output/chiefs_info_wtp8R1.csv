@@ -1,0 +1,25 @@
+,(1),(2),(3),(4),(5),(6),(7),(8)
+,Visited Post Carto,Compliance,Visited Post Carto,Compliance,Visited Post Carto,Compliance,Visited Post Carto,Compliance
+,b/se/pvalues,b/se/pvalues,b/se/pvalues,b/se/pvalues,b/se/pvalues,b/se/pvalues,b/se/pvalues,b/se/pvalues
+Willingness,0.0342,0.0374,0.0329,0.0384,,,,
+,(0.0114),(0.00731),(0.0116),(0.00780),,,,
+,[0.004],[0.000],[0.004],[0.000],,,,
+Predicted Willingness to pay,,,,,0.0370,0.0320,0.0160,0.0263
+,,,,,(0.0205),(0.0114),(0.0158),(0.00851)
+,,,,,[0.046],[0.002],[0.431],[0.006]
+Wall quality,,,0.0216,0.0210,0.0118,0.0153,0.0245,0.0119
+,,,(0.0130),(0.00851),(0.0109),(0.00682),(0.0106),(0.00468)
+,,,,,,,,
+Roof quality,,,0.0107,0.000728,0.00615,0.000972,0.0180,-0.00979
+,,,(0.00801),(0.00226),(0.00796),(0.00440),(0.00792),(0.00622)
+,,,,,,,,
+Erosion threat,,,0.0165,-0.00496,-0.00325,-0.0112,-0.00213,-0.00525
+,,,(0.0118),(0.00458),(0.0121),(0.00722),(0.0100),(0.00474)
+,,,,,,,,
+House FE ,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Stratum FE ,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Observations,3933,5521,3929,4461,4980,4994,4820,4826
+Clusters,50,50,50,50,,,,
+Mean,.357,.062,.357,.066,,,,
+Clusters2,,,,,,,,
+Mean2,,,,,,,,

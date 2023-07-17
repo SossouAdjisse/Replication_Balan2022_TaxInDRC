@@ -1,0 +1,19 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{4}{c}}
+\toprule
+                &\multicolumn{1}{c}{Tax Compliance}&\multicolumn{1}{c}{Tax Compliance}&\multicolumn{1}{c}{Tax Compliance}&\multicolumn{1}{c}{Tax Compliance}\\
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         \\
+\midrule
+Local           &    0.020         &    0.033\sym{**} &    0.034\sym{**} &    0.044\sym{**} \\
+                &  (0.016)         &  (0.014)         &  (0.014)         &  (0.018)         \\
+Month FE        &       No         &      Yes         &      Yes         &      Yes         \\
+House FE        &       No         &       No         &      Yes         &      Yes         \\
+Stratum FE      &      Yes         &      Yes         &      Yes         &      Yes         \\
+\midrule
+Observations    &     2530         &     2439         &     2439         &     1878         \\
+Clusters        &      221         &      213         &      213         &      212         \\
+Mean            &     .088         &     .082         &     .082         &     .103         \\
+\bottomrule
+\end{tabular}
+}

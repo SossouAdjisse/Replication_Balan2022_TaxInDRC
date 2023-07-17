@@ -1,0 +1,24 @@
+Table 8R1,,,,,,,,
+,(1),(2),(3),(4),(5),(6),(7),(8)
+,Visited Post Carto,Compliance,Visited Post Carto,Compliance,Visited Post Carto,Compliance,Visited Post Carto,Compliance
+,b/se/pvalues,b/se/pvalues,b/se/pvalues,b/se/pvalues,b/se/pvalues,b/se/pvalues,b/se/pvalues,b/se/pvalues
+Ease of payment,0.0448,0.0561,0.0287,0.0442,,,,
+,(0.0125),(0.00710),(0.0137),(0.00804),,,,
+,[0.000],[0.000],[0.006],[0.000],,,,
+Predicted Ease of payment,,,,,0.0385,0.0411,0.00361,0.0274
+,,,,,(0.0211),(0.0122),(0.0158),(0.00929)
+,,,,,[0.057],[0.000],[0.829],[0.003]
+Wall quality,,,0.0249,0.0213,0.0115,0.0148,0.0248,0.0116
+,,,(0.0124),(0.00704),(0.0110),(0.00683),(0.0106),(0.00465)
+,,,,,,,,
+Roof quality,,,0.00507,-0.0000608,0.00599,0.000863,0.0180,-0.00993
+,,,(0.00612),(0.00180),(0.00794),(0.00438),(0.00795),(0.00633)
+,,,,,,,,
+Erosion threat,,,0.0172,-0.00352,-0.00338,-0.0114,-0.00181,-0.00506
+,,,(0.0109),(0.00442),(0.0121),(0.00712),(0.0101),(0.00474)
+,,,,,,,,
+House FE ,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Stratum FE ,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
+Observations,5574,8135,4551,5150,4980,4994,4820,4826
+Clusters,79,80,66,66,,,,
+Mean,.376,.072,.352,.065,,,,

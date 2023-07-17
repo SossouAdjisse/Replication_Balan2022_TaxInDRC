@@ -1,0 +1,13 @@
+Table 4R1,,,,,
+,(1),(2),(3),(4),(5)
+,Tax Compliance,Tax Compliance,Tax Compliance,Tax Compliance,Tax Compliance
+,b/se/pvalues,b/se/pvalues,b/se/pvalues,b/se/pvalues,b/se/pvalues
+Local,0.0226,0.0322,0.0320,0.0331,0.0396
+,(0.00809),(0.00715),(0.00830),(0.00719),(0.00827)
+,[0.016],[0.001],[0.000],[0.001],[0.000]
+Month FE ,No,Yes,Yes,Yes,Yes
+House FE ,No,No,No,Yes,Yes
+Stratum FE ,Yes,Yes,Yes,Yes,Yes
+Observations,28872,27764,213,27764,23803
+Clusters,221,213,,213,213
+Mean,.068,.063,.065,.063,.073

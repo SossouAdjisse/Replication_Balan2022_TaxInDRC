@@ -1,0 +1,30 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{5}{c}}
+\toprule
+                &\multicolumn{1}{c}{Paid - Periph}&\multicolumn{1}{c}{Paid - MM}&\multicolumn{1}{c}{HQ - Visited}&\multicolumn{1}{c}{HQ - Paid}&\multicolumn{1}{c}{Income - Visited}\\
+                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}&\multicolumn{1}{c}{(5)}\\
+                &b/se/pvalues&b/se/pvalues&b/se/pvalues&b/se/pvalues&b/se/pvalues\\
+\midrule
+Local           &   0.0363&  0.00164&   -0.146&  0.00193&  -0.0630\\
+                &(0.00803)& (0.0128)& (0.0566)& (0.0418)&  (0.167)\\
+                &  [0.001]&  [0.903]&  [0.018]&  [0.962]&  [0.695]\\
+a7\_hq\_y         &         &         &    0.940&         &         \\
+                &         &         & (0.0407)&         &         \\
+                &         &         &         &         &         \\
+a7\_inc\_mo\_avg   &         &         &         & 0.000598&         \\
+                &         &         &         & (0.0204)&         \\
+                &         &         &         &         &         \\
+a7\_econ\_ind     &         &         &         &         &    0.289\\
+                &         &         &         &         &  (0.270)\\
+                &         &         &         &         &         \\
+Month FE        &      Yes&      Yes&      Yes&      Yes&      Yes\\
+House FE        &       No&       No&      Yes&      Yes&      Yes\\
+Stratum FE      &      Yes&      Yes&      Yes&      Yes&      Yes\\
+\midrule
+Observations    &    24380&     3384&     1310&      228&      228\\
+Clusters        &      208&      150&      157&      121&      121\\
+Mean            &     .064&     .062&     .099&     .007&     .118\\
+\bottomrule
+\end{tabular}
+}

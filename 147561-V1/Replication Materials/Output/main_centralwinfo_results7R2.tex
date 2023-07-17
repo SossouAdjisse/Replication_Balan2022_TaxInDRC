@@ -1,0 +1,28 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{7}{c}}
+\toprule
+                &\multicolumn{1}{c}{Tax Compliance}&\multicolumn{1}{c}{Tax Amount}&\multicolumn{1}{c}{Visited}&\multicolumn{1}{c}{Visits}&\multicolumn{1}{c}{Compliance}&\multicolumn{1}{c}{Compliance}&\multicolumn{1}{c}{Compliance}\\
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         &\multicolumn{1}{c}{(6)}         &\multicolumn{1}{c}{(7)}         \\
+\midrule
+Central Plus Local Info&    0.029\sym{*}  &   39.844         &   -0.061         &   -0.063         &    0.005         &    0.035\sym{**} &   50.228         \\
+                &  (0.015)         & (34.943)         &  (0.039)         &  (0.069)         &  (0.030)         &  (0.015)         & (41.740)         \\
+Local           &                  &                  &                  &                  &                  &    0.052\sym{***}&  141.085\sym{**} \\
+                &                  &                  &                  &                  &                  &  (0.013)         & (53.612)         \\
+Not very much confidence&    0.007         &   90.243         &   -0.032         &   -0.023         &    0.091         &   -0.012         &  -34.970         \\
+                &  (0.029)         &(127.200)         &  (0.064)         &  (0.113)         &  (0.073)         &  (0.024)         &(100.461)         \\
+Some confidence &    0.032\sym{*}  &   58.213         &    0.037         &    0.040         &    0.063         &    0.008         &  -11.333         \\
+                &  (0.019)         & (55.981)         &  (0.047)         &  (0.085)         &  (0.044)         &  (0.016)         & (49.419)         \\
+A lot of confidence&    0.004         &   30.414         &   -0.021         &   -0.045         &    0.040         &   -0.019         &  -60.381         \\
+                &  (0.018)         & (55.466)         &  (0.045)         &  (0.080)         &  (0.039)         &  (0.015)         & (51.165)         \\
+Time FE         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+House FE        &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+Stratum FE      &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+\midrule
+Observations    &     1791         &     1791         &     1344         &     1344         &      591         &     2973         &     2973         \\
+Clusters        &      163         &      163         &      161         &      161         &      151         &      265         &      265         \\
+Mean            &     .066         &  202.935         &      .45         &      .61         &     .112         &     .066         &     .066         \\
+CLIvC\_p         &                  &                  &                  &                  &                  &.2587289723168689         &.071013766510127         \\
+\bottomrule
+\end{tabular}
+}

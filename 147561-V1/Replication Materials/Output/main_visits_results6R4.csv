@@ -1,0 +1,11 @@
+Table 6R4,,,,
+,(1),(2),(3),(4)
+,Visited Post Carto,Visits Post Carto,Visited Other Contact,Visits Other Contact
+Local,-0.054,-0.007,0.004,0.001
+,(0.035),(0.082),(0.013),(0.029)
+Month FE ,Yes,Yes,Yes,Yes
+House FE ,Yes,Yes,Yes,Yes
+Stratum FE ,Yes,Yes,Yes,Yes
+Observations,1813,1813,1105,1105
+Clusters,208,208,188,188
+Mean,.477,.65,.036,.064

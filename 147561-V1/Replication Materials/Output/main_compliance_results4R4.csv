@@ -1,0 +1,11 @@
+Table 4R4,,,,
+,(1),(2),(3),(4)
+,Tax Compliance,Tax Compliance,Tax Compliance,Tax Compliance
+Local,0.020,0.033**,0.034**,0.044**
+,(0.016),(0.014),(0.014),(0.018)
+Month FE ,No,Yes,Yes,Yes
+House FE ,No,No,Yes,Yes
+Stratum FE ,Yes,Yes,Yes,Yes
+Observations,2530,2439,2439,1878
+Clusters,221,213,213,212
+Mean,.088,.082,.082,.103

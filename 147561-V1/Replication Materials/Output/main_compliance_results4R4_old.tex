@@ -1,0 +1,23 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{5}{c}}
+\toprule
+                &\multicolumn{1}{c}{Tax Compliance}&\multicolumn{1}{c}{Tax Compliance}&\multicolumn{1}{c}{Tax Compliance}&\multicolumn{1}{c}{Tax Compliance}&\multicolumn{1}{c}{Tax Compliance}\\
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         \\
+\midrule
+Local           & 0.067977\sym{*}  & 0.062912         & 0.031222\sym{***}& 0.060294         & 0.083984         \\
+                &(0.092107)         &(0.120787)         &(0.000247)         &(0.136303)         &(0.105125)         \\
+Trust Chief     & 0.005892         & 0.000701         & 0.009570         &-0.000333         & 0.000518         \\
+                &(0.355080)         &(0.913192)         &(0.374656)         &(0.959239)         &(0.949348)         \\
+Local x Trust Chief&-0.017561         &-0.011849         &                  &-0.010674         &-0.016039         \\
+                &(0.113692)         &(0.288890)         &                  &(0.339688)         &(0.268151)         \\
+Month FE        &       No         &      Yes         &      Yes         &      Yes         &      Yes         \\
+House FE        &       No         &       No         &       No         &      Yes         &      Yes         \\
+Stratum FE      &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+\midrule
+Observations    &     2319         &     2231         &      213         &     2231         &     1699         \\
+Clusters        &      221         &      213         &                  &      213         &      212         \\
+Mean            &     .068         &     .063         &     .065         &     .063         &     .073         \\
+\bottomrule
+\end{tabular}
+}

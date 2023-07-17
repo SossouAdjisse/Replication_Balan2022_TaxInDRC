@@ -62,7 +62,7 @@ use "${repldir}/Data/03_clean_combined/analysis_data_Sossou1.dta", clear
 	estadd scalar Observations = `e(N)'
 	estadd scalar Clusters = `e(N_clust)'
 	
-	esttab using "${reploutdir}/main_compliance_resultsR2.tex", ///
+	esttab using "${reploutdir}/main_compliance_resultsR5.tex", ///
 	replace label b(%9.6f) p(%9.6f) booktabs ///
 	keep (t_l 2.trust_chief 3.trust_chief 4.trust_chief trust_chief_dum) ///
 	order(t_l 2.trust_chief 3.trust_chief 4.trust_chief trust_chief_dum) ///
@@ -121,7 +121,7 @@ use "${repldir}/Data/03_clean_combined/analysis_data_Sossou1.dta", clear
 	estadd scalar Observations = `e(N)'
 	estadd scalar Clusters = `e(N_clust)'
 	
-	esttab using "${reploutdir}/main_revenues_resultsR2.tex", ///
+	esttab using "${reploutdir}/main_revenues_resultsR5.tex", ///
 	replace label b(%9.6f) p(%9.6f) booktabs ///
 	keep (t_l 2.trust_chief 3.trust_chief 4.trust_chief trust_chief) ///
 	order(t_l 2.trust_chief 3.trust_chief 4.trust_chief trust_chief) ///

@@ -74,8 +74,6 @@ ren educ_yrs educ_yrs_chef
 egen possessions_nb=rowtotal(possessions_1 possessions_2 possessions_3 possessions_4 possessions_5 possessions_6)
 ren possessions_nb possessions_nb_chef
 
-
-
 tempfile chef_chars
 save `chef_chars'
 
@@ -441,14 +439,6 @@ merge m:1 a7 using "${repldir}/Data/01_base/admin_data/campaign_collector_info.d
 	g `var'_av = `r(mean)'  // Added by Sossou
 	}
 	
-* Added by Sossou 
-preserve
-* Saving the data used to extract chiefs characteristics for Table 8R3
-drop if compound1 == .
-duplicates drop compound1, force
-save "${repldir}/Data/03_clean_combined/combined_data_ChiefChars_FromTableA8_A14_A15_A27.dta", replace	
-restore
-
 
 	global chief_chars = "age_chef_hi possessions_nb_chef_hi educ_yrs_chef_hi chef_minority_ethnic"
 	global chief_strength = "chef_locality chef_established chef_fam remoteness_hi chefferie"

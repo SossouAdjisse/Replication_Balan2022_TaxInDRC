@@ -361,7 +361,7 @@
 			estadd scalar Observations = `e(N)'
 			
 		esttab using "${reploutdir}/chiefs_info_payease.tex", ///
-		replace label b(%9.3f) p(%9.3f) booktabs ///
+		replace label b(%9.3f) se(%9.3f) ///
 		keep (pay_ease p_pay_ease walls_final roof_final ravine_final) ///
 		order(pay_ease p_pay_ease walls_final roof_final ravine_final) ///
 		scalar(Clusters Mean) sfmt(0 0 3) ///
@@ -442,7 +442,7 @@
 			estadd scalar Observations = `e(N)'
 			
 		esttab using "${reploutdir}/chiefs_info_wtp.tex", ///
-		replace label b(%9.3f) p(%9.3f) booktabs ///
+		replace label b(%9.3f) se(%9.3f) ///
 		keep (willingness p_willingness walls_final roof_final ravine_final) ///
 		order(willingness p_willingness walls_final roof_final ravine_final) ///
 		scalar(Clusters Mean  Clusters2 Mean2) sfmt(0 0 3 0 3) ///
