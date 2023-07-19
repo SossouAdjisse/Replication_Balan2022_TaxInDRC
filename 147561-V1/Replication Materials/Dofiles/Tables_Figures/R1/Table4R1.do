@@ -215,7 +215,7 @@ use "${repldir}/Data/03_clean_combined/analysis_data.dta", clear
 	replace label b(%9.3f) se(%9.3f) ///
 	keep (2.tmt) ///
 	order(2.tmt) /// 
-	cells("b(fmt(a3))"  "p(fmt(a3) par)" "pvalues(fmt(%9.3f) par([ ]))") ///
+	cells("b(fmt(a3))"  "se(fmt(a3) par)" "pvalues(fmt(%9.3f) par([ ]))") ///
 	scalar(Clusters Mean) sfmt(0 3 3) ///
 	mtitles("Revenues" "Revenues" "Revenues" "Revenues" "Revenues") ///
 	indicate("Month FE = *2mo*""House FE = *house*""Stratum FE = *stratum*") ///
