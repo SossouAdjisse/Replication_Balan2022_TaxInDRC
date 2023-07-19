@@ -425,7 +425,7 @@
 			estadd scalar Observations = `e(N)'
 			
 	* Latex Output
-		esttab  r1 r2 r3 r4 r5 r6 r7 r8 using "${reploutdir}/chiefs_info_payease8R1.tex", ///
+		esttab  r1 r2 r3 r4 r5 r6 r7 r8 using "${reploutdir}/chiefs_info_payease8R11.tex", ///
 		replace label b(%9.3f) se(%9.3f) booktabs ///
 		keep (pay_ease p_pay_ease walls_final roof_final ravine_final) ///
 		order(pay_ease p_pay_ease walls_final roof_final ravine_final) ///
@@ -438,7 +438,7 @@
 		nogaps nonotes compress
 		
 	* CSV Outpout 
-		esttab  r1 r2 r3 r4 r5 r6 r7 r8 using "${reploutdir}/chiefs_info_payease8R1.csv", ///
+		esttab  r1 r2 r3 r4 r5 r6 r7 r8 using "${reploutdir}/chiefs_info_payease8R11.csv", ///
 		replace label b(%9.3f) se(%9.3f) ///
 		keep (pay_ease p_pay_ease walls_final roof_final ravine_final) ///
 		order(pay_ease p_pay_ease walls_final roof_final ravine_final) ///
@@ -574,7 +574,7 @@
 			estadd scalar Observations = `e(N)'
 			
 			* Latex output
-		esttab r11 r21 r31 r41 r51 r61 r71 r81 using "${reploutdir}/chiefs_info_wtp8R1.tex", ///
+		esttab r11 r21 r31 r41 r51 r61 r71 r81 using "${reploutdir}/chiefs_info_wtp8R11.tex", ///
 		replace label b(%9.3f) se(%9.3f) booktabs ///
 		keep (willingness p_willingness walls_final roof_final ravine_final) ///
 		order(willingness p_willingness walls_final roof_final ravine_final) ///
@@ -587,7 +587,7 @@
 		nogaps nonotes compress
 		
 		* CSV output
-		esttab r11 r21 r31 r41 r51 r61 r71 r81 using "${reploutdir}/chiefs_info_wtp8R1.csv", ///
+		esttab r11 r21 r31 r41 r51 r61 r71 r81 using "${reploutdir}/chiefs_info_wtp8R11.csv", ///
 		replace label b(%9.3f) se(%9.3f) ///
 		keep (willingness p_willingness walls_final roof_final ravine_final) ///
 		order(willingness p_willingness walls_final roof_final ravine_final) ///

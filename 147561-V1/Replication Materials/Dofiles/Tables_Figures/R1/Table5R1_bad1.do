@@ -7,7 +7,7 @@
 ******************
 
 	use "${repldir}/Data/03_clean_combined/analysis_data.dta", clear
-	* keep if tmt==1 | tmt==2 | tmt==3
+	keep if tmt==1 | tmt==2 | tmt==3
 
 	* Outcomes
 	gen enum_disagrees_exempt=0 if exempt_enum!=. & exempt!=.
@@ -15,11 +15,8 @@
 
 	g house_type = 0 if house==1
 	replace house_type = 1 if house==2
-	
-	* correct ---> No = 0 (1077), Yes = 1 (44100)
-	revrs correct /* No = 2 (1077), Yes = 1 (44100) */
-	replace revcorrect = revcorrect-1 /* 0 = 0 (44100), Yes = 1 (1077)*/
-		
+	revrs correct
+	replace revcorrect = revcorrect-1
 	ren revcorrect enum_disagrees_house
 	
 	cap drop visit_post_carto
@@ -63,6 +60,7 @@
 	sa `midline'
 		
 	* Merge endline not on compound code
+
 		use "${repldir}/Data/01_base/survey_data/endline_round1_noPII.dta", clear
 		keep if tot_complete==1 
 		replace compound_code=compound_code_prev if (compound_code_prev!=. & compound_code_prev!=3)
@@ -121,7 +119,9 @@
 
 #delimit ;
 global dependent_variables =  "exempt enum_disagrees_exempt house_type enum_disagrees_house
-							   bribe_combined gap_midline bribe_endline informal_pay_endline";
+							   bribe_combined bribe_combined_amt gap_midline bribe_endline bribe_amt_endline informal_pay_endline";
+							   
+
 #delimit cr
 
 local counter = 0
@@ -129,38 +129,42 @@ eststo clear
 foreach depvar in $dependent_variables  {
 local counter = `counter' + 1
 cap confirm variable `depvar'
-	if `counter'<=2 | (`counter'==5) | (`counter'==6){
-	u `midline',clear
-	reg `depvar' i.treatment i.house i.stratum i.time_FE_tdm_2mo_CvL if inlist(treatment,1,2), cluster(a7)
-		ritest treatment _b[2.treatment], reps(1000) seed(125) cluster(a7) strata(stratum): `e(cmdline)'
+	if `counter'<=2 | (`counter'==5) | (`counter'==6) | (`counter'==7){
+	use `midline',clear
+	reg `depvar' t_l i.house i.stratum i.time_FE_tdm_2mo_CvL if inlist(treatment,1,2), cluster(a7)
+		ritest tmt _b[t_l], reps(10) seed(125) cluster(a7) strata(stratum): `e(cmdline)'
 		matrix pvalues = r(p) // save the p-values from ritest
-		mat colnames pvalues = 2.treatment  // name p-values so that esttab knows to which coefficient they belong
+		mat colnames pvalues = t_l  // name p-values so that esttab knows to which coefficient they belong
 		local p = pvalues[1,1]
-
+		* matrix pvalues = r(p) // save the p-values from ritest
+		*local p = `r(p)'
 	}
 	if `counter'==3 | `counter'==4{
-	u `midline',clear
-	reg `depvar' i.treatment i.stratum i.time_FE_tdm_2mo_CvL if inlist(treatment,1,2), cluster(a7)
-		ritest treatment _b[2.treatment], reps(1000) seed(125) cluster(a7) strata(stratum): `e(cmdline)'
+	use `midline',clear
+	reg `depvar' t_l i.stratum i.time_FE_tdm_2mo_CvL if inlist(treatment,1,2), cluster(a7)
+		ritest tmt _b[t_l], reps(10) seed(125) cluster(a7) strata(stratum): `e(cmdline)'
 		matrix pvalues = r(p) // save the p-values from ritest
-		mat colnames pvalues = 2.treatment  // name p-values so that esttab knows to which coefficient they belong
+		mat colnames pvalues = t_l  // name p-values so that esttab knows to which coefficient they belong
 		local p = pvalues[1,1]
+		* matrix pvalues = r(p) // save the p-values from ritest
+		*local p = `r(p)'
 
 	}
-	if `counter'==7 | (`counter'==8){
-	u `endline',clear
-	reg `depvar' i.treatment i.stratum if inlist(treatment,1,2), cluster(a7)
-		ritest treatment _b[2.treatment], reps(1000) seed(125) cluster(a7) strata(stratum): `e(cmdline)'
+	if `counter'==8 | (`counter'==9)| (`counter'==10){
+	use  `endline',clear
+	reg `depvar' t_l i.stratum if inlist(treatment,1,2), cluster(a7)
+		ritest tmt _b[t_l], reps(10) seed(125) cluster(a7) strata(stratum): `e(cmdline)'
 		matrix pvalues = r(p) // save the p-values from ritest
-		mat colnames pvalues = 2.treatment  // name p-values so that esttab knows to which coefficient they belong
+		mat colnames pvalues = t_l  // name p-values so that esttab knows to which coefficient they belong
 		local p = pvalues[1,1]
-
+		* matrix pvalues = r(p) // save the p-values from ritest
+		*local p = `r(p)'
 	}
-local beta = round(_b[2.treatment],.001)
+local beta = round(_b[t_l],.001)
 di "Beta: `beta'"
-local se = round(_se[2.treatment],.001)
+local se = round(_se[t_l],.001)
 di "SE: `se'"
-* local p = round(2*ttail(e(df_r), abs(_b[t_l]/_se[t_l])),.001)
+*local p = round(2*ttail(e(df_r), abs(_b[t_l]/_se[t_l])),.001)
 di "p-value: `p'"
 local obs = round(`e(N)',1)
 di "N:`obs'"
@@ -168,7 +172,7 @@ local clust = round(`e(N_clust)',1)
 di "Clusters:`clust'"
 local r2 = `e(r2)' 
 di "R2:`r2'"
-if `counter'<=2 | (`counter'==4) | (`counter'==5) | (`counter'==6) | (`counter'==3){
+if `counter'<=2 | (`counter'==4) | (`counter'==5) | (`counter'==6) | (`counter'==7)| (`counter'==3){
 sum `depvar' if t_c==1 & time_FE_tdm_2mo_CvL!=.
 }
 else{
@@ -178,13 +182,13 @@ local centralmean = round(`r(mean)',.001)
 di "Central mean:`centralmean'"
 
 	if `counter' == 1 { 
-		mat input reg = (`beta', `se', `p', `r2',`obs',`centralmean') 
+		mat input reg = (`beta', `se',`p', `r2',`obs',`centralmean') 
 		mat rownames reg = `depvar' 
 		mat colnames reg = beta SE p r2 N centralmean	 
 	}
 	
 	if `counter' > 1 { 
-		mat input reg`counter' = (`beta', `se',`p',`r2',`obs',`centralmean') 
+		mat input reg`counter' = (`beta', `se',`p', `r2',`obs',`centralmean') 
 		mat rownames reg`counter' = `depvar' 
 		mat colnames reg`counter' = beta SE p r2 N centralmean	 
 		mat reg = (reg \ reg`counter' )
@@ -194,10 +198,10 @@ di "Central mean:`centralmean'"
 	mat list reg 	
 	
 	cd "$reploutdir"
-	mmat2tex reg using "assessment_bribes5R1.tex", replace  ///
+	mmat2tex reg using "assessment_bribes5R1_bad.tex", replace  ///
 	colnames(beta SE p r2 N centralmean) ///
 	rownames("Assigned Exemption" "Incorrect Exemption" "Assigned High Band" "Incorrect Assignment" ///
-	"Paid Bribe (Midline)" "Gap Self v. Admin (Midline)" "Paid Bribe (Endline)" "Other Payments (Endline)") ///
+	"Paid Bribe (Midline)" "Paid Bribe Amount (Midline)" "Gap Self v. Admin (Midline)" "Paid Bribe (Endline)" "Paid Bribe Amount (Endline)" "Other Payments (Endline)") ///
 	preheader("{\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi} \begin{tabular}{l*{6}{c}} \hline\hline") ///
 	bottom("\hline\hline \end{tabular} }") ///
 	fmt(%9.3f)
@@ -414,18 +418,8 @@ global covariates = "age age2 female"
 global outcomes_with_bl =  "trust_chef trust_ngos trust_dgrkoc trust_gov pg_provide conflict_chief conflict_formal demand_chief demand_gov responsiveness_chief responsiveness_gov performance_gov help_from_chief integrity_chief integrity_gov tax_morale punish_probability"
 
 foreach depvar in $outcomes_with_bl {
-	reg `depvar'_el i.treatment i.stratum if inlist(treatment,1,2), cluster(a7)
-		ritest treatment _b[2.treatment], reps(1000) seed(125) cluster(a7) strata(stratum): `e(cmdline)'
-		matrix pvalues = r(p) // save the p-values from ritest
-		mat colnames pvalues = 2.treatment  // name p-values so that esttab knows to which coefficient they belong
-		local p = pvalues[1,1]
-
-	reg `depvar'_el i.treatment `depvar'_bl i.stratum if inlist(treatment,1,2), cluster(a7)
-		ritest treatment _b[2.treatment], reps(1000) seed(125) cluster(a7) strata(stratum): `e(cmdline)'
-		matrix pvalues = r(p) // save the p-values from ritest
-		mat colnames pvalues = 2.treatment  // name p-values so that esttab knows to which coefficient they belong
-		local p = pvalues[1,1]
-
+	reg `depvar'_el t_l i.stratum if inlist(treatment,1,2), cluster(a7)
+	reg `depvar'_el t_l `depvar'_bl i.stratum if inlist(treatment,1,2), cluster(a7)
 }
 
 
@@ -436,18 +430,8 @@ global outcomes_no_bl = "importance_chief punish_probability_all punish_severity
 
 
 foreach depvar in $outcomes_no_bl {
-	reg `depvar'_el i.treatment i.stratum if inlist(treatment,1,2), cluster(a7)
-		ritest treatment _b[2.treatment], reps(1000) seed(125) cluster(a7) strata(stratum): `e(cmdline)'
-		matrix pvalues = r(p) // save the p-values from ritest
-		mat colnames pvalues = 2.treatment  // name p-values so that esttab knows to which coefficient they belong
-		local p = pvalues[1,1]
-
-	reg `depvar'_el i.treatment i.stratum $covariates if inlist(treatment,1,2), cluster(a7)
-		ritest treatment _b[2.treatment], reps(1000) seed(125) cluster(a7) strata(stratum): `e(cmdline)'
-		matrix pvalues = r(p) // save the p-values from ritest
-		mat colnames pvalues = 2.treatment  // name p-values so that esttab knows to which coefficient they belong
-		local p = pvalues[1,1]
-
+	reg `depvar'_el t_l i.stratum if inlist(treatment,1,2), cluster(a7)
+	reg `depvar'_el t_l i.stratum $covariates if inlist(treatment,1,2), cluster(a7)
 }
 
 * Export table
@@ -460,26 +444,16 @@ foreach depvar in $dependent_variables  {
 local counter = `counter' + 1
 cap confirm variable `depvar'_bl
 	if !_rc {
-	reg `depvar'_el i.treatment `depvar'_bl i.stratum if inlist(treatment,1,2), cluster(a7)
-		ritest treatment _b[2.treatment], reps(1000) seed(125) cluster(a7) strata(stratum): `e(cmdline)'
-		matrix pvalues = r(p) // save the p-values from ritest
-		mat colnames pvalues = 2.treatment  // name p-values so that esttab knows to which coefficient they belong
-		local p = pvalues[1,1]
-
+	reg `depvar'_el t_l `depvar'_bl i.stratum if inlist(treatment,1,2), cluster(a7)
 	}
 	else {
-	reg `depvar'_el i.treatment i.stratum if inlist(treatment,1,2), cluster(a7)
-		ritest treatment _b[2.treatment], reps(1000) seed(125) cluster(a7) strata(stratum): `e(cmdline)'
-		matrix pvalues = r(p) // save the p-values from ritest
-		mat colnames pvalues = 2.treatment  // name p-values so that esttab knows to which coefficient they belong
-		local p = pvalues[1,1]
-
+	reg `depvar'_el t_l i.stratum if inlist(treatment,1,2), cluster(a7)
 	}
-local beta = round(_b[2.treatment],.001)
+local beta = round(_b[t_l],.001)
 di "Beta: `beta'"
-local se = round(_se[2.treatment],.001)
+local se = round(_se[t_l],.001)
 di "SE: `se'"
-* local p = round(2*ttail(e(df_r), abs(_b[t_l]/_se[t_l])),.001)
+local p = round(2*ttail(e(df_r), abs(_b[t_l]/_se[t_l])),.001)
 di "p-value: `p'"
 local obs = round(`e(N)',1)
 di "N:`obs'"
@@ -498,7 +472,7 @@ di "Central mean:`centralmean'"
 	}
 	
 	if `counter' > 1 { 
-		mat input reg`counter' = (`beta', `se',`p',`r2',`obs',`centralmean') 
+		mat input reg`counter' = (`beta', `se',`p', `r2',`obs',`centralmean') 
 		mat rownames reg`counter' = `depvar' 
 		mat colnames reg`counter' = beta SE p r2 N centralmean	 
 		mat reg = (reg \ reg`counter' )
@@ -508,7 +482,7 @@ di "Central mean:`centralmean'"
 	mat list reg 	
 	
 	cd "$reploutdir"
-	mmat2tex reg using "attitudes5R1.tex", replace  ///
+	mmat2tex reg using "attitudes5R1_bad.tex", replace  ///
 	colnames(beta SE p r2 N centralmean) ///
 	rownames("View of government (index)" "Trust in government" "Responsiveness of government" "Performance of government" "Integrity of government" "Perceived tax compliance on avenue" "Trust in tax ministry" "Property tax morale" "Fairness of property taxation" "Perception of enforcement") ///
 	preheader("{\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi} \begin{tabular}{l*{6}{c}} \hline\hline") ///

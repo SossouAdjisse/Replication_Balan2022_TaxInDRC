@@ -242,7 +242,7 @@ Properties  & 14,489  & 14,383  & 9,422 & 6,071  & 797 \tabularnewline
 \end{table}
 
 \begin{table}[H]
-	\textbf{\caption*{\label{Table_CvL_Compliance_edited_Replicated} Table 4R1:  $\rightarrow$  Randomization Inference}}
+	\textbf{\caption*{\label{Table_CvL_Compliance_edited_4R1} Table 4R1:  $\rightarrow$  Randomization Inference}}
 	\centering
 	\small{\input{Output/main_compliance_results4R1.tex}}
 	\small{\input{Output/main_revenues_results4R1.tex}}
@@ -259,24 +259,45 @@ Properties  & 14,489  & 14,383  & 9,422 & 6,071  & 797 \tabularnewline
 %	\parbox{6in}{\footnotesize \textit{Notes}: Table 4 repliacted  using randomization inference on the sample that the authors used. There are two p-values reported. The first one in parenthesis is from the simple regression. The second one  in square brackets is from the randomization inference estimation using the ritest command in Stata. The RI was repeated 1000 with seed 125. All other controls are the same as the ones used by the authors in the original table. The dofile of this table is name \enquote{Table4RI.do}}
 %\end{table}
 
-\begin{table}[H]
-	\textbf{\caption *{\label{Table_CvL_Compliance_edited_Rbaseline} Table 4R2: $\rightarrow$ Restricted to Baseline Only + Randomization Inference }}
-	\centering
-	\small{\input{Output/main_compliance_resultsR2.tex}}
-	\small{\input{Output/main_revenues_resultsR2.tex}}
-	\usebox{\tablebox}\\[1ex]
-	\parbox{6in}{\footnotesize \textit{Notes}: Table 4 repliacted by restricting to respondents in the baseline sample. There are two p-values reported. The first one in parenthesis is from the simple regression. The second one  in square brackets is from the randomization inference estimation using the ritest command in Stata. The RI was repeated 1000 with seed 125. All other controls are the same as the ones used by the authors in the original table. The dofile of this table is name \enquote{Table4Rbaseline.do}}
-\end{table}
 
 \begin{table}[H]
-	\textbf{\caption *{\label{Table_CvL_Compliance_edited_Rbaseline} Table 4R2 new: $\rightarrow$ Controlling for Trust in Cheifs (Restricted to Baseline Only) }}
+	\textbf{\caption *{\label{Table_CvL_Compliance_edited_Rbaseline_4R2} Table 4R2: $\rightarrow$ Controlling for chiefs characteristics}}
 	\centering
-	\small{\input{Output/main_compliance_results4R2_new.tex}}
-	\small{\input{Output/main_revenues_results4R2_new.tex}}
+	\small{\input{Output/main_compliance_results4R2.tex}}
+	\small{\input{Output/main_revenues_results4R2.tex}}
 	\usebox{\tablebox}\\[1ex]
-	\parbox{6in}{\footnotesize \textit{Notes}: }
-	% Table 4 repliacted by restricting to respondents in the baseline sample. There are two p-values reported. The first one in parenthesis is from the simple regression. The second one  in square brackets is from the randomization inference estimation using the ritest command in Stata. The RI was repeated 1000 with seed 125. All other controls are the same as the ones used by the authors in the original table. The dofile of this table is name \enquote{Table4Rbaseline.do}
+	\parbox{6in}{\footnotesize \textit{Notes}: Table 4 repliacted}
 \end{table}
+
+
+
+\begin{table}[H]
+	\textbf{\caption *{\label{Table_CvL_Compliance_edited_Rbaseline_4R4} Table 4R4: $\rightarrow$ Restricting to Baseline}}
+	\centering
+	\small{\input{Output/main_compliance_results4R4.tex}}
+	\small{\input{Output/main_revenues_results4R4.tex}}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}: Table 4 repliacted}
+\end{table}
+
+%\begin{table}[H]
+%	\textbf{\caption *{\label{Table_CvL_Compliance_edited_Rbaseline_4R2} Table 4R2: $\rightarrow$ Restricted to Baseline Only + Randomization Inference }}
+%	\centering
+%	\small{\input{Output/main_compliance_resultsR2.tex}}
+%	\small{\input{Output/main_revenues_resultsR2.tex}}
+%	\usebox{\tablebox}\\[1ex]
+%	\parbox{6in}{\footnotesize \textit{Notes}: Table 4 repliacted by restricting to respondents in the baseline sample. There are two p-values reported. The first one in parenthesis is from the simple regression. The second one  in square brackets is from the randomization inference estimation using the ritest command in Stata. The RI was repeated 1000 with seed 125. All other controls are the same as the ones used by the authors in the original table. The dofile of this table is name \enquote{Table4Rbaseline.do}}
+%\end{table}
+
+%\begin{table}[H]
+%	\textbf{\caption *{\label{Table_CvL_Compliance_edited_Rbaseline} Table 4R2 new: $\rightarrow$ Controlling for Trust in Cheifs (Restricted to Baseline Only) }}
+%	\centering
+%	\small{\input{Output/main_compliance_results4R2_new.tex}}
+%	\small{\input{Output/main_revenues_results4R2_new.tex}}
+%	\usebox{\tablebox}\\[1ex]
+%	\parbox{6in}{\footnotesize \textit{Notes}: }
+%	% Table 4 repliacted by restricting to respondents in the baseline sample. There are two p-values reported. The first one in parenthesis is from the simple regression. The second one  in square brackets is from the randomization inference estimation using the ritest command in Stata. The RI was repeated 1000 with seed 125. All other controls are the same as the ones used by the authors in the original table. The dofile of this table is name \enquote{Table4Rbaseline.do}
+%\end{table}
 
 %\begin{table}[H]
 %	\textbf{\caption*{\label{Table_CvL_Compliance_edited_R2} Table 4 Replicated:  $\rightarrow$ Controling for Trust in Chief}}
@@ -288,43 +309,42 @@ Properties  & 14,489  & 14,383  & 9,422 & 6,071  & 797 \tabularnewline
 %\end{table}
 %
 %
-\begin{table}[H]
-	\textbf{\caption*{\label{Table_CvL_Compliance_edited_R3_old} Table 4R3 (old version): \ref{Table_CvL_Compliance_edited} $\rightarrow$ Controling for Trust in Chief, and Local x Trust Chief}}
-	\centering
-	\small{\input{Output/main_compliance_resultsR3_old.tex}}
-	\small{\input{Output/main_revenues_resultsR3_old.tex}}
-	\usebox{\tablebox}\\[1ex]
-	\parbox{6in}{\footnotesize \textit{Notes}: Table 4 Replicated .}
-\end{table}
-
-\begin{table}[H]
-	\textbf{\caption*{\label{Table_CvL_Compliance_edited_R3_new} Table 4R3 (new version): \ref{Table_CvL_Compliance_edited} $\rightarrow$ Controling for Trust in Chief, and Local x Trust Chief}}
-	\centering
-	\small{\input{Output/main_compliance_resultsR3_new.tex}}
-	\small{\input{Output/main_revenues_resultsR3_new.tex}}
-	\usebox{\tablebox}\\[1ex]
-	\parbox{6in}{\footnotesize \textit{Notes}: Table 4 Replicated .}
-\end{table}
-
-
-
- \begin{table}[H]
-	\textbf{\caption*{\label{Table_CvL_Compliance_edited_R4} Table 4R4:  \ref{Table_CvL_Compliance_edited} $\rightarrow$ Using Central, and Controling for Trust in Chief, and Local x Trust Chief}}
-	\centering
-	\small{\input{Output/main_compliance_resultsR4.tex}}
-	\small{\input{Output/main_revenues_resultsR4.tex}}
-	\usebox{\tablebox}\\[1ex]
-	\parbox{6in}{\footnotesize \textit{Notes}: Table 4 Replicated .}
-\end{table}
-
- \begin{table}[H]
-	\textbf{\caption*{\label{Table_CvL_Compliance_edited_R4_new} Table 4R4 (new version ):  \ref{Table_CvL_Compliance_edited} $\rightarrow$ Using Central, and Controling for Trust in Chief, and Local x Trust Chief}}
-	\centering
-	\small{\input{Output/main_compliance_resultsR4_new.tex}}
-	\small{\input{Output/main_revenues_resultsR4_new.tex}}
-	\usebox{\tablebox}\\[1ex]
-	\parbox{6in}{\footnotesize \textit{Notes}: Table 4 Replicated .}
-\end{table}
+%\begin{table}[H]
+%	\textbf{\caption*{\label{Table_CvL_Compliance_edited_R3_old} Table 4R3 (old version): \ref{Table_CvL_Compliance_edited} $\rightarrow$ Controling for Trust in Chief, and Local x Trust Chief}}
+%	\centering
+%	\small{\input{Output/main_compliance_resultsR3_old.tex}}
+%	\small{\input{Output/main_revenues_resultsR3_old.tex}}
+%	\usebox{\tablebox}\\[1ex]
+%	\parbox{6in}{\footnotesize \textit{Notes}: Table 4 Replicated .}
+%\end{table}
+%
+%\begin{table}[H]
+%	\textbf{\caption*{\label{Table_CvL_Compliance_edited_R3_new} Table 4R3 (new version): \ref{Table_CvL_Compliance_edited} $\rightarrow$ Controling for Trust in Chief, and Local x Trust Chief}}
+%	\centering
+%	\small{\input{Output/main_compliance_resultsR3_new.tex}}
+%	\small{\input{Output/main_revenues_resultsR3_new.tex}}
+%	\usebox{\tablebox}\\[1ex]
+%	\parbox{6in}{\footnotesize \textit{Notes}: Table 4 Replicated .}
+%\end{table}
+%
+%
+% \begin{table}[H]
+%	\textbf{\caption*{\label{Table_CvL_Compliance_edited_R4} Table 4R4:  \ref{Table_CvL_Compliance_edited} $\rightarrow$ Using Central, and Controling for Trust in Chief, and Local x Trust Chief}}
+%	\centering
+%	\small{\input{Output/main_compliance_resultsR4.tex}}
+%	\small{\input{Output/main_revenues_resultsR4.tex}}
+%	\usebox{\tablebox}\\[1ex]
+%	\parbox{6in}{\footnotesize \textit{Notes}: Table 4 Replicated .}
+%\end{table}
+%
+% \begin{table}[H]
+%	\textbf{\caption*{\label{Table_CvL_Compliance_edited_R4_new} Table 4R4 (new version ):  \ref{Table_CvL_Compliance_edited} $\rightarrow$ Using Central, and Controling for Trust in Chief, and Local x Trust Chief}}
+%	\centering
+%	\small{\input{Output/main_compliance_resultsR4_new.tex}}
+%	\small{\input{Output/main_revenues_resultsR4_new.tex}}
+%	\usebox{\tablebox}\\[1ex]
+%	\parbox{6in}{\footnotesize \textit{Notes}: Table 4 Replicated .}
+%\end{table}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{landscape}
@@ -342,10 +362,10 @@ Properties  & 14,489  & 14,383  & 9,422 & 6,071  & 797 \tabularnewline
 
  Table 5 Replicated: Bribe Amount
  \begin{table}[H]
- 	\textbf{\caption*{\label{bribesviews5R1} Table 5R1:  $\rightarrow$ Add p-value, Bribe Amounst (Midline and Endline)} }
+ 	\textbf{\caption*{\label{bribesviews5R1} Table 5R1:  $\rightarrow$ Add Randomized Inference p-value } }
  	\centering
  	\input{Output/assessment_bribes5R1.tex}
- 	\input{Output/attitudes.tex}
+ 	\input{Output/attitudes5R1.tex}
  	\usebox{\tablebox}\\[1ex]
  	\parbox{6in}{\footnotesize \textit{Notes}: }
  \end{table}
@@ -735,11 +755,11 @@ B: Predicted Ease of Payment and House Quality\\
 
 
 \begin{table}[H]
-	\textbf{\caption*{\label{Table_CvL_Distribution_Incidence_Replicated} Table \ref{Table_CvL_Distribution_Incidence}  $\rightarrow$  Replicated using RI}}
+	\textbf{\caption*{\label{Table_CvL_Distribution_Incidence_Replicated} Table9R1: $\rightarrow$ Table \ref{Table_CvL_Distribution_Incidence}    Replicated using RI}}
 	\centering
 	\begin{lrbox}{\tablebox}
 		\resizebox{15cm}{!}{
-			\input{Output/main_incidence_resultsR.tex}
+			\input{Output/main_incidence_results9R1.tex}
 		}
 	\end{lrbox}
 	\usebox{\tablebox}\\[1ex]

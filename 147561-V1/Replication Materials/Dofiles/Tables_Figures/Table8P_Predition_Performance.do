@@ -148,11 +148,6 @@ replace Model = "W-LRCC vs W-LR" if Model == "p_l_cc_willingnessag"
 replace Model = "W-OP vs W-LR" if Model == "p_oprob_willingnessag"
 replace Model = "W-OPCC vs W-LR" if Model == "p_oprob_cc_willingnessag"
 
-
-
-
-
-
 replace id = 1 if Model == "PE-LR"
 replace id = 2 if Model == "PE-LRCC"
 replace id = 3 if Model == "PE-OP"
@@ -192,7 +187,6 @@ forvalues r1 = 1(1)14{
 }
 local  count1 = `count1' + 1
 }
-
 
 
 * Output
