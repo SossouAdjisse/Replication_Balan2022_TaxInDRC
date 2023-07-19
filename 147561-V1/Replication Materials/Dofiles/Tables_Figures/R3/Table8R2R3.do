@@ -206,10 +206,12 @@
 	
 	// For prediction and appendix table (also show alternate definition with different dummies)
 	
+/*
 	 * Added by Sossou
 	recode willingness (1=0 "Pas du tout")(2=1 "Un peu")(3=2 "Beaucoup")(else=.), gen(willingness1)
 	drop willingness
 	rename willingness1 willingness
+*/
 
 
 	
@@ -298,6 +300,13 @@ chef_type hh_head born_kga compound_chef compound_assis edu2 work_gov salongo_ac
 	*global covs_addition2 = "i.gov_perform i.chef_perform i.trust_gov i.trust_dgrkoc i.trust_chef" // Few observation 
 	
 	global chief_chars = "age_chef_hi possessions_nb_chef_hi educ_yrs_chef_hi remoteness_hi chef_trust_gov_hi chef_trust_dgrkoc_hi col_view_gov_gen_hi col_view_gov_nbhd_hi col_gov_integrity_hi tmt_2016 chef_fam chef_tenure_hi"
+	
+	
+	/*
+	Variable defitions (above-the-median binaries):
+	-  age_chef_hi: age, 
+	- number of  possessions, education, how far do chiefs live to their tax collection compounds, chiefs trust in the national  and the provincial governments, trust in tax ministry, chiefs tenure greater than 10 years, dynasty status (whether chiefs have inherited the position from a family memenber),  the treatment status of 2016 etc.
+	*/
 	*global chief_chars2 = "chef_minority_ethnic chef_locality chef_established chef_fam chef_party chef_pprd chef_udps chef_gov_job chef_know_fired chef_know_2016tax"
 	
 		
@@ -354,12 +363,12 @@ chef_type hh_head born_kga compound_chef compound_assis edu2 work_gov salongo_ac
 	eststo clear
 		
 	// Actual pay ease predicting visits and compliance in CLI
-	eststo: reg visit_post_carto pay_ease p_pay_ease i.house i.stratum if t_cli==1,cluster(a7)
+	eststo: reg visit_post_carto pay_ease  i.house i.stratum if t_cli==1,cluster(a7)
 		estadd scalar Clusters = `e(N_clust)'
 		sum visit_post_carto if t_cli==1 & pay_ease!=.
 		estadd local Mean=abs(round(`r(mean)',.001))
 		estadd scalar Observations = `e(N)'
-	eststo: reg taxes_paid pay_ease  p_pay_ease i.house i.stratum if t_cli==1,cluster(a7)
+	eststo: reg taxes_paid pay_ease   i.house i.stratum if t_cli==1,cluster(a7)
 		estadd scalar Clusters = `e(N_clust)'
 		sum taxes_paid if t_cli==1 & pay_ease!=.
 		estadd local Mean=abs(round(`r(mean)',.001))
@@ -367,12 +376,12 @@ chef_type hh_head born_kga compound_chef compound_assis edu2 work_gov salongo_ac
 		
 	// Actual pay ease predicting visits and compliance in CLI - controlling for observables
 
-	eststo: reg visit_post_carto pay_ease p_pay_ease walls_final roof_final ravine_final i.house i.stratum if t_cli==1,cluster(a7)
+	eststo: reg visit_post_carto pay_ease walls_final roof_final ravine_final i.house i.stratum if t_cli==1,cluster(a7)
 		estadd scalar Clusters = `e(N_clust)'
 		sum visit_post_carto if t_cli==1 & pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
 		estadd local Mean=abs(round(`r(mean)',.001))
 		estadd scalar Observations = `e(N)'
-	eststo: reg taxes_paid pay_ease  p_pay_ease walls_final roof_final ravine_final i.house i.stratum if t_cli==1,cluster(a7)
+	eststo: reg taxes_paid pay_ease  walls_final roof_final ravine_final i.house i.stratum if t_cli==1,cluster(a7)
 		estadd scalar Clusters = `e(N_clust)'
 		sum taxes_paid if t_cli==1 & pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
 		estadd local Mean=abs(round(`r(mean)',.001))
@@ -444,12 +453,12 @@ chef_type hh_head born_kga compound_chef compound_assis edu2 work_gov salongo_ac
 	eststo clear
 		
 	// Actual willingness predicting visits and compliance in CLI
-	eststo: reg visit_post_carto willingness p_willingness i.house i.stratum if t_cli==1,cluster(a7)
+	eststo: reg visit_post_carto willingness  i.house i.stratum if t_cli==1,cluster(a7)
 		estadd scalar Clusters = `e(N_clust)'
 		sum visit_post_carto if t_cli==1 & willingness!=.
 		estadd local Mean=abs(round(`r(mean)',.001))
 		estadd scalar Observations = `e(N)'
-	eststo: reg taxes_paid willingness p_willingness i.house i.stratum if t_cli==1,cluster(a7)
+	eststo: reg taxes_paid willingness  i.house i.stratum if t_cli==1,cluster(a7)
 		estadd scalar Clusters = `e(N_clust)'
 		sum taxes_paid if t_cli==1 & willingness!=.
 		estadd local Mean=abs(round(`r(mean)',.001))
@@ -460,12 +469,12 @@ chef_type hh_head born_kga compound_chef compound_assis edu2 work_gov salongo_ac
 	sum ravine
 	cap g ravine_final = (ravine-`r(mean)')/(`r(sd)') //standardize
 
-	eststo: reg visit_post_carto willingness p_willingness walls_final roof_final ravine_final i.house i.stratum if t_cli==1,cluster(a7)
+	eststo: reg visit_post_carto willingness  walls_final roof_final ravine_final i.house i.stratum if t_cli==1,cluster(a7)
 		estadd scalar Clusters = `e(N_clust)'
 		sum visit_post_carto if t_cli==1 & willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=.
 		estadd local Mean=abs(round(`r(mean)',.001))
 		estadd scalar Observations = `e(N)'
-	eststo: reg taxes_paid willingness p_willingness walls_final roof_final ravine_final i.house i.stratum if t_cli==1,cluster(a7)
+	eststo: reg taxes_paid willingness  walls_final roof_final ravine_final i.house i.stratum if t_cli==1,cluster(a7)
 		estadd scalar Clusters = `e(N_clust)'
 		sum taxes_paid if t_cli==1 & willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=.
 		estadd local Mean=abs(round(`r(mean)',.001))
