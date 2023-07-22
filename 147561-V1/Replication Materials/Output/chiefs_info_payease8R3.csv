@@ -14,5 +14,5 @@ Erosion threat,,,0.017,-0.004,-0.003,-0.011,-0.002,-0.005
 House FE ,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
 Stratum FE ,Yes,Yes,Yes,Yes,Yes,Yes,Yes,Yes
 Observations,5574,8135,4551,5150,4980,4994,4820,4826
-Clusters,79,80,66,66,,,,
-Mean,.376,.072,.352,.065,,,,
+Clusters,79,80,66,66,82,82,77,77
+Mean,.376,.072,.352,.065,.449,.112,.413,.061

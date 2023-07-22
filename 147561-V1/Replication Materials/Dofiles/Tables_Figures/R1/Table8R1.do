@@ -391,7 +391,7 @@
 			est restore r5
 			estadd matrix pvalues = pvalues
 			esttab r5, cells(b p(par) pvalues(par([ ])))
-			estimates store L_visit_pay_ease
+			* estimates store L_visit_pay_ease
 			estadd scalar Clusters = `e(N_clust)'
 			sum visit_post_carto if t_l==1 & p_pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
 			estadd local Mean=abs(round(`r(mean)',.001))
@@ -404,7 +404,7 @@
 			est restore r6
 			estadd matrix pvalues = pvalues
 			esttab r6, cells(b p(par) pvalues(par([ ])))
-			estimates store L_compl_pay_ease
+			* estimates store L_compl_pay_ease
 			estadd scalar Clusters = `e(N_clust)'
 			sum taxes_paid if t_l==1 & p_pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
 			estadd local Mean=abs(round(`r(mean)',.001))
@@ -417,7 +417,7 @@
 			est restore r7 
 			estadd matrix pvalues = pvalues
 			esttab r7, cells(b p(par) pvalues(par([ ])))
-			estimates store C_visit_pay_ease
+			* estimates store C_visit_pay_ease
 			estadd scalar Clusters = `e(N_clust)'
 			sum visit_post_carto if t_c==1 & p_pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
 			estadd local Mean=abs(round(`r(mean)',.001))
@@ -430,7 +430,7 @@
 			est restore r8 
 			estadd matrix pvalues = pvalues
 			esttab r8, cells(b p(par) pvalues(par([ ])))
-			estimates store C_compl_pay_ease
+			* estimates store C_compl_pay_ease
 			estadd scalar Clusters = `e(N_clust)'
 			sum taxes_paid if t_c==1 & p_pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
 			estadd local Mean=abs(round(`r(mean)',.001))
@@ -441,7 +441,7 @@
 		replace label b(%9.3f) se(%9.3f) booktabs ///
 		keep (pay_ease p_pay_ease walls_final roof_final ravine_final) ///
 		order(pay_ease p_pay_ease walls_final roof_final ravine_final) ///
-		cells("b(fmt(a6))"  "p(fmt(a3) par)" "pvalues(fmt(%9.6f) par([ ]))") ///
+		cells("b(fmt(a3))"  "se(fmt(a3) par)" "pvalues(fmt(%9.3f) par([ ]))") ///
 		scalar(Clusters Mean) sfmt(0 0 3) ///
 		nomtitles ///
 		mgroups("Visited Post Carto" "Compliance" "Visited Post Carto" "Compliance" "Visited Post Carto" "Compliance" "Visited Post Carto"  "Compliance", pattern(1 1 1 1 1 1  1 1) prefix(\multicolumn{@span}{c}{) suffix(}) span) ///
@@ -454,7 +454,7 @@
 		replace label b(%9.3f) se(%9.3f) ///
 		keep (pay_ease p_pay_ease walls_final roof_final ravine_final) ///
 		order(pay_ease p_pay_ease walls_final roof_final ravine_final) ///
-		cells("b(fmt(a6))"  "p(fmt(a3) par)" "pvalues(fmt(%9.6f) par([ ]))") ///
+		cells("b(fmt(a3))"  "se(fmt(a3) par)" "pvalues(fmt(%9.3f) par([ ]))") ///
 		scalar(Clusters Mean) sfmt(0 0 3) ///
 		mtitles("Visited Post Carto" "Compliance" "Visited Post Carto" "Compliance" "Visited Post Carto" "Compliance" "Visited Post Carto"  "Compliance") ///
 		indicate("House FE = *house*""Stratum FE = *stratum*") ///
@@ -540,10 +540,10 @@
 			est restore r51 
 			estadd matrix pvalues = pvalues
 			esttab r51, cells(b p(par) pvalues(par([ ])))
-			estimates store L_visit_wtp
-			estadd scalar Clusters2 = `e(N_clust)'
+			* estimates store L_visit_wtp
+			estadd scalar Clusters = `e(N_clust)'
 			sum visit_post_carto if t_l==1 & p_willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=.
-			estadd local Mean2=abs(round(`r(mean)',.001))
+			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
 		
 		eststo r61: reg taxes_paid p_willingness walls_final roof_final ravine_final i.house i.stratum if t_l==1,cluster(a7)
@@ -553,10 +553,10 @@
 			est restore r61 
 			estadd matrix pvalues = pvalues
 			esttab r61, cells(b p(par) pvalues(par([ ])))
-			estimates store L_compl_wtp
-			estadd scalar Clusters2 = `e(N_clust)'
+			*estimates store L_compl_wtp
+			estadd scalar Clusters = `e(N_clust)'
 			sum taxes_paid if t_l==1 & p_willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=.
-			estadd local Mean2=abs(round(`r(mean)',.001))
+			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
 		
 		eststo r71: reg visit_post_carto p_willingness walls_final roof_final ravine_final i.house i.stratum if t_c==1,cluster(a7)
@@ -566,10 +566,10 @@
 			est restore r71 
 			estadd matrix pvalues = pvalues
 			esttab r71, cells(b p(par) pvalues(par([ ])))
-			estimates store C_visit_wtp
-			estadd scalar Clusters2 = `e(N_clust)'
+			* estimates store C_visit_wtp
+			estadd scalar Clusters = `e(N_clust)'
 			sum visit_post_carto if t_c==1 & p_willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=.
-			estadd local Mean2=abs(round(`r(mean)',.001))
+			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
 		
 		eststo r81: reg taxes_paid p_willingness walls_final roof_final ravine_final i.house i.stratum if t_c==1,cluster(a7)
@@ -579,10 +579,10 @@
 			est restore r81 
 			estadd matrix pvalues = pvalues
 			esttab r81, cells(b p(par) pvalues(par([ ])))
-			estimates store C_compl_wtp
-			estadd scalar Clusters2 = `e(N_clust)'
+			*estimates store C_compl_wtp
+			estadd scalar Clusters = `e(N_clust)'
 			sum taxes_paid if t_c==1 & p_willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=.
-			estadd local Mean2=abs(round(`r(mean)',.001))
+			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
 			
 			* Latex output
@@ -590,8 +590,8 @@
 		replace label b(%9.3f) se(%9.3f) booktabs ///
 		keep (willingness p_willingness walls_final roof_final ravine_final) ///
 		order(willingness p_willingness walls_final roof_final ravine_final) ///
-		cells("b(fmt(a6))"  "p(fmt(a3) par)" "pvalues(fmt(%9.6f) par([ ]))") ///
-		scalar(Clusters Mean  Clusters2 Mean2) sfmt(0 0 3 0 3) ///
+		cells("b(fmt(a3))"  "se(fmt(a3) par)" "pvalues(fmt(%9.3f) par([ ]))") ///
+		scalar(Clusters Mean) sfmt(0 0 3) ///
 		nomtitles ///
 		mgroups("Visited Post Carto" "Compliance" "Visited Post Carto" "Compliance" "Visited Post Carto"  "Compliance" "Visited Post Carto" "Compliance", pattern(1 1 1 1 1 1 1 1) prefix(\multicolumn{@span}{c}{) suffix(}) span) ///
 		indicate("House FE = *house*""Stratum FE = *stratum*") ///
@@ -603,8 +603,8 @@
 		replace label b(%9.3f) se(%9.3f) ///
 		keep (willingness p_willingness walls_final roof_final ravine_final) ///
 		order(willingness p_willingness walls_final roof_final ravine_final) ///
-		cells("b(fmt(a6))"  "p(fmt(a3) par)" "pvalues(fmt(%9.6f) par([ ]))") ///
-		scalar(Clusters Mean  Clusters2 Mean2) sfmt(0 0 3 0 3) ///
+		cells("b(fmt(a3))"  "se(fmt(a3) par)" "pvalues(fmt(%9.3f) par([ ]))") ///
+		scalar(Clusters Mean) sfmt(0 0 3) ///
 		mtitles("Visited Post Carto" "Compliance" "Visited Post Carto" "Compliance" "Visited Post Carto"  "Compliance" "Visited Post Carto" "Compliance") ///
 		indicate("House FE = *house*""Stratum FE = *stratum*") ///
 		star(* 0.10 ** 0.05 *** 0.001) ///
