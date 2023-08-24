@@ -4,7 +4,7 @@
 
 * Merging Prediction datasets
 use "${repldir}/Data/03_clean_combined/predictions_FromTable8R1.dta", clear /* Table 8 */
-use "${repldir}/Data/03_clean_combined/predictions_FromTable8R2.dta", clear 
+* use "${repldir}/Data/03_clean_combined/predictions_FromTable8R2.dta", clear 
 
 merge 1:1 compound_code using "${repldir}/Data/03_clean_combined/predictions_FromTable8R2.dta"
 keep if _merge == 3

@@ -15,13 +15,161 @@ use "${repldir}/Data/03_clean_combined/analysis_data.dta", clear
 	egen time_FE_tdm_2mo_CvL = cut(today_alt),at(21355 21415 21475 21532) icodes
 	
 	
+	eststo clear
+	label var t_l "Local"
+	
+*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+/*
+	Power Calculation with Paul 
+*/
+
+	* taxes_paid variable
+* 1-) Getting the intra-cluster correlation ---> How correlated observations within a cluter are to each other
+loneway taxes_paid a7 if inlist(tmt,1) /* Intraclass correlation -->  0.06091 ; CI ---> [0.04239  0.07942] */
+
+* 2-) Summarize the depend variable and its Mean and SD
+sum taxes_paid if inlist(tmt,1) /* Stanrad deviation of the dependand variable --> .2520798*/
+
+* 3-) Power calculation 
+* Power calculation for the mean taxes_paid (continuous variable)
+power twomeans 0.063 0.095, sd(0.252) n1(13668) n2(14096) k1(104) k2(109) rho(0.061) 
+power twomeans 0.063 /* Central Mean --> Table 4 */ 0.095, ///
+sd(0.252) /* SD for Central --> sum taxes_paid if inlist(tmt,1) */ ///
+n1(14489) /* number of properties in Central treatments arm */ ///
+n2(14383) /* number of properties in Local treatments arm */ ///
+k1(110) /* number of neighborhoods in the  Central treatment arm  */ ///
+k2(111) /* number of neighborhoods in the Local treatment arm  */ ///
+rho(0.042) /* intraclass correlation --> loneway taxes_paid a7 if inlist(tmt,1) */
+
+power twomeans 0.063 0.095, sd(0.252) n1(14489) n2(14383) k1(110) k2(111) rho(0.08)
+
+power twomeans 0.063 0.095, sd(0.252) n1(1234) n2(1296) k1(104) k2(109) rho(0.061) alpha(0.1)
+power twomeans 0.063 0.095, sd(0.252) n1(1234) n2(1296) k1(110) k2(111) rho(0.042)
+power twomeans 0.063 0.095, sd(0.252) n1(1234) n2(1296) k1(110) k2(111) rho(0.08)
+
+* Power calculation for the proportion taxes_paid
+power twoprop 0.06 0.09, n1(14489) n2(14383) k1(110) k2(111) rho(0.061)
+power twoprop 0.06 0.09, n1(14489) n2(14383) k1(110) k2(111) rho(0.042)
+power twoprop 0.06 0.09, n1(14489) n2(14383) k1(110) k2(111) rho(0.08)
+
+power twoprop 0.06 0.09, n1(1234) n2(1296) k1(110) k2(111) rho(0.061)
+power twoprop 0.06 0.09, n1(1234) n2(1296) k1(110) k2(111) rho(0.042)
+power twoprop 0.06 0.09, n1(1234) n2(1296) k1(110) k2(111) rho(0.08)
+
+
+
+	* taxes_paid_amt variable
+* Getting the intra-cluster correlation ---> How correlated observations within a cluter are to each other
+loneway taxes_paid_amt a7 if inlist(tmt,1) /* Intraclass correlation -->  0.03843 ; CI ---> [0.02580   0.05106] */
+* Summarize the depend variable 
+sum taxes_paid_amt if inlist(tmt,1) /* Stanrad deviation of the dependand variable --> 942.2908  */
+
+// 94 28 76 44
+// 
+
+* Restricted to the baseline 
+* Use the baseline administrative data 
+
+use "/Users/sossousimpliceadjisse/Documents/myfiles/PaulMoussaReplicationProject/147561-V1/Replication Materials/Data/01_base/admin_data/tax_payments_noPII.dta", clear
+
+gen paid_dummy = (paid == 3)
+replace paid_dummy = . if  paid != 1 &  paid != 3
+
+
+	* taxes_paid variable
+	
+* Getting the intra-cluster correlation ---> How correlated observations within a cluter are to each other
+loneway paid_dummy a7  /* Intraclass correlation -->  0.24195 ; CI ---> [ 0.18568   0.29822] */
+
+* Summarize the depend variable 
+sum paid_dummy  /* SD --> 0.2242545 ; Mean = 0.0530853 */
+
+
+
+gen paid_dum2 = paid_dummy*amountCF
+
+	* taxes_paid variable
+* Getting the intra-cluster correlation ---> How correlated observations within a cluter are to each other
+loneway paid_dum2 a7  /* Intraclass correlation -->  0.17585 ; CI ---> [0.12733   0.22438] */
+* Summarize the depend variable 
+sum paid_dum2 /* ---> SD = 662.3523 ; Mean = 129.1231 */
+
+	* Power calculation for the mean paid_dummy (continuous variable)
+power twomeans 0.0530853 0.0796, sd(0.2242545) n1(13668) n2(14096) k1(104) k2(109) rho(0.242) alpha(0.1)
+power twomeans 0.0530853 0.0796, sd(0.2242545) n1(13668) n2(14096) k1(104) k2(109) rho(0.18568) alpha(0.1)
+power twomeans 0.0530853 0.0796, sd(0.2242545) n1(13668) n2(14096) k1(104) k2(109) rho(0.29822) alpha(0.1)
+
+power twomeans 0.0530853 0.0796, sd(0.2242545) n1(1234) n2(1296) k1(104) k2(109) rho(0.242) alpha(0.1)
+power twomeans 0.0530853 0.0796, sd(0.2242545) n1(1234) n2(1296) k1(104) k2(109) rho(0.18568) alpha(0.1)
+power twomeans 0.0530853 0.0796, sd(0.2242545) n1(1234) n2(1296) k1(104) k2(109) rho(0.29822) alpha(0.1)
+
+
+
+	* Power calculation for the proportion paid_dummy
+power twoprop 0.0530853 0.0796,  n1(13668) n2(14096) k1(104) k2(109) rho(0.242) alpha(0.1)
+power twoprop 0.0530853 0.0796,  n1(13668) n2(14096) k1(104) k2(109) rho(0.18568) alpha(0.1)
+power twoprop 0.0530853 0.0796,  n1(13668) n2(14096) k1(104) k2(109) rho(0.29822) alpha(0.1)
+
+power twoprop 0.0530853 0.0796,  n1(1234) n2(1296) k1(104) k2(109) rho(0.242) alpha(0.1)
+power twoprop 0.0530853 0.0796,  n1(1234) n2(1296) k1(104) k2(109) rho(0.18568) alpha(0.1)
+power twoprop 0.0530853 0.0796,  n1(1234) n2(1296) k1(104) k2(109) rho(0.29822) alpha(0.1)
+
+
+	* Power calculation for the mean paid_dum2 (continuous variable)
+power twomeans 129.1231 186, sd(662.3523) n1(13668) n2(14096) k1(104) k2(109) rho(0.17585) alpha(0.1)
+power twomeans 129.1231 186, sd(662.3523) n1(13668) n2(14096) k1(104) k2(109) rho(0.12733) alpha(0.1)
+power twomeans 129.1231 186, sd(662.3523) n1(13668) n2(14096) k1(104) k2(109) rho(0.22438) alpha(0.1)
+
+power twomeans 129.1231 186, sd(662.3523) n1(1234) n2(1296) k1(104) k2(109) rho(0.17585) alpha(0.1)
+power twomeans 129.1231 186, sd(662.3523) n1(1234) n2(1296) k1(104) k2(109) rho(0.12733) alpha(0.1)
+power twomeans 129.1231 186, sd(662.3523) n1(1234) n2(1296) k1(104) k2(109) rho(0.22438) alpha(0.1)
+
+
+
+
+
+
+	* taxes_paid_amt variable
+* Getting the intra-cluster correlation ---> How correlated observations within a cluter are to each other
+loneway taxes_paid_amt a7 if inlist(tmt,1) /* Intraclass correlation -->  0.03843 ; CI ---> [0.02580   0.05106] */
+* Summarize the depend variable 
+sum taxes_paid_amt if inlist(tmt,1) /* Stanrad deviation of the dependand variable --> 942.2908 */
+
+
+	* Overall number of neighborhood
+* Number of neighborhood for central ---> 110 ; Local ---> 111
+* Number of properties for central ---> 14489 ; Local ---> 14383
+
+	* Number of neighborhood and properties restricted to the baseline 
+* Number of neighborhood for central ---> 110 ; Local ---> 111
+* Number of properties for central ---> 1234 ; Local ---> 1296 /* Get this from Firts part of Table4R4.do*/
+
+	* Number of neighborhood and properties restricted to the baseline (preferred specification)
+* Number of neighborhood for central ---> 104 ; Local ---> 109
+* Number of properties for central ---> 13668 ; Local ---> 14096 /* Get this from the regression */
+
+	* Number of neighborhood and properties restricted to the baseline (Restricted to the baseline)
+* Number of neighborhood for central ---> 104 ; Local ---> 109
+* Number of properties for central ---> 1167 ; Local ---> 1272 /* Get this from the regression */
+
+* Detectin neighborhood in the 
+
+reg taxes_paid_amt i.tmt i.stratum i.time_FE_tdm_2mo_CvL if inlist(tmt,1) , cl(a7) 
+reg taxes_paid_amt i.tmt i.stratum i.time_FE_tdm_2mo_CvL if inlist(tmt,2) , cl(a7) 
+
+* Baseline regression to the baseline ----> Firt part of the 
+reg taxes_paid i.tmt   i.stratum i.time_FE_tdm_2mo_CvL if inlist(tmt,1), cl(a7) 
+reg taxes_paid i.tmt   i.stratum i.time_FE_tdm_2mo_CvL if inlist(tmt,2), cl(a7)
+
+
+
+*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 **************
 * Compliance *
 **************
 // tmt = treatments : Control, Central, Local,  CLI, CXL ----> added by Sossou
-	eststo clear
-	label var t_l "Local"
-	
 
 	* Normal - Compliance - No house FE
 	eststo r11: reg taxes_paid i.tmt i.stratum if inlist(tmt,1,2), cl(a7)  

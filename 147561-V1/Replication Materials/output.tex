@@ -15,7 +15,9 @@
 \newsavebox{\tablebox}
 \usepackage{placeins}
 \usepackage{color}
-
+\usepackage{adjustbox}
+\usepackage{float}
+\usepackage{threeparttable}
 \usepackage{csquotes}
 
 \usepackage{titletoc}
@@ -150,6 +152,70 @@
 \normalsize
 
 \section{Main Tables and Figures Replicated}
+
+\clearpage
+%	\tiny{\input{Output/BaseAdminCompliance.tex}}
+\begin{table}[H]
+	\centering
+	\caption{Power - Baseline Admin - Compliance}
+	\begin{adjustbox}{max width=\textwidth}
+		\begin{threeparttable}
+			\input{Output/BaseAdminCompliance_m.tex}
+			\begin{tablenotes}[flushleft]
+				\item\hspace{-.25em}\input{Output/BaseAdminCompliance_m_note.tex}
+			\end{tablenotes}
+		\end{threeparttable}
+	\end{adjustbox}
+\end{table}
+\clearpage
+
+\clearpage
+%	\tiny{\input{Output/BaseAdminCompliance.tex}}
+\begin{table}[H]
+	\centering
+	\caption{Power - Central Analysis data - Compliance}
+	\begin{adjustbox}{max width=\textwidth}
+		\begin{threeparttable}
+			\input{Output/AnalDCentralCompliance_m.tex}
+			%			\begin{tablenotes}[flushleft]
+				%				\item\hspace{-.25em}\input{Tables/BFA/BFA_balance_new_note.tex}
+				%			\end{tablenotes}
+		\end{threeparttable}
+	\end{adjustbox}
+\end{table}
+\clearpage
+
+\clearpage
+%	\tiny{\input{Output/BaseAdminCompliance.tex}}
+\begin{table}[H]
+	\centering
+	\caption{Power - Control Analysis data - Compliance}
+	\begin{adjustbox}{max width=\textwidth}
+		\begin{threeparttable}
+			\input{Output/AnalDControlCompliance_m.tex}
+			%			\begin{tablenotes}[flushleft]
+				%				\item\hspace{-.25em}\input{Tables/BFA/BFA_balance_new_note.tex}
+				%			\end{tablenotes}
+		\end{threeparttable}
+	\end{adjustbox}
+\end{table}
+\clearpage
+
+\clearpage
+%	\tiny{\input{Output/BaseAdminCompliance.tex}}
+\begin{table}[H]
+	\centering
+	\caption{Power - Baseline, Central and Control - Revenues}
+	\begin{adjustbox}{max width=\textwidth}
+		\begin{threeparttable}
+			\input{Output/AnalDAllRevenues_m.tex}
+			%			\begin{tablenotes}[flushleft]
+				%				\item\hspace{-.25em}\input{Tables/BFA/BFA_balance_new_note.tex}
+				%			\end{tablenotes}
+		\end{threeparttable}
+	\end{adjustbox}
+\end{table}
+\clearpage
 
 \begin{table}[ht]
 \textbf{\caption{\label{table_activities} Components of the Tax Campaign and its Evaluation}} 
