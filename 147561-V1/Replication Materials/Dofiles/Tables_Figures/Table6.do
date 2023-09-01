@@ -19,6 +19,7 @@
 	gen visits_other_dummy=visits_other1a
 	replace visits_other_dummy=visits_other2a if visits_other1a==. & visits_other2a!=. 
 	label var visits_other_dummy "Talked to collectors about Property Tax"
+	
 	gen visits_other_nb=visits_other1b
 	replace visits_other_nb= visits_other2b if visits_other_nb==.
 	replace visits_other_nb=0 if visits_other_dummy==0

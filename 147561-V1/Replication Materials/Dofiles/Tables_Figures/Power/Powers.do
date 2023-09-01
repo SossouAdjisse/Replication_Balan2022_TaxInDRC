@@ -13,96 +13,7 @@ local alps "5 10"
 foreach i of local alps{
 	
 	local alp = 0.01*`i'
-	
-		* twomeans power 
 		
-	* Mean Big
-	local suffix "ptmBaseAdminAvInCor`i'b"
-	power twomeans 0.053 0.085, sd(0.224) n1(13668) n2(14096) k1(104) k2(109) rho(0.242) alpha(`alp')
-	gen M1`suffix' = `r(m1)' 
-	gen M2`suffix' = `r(m2)'
-	gen power`suffix' = `r(power)' 
-	gen alpha`suffix' = `r(alpha)'
-	gen sd`suffix' = `r(sd)'
-	gen N1`suffix' = `r(N1)'
-	gen N2`suffix' = `r(N2)'
-	gen K1`suffix' = `r(K1)'
-	gen K2`suffix' = `r(K2)'
-	gen rho`suffix' = `r(rho)'
-	
-		* Mean Small
-	local suffix "ptmBaseAdminAvInCor`i's"
-	power twomeans 0.053 0.085, sd(0.224) n1(1167) n2(1272) k1(104) k2(109) rho(0.242) alpha(`alp')
-	gen M1`suffix' = `r(m1)' 
-	gen M2`suffix' = `r(m2)'
-	gen power`suffix' = `r(power)' 
-	gen alpha`suffix' = `r(alpha)'
-	gen sd`suffix' = `r(sd)'
-	gen N1`suffix' = `r(N1)'
-	gen N2`suffix' = `r(N2)'
-	gen K1`suffix' = `r(K1)'
-	gen K2`suffix' = `r(K2)'
-	gen rho`suffix' = `r(rho)'
-	
-		* CI1 Big 
-	local suffix "ptmBaseAdminCI1InCor`i'b"
-	power twomeans 0.053 0.085, sd(0.224) n1(13668) n2(14096) k1(104) k2(109) rho(0.186) alpha(`alp')
-	gen M1`suffix' = `r(m1)' 
-	gen M2`suffix' = `r(m2)'
-	gen power`suffix' = `r(power)' 
-	gen alpha`suffix' = `r(alpha)'
-	gen sd`suffix' = `r(sd)'
-	gen N1`suffix' = `r(N1)'
-	gen N2`suffix' = `r(N2)'
-	gen K1`suffix' = `r(K1)'
-	gen K2`suffix' = `r(K2)'
-	gen rho`suffix' = `r(rho)'
-
-
-		* CI1 Small 
-	local suffix "ptmBaseAdminCI1InCor`i's"
-	power twomeans 0.053 0.085, sd(0.224) n1(1167) n2(1272) k1(104) k2(109) rho(0.186) alpha(`alp')
-	gen M1`suffix' = `r(m1)' 
-	gen M2`suffix' = `r(m2)'
-	gen power`suffix' = `r(power)' 
-	gen alpha`suffix' = `r(alpha)'
-	gen sd`suffix' = `r(sd)'
-	gen N1`suffix' = `r(N1)'
-	gen N2`suffix' = `r(N2)'
-	gen K1`suffix' = `r(K1)'
-	gen K2`suffix' = `r(K2)'
-	gen rho`suffix' = `r(rho)'
-	
-	
-		* CI2 Big
-	local suffix "ptmBaseAdminCI2InCor`i'b"
-	power twomeans 0.053 0.085, sd(0.224) n1(13668) n2(14096) k1(104) k2(109) rho(0.298) alpha(`alp')
-	gen M1`suffix' = `r(m1)' 
-	gen M2`suffix' = `r(m2)'
-	gen power`suffix' = `r(power)' 
-	gen alpha`suffix' = `r(alpha)'
-	gen sd`suffix' = `r(sd)'
-	gen N1`suffix' = `r(N1)'
-	gen N2`suffix' = `r(N2)'
-	gen K1`suffix' = `r(K1)'
-	gen K2`suffix' = `r(K2)'
-	gen rho`suffix' = `r(rho)'
-
-		* CI2 Small
-	local suffix "ptmBaseAdminCI2InCor`i's"
-	power twomeans 0.053 0.085, sd(0.224) n1(1167) n2(1272) k1(104) k2(109) rho(0.298) alpha(`alp')
-	gen M1`suffix' = `r(m1)' 
-	gen M2`suffix' = `r(m2)'
-	gen power`suffix' = `r(power)' 
-	gen alpha`suffix' = `r(alpha)'
-	gen sd`suffix' = `r(sd)'
-	gen N1`suffix' = `r(N1)'
-	gen N2`suffix' = `r(N2)'
-	gen K1`suffix' = `r(K1)'
-	gen K2`suffix' = `r(K2)'
-	gen rho`suffix' = `r(rho)'
-
-	
 		* twoprop power 
 			
 	* Mean Big
@@ -201,10 +112,10 @@ drop id
 gen No = _n
 order No Model M1 M2 sd N1 N2 K1 K2 rho alpha power
 
-mat define T1 = J(24,11,.)
+mat define T1 = J(12,11,.)
 local count1 = 1
 foreach vars in No M1 M2 sd N1 N2 K1 K2 rho alpha power{
-forvalues r1 = 1(1)24{
+forvalues r1 = 1(1)12{
 	mat T1[`r1',`count1'] = `vars'[`r1']
 }
 local  count1 = `count1' + 1
@@ -215,13 +126,6 @@ cap ssc install outtable
 mat colnames T1 =  No M1 M2 sd N1 N2 K1 K2 rho alpha power 
 mat rownames T1 = `r(levels)' 
 outtable using "${reploutdir}/BaseAdminCompliance",mat(T1) replace  
-
-
-/*
-
-tempfile BaseAdminControl
-save `BaseAdminControl'
-*/
 
 
 *$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -235,95 +139,6 @@ local alps "5 10"
 foreach i of local alps{
 	
 	local alp = 0.01*`i'
-	
-		* twomeans power 
-		
-	* Mean Big
-	local suffix "ptmAnalDCtralAvInCor`i'b"
-	power twomeans 0.063 0.095, sd(0.244) n1(13668) n2(14096) k1(104) k2(109) rho(0.061) alpha(`alp')
-	gen M1`suffix' = `r(m1)' 
-	gen M2`suffix' = `r(m2)'
-	gen power`suffix' = `r(power)' 
-	gen alpha`suffix' = `r(alpha)'
-	gen sd`suffix' = `r(sd)'
-	gen N1`suffix' = `r(N1)'
-	gen N2`suffix' = `r(N2)'
-	gen K1`suffix' = `r(K1)'
-	gen K2`suffix' = `r(K2)'
-	gen rho`suffix' = `r(rho)'
-	
-		* Mean Small
-	local suffix "ptmAnalDCtralAvInCor`i's"
-	power twomeans 0.063 0.095, sd(0.244) n1(1167) n2(1272) k1(104) k2(109) rho(0.061) alpha(`alp')
-	gen M1`suffix' = `r(m1)' 
-	gen M2`suffix' = `r(m2)'
-	gen power`suffix' = `r(power)' 
-	gen alpha`suffix' = `r(alpha)'
-	gen sd`suffix' = `r(sd)'
-	gen N1`suffix' = `r(N1)'
-	gen N2`suffix' = `r(N2)'
-	gen K1`suffix' = `r(K1)'
-	gen K2`suffix' = `r(K2)'
-	gen rho`suffix' = `r(rho)'
-	
-		* CI1 Big 
-	local suffix "ptmAnalDCtralCI1InCor`i'b"
-	power twomeans 0.063 0.095, sd(0.244) n1(13668) n2(14096) k1(104) k2(109) rho(0.042) alpha(`alp')
-	gen M1`suffix' = `r(m1)' 
-	gen M2`suffix' = `r(m2)'
-	gen power`suffix' = `r(power)' 
-	gen alpha`suffix' = `r(alpha)'
-	gen sd`suffix' = `r(sd)'
-	gen N1`suffix' = `r(N1)'
-	gen N2`suffix' = `r(N2)'
-	gen K1`suffix' = `r(K1)'
-	gen K2`suffix' = `r(K2)'
-	gen rho`suffix' = `r(rho)'
-
-
-		* CI1 Small 
-	local suffix "ptmAnalDCtralCI1InCor`i's"
-	power twomeans 0.063 0.095, sd(0.244) n1(1167) n2(1272) k1(104) k2(109) rho(0.042) alpha(`alp')
-	gen M1`suffix' = `r(m1)' 
-	gen M2`suffix' = `r(m2)'
-	gen power`suffix' = `r(power)' 
-	gen alpha`suffix' = `r(alpha)'
-	gen sd`suffix' = `r(sd)'
-	gen N1`suffix' = `r(N1)'
-	gen N2`suffix' = `r(N2)'
-	gen K1`suffix' = `r(K1)'
-	gen K2`suffix' = `r(K2)'
-	gen rho`suffix' = `r(rho)'
-	
-	
-		* CI2 Big
-	local suffix "ptmAnalDCtralCI2InCor`i'b"
-	power twomeans 0.063 0.095, sd(0.244) n1(13668) n2(14096) k1(104) k2(109) rho(0.079) alpha(`alp')
-	gen M1`suffix' = `r(m1)' 
-	gen M2`suffix' = `r(m2)'
-	gen power`suffix' = `r(power)' 
-	gen alpha`suffix' = `r(alpha)'
-	gen sd`suffix' = `r(sd)'
-	gen N1`suffix' = `r(N1)'
-	gen N2`suffix' = `r(N2)'
-	gen K1`suffix' = `r(K1)'
-	gen K2`suffix' = `r(K2)'
-	gen rho`suffix' = `r(rho)'
-
-		* CI2 Small
-	local suffix "ptmAnalDCtralCI2InCor`i's"
-	power twomeans 0.063 0.095, sd(0.244) n1(1167) n2(1272) k1(104) k2(109) rho(0.079) alpha(`alp')
-	gen M1`suffix' = `r(m1)' 
-	gen M2`suffix' = `r(m2)'
-	gen power`suffix' = `r(power)' 
-	gen alpha`suffix' = `r(alpha)'
-	gen sd`suffix' = `r(sd)'
-	gen N1`suffix' = `r(N1)'
-	gen N2`suffix' = `r(N2)'
-	gen K1`suffix' = `r(K1)'
-	gen K2`suffix' = `r(K2)'
-	gen rho`suffix' = `r(rho)'
-
 	
 		* twoprop power 
 			
@@ -423,10 +238,10 @@ drop id
 gen No = _n
 order No Model M1 M2 sd N1 N2 K1 K2 rho alpha power
 
-mat define T1 = J(24,11,.)
+mat define T1 = J(12,11,.)
 local count1 = 1
 foreach vars in No M1 M2 sd N1 N2 K1 K2 rho alpha power{
-forvalues r1 = 1(1)24{
+forvalues r1 = 1(1)12{
 	mat T1[`r1',`count1'] = `vars'[`r1']
 }
 local  count1 = `count1' + 1
@@ -437,11 +252,6 @@ cap ssc install outtable
 mat colnames T1 =  No M1 M2 sd N1 N2 K1 K2 rho alpha power 
 mat rownames T1 = `r(levels)' 
 outtable using "${reploutdir}/AnalDCentralCompliance",mat(T1) replace  
-
-/*
-tempfile AnalDCtralControl
-save `AnalDCtralControl'
-*/
 
 
 *$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
@@ -454,95 +264,6 @@ local alps "5 10"
 foreach i of local alps{
 	
 	local alp = 0.01*`i'
-	
-		* twomeans power 
-		
-	* Mean Big
-	local suffix "ptmAnalDCtrolAvInCor`i'b"
-	power twomeans 0.0013 0.033, sd(0.035) n1(13668) n2(14096) k1(104) k2(109) rho(0) alpha(`alp')
-	gen M1`suffix' = `r(m1)' 
-	gen M2`suffix' = `r(m2)'
-	gen power`suffix' = `r(power)' 
-	gen alpha`suffix' = `r(alpha)'
-	gen sd`suffix' = `r(sd)'
-	gen N1`suffix' = `r(N1)'
-	gen N2`suffix' = `r(N2)'
-	gen K1`suffix' = `r(K1)'
-	gen K2`suffix' = `r(K2)'
-	gen rho`suffix' = `r(rho)'
-	
-		* Mean Small
-	local suffix "ptmAnalDCtrolAvInCor`i's"
-	power twomeans 0.0013 0.033, sd(0.035) n1(1167) n2(1272) k1(104) k2(109) rho(0) alpha(`alp')
-	gen M1`suffix' = `r(m1)' 
-	gen M2`suffix' = `r(m2)'
-	gen power`suffix' = `r(power)' 
-	gen alpha`suffix' = `r(alpha)'
-	gen sd`suffix' = `r(sd)'
-	gen N1`suffix' = `r(N1)'
-	gen N2`suffix' = `r(N2)'
-	gen K1`suffix' = `r(K1)'
-	gen K2`suffix' = `r(K2)'
-	gen rho`suffix' = `r(rho)'
-	
-		* CI1 Big 
-	local suffix "ptmAnalDCtrolCI1InCor`i'b"
-	power twomeans 0.0013 0.033, sd(0.035) n1(13668) n2(14096) k1(104) k2(109) rho(0) alpha(`alp')
-	gen M1`suffix' = `r(m1)' 
-	gen M2`suffix' = `r(m2)'
-	gen power`suffix' = `r(power)' 
-	gen alpha`suffix' = `r(alpha)'
-	gen sd`suffix' = `r(sd)'
-	gen N1`suffix' = `r(N1)'
-	gen N2`suffix' = `r(N2)'
-	gen K1`suffix' = `r(K1)'
-	gen K2`suffix' = `r(K2)'
-	gen rho`suffix' = `r(rho)'
-
-
-		* CI1 Small 
-	local suffix "ptmAnalDCtrolCI1InCor`i's"
-	power twomeans 0.0013 0.033, sd(0.035) n1(1167) n2(1272) k1(104) k2(109) rho(0) alpha(`alp')
-	gen M1`suffix' = `r(m1)' 
-	gen M2`suffix' = `r(m2)'
-	gen power`suffix' = `r(power)' 
-	gen alpha`suffix' = `r(alpha)'
-	gen sd`suffix' = `r(sd)'
-	gen N1`suffix' = `r(N1)'
-	gen N2`suffix' = `r(N2)'
-	gen K1`suffix' = `r(K1)'
-	gen K2`suffix' = `r(K2)'
-	gen rho`suffix' = `r(rho)'
-	
-	
-		* CI2 Big
-	local suffix "ptmAnalDCtrolCI2InCor`i'b"
-	power twomeans 0.0013 0.033, sd(0.035) n1(13668) n2(14096) k1(104) k2(109) rho(0.009) alpha(`alp')
-	gen M1`suffix' = `r(m1)' 
-	gen M2`suffix' = `r(m2)'
-	gen power`suffix' = `r(power)' 
-	gen alpha`suffix' = `r(alpha)'
-	gen sd`suffix' = `r(sd)'
-	gen N1`suffix' = `r(N1)'
-	gen N2`suffix' = `r(N2)'
-	gen K1`suffix' = `r(K1)'
-	gen K2`suffix' = `r(K2)'
-	gen rho`suffix' = `r(rho)'
-
-		* CI2 Small
-	local suffix "ptmAnalDCtrolCI2InCor`i's"
-	power twomeans 0.0013 0.033, sd(0.035) n1(1167) n2(1272) k1(104) k2(109) rho(0.009) alpha(`alp')
-	gen M1`suffix' = `r(m1)' 
-	gen M2`suffix' = `r(m2)'
-	gen power`suffix' = `r(power)' 
-	gen alpha`suffix' = `r(alpha)'
-	gen sd`suffix' = `r(sd)'
-	gen N1`suffix' = `r(N1)'
-	gen N2`suffix' = `r(N2)'
-	gen K1`suffix' = `r(K1)'
-	gen K2`suffix' = `r(K2)'
-	gen rho`suffix' = `r(rho)'
-
 	
 		* twoprop power 
 			
@@ -641,10 +362,10 @@ drop id
 gen No = _n
 order No Model M1 M2 sd N1 N2 K1 K2 rho alpha power
 
-mat define T1 = J(24,11,.)
+mat define T1 = J(12,11,.)
 local count1 = 1
 foreach vars in No M1 M2 sd N1 N2 K1 K2 rho alpha power{
-forvalues r1 = 1(1)24{
+forvalues r1 = 1(1)12{
 	mat T1[`r1',`count1'] = `vars'[`r1']
 }
 local  count1 = `count1' + 1
@@ -655,11 +376,6 @@ cap ssc install outtable
 mat colnames T1 =  No M1 M2 sd N1 N2 K1 K2 rho alpha power 
 mat rownames T1 = `r(levels)' 
 outtable using "${reploutdir}/AnalDControlCompliance",mat(T1) replace  
-
-/*
-tempfile AnalDCtrolControl
-save `AnalDCtrolControl'
-*/
 
 
 
@@ -996,7 +712,6 @@ foreach i of local alps{
 gen id = 1
 keep id M1* M2* sd* N1* N2* K1* K2* rho*  alpha* power*
 reshape long M1 M2 sd N1 N2 K1 K2 rho alpha power, i(id) j(Model) string
-// gen outcomevar = "Compliance"
 
 tempfile AnalDCtrolControl_amt
 save `AnalDCtrolControl_amt'

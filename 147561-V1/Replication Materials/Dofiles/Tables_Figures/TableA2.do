@@ -13,15 +13,14 @@
 	* use clean baseline data 
 	use "${repldir}/Data/01_base/survey_data/baseline_noPII.dta", clear
 	
-	preserve 
-	
-	gen baseline = 1 // Added by Sossou
 	keep if tot_complete==1 
-	keep baseline compound_code
-	gen compound1 = compound_code
-	duplicates drop
-	save "${repldir}/data/03_clean_combined/baseline_noPII.dta_FromTableA2.dta", replace
+	gen baseline = 1 // Added by Sossou
 	
+	preserve 
+		keep baseline compound_code
+		gen compound1 = compound_code
+		duplicates drop
+		save "${repldir}/data/03_clean_combined/baseline_noPII.dta_FromTableA2.dta", replace
 	restore
 	
 	drop possessions
@@ -75,7 +74,7 @@
 		
 	global TrustChiefFromBaseline "trust_chief" // Added by Sossou
 
-	keep code a7 edu_yrs age male elect1 possessions possessions_norm lg_inc_mo inc_mo lg_transport transport fence trust_chief trust_nat_gov trust_prov_gov trust_tax_min tax1 tax11 tax12 tax13 tax14 tax15 tax17 baseline
+	keep code a7 edu_yrs baseline age male elect1 possessions possessions_norm lg_inc_mo inc_mo lg_transport transport fence trust_chief trust_nat_gov trust_prov_gov trust_tax_min tax1 tax11 tax12 tax13 tax14 tax15 tax17 baseline
 		
 	* tempfile 
 	tempfile bl
@@ -498,8 +497,8 @@ global balancevars_ml "sex_prop age_prop main_tribe employed salaried work_gov j
 		
 	esttab using "${reploutdir}/balance_Ftest_baselinevars.tex", ///
 	replace label b(%9.3f) se(%9.3f) ///
-	keep (${balancevars_bl}) ///
-	order(${balancevars_bl}) ///
+	keep (${balancevars_bl} trust_chief) ///
+	order(${balancevars_bl} trust_chief) ///
 	scalar(Clusters Mean F_stat p_val) sfmt(0 3 3 3 3) ///
 	nomtitles ///
 	mgroups("Years of Education" "Electricity" "Log HH Monthly Income" "Trust of Chief" "Trust of National Government" "Trust of Provincial Government" "Trust of Tax Ministry", pattern(1 1 1 1 1 1 1) prefix(\multicolumn{@span}{c}{) suffix(}) span) ///
