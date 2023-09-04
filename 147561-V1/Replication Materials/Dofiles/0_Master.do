@@ -30,6 +30,8 @@
 		// Dofiles
 		global repldodir "${stem}/Dofiles"
 		
+		global repldodir1 "${stem}/Dofiles/Tables_Figures"
+		
 		// Output
 		global reploutdir "${stem}/Output"
 
@@ -40,6 +42,20 @@
 	do "$repldodir/3_Main_Tables_Figures.do"
 	do "$repldodir/4_Appendix_Tables_Figures.do"
 	
+	* R1
+	run "${repldodir1}/R1_pvalue/Table4R1.do"
+	run "${repldodir1}/R1_pvalue/Table5R1.do"
+	run "${repldodir1}/R1_pvalue/Table6R1.do"
+	run "${repldodir1}/R1_pvalue/Table7R1.do"
+	run "${repldodir1}/R1_pvalue/Table8R1.do"
+	run "${repldodir1}/R1_pvalue/Table9R1.do"
+	
+	* R2
+	run "${repldodir1}/R2_pvalue/Table4R2.do"
+	run "${repldodir1}/R2_pvalue/Table6R2.do"
+	run "${repldodir1}/R2_pvalue/Table7R2.do"
+	run "${repldodir1}/R2_pvalue/Table8R2.do"
+
 
 	
 	

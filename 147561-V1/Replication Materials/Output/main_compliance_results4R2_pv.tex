@@ -1,0 +1,25 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{4}{c}}
+\toprule
+                &\multicolumn{1}{c}{Tax Compliance}&\multicolumn{1}{c}{Tax Compliance}&\multicolumn{1}{c}{Tax Compliance}&\multicolumn{1}{c}{Tax Compliance}\\
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         \\
+\midrule
+Local           &    0.020         &    0.033\sym{**} &    0.034\sym{**} &    0.044\sym{**} \\
+                &  (0.207)         &  (0.021)         &  (0.019)         &  (0.012)         \\
+Not very much confidence&   -0.016         &   -0.020         &   -0.018         &   -0.022         \\
+                &  (0.515)         &  (0.432)         &  (0.480)         &  (0.497)         \\
+Some confidence &    0.012         &    0.007         &    0.007         &    0.007         \\
+                &  (0.556)         &  (0.706)         &  (0.723)         &  (0.790)         \\
+A lot of confidence&   -0.015         &   -0.023         &   -0.024         &   -0.030         \\
+                &  (0.369)         &  (0.174)         &  (0.165)         &  (0.160)         \\
+Month FE        &       No         &      Yes         &      Yes         &      Yes         \\
+House FE        &       No         &       No         &      Yes         &      Yes         \\
+Stratum FE      &      Yes         &      Yes         &      Yes         &      Yes         \\
+\midrule
+Observations    &     2517         &     2426         &     2426         &     1868         \\
+Clusters        &      221         &      213         &      213         &      212         \\
+Mean            &     .088         &     .082         &     .082         &     .103         \\
+\bottomrule
+\end{tabular}
+}

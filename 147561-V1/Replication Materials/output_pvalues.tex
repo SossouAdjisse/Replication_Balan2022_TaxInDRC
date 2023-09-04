@@ -1,0 +1,353 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[12pt,english]{article}
+\usepackage{mathpazo}
+\renewcommand{\sfdefault}{lmss}
+\renewcommand{\ttdefault}{lmtt}
+\usepackage{geometry}
+\geometry{verbose, tmargin=1.14in, bmargin=1.14in, lmargin=1.4in, rmargin=1.4in}
+\usepackage{color}
+\usepackage{etoolbox}
+\usepackage[american]{babel}
+\usepackage[hang,flushmargin]{footmisc}
+\usepackage{float}
+\usepackage{booktabs}
+\newsavebox{\tablebox}
+\usepackage{placeins}
+\usepackage{color}
+\usepackage{adjustbox}
+\usepackage{float}
+\usepackage{threeparttable}
+\usepackage{csquotes}
+
+\usepackage{titletoc}
+\usepackage{mathptmx}
+\usepackage{bm}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage[compact]{titlesec}
+    \titlespacing*{\section}{0pt}{.5ex}{1ex}
+    \titlespacing*{\subsection}{0pt}{.5ex}{1ex}
+    \titlespacing*{\subsubsection}{0pt}{0.5ex}{0ex}
+\renewcommand{\footnotesize}{\fontsize{9pt}{11pt}\selectfont}\usepackage[unicode=true,
+ bookmarks=true,bookmarksnumbered=false,bookmarksopen=false,
+ breaklinks=false,pdfborder={0 0 0},pdfborderstyle={},backref=false,colorlinks=true]
+ {hyperref}
+\hypersetup{
+ linkcolor=[rgb]{0,0,0.6}, citecolor=[rgb]{0,0,0.6}, urlcolor=[rgb]{0,0,0.6}}
+\usepackage{breakurl}
+\usepackage{atbegshi}
+\AtBeginDocument{\AtBeginShipoutNext{\AtBeginShipoutDiscard}}
+\usepackage{scalerel,stackengine}
+\stackMath
+\newcommand\reallywidehat[1]{%
+\savestack{\tmpbox}{\stretchto{%
+  \scaleto{%
+    \scalerel*[\widthof{\ensuremath{#1}}]{\kern-.6pt\bigwedge\kern-.6pt}%
+    {\rule[-\textheight/2]{1ex}{\textheight}}%WIDTH-LIMITED BIG WEDGE
+  }{\textheight}% 
+}{0.5ex}}%
+\stackon[1pt]{#1}{\tmpbox}%
+}
+\makeatletter
+\usepackage{csvsimple}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\providecommand{\tabularnewline}{\\}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{multirow}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usetikzlibrary{patterns,decorations.pathreplacing}
+\usepackage[font={bf,sc}]{caption}
+\usetikzlibrary{arrows}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{makecell}
+\usepackage{pdflscape}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{geometry}
+\usepackage{natbib}
+\usepackage{amsmath}
+\usepackage{threeparttable}
+\DeclareSymbolFont{operators} {OT1}{lmr} {m}{n}
+\DeclareSymbolFont{letters} {OML}{cmm} {m}{it}
+\DeclareSymbolFont{symbols} {OMS}{cmsy}{m}{n}
+\SetSymbolFont{operators}{bold}{OT1}{cmr}{b}{n}
+\SetSymbolFont{letters}{bold}{OML}{cmm}{b}{it}
+\SetSymbolFont{symbols}{bold}{OMS}{cmsy}{b}{n}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\newcommand{\cmmnt}[1]{\ignorespaces}
+\AtBeginDocument{
+  \def\labelitemii{\(\ast\)}
+  \def\labelitemiii{\(\star\)}
+}
+\usepackage{multicol}
+\usepackage{etoolbox}
+\usepackage{relsize}
+\setlength{\columnsep}{1cm} 
+\patchcmd{\thebibliography}
+  {\list}
+  {\begin{multicols}{2}\smaller\list}
+  {}
+  {}
+\appto{\endthebibliography}{\end{multicols}}
+\usepackage{pgfplots}
+\pgfmathdeclarefunction{gauss}{2}{%
+  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
+}
+\makeatletter
+\newcommand{\lyxdot}{.}
+\newcommand*{\centerfloat}{%
+  \parindent \z@
+  \leftskip \z@ \@plus 1fil \@minus \textwidth
+  \rightskip\leftskip
+  \parfillskip \z@skip}
+\makeatother
+\usepackage{titlesec}
+\makeatletter
+\titleformat{\section}[runin]{}{}{0pt}{\@gobble}
+\titleformat{\subsection}[runin]{}{}{0pt}{\@gobble}
+\titleformat{\subsubsection}[runin]{}{}{0pt}{\@gobble}
+\makeatother
+\titlespacing{\section}{\parindent}{0pt}{0pt}
+\titlespacing{\subsection}{\parindent}{0pt}{0pt}
+\titlespacing{\subsubsection}{\parindent}{0pt}{0pt}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\sloppy
+
+\title{\textcolor{black}{\textsc{Replicated Tables with p-values  for \\\ Local Elites as State Capacity}:}\\
+\textcolor{black}{\textsc{\Large{How City Chiefs Use Local Information to Increase Tax Compliance in the D.R. Congo}}}
+\textcolor{black}{\textbf{\Huge{}}}
+}\thanks{\scriptsize{AEA RCT Registry ID: AEARCTR-0003308.}}
+
+\author{By Pablo Bal\'an, Augustin Bergeron, Gabriel Tourek, \\ and Jonathan L. Weigel\thanks{\scriptsize Affiliations: Harvard University (pbalan@g.harvard.edu), Harvard University (augustinbergeron@fas.harvard.edu), MIT (gztourek@mit.edu), Haas School of Business, University of California Berkeley and CEPR (jweigel@berkeley.edu).}}
+
+\maketitle
+
+\addtocounter{page}{-2}
+
+\singlespacing
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+\thispagestyle{empty}
+ 
+ %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+\newgeometry{verbose, tmargin=1in, bmargin=1in, lmargin=1.2in, rmargin=1.2in}
+
+\onehalfspacing
+\normalsize
+
+\section{Main Tables  Replicated with p-values}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{R1}
+\begin{table}[H]
+	\textbf{\caption*{\label{Table_CvL_Compliance_edited_4R1} Table 4R1}}
+	\centering
+	\small{\input{Output/main_compliance_results4R1_pv.tex}}
+	\small{\input{Output/main_revenues_results4R1_pv.tex}}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}:}
+\end{table}
+
+\begin{table}[H]
+	\textbf{\caption*{\label{bribesviews5R1} Table 5R1} }
+	\centering
+	\input{Output/assessment_bribes5R1_pv.tex}
+	\input{Output/attitudes5R1_pv.tex}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}: p1 is the simple regression p-value and p is the p-value of the randomization inference (RI)}
+\end{table}
+
+\begin{table}[H]
+	\textbf{\caption*{\label{Table_CvL_Visits_edited_6R1} Table 6R1}}
+	\centering
+	\begin{lrbox}{\tablebox}
+		\scalebox{0.8}{
+			\input{Output/main_visits_results6R1_pv.tex}
+		}
+	\end{lrbox}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}.}
+\end{table}
+
+\begin{table}[H]
+	\textbf{\caption*{\label{Table_CvCLI_Replicated}  Table 7R1}}
+	\centering
+	\begin{lrbox}{\tablebox}
+		
+		\resizebox{14cm}{!}{
+			\input{Output/main_centralwinfo_results7R1_pv.tex}
+		}
+	\end{lrbox}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}: }
+\end{table}
+
+\begin{table}[H]
+	\textbf{\caption*{Table 8R1 \label{validation_cli_control_8R1}}}
+	\centering
+	\centerfloat
+	\tiny{\input{Output/chiefs_info_payease8R1.tex}} \newline 
+	\tiny{\input{Output/chiefs_info_wtp8R1_pv.tex}}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}}
+\end{table}
+
+\begin{table}[H]
+	\textbf{\caption*{\label{Table_CvL_Distribution_Incidence_Replicated} Table9R1}}
+	\centering
+	\begin{lrbox}{\tablebox}
+		\resizebox{15cm}{!}{
+			\input{Output/main_incidence_results9R1_pv.tex}
+		}
+	\end{lrbox}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}: }
+\end{table}
+
+
+%%%%%%%%%%%%%%%%%%%%%
+\section{R2}
+\begin{table}[H]
+	\textbf{\caption *{\label{Table_CvL_Compliance_edited_Rbaseline_4R2} Table 4R2}}
+	\centering
+	\small{\input{Output/main_compliance_results4R2_pv.tex}}
+	\small{\input{Output/main_revenues_results4R2_pv.tex}}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}: Table 4 repliacted}
+\end{table}
+
+\begin{table}[H]
+	\textbf{\caption*{\label{Table_CvL_Visits_edited6R2} Table 6R2}}
+	\centering
+	\begin{lrbox}{\tablebox}
+		\scalebox{0.8}{
+			\input{Output/main_visits_results6R2_pv.tex}
+		}
+	\end{lrbox}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}}
+\end{table}
+
+\begin{table}[H]
+	\textbf{\caption*{\label{Table_CvCLI7R2_Replicated}  Table 7R2}}
+	\centering
+	\begin{lrbox}{\tablebox}
+		
+		\resizebox{14cm}{!}{
+			\input{Output/main_centralwinfo_results7R2_pv.tex}
+		}
+	\end{lrbox}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}: }
+\end{table}
+
+\begin{table}[H]
+	\textbf{\caption*{Table 8R2\label{validation_cli_control_8R2}}}
+	\centering
+	\centerfloat
+	\tiny{\input{Output/chiefs_info_payease8R2_pv.tex}} \newline 
+	\tiny{\input{Output/chiefs_info_wtp8R2_pv.tex}}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}:}
+\end{table}
+%
+
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{R3}
+\begin{table}[H]
+	\textbf{\caption*{Table 8R3\label{validation_cli_control_8R3}}}
+	\centering
+	\centerfloat
+	\tiny{\input{Output/chiefs_info_payease8R3_pv.tex}} \newline 
+	\tiny{\input{Output/chiefs_info_wtp8R3_pv.tex}}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}:}
+\end{table}
+
+\begin{table}[H]
+	\textbf{\caption*{Table 8R2R3\label{validation_cli_control_8R2R3}}}
+	\centering
+	\centerfloat
+	\tiny{\input{Output/chiefs_info_payease8R2R3_pv.tex}} \newline 
+	\tiny{\input{Output/chiefs_info_wtp8R2R3_pv.tex}}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}:}
+\end{table}
+
+%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{R4}
+\begin{table}[H]
+	\textbf{\caption *{\label{Table_CvL_Compliance_edited_Rbaseline_4R4} Table 4R4}}
+	\centering
+	\small{\input{Output/main_compliance_results4R4_pv.tex}}
+	\small{\input{Output/main_revenues_results4R4_pv.tex}}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}: Table 4 repliacted}
+\end{table}
+
+\begin{table}[H]
+	\textbf{\caption*{\label{Table_CvL_Visits_edited_6R4} Table 6R4}}
+	\centering
+	\begin{lrbox}{\tablebox}
+		\scalebox{0.8}{
+			\input{Output/main_visits_results6R4_pv.tex}
+		}
+	\end{lrbox}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}: }
+\end{table}
+
+\begin{table}[H]
+	\textbf{\caption*{\label{Table_CvCLI7R4_Replicated}  Table 7R4}}
+	\centering
+	\begin{lrbox}{\tablebox}
+		
+		\resizebox{14cm}{!}{
+			\input{Output/main_centralwinfo_results7R4_pv.tex}
+		}
+	\end{lrbox}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}: }
+\end{table}
+
+\begin{table}[H]
+	\textbf{\caption*{Table 8R4\label{8R4}}}
+	\centering
+	\centerfloat
+	\tiny{\input{Output/chiefs_info_payease8R4_pv.tex}} \newline 
+	\tiny{\input{Output/chiefs_info_wtp8R4_pv.tex}}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes}: }
+\end{table}
+
+\begin{table}[H]
+	\textbf{\caption*{Table 8R5 \label{chiefs_info_payease8R5}}}
+	\centering
+	\centerfloat
+	\tiny{\input{Output/chiefs_info_payeaseR5_pv.tex}} \newline 
+	\tiny{\input{Output/chiefs_info_wtpR5_pv.tex}}
+	\usebox{\tablebox}\\[1ex]
+	\parbox{6in}{\footnotesize \textit{Notes:}}
+\end{table}
+
+
+\end{document}

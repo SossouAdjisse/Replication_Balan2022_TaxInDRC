@@ -1,0 +1,26 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{4}{c}}
+\toprule
+                &\multicolumn{1}{c}{Revenues}&\multicolumn{1}{c}{Revenues}&\multicolumn{1}{c}{Revenues}&\multicolumn{1}{c}{Revenues}\\
+                &\multicolumn{1}{c}{(1)}&\multicolumn{1}{c}{(2)}&\multicolumn{1}{c}{(3)}&\multicolumn{1}{c}{(4)}\\
+                &      b/p&      b/p&      b/p&      b/p\\
+\midrule
+Local           &    43.13&    91.52&    84.54&    117.7\\
+                &  (0.485)&  (0.115)&  (0.131)& (0.0848)\\
+Not very much confidence&   -32.22&   -53.14&   -70.41&   -99.21\\
+                &  (0.780)&  (0.657)&  (0.550)&  (0.530)\\
+Some confidence &    10.46&   -26.31&   -22.32&   -30.16\\
+                &  (0.878)&  (0.693)&  (0.734)&  (0.721)\\
+A lot of confidence&   -36.77&   -69.58&   -64.21&   -91.46\\
+                &  (0.578)&  (0.287)&  (0.318)&  (0.261)\\
+Month FE        &       No&      Yes&      Yes&      Yes\\
+House FE        &       No&       No&      Yes&      Yes\\
+Stratum FE      &      Yes&      Yes&      Yes&      Yes\\
+\midrule
+Observations    &     2517&     2426&     2426&     1868\\
+Clusters        &      221&      213&      213&      212\\
+Mean            &  275.851&  252.785&  252.785&  310.011\\
+\bottomrule
+\end{tabular}
+}
