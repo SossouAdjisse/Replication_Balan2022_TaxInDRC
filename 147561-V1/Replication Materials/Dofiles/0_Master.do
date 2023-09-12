@@ -56,6 +56,16 @@
 	run "${repldodir1}/R2_pvalue/Table7R2.do"
 	run "${repldodir1}/R2_pvalue/Table8R2.do"
 
+	* R3
+	run "${repldodir1}/R3_pvalue/Table8R2R3.do"
+	run "${repldodir1}/R3_pvalue/Table8R3.do"
+
+	* R4
+	run "${repldodir1}/R4_pvalue/Table4R4.do"
+	run "${repldodir1}/R4_pvalue/Table6R4.do"
+	run "${repldodir1}/R4_pvalue/Table7R4.do"
+	run "${repldodir1}/R4_pvalue/Table8R4.do"
+	run "${repldodir1}/R4_pvalue/Table8R5.do"
 
 	
 	

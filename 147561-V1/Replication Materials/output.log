@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  1 SEP 2023 16:04
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  12 SEP 2023 13:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2660,7 +2660,7 @@ LaTeX Warning: There were multiply-defined labels.
 Here is how much of TeX's memory you used:
  38698 strings out of 492616
  861093 string characters out of 6129482
- 1187561 words of memory out of 5000000
+ 1187552 words of memory out of 5000000
  41119 multiletter control sequences out of 15000+600000
  93934 words of font info for 133 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -2689,7 +2689,7 @@ t/fonts/type1/public/lm/lmr9.pfb></usr/local/texlive/2019/texmf-dist/fonts/type
 tino/uplr8a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmb8
 a.pfb></usr/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></us
 r/local/texlive/2019/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on output.pdf (105 pages, 11101785 bytes).
+Output written on output.pdf (105 pages, 11102000 bytes).
 PDF statistics:
  1832 PDF objects out of 2073 (max. 8388607)
  1379 compressed objects within 14 object streams

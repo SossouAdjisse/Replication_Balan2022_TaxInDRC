@@ -133,6 +133,7 @@ drop _merge
 	replace label b(%9.3f) p(%9.3f) booktabs ///
 	keep (t_l 2.trust_chief 3.trust_chief 4.trust_chief) ///
 	order(t_l 2.trust_chief 3.trust_chief 4.trust_chief) ///
+	cells("b(fmt(a3))"  "p(fmt(a3) par)") ///
 	scalar(Clusters Mean) sfmt(0 3 3) ///
 	nomtitles ///
 	mgroups("Tax Compliance" "Tax Compliance" "Tax Compliance" "Tax Compliance" "Tax Compliance", pattern(1 1 1 1 1) prefix(\multicolumn{@span}{c}{) suffix(}) span) ///
@@ -145,6 +146,7 @@ drop _merge
 	replace label b(%9.3f) p(%9.3f) ///
 	keep (t_l 2.trust_chief 3.trust_chief 4.trust_chief) ///
 	order(t_l 2.trust_chief 3.trust_chief 4.trust_chief) ///
+	cells("b(fmt(a3))"  "p(fmt(a3) par)") ///
 	scalar(Clusters Mean) sfmt(0 3 3) ///
 	mtitles("Tax Compliance" "Tax Compliance" "Tax Compliance" "Tax Compliance" "Tax Compliance") ///
 	indicate("Month FE = *2mo*""House FE = *house*""Stratum FE = *stratum*") ///

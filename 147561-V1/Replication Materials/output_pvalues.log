@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  4 SEP 2023 07:19
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  12 SEP 2023 13:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1420,7 +1420,7 @@ Package rerunfilecheck Info: File `output_pvalues.out' has not changed.
 Here is how much of TeX's memory you used:
  36283 strings out of 492616
  802804 string characters out of 6129482
- 1089099 words of memory out of 5000000
+ 1089100 words of memory out of 5000000
  39456 multiletter control sequences out of 15000+600000
  69284 words of font info for 101 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1432,7 +1432,7 @@ ive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texliv
 e/2019/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2019/tex
 mf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2019/texmf-dist/fo
 nts/type1/urw/times/utmri8a.pfb>
-Output written on output_pvalues.pdf (13 pages, 80935 bytes).
+Output written on output_pvalues.pdf (13 pages, 80934 bytes).
 PDF statistics:
  137 PDF objects out of 1000 (max. 8388607)
  113 compressed objects within 2 object streams
