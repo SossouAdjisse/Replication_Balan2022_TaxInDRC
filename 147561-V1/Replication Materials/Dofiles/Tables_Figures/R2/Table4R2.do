@@ -130,7 +130,7 @@ drop _merge
 	estadd scalar Clusters = `e(N_clust)'
 	
 	esttab using "${reploutdir}/main_compliance_results4R2.tex", ///
-	replace label b(%9.3f) p(%9.3f) booktabs ///
+	replace label b(%9.3f) se(%9.3f) booktabs ///
 	keep (t_l 2.trust_chief 3.trust_chief 4.trust_chief) ///
 	order(t_l 2.trust_chief 3.trust_chief 4.trust_chief) ///
 	scalar(Clusters Mean) sfmt(0 3 3) ///
@@ -142,7 +142,7 @@ drop _merge
 	
 	* CSV Format 
 	esttab using "${reploutdir}/main_compliance_results4R2.csv", ///
-	replace label b(%9.3f) p(%9.3f) ///
+	replace label b(%9.3f) se(%9.3f) ///
 	keep (t_l 2.trust_chief 3.trust_chief 4.trust_chief) ///
 	order(t_l 2.trust_chief 3.trust_chief 4.trust_chief) ///
 	scalar(Clusters Mean) sfmt(0 3 3) ///
@@ -202,7 +202,7 @@ drop _merge
 	estadd scalar Clusters = `e(N_clust)'
 	
 	esttab using "${reploutdir}/main_revenues_results4R2.tex", ///
-	replace label b(%9.3f) p(%9.3f) booktabs ///
+	replace label b(%9.3f) se(%9.3f) booktabs ///
 	keep (t_l 2.trust_chief 3.trust_chief 4.trust_chief) ///
 	order(t_l 2.trust_chief 3.trust_chief 4.trust_chief) ///
 	scalar(Clusters Mean) sfmt(0 3 3) ///
@@ -214,7 +214,7 @@ drop _merge
 	
 	* CSV Format 
 	esttab using "${reploutdir}/main_revenues_results4R2.csv", ///
-	replace label b(%9.3f) p(%9.3f) ///
+	replace label b(%9.3f) se(%9.3f) ///
 	keep (t_l 2.trust_chief 3.trust_chief 4.trust_chief) ///
 	order(t_l 2.trust_chief 3.trust_chief 4.trust_chief) ///
 	scalar(Clusters Mean) sfmt(0 3 3) ///

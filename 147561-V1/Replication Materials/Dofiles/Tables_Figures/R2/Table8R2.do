@@ -286,25 +286,38 @@ restore
 keep if _merge > 2
 drop _merge
 gen chef_tenure_hi  = chef_tenure > 10
-		
+	
 	
 	drop if visits == 99999
 
 	global covs_basic = "age_prop sex_prop employed salaried work_gov"	
-	global covs_addition = "pubgoods sanctions"	
+	
+	global covs_addition = "pubgoods sanctions  age_prop2 salongo salongo_hours"	
 	global chief_chars = "age_chef_hi possessions_nb_chef_hi educ_yrs_chef_hi remoteness_hi chef_trust_gov_hi chef_trust_dgrkoc_hi col_view_gov_gen_hi col_view_gov_nbhd_hi col_gov_integrity_hi tmt_2016 chef_fam chef_tenure_hi"
 	
-		
-	drop p_pay_ease* p_willingness*
-	eststo clear
-	foreach depvar in pay_ease willingness{
-	eststo: xi: reg `depvar' $covs_basic $chief_chars i.tribe i.house i.stratum i.time_FE_tdm_2mo_CvCLI if t_cli==1,cluster(a7)
-		estadd scalar Clusters = `e(N_clust)'
-		predict p_`depvar' if inlist(tmt,1,2,3)
-		sum `depvar' if t_cli==1
-		estadd local Mean=abs(round(`r(mean)',.001))
-		estadd scalar Observations = `e(N)'
-	}
+	global covs_pay_ease "age_prop sex_prop employed salaried age_chef_hi remoteness_hi chef_trust_gov_hi chef_trust_dgrkoc_hi"
+	
+	global covs_willingness "age_prop sex_prop  salaried possessions_nb_chef_hi chef_trust_dgrkoc_hi col_view_gov_nbhd_hi col_gov_integrity_hi tmt_2016 chef_fam chef_tenure_hi"
+	 
+eststo clear
+
+********** pay_ease
+capture drop p_pay_ease*
+eststo: xi: reg pay_ease  $covs_pay_ease i.tribe i.house i.stratum i.time_FE_tdm_2mo_CvCLI if t_cli==1,cluster(a7)
+	estadd scalar Clusters = `e(N_clust)'
+	predict p_pay_ease if inlist(tmt,1,2,3)
+	sum pay_ease if t_cli==1
+	estadd local Mean=abs(round(`r(mean)',.001))
+	estadd scalar Observations = `e(N)'
+
+********** pay_ease
+capture drop p_willingness*
+eststo: xi: reg willingness  $covs_willingness i.tribe i.house i.stratum i.time_FE_tdm_2mo_CvCLI if t_cli==1,cluster(a7)
+	estadd scalar Clusters = `e(N_clust)'
+	predict p_willingness if inlist(tmt,1,2,3)
+	sum willingness if t_cli==1
+	estadd local Mean=abs(round(`r(mean)',.001))
+	estadd scalar Observations = `e(N)'
 	
 ***********
 * Panel A *

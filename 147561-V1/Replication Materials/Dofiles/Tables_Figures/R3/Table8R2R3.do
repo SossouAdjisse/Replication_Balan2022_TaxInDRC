@@ -285,44 +285,48 @@ restore
 keep if _merge > 2
 drop _merge
 gen chef_tenure_hi  = chef_tenure > 10
-	
-	/*
-chef_type hh_head born_kga compound_chef compound_assis edu2 work_gov salongo_acceptability hh_size hh_size_bl know_dgrkoc renters_bl read_language name_know NbrLoc date periph_vs_mm_p chef_steal trust_police chef_imp dgrkoc_imp i.today_monitoring 
-	*/
-	
+		
 	
 	drop if visits == 99999
 
-	global covs_basic = "age_prop sex_prop employed salaried work_gov"
-	*global covs_basic2 = "walls_final roof_final ravine_final  i.lang i.job i.visited visits i.job_gov i.status i.know_eachother tenants salongo salongo_hours i.crieur hh_size_bl_orig i.elect1_bl inc_mo_bl i.status"
-	
-	global covs_addition = "pubgoods sanctions"
-	*global covs_addition2 = "i.gov_perform i.chef_perform i.trust_gov i.trust_dgrkoc i.trust_chef" // Few observation 
-	
+
+	global covs_basic = "age_prop sex_prop employed salaried work_gov"	
+	/* social_norm transport_norm church_norm wed_fun_norm hh_size_norm trust_norm access_norm income_avg_norm liquid_avg_norm move_ave */
+	global covs_addition = "pubgoods sanctions  age_prop2 salongo salongo_hours"	
 	global chief_chars = "age_chef_hi possessions_nb_chef_hi educ_yrs_chef_hi remoteness_hi chef_trust_gov_hi chef_trust_dgrkoc_hi col_view_gov_gen_hi col_view_gov_nbhd_hi col_gov_integrity_hi tmt_2016 chef_fam chef_tenure_hi"
 	
+	global covs_pay_ease "age_prop sex_prop employed salaried age_chef_hi remoteness_hi chef_trust_gov_hi chef_trust_dgrkoc_hi"
 	
-	/*
-	Variable defitions (above-the-median binaries):
-	-  age_chef_hi: age, 
-	- number of  possessions, education, how far do chiefs live to their tax collection compounds, chiefs trust in the national  and the provincial governments, trust in tax ministry, chiefs tenure greater than 10 years, dynasty status (whether chiefs have inherited the position from a family memenber),  the treatment status of 2016 etc.
-	*/
-	*global chief_chars2 = "chef_minority_ethnic chef_locality chef_established chef_fam chef_party chef_pprd chef_udps chef_gov_job chef_know_fired chef_know_2016tax"
-	
+	global covs_willingness "age_prop sex_prop  salaried possessions_nb_chef_hi chef_trust_dgrkoc_hi col_view_gov_nbhd_hi col_gov_integrity_hi tmt_2016 chef_fam chef_tenure_hi"
+
+
+eststo clear
+
+********** pay_ease
+capture drop p_pay_ease*
+eststo: xi: oprobit pay_ease $covs_pay_ease i.tribe i.house i.stratum i.time_FE_tdm_2mo_CvCLI if t_cli==1,cluster(a7)
+	predict ppay_ease*  if inlist(tmt,1,2,3)
+	gen p_pay_ease = 0 if (ppay_ease1 != .) & (ppay_ease2!=.) & (ppay_ease3!=.)
+	replace p_pay_ease = 1 if (ppay_ease2 > ppay_ease1) & (ppay_ease2 > ppay_ease3) & (ppay_ease2!=.)
+	replace p_pay_ease = 2 if (ppay_ease3 > ppay_ease1) & (ppay_ease3 > ppay_ease2) & (ppay_ease3!=.)
+	sum pay_ease if t_cli==1
+	estadd local Mean=abs(round(`r(mean)',.001))
+	estadd scalar Observations = `e(N)'
+	estadd scalar Clusters = `e(N_clust)'
+
+********** pay_ease
+capture drop p_willingness*
+eststo: xi: oprobit willingness $covs_willingness i.tribe i.house i.stratum i.time_FE_tdm_2mo_CvCLI if t_cli==1,cluster(a7)
+	predict pwillingness*  if inlist(tmt,1,2,3)
+	gen p_willingness = 0 if (pwillingness1 != .) & (pwillingness2!=.) & (pwillingness3!=.)
+	replace p_willingness = 1 if (pwillingness2 > pwillingness1) & (pwillingness2 > pwillingness3) & (pwillingness2!=.)
+	replace p_willingness = 2 if (pwillingness3 > pwillingness1) & (pwillingness3 > pwillingness2) & (pwillingness3!=.)
+	sum willingness if t_cli==1
+	estadd local Mean=abs(round(`r(mean)',.001))
+	estadd scalar Observations = `e(N)'
+	estadd scalar Clusters = `e(N_clust)'
+
 		
-	drop p_pay_ease* p_willingness*
-	eststo clear
-	foreach depvar in pay_ease willingness{
-	eststo: xi: oprobit `depvar' $covs_basic $chief_chars i.tribe i.house i.stratum i.time_FE_tdm_2mo_CvCLI if t_cli==1,cluster(a7)
-		predict p`depvar'*  if inlist(tmt,1,2,3)
-		gen p_`depvar' = 0 if (p`depvar'1 != .) & (p`depvar'2!=.) & (p`depvar'3!=.)
-		replace p_`depvar' = 1 if (p`depvar'2 > p`depvar'1) & (p`depvar'2 > p`depvar'3) & (p`depvar'2!=.)
-		replace p_`depvar' = 2 if (p`depvar'3 > p`depvar'1) & (p`depvar'3 > p`depvar'2) & (p`depvar'3!=.)
-		sum `depvar' if t_cli==1
-		estadd local Mean=abs(round(`r(mean)',.001))
-		estadd scalar Observations = `e(N)'
-		estadd scalar Clusters = `e(N_clust)'
-	}
 	
 ***********
 * Panel A *
