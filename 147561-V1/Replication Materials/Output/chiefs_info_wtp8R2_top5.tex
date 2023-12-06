@@ -1,0 +1,26 @@
+{
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+\begin{tabular}{l*{8}{c}}
+\toprule
+                &\multicolumn{1}{c}{Visited Post Carto}&\multicolumn{1}{c}{Compliance}&\multicolumn{1}{c}{Visited Post Carto}&\multicolumn{1}{c}{Compliance}&\multicolumn{1}{c}{Visited Post Carto}&\multicolumn{1}{c}{Compliance}&\multicolumn{1}{c}{Visited Post Carto}&\multicolumn{1}{c}{Compliance}\\
+                &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         &\multicolumn{1}{c}{(3)}         &\multicolumn{1}{c}{(4)}         &\multicolumn{1}{c}{(5)}         &\multicolumn{1}{c}{(6)}         &\multicolumn{1}{c}{(7)}         &\multicolumn{1}{c}{(8)}         \\
+\midrule
+Willingness     &    0.034\sym{**} &    0.037\sym{***}&    0.033\sym{**} &    0.038\sym{***}&                  &                  &                  &                  \\
+                &  (0.011)         &  (0.007)         &  (0.012)         &  (0.008)         &                  &                  &                  &                  \\
+Predicted Willingness to pay&                  &                  &                  &                  &    0.053         &    0.025         &    0.002         &    0.026\sym{**} \\
+                &                  &                  &                  &                  &  (0.032)         &  (0.018)         &  (0.033)         &  (0.011)         \\
+Wall quality    &                  &                  &    0.022         &    0.021\sym{**} &    0.010         &    0.013\sym{**} &    0.025\sym{**} &    0.013\sym{**} \\
+                &                  &                  &  (0.013)         &  (0.009)         &  (0.010)         &  (0.007)         &  (0.010)         &  (0.005)         \\
+Roof quality    &                  &                  &    0.011         &    0.001         &    0.004         &   -0.001         &    0.017\sym{**} &   -0.010\sym{*}  \\
+                &                  &                  &  (0.008)         &  (0.002)         &  (0.006)         &  (0.005)         &  (0.008)         &  (0.006)         \\
+Erosion threat  &                  &                  &    0.016         &   -0.005         &   -0.006         &   -0.008         &   -0.000         &   -0.006         \\
+                &                  &                  &  (0.012)         &  (0.005)         &  (0.013)         &  (0.007)         &  (0.009)         &  (0.005)         \\
+House FE        &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+Stratum FE      &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         &      Yes         \\
+\midrule
+Observations    &     3933         &     5521         &     3929         &     4461         &     5317         &     5332         &     5078         &     5085         \\
+Clusters        &       50         &       50         &       50         &       50         &       80         &       80         &       76         &       76         \\
+Mean            &     .357         &     .062         &     .357         &     .066         &     .446         &      .11         &     .399         &     .058         \\
+\bottomrule
+\end{tabular}
+}
