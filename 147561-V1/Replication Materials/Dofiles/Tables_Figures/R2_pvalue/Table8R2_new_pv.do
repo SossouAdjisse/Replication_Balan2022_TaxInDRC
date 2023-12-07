@@ -78,8 +78,8 @@ use "${repldir}/Data/03_clean_combined/analysis_data.dta", clear
 rename compound1 compound_code
 merge 1:1 compound_code using `bl', force 
 
-keep if _merge > 2
-drop _merge
+ keep if _merge > 2
+drop  _merge 
 	
 	keep if tmt==1 | tmt==2 | tmt==3
 	
@@ -311,7 +311,7 @@ drop _merge
 		estadd local Mean=abs(round(`r(mean)',.001))
 		estadd scalar Observations = `e(N)'
 		local Mean=abs(round(`r(mean)',.001))
-		estadd scalar Mean2 = `Mean'
+		* estadd scalar Mean = `Mean'
 	
 	// Alternate first stage with more variables
 	
@@ -412,25 +412,25 @@ drop _merge
 			
 		// Predicted pay ease function predicting visits/payment in C and L
 		eststo: reg visit_post_carto p_pay_ease walls_final roof_final ravine_final i.trust_chief i.house i.stratum if t_l==1,cluster(a7)
-			estimates store L_visit_pay_ease
+			* estimates store L_visit_pay_ease
 			estadd scalar Clusters = `e(N_clust)'
 			sum visit_post_carto if t_l==1 & p_pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
 			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
 		eststo: reg taxes_paid p_pay_ease walls_final roof_final ravine_final i.trust_chief i.house i.stratum if t_l==1,cluster(a7)
-			estimates store L_compl_pay_ease
+			* estimates store L_compl_pay_ease
 			estadd scalar Clusters = `e(N_clust)'
 			sum taxes_paid if t_l==1 & p_pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
 			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
 		eststo: reg visit_post_carto p_pay_ease walls_final roof_final ravine_final i.trust_chief i.house i.stratum if t_c==1,cluster(a7)
-			estimates store C_visit_pay_ease
+			* estimates store C_visit_pay_ease
 			estadd scalar Clusters = `e(N_clust)'
 			sum visit_post_carto if t_c==1 & p_pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
 			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
 		eststo: reg taxes_paid p_pay_ease walls_final roof_final ravine_final i.trust_chief i.house i.stratum if t_c==1,cluster(a7)
-			estimates store C_compl_pay_ease
+			* estimates store C_compl_pay_ease
 			estadd scalar Clusters = `e(N_clust)'
 			sum taxes_paid if t_c==1 & p_pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
 			estadd local Mean=abs(round(`r(mean)',.001))
