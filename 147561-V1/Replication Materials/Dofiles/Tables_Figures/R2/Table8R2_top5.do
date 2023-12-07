@@ -351,7 +351,7 @@ eststo: xi: reg willingness  $covs_willingness i.tribe i.house i.stratum i.time_
 		label var p_linear_cc_pay_ease "prediction of pay_ease from linear + chiefs characteristics"
 		label var p_linear_cc_willingness "prediction of willingness from linear + chiefs characteristics"
 		duplicates drop compound_code, force
-		save "${repldir}/Data/03_clean_combined/predictions_FromTable8LC.dta", replace	
+		save "${repldir}/Data/03_clean_combined/predictions_FromTable8R2_top5.dta", replace	
 	restore
 
 
