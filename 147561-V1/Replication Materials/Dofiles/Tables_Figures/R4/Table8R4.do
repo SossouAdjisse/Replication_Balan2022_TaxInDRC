@@ -77,8 +77,8 @@ use "${repldir}/Data/03_clean_combined/analysis_data.dta", clear
 rename compound1 compound_code
 merge 1:1 compound_code using `bl', force 
 
-keep if _merge > 2
-drop _merge
+// keep if _merge > 2
+rename _merge merge_baseline
 
 
 	
@@ -290,28 +290,28 @@ drop _merge
 	
 	eststo clear
 	
-	eststo: reg pay_ease age_prop sex_prop employed salaried work_gov main_tribe  i.stratum if t_cli==1 & trust_chief != .,cluster(a7)
+	eststo: reg pay_ease age_prop sex_prop employed salaried work_gov main_tribe  i.stratum if t_cli==1 ,cluster(a7)
 		estadd scalar Clusters = `e(N_clust)'
 		predict p_pay_ease if inlist(tmt,1,2,3)
-		sum pay_ease_dum if age_prop!=. & sex_prop!=. & employed!=. & salaried!=. & work_gov!=. & main_tribe!=. & t_cli==1 & trust_chief != . 
+		sum pay_ease_dum if age_prop!=. & sex_prop!=. & employed!=. & salaried!=. & work_gov!=. & main_tribe!=. & t_cli==1 
 		estadd local Mean=abs(round(`r(mean)',.001))
 		estadd scalar Observations = `e(N)'
-	eststo: reg pay_ease age_prop sex_prop employed salaried work_gov main_tribe i.stratum i.time_FE_tdm_2mo_CvCLI if t_cli==1 & trust_chief != .,cluster(a7)
+	eststo: reg pay_ease age_prop sex_prop employed salaried work_gov main_tribe i.stratum i.time_FE_tdm_2mo_CvCLI if t_cli==1,cluster(a7)
 		estadd scalar Clusters = `e(N_clust)'
 		predict p_pay_ease_timeFE if inlist(tmt,1,2,3)
-		sum pay_ease_dum if age_prop!=. & sex_prop!=. & employed!=. & salaried!=. & work_gov!=. & main_tribe!=. &  t_cli==1 & time_FE_tdm_2mo_CvCLI!=. & trust_chief != .
+		sum pay_ease_dum if age_prop!=. & sex_prop!=. & employed!=. & salaried!=. & work_gov!=. & main_tribe!=. &  t_cli==1 & time_FE_tdm_2mo_CvCLI!=.
 		estadd local Mean=abs(round(`r(mean)',.001))
 		estadd scalar Observations = `e(N)'
-	eststo: reg willingness age_prop sex_prop employed salaried work_gov main_tribe  i.stratum if t_cli==1 & trust_chief != .,cluster(a7)
+	eststo: reg willingness age_prop sex_prop employed salaried work_gov main_tribe  i.stratum if t_cli==1,cluster(a7)
 		estadd scalar Clusters = `e(N_clust)'
 		predict p_willingness if inlist(tmt,1,2,3)
-		sum willingness_dum if age_prop!=. & sex_prop!=. & employed!=. & salaried!=. & work_gov!=. & main_tribe!=. & t_cli==1 & trust_chief != .
+		sum willingness_dum if age_prop!=. & sex_prop!=. & employed!=. & salaried!=. & work_gov!=. & main_tribe!=. & t_cli==1 
 		estadd local Mean=abs(round(`r(mean)',.001))
 		estadd scalar Observations = `e(N)'
-	eststo: reg willingness age_prop sex_prop employed salaried work_gov main_tribe  i.stratum i.time_FE_tdm_2mo_CvCLI if t_cli==1 & trust_chief != .,cluster(a7)
+	eststo: reg willingness age_prop sex_prop employed salaried work_gov main_tribe  i.stratum i.time_FE_tdm_2mo_CvCLI if t_cli==1,cluster(a7)
 		estadd scalar Clusters = `e(N_clust)'
 		predict p_willingness_timeFE if inlist(tmt,1,2,3)
-		sum willingness_dum if age_prop!=. & sex_prop!=. & employed!=. & salaried!=. & work_gov!=. & main_tribe!=.  & t_cli==1 & time_FE_tdm_2mo_CvCLI!=. & trust_chief != .
+		sum willingness_dum if age_prop!=. & sex_prop!=. & employed!=. & salaried!=. & work_gov!=. & main_tribe!=.  & t_cli==1 & time_FE_tdm_2mo_CvCLI!=.
 		estadd local Mean=abs(round(`r(mean)',.001))
 		estadd scalar Observations = `e(N)'
 		local Mean=abs(round(`r(mean)',.001))
@@ -344,19 +344,19 @@ drop _merge
 	drop p_pay_ease* p_willingness*
 	eststo clear
 	foreach depvar in pay_ease willingness{
-	eststo: xi: reg `depvar' $covs_basic i.tribe i.house i.stratum i.time_FE_tdm_2mo_CvCLI if t_cli==1 & trust_chief != .,cluster(a7)
+	eststo: xi: reg `depvar' $covs_basic i.tribe i.house i.stratum i.time_FE_tdm_2mo_CvCLI if t_cli==1,cluster(a7)
 		estadd scalar Clusters = `e(N_clust)'
 		predict p_`depvar' if inlist(tmt,1,2,3)
 		sum `depvar' if t_cli==1
 		estadd local Mean=abs(round(`r(mean)',.001))
 		estadd scalar Observations = `e(N)'
-	eststo: xi: reg `depvar' $covs_basic $covs_addition i.tribe i.house  i.stratum i.time_FE_tdm_2mo_CvCLI if t_cli==1 & trust_chief != .,cluster(a7)
+	eststo: xi: reg `depvar' $covs_basic $covs_addition i.tribe i.house  i.stratum i.time_FE_tdm_2mo_CvCLI if t_cli==1,cluster(a7)
 		estadd scalar Clusters = `e(N_clust)'
 		predict p_`depvar'2 if inlist(tmt,1,2,3)
 		sum `depvar' if t_cli==1
 		estadd local Mean=abs(round(`r(mean)',.001))
 		estadd scalar Observations = `e(N)'
-	eststo: xi: reg `depvar' $covs_basic $covs_addition $house_chars i.tribe i.house  i.stratum i.time_FE_tdm_2mo_CvCLI if t_cli==1 & trust_chief != .,cluster(a7)
+	eststo: xi: reg `depvar' $covs_basic $covs_addition $house_chars i.tribe i.house  i.stratum i.time_FE_tdm_2mo_CvCLI if t_cli==1,cluster(a7)
 		estadd scalar Clusters = `e(N_clust)'
 		predict p_`depvar'3 if inlist(tmt,1,2,3)
 		sum `depvar' if t_cli==1
@@ -390,7 +390,7 @@ drop _merge
 		eststo clear
 			
 		// Actual pay ease predicting visits and compliance in CLI		
-		eststo r1: reg visit_post_carto pay_ease i.house i.stratum if t_cli==1  & trust_chief != .,cluster(a7)
+		eststo r1: reg visit_post_carto pay_ease i.house i.stratum if t_cli==1  & merge_baseline == 3,cluster(a7)
 /*
 		ritest pay_ease _b[pay_ease], reps(1000) seed(125) strata(stratum) nodots: `e(cmdline)' // Error --> pay_ease does not seem to be constant within clusters !!??
 			matrix pvalues = r(p) // save the p-values from ritest
@@ -403,7 +403,7 @@ drop _merge
 			sum visit_post_carto if t_cli==1 & pay_ease!=.
 			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
-		eststo r2: reg taxes_paid pay_ease i.house i.stratum if t_cli==1  & trust_chief != .,cluster(a7)
+		eststo r2: reg taxes_paid pay_ease i.house i.stratum if t_cli==1  & merge_baseline == 3,cluster(a7)
 /*
 		ritest pay_ease _b[pay_ease], reps(1000) seed(125) strata(stratum) nodots: `e(cmdline)' 
 			matrix pvalues = r(p) 
@@ -419,7 +419,7 @@ drop _merge
 			
 		// Actual pay ease predicting visits and compliance in CLI - controlling for observables
 		
-		eststo r3: reg visit_post_carto pay_ease walls_final roof_final ravine_final i.house i.stratum if t_cli==1  & trust_chief != .,cluster(a7)
+		eststo r3: reg visit_post_carto pay_ease walls_final roof_final ravine_final i.house i.stratum if t_cli==1  & merge_baseline == 3,cluster(a7)
 /*
 		ritest pay_ease _b[pay_ease], reps(1000) seed(125) strata(stratum) nodots: `e(cmdline)' 
 			matrix pvalues = r(p) 
@@ -432,7 +432,7 @@ drop _merge
 			sum visit_post_carto if t_cli==1 & pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
 			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
-		eststo r4: reg taxes_paid pay_ease walls_final roof_final ravine_final i.house i.stratum if t_cli==1  & trust_chief != .,cluster(a7)
+		eststo r4: reg taxes_paid pay_ease walls_final roof_final ravine_final i.house i.stratum if t_cli==1  & merge_baseline == 3,cluster(a7)
 /*
 		ritest pay_ease _b[pay_ease], reps(1000) seed(125) strata(stratum) nodots: `e(cmdline)' 
 			matrix pvalues = r(p) 
@@ -447,7 +447,7 @@ drop _merge
 			estadd scalar Observations = `e(N)'
 			
 		// Predicted pay ease function predicting visits/payment in C and L
-		eststo r5: reg visit_post_carto p_pay_ease walls_final roof_final ravine_final i.house i.stratum if t_l==1  & trust_chief != .,cluster(a7)
+		eststo r5: reg visit_post_carto p_pay_ease walls_final roof_final ravine_final i.house i.stratum if t_l==1  & merge_baseline == 3,cluster(a7)
 /*
 		ritest p_pay_ease _b[p_pay_ease], reps(1000) seed(125) strata(stratum) nodots: `e(cmdline)' 
 			matrix pvalues = r(p) 
@@ -461,7 +461,7 @@ drop _merge
 			sum visit_post_carto if t_l==1 & p_pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
 			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
-		eststo r6: reg taxes_paid p_pay_ease walls_final roof_final ravine_final i.house i.stratum if t_l==1  & trust_chief != .,cluster(a7)
+		eststo r6: reg taxes_paid p_pay_ease walls_final roof_final ravine_final i.house i.stratum if t_l==1  & merge_baseline == 3,cluster(a7)
 /*
 		ritest p_pay_ease _b[p_pay_ease], reps(1000) seed(125) strata(stratum) nodots: `e(cmdline)' 
 			matrix pvalues = r(p) 
@@ -475,7 +475,7 @@ drop _merge
 			sum taxes_paid if t_l==1 & p_pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
 			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
-		eststo r7: reg visit_post_carto p_pay_ease walls_final roof_final ravine_final i.house i.stratum if t_c==1  & trust_chief != .,cluster(a7)
+		eststo r7: reg visit_post_carto p_pay_ease walls_final roof_final ravine_final i.house i.stratum if t_c==1  & merge_baseline == 3,cluster(a7)
 /*
 		ritest p_pay_ease _b[p_pay_ease], reps(1000) seed(125) strata(stratum) nodots: `e(cmdline)' 
 			matrix pvalues = r(p) 
@@ -489,7 +489,7 @@ drop _merge
 			sum visit_post_carto if t_c==1 & p_pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
 			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
-		eststo r8: reg taxes_paid p_pay_ease walls_final roof_final ravine_final i.house i.stratum if t_c==1  & trust_chief != .,cluster(a7)
+		eststo r8: reg taxes_paid p_pay_ease walls_final roof_final ravine_final i.house i.stratum if t_c==1  & merge_baseline == 3,cluster(a7)
 /*
 		ritest p_pay_ease _b[p_pay_ease], reps(1000) seed(125) strata(stratum) nodots: `e(cmdline)' 
 			matrix pvalues = r(p) 
@@ -548,7 +548,7 @@ drop _merge
 		eststo clear
 			
 		// Actual willingness predicting visits and compliance in CLI
-		eststo r11: reg visit_post_carto willingness i.house i.stratum if t_cli==1  & trust_chief != .,cluster(a7)
+		eststo r11: reg visit_post_carto willingness i.house i.stratum if t_cli==1  & merge_baseline == 3,cluster(a7)
 /*
 		ritest willingness _b[willingness], reps(1000) seed(125) strata(stratum) nodots: `e(cmdline)' 
 			matrix pvalues = r(p) 
@@ -561,7 +561,7 @@ drop _merge
 			sum visit_post_carto if t_cli==1 & willingness!=.
 			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
-		eststo r21: reg taxes_paid willingness i.house i.stratum if t_cli==1  & trust_chief != .,cluster(a7)
+		eststo r21: reg taxes_paid willingness i.house i.stratum if t_cli==1  & merge_baseline == 3,cluster(a7)
 /*
 		ritest willingness _b[willingness], reps(1000) seed(125) strata(stratum) nodots: `e(cmdline)' 
 			matrix pvalues = r(p) 
@@ -580,7 +580,7 @@ drop _merge
 		sum ravine
 		cap g ravine_final = (ravine-`r(mean)')/(`r(sd)') //standardize
 		
-		eststo r31: reg visit_post_carto willingness walls_final roof_final ravine_final i.house i.stratum if t_cli==1  & trust_chief != .,cluster(a7)
+		eststo r31: reg visit_post_carto willingness walls_final roof_final ravine_final i.house i.stratum if t_cli==1  & merge_baseline == 3,cluster(a7)
 /*
 		ritest willingness _b[willingness], reps(1000) seed(125) strata(stratum) nodots: `e(cmdline)' 
 			matrix pvalues = r(p) 
@@ -593,7 +593,7 @@ drop _merge
 			sum visit_post_carto if t_cli==1 & willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=.
 			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
-		eststo r41: reg taxes_paid willingness walls_final roof_final ravine_final i.house i.stratum if t_cli==1  & trust_chief != .,cluster(a7)
+		eststo r41: reg taxes_paid willingness walls_final roof_final ravine_final i.house i.stratum if t_cli==1  & merge_baseline == 3,cluster(a7)
 /*
 		ritest willingness _b[willingness], reps(1000) seed(125) strata(stratum) nodots: `e(cmdline)' 
 			matrix pvalues = r(p) 
@@ -608,7 +608,7 @@ drop _merge
 			estadd scalar Observations = `e(N)'
 			
 		// Predicted willingness function predicting visits/payment in C and L
-		eststo r51: reg visit_post_carto p_willingness walls_final roof_final ravine_final i.house i.stratum if t_l==1  & trust_chief != .,cluster(a7)
+		eststo r51: reg visit_post_carto p_willingness walls_final roof_final ravine_final i.house i.stratum if t_l==1 & merge_baseline == 3,cluster(a7)
 /*
 		ritest p_willingness _b[p_willingness], reps(1000) seed(125) strata(stratum) nodots: `e(cmdline)' 
 			matrix pvalues = r(p) 
@@ -622,7 +622,7 @@ drop _merge
 			sum visit_post_carto if t_l==1 & p_willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=.
 			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
-		eststo r61: reg taxes_paid p_willingness walls_final roof_final ravine_final i.house i.stratum if t_l==1 & trust_chief != .,cluster(a7)
+		eststo r61: reg taxes_paid p_willingness walls_final roof_final ravine_final i.house i.stratum if t_l==1 & merge_baseline == 3,cluster(a7)
 /*
 		ritest p_willingness _b[p_willingness], reps(1000) seed(125) strata(stratum) nodots: `e(cmdline)' 
 			matrix pvalues = r(p) 
@@ -636,7 +636,7 @@ drop _merge
 			sum taxes_paid if t_l==1 & p_willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=.
 			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
-		eststo r71: reg visit_post_carto p_willingness walls_final roof_final ravine_final i.house i.stratum if t_c==1 & trust_chief != .,cluster(a7)
+		eststo r71: reg visit_post_carto p_willingness walls_final roof_final ravine_final i.house i.stratum if t_c==1 & merge_baseline == 3,cluster(a7)
 /*
 		ritest p_willingness _b[p_willingness], reps(1000) seed(125) strata(stratum) nodots: `e(cmdline)' 
 			matrix pvalues = r(p) 
@@ -650,7 +650,7 @@ drop _merge
 			sum visit_post_carto if t_c==1 & p_willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=.
 			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
-		eststo r81: reg taxes_paid p_willingness walls_final roof_final ravine_final i.house i.stratum if t_c==1 & trust_chief != .,cluster(a7)
+		eststo r81: reg taxes_paid p_willingness walls_final roof_final ravine_final i.house i.stratum if t_c==1 & merge_baseline == 3,cluster(a7)
 /*
 		ritest p_willingness _b[p_willingness], reps(1000) seed(125) strata(stratum) nodots: `e(cmdline)' 
 			matrix pvalues = r(p) 
