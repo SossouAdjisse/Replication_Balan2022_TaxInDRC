@@ -78,8 +78,9 @@ use "${repldir}/Data/03_clean_combined/analysis_data.dta", clear
 rename compound1 compound_code
 merge 1:1 compound_code using `bl', force 
 
- keep if _merge > 2
-drop  _merge 
+// keep if _merge > 2
+rename _merge merge_baseline
+
 	
 	keep if tmt==1 | tmt==2 | tmt==3
 	
@@ -386,53 +387,53 @@ drop  _merge
 		eststo clear
 			
 		// Actual pay ease predicting visits and compliance in CLI
-		eststo: reg visit_post_carto pay_ease i.trust_chief i.house i.stratum if t_cli==1,cluster(a7)
+		eststo: reg visit_post_carto pay_ease i.trust_chief i.house i.stratum if t_cli==1 & merge_baseline == 3,cluster(a7)
 			estadd scalar Clusters = `e(N_clust)'
-			sum visit_post_carto if t_cli==1 & pay_ease!=.
+			sum visit_post_carto if t_cli==1 & pay_ease!=. & merge_baseline == 3
 			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
-		eststo: reg taxes_paid pay_ease i.trust_chief i.house i.stratum if t_cli==1,cluster(a7)
+		eststo: reg taxes_paid pay_ease i.trust_chief i.house i.stratum if t_cli==1 & merge_baseline == 3,cluster(a7)
 			estadd scalar Clusters = `e(N_clust)'
-			sum taxes_paid if t_cli==1 & pay_ease!=.
+			sum taxes_paid if t_cli==1 & pay_ease!=. & merge_baseline == 3
 			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
 			
 		// Actual pay ease predicting visits and compliance in CLI - controlling for observables
 		
-		eststo: reg visit_post_carto pay_ease walls_final roof_final ravine_final i.trust_chief  i.house i.stratum if t_cli==1,cluster(a7)
+		eststo: reg visit_post_carto pay_ease walls_final roof_final ravine_final i.trust_chief  i.house i.stratum if t_cli==1 & merge_baseline == 3,cluster(a7)
 			estadd scalar Clusters = `e(N_clust)'
-			sum visit_post_carto if t_cli==1 & pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
+			sum visit_post_carto if t_cli==1 & pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=. & merge_baseline == 3
 			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
-		eststo: reg taxes_paid pay_ease walls_final roof_final ravine_final i.trust_chief  i.house i.stratum if t_cli==1,cluster(a7)
+		eststo: reg taxes_paid pay_ease walls_final roof_final ravine_final i.trust_chief  i.house i.stratum if t_cli==1 & merge_baseline == 3,cluster(a7)
 			estadd scalar Clusters = `e(N_clust)'
-			sum taxes_paid if t_cli==1 & pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
+			sum taxes_paid if t_cli==1 & pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=. & merge_baseline == 3
 			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
 			
 		// Predicted pay ease function predicting visits/payment in C and L
-		eststo: reg visit_post_carto p_pay_ease walls_final roof_final ravine_final i.trust_chief i.house i.stratum if t_l==1,cluster(a7)
+		eststo: reg visit_post_carto p_pay_ease walls_final roof_final ravine_final i.trust_chief i.house i.stratum if t_l==1 & merge_baseline == 3,cluster(a7)
 			* estimates store L_visit_pay_ease
 			estadd scalar Clusters = `e(N_clust)'
-			sum visit_post_carto if t_l==1 & p_pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
+			sum visit_post_carto if t_l==1 & p_pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=. & merge_baseline == 3
 			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
-		eststo: reg taxes_paid p_pay_ease walls_final roof_final ravine_final i.trust_chief i.house i.stratum if t_l==1,cluster(a7)
+		eststo: reg taxes_paid p_pay_ease walls_final roof_final ravine_final i.trust_chief i.house i.stratum if t_l==1 & merge_baseline == 3,cluster(a7)
 			* estimates store L_compl_pay_ease
 			estadd scalar Clusters = `e(N_clust)'
-			sum taxes_paid if t_l==1 & p_pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
+			sum taxes_paid if t_l==1 & p_pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=. & merge_baseline == 3
 			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
-		eststo: reg visit_post_carto p_pay_ease walls_final roof_final ravine_final i.trust_chief i.house i.stratum if t_c==1,cluster(a7)
+		eststo: reg visit_post_carto p_pay_ease walls_final roof_final ravine_final i.trust_chief i.house i.stratum if t_c==1 & merge_baseline == 3,cluster(a7)
 			* estimates store C_visit_pay_ease
 			estadd scalar Clusters = `e(N_clust)'
-			sum visit_post_carto if t_c==1 & p_pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
+			sum visit_post_carto if t_c==1 & p_pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=. & merge_baseline == 3
 			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
-		eststo: reg taxes_paid p_pay_ease walls_final roof_final ravine_final i.trust_chief i.house i.stratum if t_c==1,cluster(a7)
+		eststo: reg taxes_paid p_pay_ease walls_final roof_final ravine_final i.trust_chief i.house i.stratum if t_c==1 & merge_baseline == 3,cluster(a7)
 			* estimates store C_compl_pay_ease
 			estadd scalar Clusters = `e(N_clust)'
-			sum taxes_paid if t_c==1 & p_pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=.
+			sum taxes_paid if t_c==1 & p_pay_ease!=. & walls_final!=. & roof_final!=. & ravine_final!=. & merge_baseline == 3
 			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
 			
@@ -476,14 +477,14 @@ drop  _merge
 		eststo clear
 			
 		// Actual willingness predicting visits and compliance in CLI
-		eststo: reg visit_post_carto willingness i.trust_chief i.house i.stratum if t_cli==1,cluster(a7)
+		eststo: reg visit_post_carto willingness i.trust_chief i.house i.stratum if t_cli==1 & merge_baseline == 3,cluster(a7)
 			estadd scalar Clusters = `e(N_clust)'
-			sum visit_post_carto if t_cli==1 & willingness!=.
+			sum visit_post_carto if t_cli==1 & willingness!=. & merge_baseline == 3
 			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
-		eststo: reg taxes_paid willingness i.trust_chief i.house i.stratum if t_cli==1,cluster(a7)
+		eststo: reg taxes_paid willingness i.trust_chief i.house i.stratum if t_cli==1 & merge_baseline == 3,cluster(a7)
 			estadd scalar Clusters = `e(N_clust)'
-			sum taxes_paid if t_cli==1 & willingness!=.
+			sum taxes_paid if t_cli==1 & willingness!=. & merge_baseline == 3
 			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
 			
@@ -492,40 +493,40 @@ drop  _merge
 		sum ravine
 		cap g ravine_final = (ravine-`r(mean)')/(`r(sd)') //standardize
 		
-		eststo: reg visit_post_carto willingness walls_final roof_final ravine_final i.trust_chief i.house i.stratum if t_cli==1,cluster(a7)
+		eststo: reg visit_post_carto willingness walls_final roof_final ravine_final i.trust_chief i.house i.stratum if t_cli==1 & merge_baseline == 3,cluster(a7)
 			estadd scalar Clusters = `e(N_clust)'
-			sum visit_post_carto if t_cli==1 & willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=.
+			sum visit_post_carto if t_cli==1 & willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=. & merge_baseline == 3
 			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
-		eststo: reg taxes_paid willingness walls_final roof_final ravine_final i.trust_chief i.house i.stratum if t_cli==1,cluster(a7)
+		eststo: reg taxes_paid willingness walls_final roof_final ravine_final i.trust_chief i.house i.stratum if t_cli==1 & merge_baseline == 3,cluster(a7)
 			estadd scalar Clusters = `e(N_clust)'
-			sum taxes_paid if t_cli==1 & willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=.
+			sum taxes_paid if t_cli==1 & willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=. & merge_baseline == 3
 			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
 			
 		// Predicted willingness function predicting visits/payment in C and L
-		eststo: reg visit_post_carto p_willingness walls_final roof_final ravine_final i.trust_chief  i.house i.stratum if t_l==1,cluster(a7)
+		eststo: reg visit_post_carto p_willingness walls_final roof_final ravine_final i.trust_chief  i.house i.stratum if t_l==1 & merge_baseline == 3,cluster(a7)
 			* estimates store L_visit_wtp
 			estadd scalar Clusters = `e(N_clust)'
-			sum visit_post_carto if t_l==1 & p_willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=.
+			sum visit_post_carto if t_l==1 & p_willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=. & merge_baseline == 3
 			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
-		eststo: reg taxes_paid p_willingness walls_final roof_final ravine_final i.trust_chief  i.house i.stratum if t_l==1,cluster(a7)
+		eststo: reg taxes_paid p_willingness walls_final roof_final ravine_final i.trust_chief  i.house i.stratum if t_l==1 & merge_baseline == 3,cluster(a7)
 			* estimates store L_compl_wtp
 			estadd scalar Clusters = `e(N_clust)'
-			sum taxes_paid if t_l==1 & p_willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=.
+			sum taxes_paid if t_l==1 & p_willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=. & merge_baseline == 3
 			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
-		eststo: reg visit_post_carto p_willingness walls_final roof_final ravine_final i.trust_chief  i.house i.stratum if t_c==1,cluster(a7)
+		eststo: reg visit_post_carto p_willingness walls_final roof_final ravine_final i.trust_chief  i.house i.stratum if t_c==1 & merge_baseline == 3,cluster(a7)
 			* estimates store C_visit_wtp
 			estadd scalar Clusters = `e(N_clust)'
-			sum visit_post_carto if t_c==1 & p_willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=.
+			sum visit_post_carto if t_c==1 & p_willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=. & merge_baseline == 3
 			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
-		eststo: reg taxes_paid p_willingness walls_final roof_final ravine_final i.trust_chief  i.house i.stratum if t_c==1,cluster(a7)
+		eststo: reg taxes_paid p_willingness walls_final roof_final ravine_final i.trust_chief  i.house i.stratum if t_c==1 & merge_baseline == 3,cluster(a7)
 			* estimates store C_compl_wtp
 			estadd scalar Clusters = `e(N_clust)'
-			sum taxes_paid if t_c==1 & p_willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=.
+			sum taxes_paid if t_c==1 & p_willingness!=. & walls_final!=. & roof_final!=. & ravine_final!=. & merge_baseline == 3
 			estadd local Mean=abs(round(`r(mean)',.001))
 			estadd scalar Observations = `e(N)'
 			
