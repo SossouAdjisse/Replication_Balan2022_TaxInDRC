@@ -335,7 +335,14 @@
 		label var p_oprob_pay_ease "prediction of pay_ease from ordered probit"
 		label var p_oprob_willingness "prediction of willingness from ordered probit"
 		duplicates drop compound_code, force
-		save "${repldir}/Data/03_clean_combined/predictions_FromTable8R2.dta", replace	 /* predictions_FromTable8R2 */
+		
+						* Added by Sossou
+		recode willingness (1=0 "Pas du tout")(2=1 "Un peu")(3=2 "Beaucoup")(else=.), gen(willingness1)
+		drop willingness
+		rename willingness1 willingness
+
+
+		save "${repldir}/Data/03_clean_combined/predictions_FromTable8R3i.dta", replace	 /* predictions_FromTable8R2 */
 	restore
 
 	

@@ -362,7 +362,14 @@ eststo: xi: oprobit willingness $covs_willingness i.tribe i.house i.stratum i.ti
 		label var p_oprob_cc_pay_ease "prediction of pay_ease from ordered probit + chiefs characteristics"
 		label var p_oprob_cc_willingness "prediction of willingness from ordered probit + chiefs characteristics"
 		duplicates drop compound_code, force
-		save "${repldir}/Data/03_clean_combined/predictions_FromTable8R2R3_top5.dta", replace	
+		
+						* Added by Sossou
+		recode willingness (1=0 "Pas du tout")(2=1 "Un peu")(3=2 "Beaucoup")(else=.), gen(willingness1)
+		drop willingness
+		rename willingness1 willingness
+
+
+		save "${repldir}/Data/03_clean_combined/predictions_FromTable8R3ii.dta", replace	
 	restore
 
 	

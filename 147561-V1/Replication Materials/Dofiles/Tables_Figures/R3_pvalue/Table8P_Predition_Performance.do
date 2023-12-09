@@ -6,22 +6,25 @@
 use "${repldir}/Data/03_clean_combined/predictions_FromTable8R1.dta", clear /* Table 8 */
 * use "${repldir}/Data/03_clean_combined/predictions_FromTable8R2.dta", clear 
 
-/*
-merge 1:1 compound_code using "${repldir}/Data/03_clean_combined/predictions_FromTable8R2.dta"
+merge 1:1 compound_code using "${repldir}/Data/03_clean_combined/predictions_FromTable8R3i.dta"
 keep if _merge == 3
 drop _merge
-*/
+
+/*
 merge 1:1 compound_code using "${repldir}/Data/03_clean_combined/predictions_FromTable8R2_top5.dta"
 keep if _merge == 3
 drop _merge
+*/
 
-merge 1:1 compound_code using "${repldir}/Data/03_clean_combined/predictions_FromTable8R2R3_top5.dta"
+merge 1:1 compound_code using "${repldir}/Data/03_clean_combined/predictions_FromTable8R3ii.dta"
 keep if _merge == 3
 drop _merge
 
 
+/*
 rename p_linear_cc_pay_ease p_l_cc_pay_ease
 rename p_linear_cc_willingness p_l_cc_willingness
+*/
 
 
 //order compound_code pay_ease p_reg_pay_ease p_linear_cc_pay_ease p_oprob_pay_ease p_oprob_cc_pay_ease
@@ -29,7 +32,7 @@ rename p_linear_cc_willingness p_l_cc_willingness
 				* Against the true Value
 
 * Against the True Pay Ease
-foreach varac in p_reg_pay_ease p_l_cc_pay_ease /* p_oprob_pay_ease */ p_oprob_cc_pay_ease{
+foreach varac in p_reg_pay_ease /* p_l_cc_pay_ease */  p_oprob_pay_ease  p_oprob_cc_pay_ease{
 	keep if  pay_ease >= 0 & pay_ease <= 2 & `varac' != .
 	
 	* Accuracy 
@@ -52,7 +55,7 @@ foreach varac in p_reg_pay_ease p_l_cc_pay_ease /* p_oprob_pay_ease */ p_oprob_c
 }
 
 * Against the true Willingness
-foreach varac in p_reg_willingness p_l_cc_willingness /* p_oprob_willingness */ p_oprob_cc_willingness{
+foreach varac in p_reg_willingness /* p_l_cc_willingness */ p_oprob_willingness p_oprob_cc_willingness{
 	keep if  willingness >= 0 & willingness <= 2 & `varac' != .
 	
 	* Accuracy 
@@ -79,7 +82,7 @@ foreach varac in p_reg_willingness p_l_cc_willingness /* p_oprob_willingness */ 
 * Against the Original Prediction 
 
 * Against the original prediction of Pay Ease
-foreach varac in  p_l_cc_pay_ease /* p_oprob_pay_ease */ p_oprob_cc_pay_ease{
+foreach varac in  /* p_l_cc_pay_ease */ p_oprob_pay_ease p_oprob_cc_pay_ease{
 	keep if  p_reg_pay_ease >= 0 & p_reg_pay_ease <= 2 & `varac' != .
 	
 	* Accuracy 
@@ -102,7 +105,7 @@ foreach varac in  p_l_cc_pay_ease /* p_oprob_pay_ease */ p_oprob_cc_pay_ease{
 }
 
 * Willingness
-foreach varac in  p_l_cc_willingness /* p_oprob_willingness */ p_oprob_cc_willingness{
+foreach varac in  /* p_l_cc_willingness */ p_oprob_willingness p_oprob_cc_willingness{
 	keep if  p_reg_willingness >= 0 & p_reg_willingness <= 2 & `varac' != .
 	
 	* Accuracy 
@@ -133,21 +136,21 @@ reshape long Accuracy MSE MAE , i(id) j(Model) string
  
 
 replace Model = "PayEase-Table8" if Model == "p_reg_pay_ease"
-replace Model = "PayEase-Table8R3i" if Model == "p_l_cc_pay_ease"
+replace Model = "PayEase-Table8R3i" if Model == "p_oprob_pay_ease"
 // replace Model = "PE-OP" if Model == "p_oprob_pay_ease"
 replace Model = "PayEase-Table8R3ii" if Model == "p_oprob_cc_pay_ease"
 
-replace Model = "PayEase: Table8R3i vs Table8" if Model == "p_l_cc_pay_easeag"
+replace Model = "PayEase: Table8R3i vs Table8" if Model == "p_oprob_pay_easeag"
 // replace Model = "PE-OP vs PE-LR" if Model == "p_oprob_pay_easeag"
 replace Model = "PayEase: Table8R3ii vs Table8" if Model == "p_oprob_cc_pay_easeag"
 
 
 replace Model = "Willingness-Table8" if Model == "p_reg_willingness"
-replace Model = "Willingness-Table8R3i" if Model == "p_l_cc_willingness"
+replace Model = "Willingness-Table8R3i" if Model == "p_oprob_willingness"
 //replace Model = "W-OP" if Model == "p_oprob_willingness"
 replace Model = "Willingness-Table8R3ii" if Model == "p_oprob_cc_willingness"
 
-replace Model = "Willingness: Table8R3i vs Table8" if Model == "p_l_cc_willingnessag"
+replace Model = "Willingness: Table8R3i vs Table8" if Model == "p_oprob_willingnessag"
 //replace Model = "W-OP vs W-LR" if Model == "p_oprob_willingnessag"
 replace Model = "Willingness: Table8R3ii vs Table8" if Model == "p_oprob_cc_willingnessag"
 

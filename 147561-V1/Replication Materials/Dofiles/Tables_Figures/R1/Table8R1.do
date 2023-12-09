@@ -204,13 +204,6 @@
 	lab var main_tribe "Main Tribe"
 	lab var house_quality "House quality index"
 	
-/*
-		* Added by Sossou
-	recode willingness (1=0 "Pas du tout")(2=1 "Un peu")(3=2 "Beaucoup")(else=.), gen(willingness1)
-	drop willingness
-	rename willingness1 willingness
-
-*/
 	
 	// For prediction and appendix table (also show alternate definition with different dummies)
 	
@@ -324,6 +317,12 @@
 		label var p_reg_pay_ease "prediction of pay_ease from simple regression"
 		label var p_reg_willingness "prediction of willingness from simple regression"
 		duplicates drop compound_code, force
+		
+				* Added by Sossou
+		recode willingness (1=0 "Pas du tout")(2=1 "Un peu")(3=2 "Beaucoup")(else=.), gen(willingness1)
+		drop willingness
+		rename willingness1 willingness
+
 		save "${repldir}/Data/03_clean_combined/predictions_FromTable8R1.dta", replace	
 	restore
 

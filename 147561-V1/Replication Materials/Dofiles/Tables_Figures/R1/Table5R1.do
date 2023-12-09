@@ -7,7 +7,7 @@
 ******************
 
 	use "${repldir}/Data/03_clean_combined/analysis_data.dta", clear
-	* keep if tmt==1 | tmt==2 | tmt==3
+	keep if tmt==1 | tmt==2 | tmt==3
 
 	* Outcomes
 	gen enum_disagrees_exempt=0 if exempt_enum!=. & exempt!=.
