@@ -368,7 +368,6 @@ eststo: xi: oprobit willingness $covs_willingness i.tribe i.house i.stratum i.ti
 		drop willingness
 		rename willingness1 willingness
 
-
 		save "${repldir}/Data/03_clean_combined/predictions_FromTable8R3ii.dta", replace	
 	restore
 
