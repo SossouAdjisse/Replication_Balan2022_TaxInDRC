@@ -200,7 +200,7 @@ use "${repldir}/Data/03_clean_combined/analysis_data.dta", clear
 		estadd scalar Clusters = `e(N_clust)'
 		
 * Latex Output
-	esttab r12 r22 r32 r42 r52 using "${reploutdir}/main_revenues_results4R1.tex", ///
+	esttab r12 r22 r32 r42 r52 using "${reploutdir}/main_revenues_results4R1.tex", /// 
 	replace label booktabs b(%9.3f) se(%9.3f) ///
 	keep (2.tmt) ///
 	order(2.tmt) /// 
