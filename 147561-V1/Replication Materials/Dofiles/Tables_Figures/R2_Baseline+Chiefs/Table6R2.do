@@ -1,5 +1,5 @@
 ***********
-* Table 6 *
+* Table 6 : Restricting the sample to baseline repondents - Sossou  *
 ***********
 
 	* Load data and define variables	

@@ -1,5 +1,6 @@
 ***********
-* Table 4 *
+* Table 4 : Restricting the sample to baseline repondents - Sossou *
+
 * Replicate of Table 4, but controlling ONLY for "trust in chief (trust_chief)" as a factor variable (i.trust_chief)
 ***********
 

@@ -1,5 +1,5 @@
 ***********
-* Table 7 *
+* Table 7 : Restricting the sample to baseline repondents - Sossou  *
 ***********
 //quietly{	
 	// CvCLI Compliance and revenues

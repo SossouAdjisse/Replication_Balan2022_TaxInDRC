@@ -20,7 +20,8 @@
 * 1. Set up your user specific root directory to Replication Materials folder
 
 		* gl stem "Your Directory/Replication Materials"
-		 gl stem "/Users/sossousimpliceadjisse/Documents/myfiles/PaulMoussaReplicationProject/147561-V1/Replication Materials"
+		 gl stem "/Users/sossousimpliceadjisse/Library/CloudStorage/OneDrive-Personal/ABC_Research/00 - I4R - Replication - 2022-73/Replication_Balan2022_TaxInDRC/147561-V1/Replication Materials"
+		 
 		
 	
 * 3. Route file paths
