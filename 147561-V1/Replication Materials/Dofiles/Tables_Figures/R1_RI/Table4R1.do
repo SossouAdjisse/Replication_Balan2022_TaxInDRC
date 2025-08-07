@@ -104,7 +104,7 @@ use "${repldir}/Data/03_clean_combined/analysis_data.dta", clear
 	nomtitles ///
 	mgroups("Tax Compliance" "Tax Compliance" "Tax Compliance" "Tax Compliance" "Tax Compliance", pattern(1 1 1 1 1) prefix(\multicolumn{@span}{c}{) suffix(}) span) ///
 	indicate("Month FE = *2mo*""House FE = *house*""Stratum FE = *stratum*") ///
-	star(* 0.10 ** 0.05 *** 0.001) ///
+	/* star(* 0.10 ** 0.05 *** 0.001) */ ///
 	nogaps nonotes compress
 	
 * CSV  Output 
@@ -209,7 +209,7 @@ use "${repldir}/Data/03_clean_combined/analysis_data.dta", clear
 	nomtitles ///
 	mgroups("Revenues" "Revenues" "Revenues" "Revenues" "Revenues", pattern(1 1 1 1 1) prefix(\multicolumn{@span}{c}{) suffix(}) span) ///
 	indicate("Month FE = *2mo*""House FE = *house*""Stratum FE = *stratum*") ///
-	star(* 0.10 ** 0.05 *** 0.001) ///
+	/* star(* 0.10 ** 0.05 *** 0.001) */ ///
 	nogaps nonotes compress
 
  * CSV Output

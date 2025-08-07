@@ -178,12 +178,13 @@ drop _merge
 	replace label b(%9.3f) se(%9.3f) booktabs ///
 	keep (3.tmt 2.tmt) ///
 	order(3.tmt 2.tmt) ///
-	cells("b(fmt(a6))"  "se(fmt(a3) par)" "pvalues(fmt(%9.6f) par([ ]))") ///
+	cells("b(fmt(a3))"  "se(fmt(a3) par)" "pvalues(fmt(%9.6f) par([ ]))") ///
 	scalar(Clusters Mean CLIvC_p) sfmt(0 3 3 3 3) ///
 	nomtitles ///
 	mgroups("Tax Compliance" "Tax Amount" "Visited" "Visits" "Compliance" "Compliance", pattern(1 1 1 1 1 1) prefix(\multicolumn{@span}{c}{) suffix(}) span) ///
 	indicate("Time FE = *2mo*""House FE = *house*""Stratum FE = *stratum*") ///
-	star(* 0.10 ** 0.05 *** 0.001) ///
+	/* star(* 0.10 ** 0.05 *** 0.001) */ ///
+	nostar ///
 	nogaps nonotes compress
 	
 	 * CSV Format 
@@ -191,10 +192,11 @@ drop _merge
 	replace label b(%9.3f) se(%9.3f) ///
 	keep (3.tmt 2.tmt) ///
 	order(3.tmt 2.tmt) ///
-	cells("b(fmt(a6))"  "se(fmt(a3) par)" "pvalues(fmt(%9.6f) par([ ]))") ///
+	cells("b(fmt(a3))"  "se(fmt(a3) par)" "pvalues(fmt(%9.6f) par([ ]))") ///
 	scalar(Clusters Mean CLIvC_p) sfmt(0 3 3 3 3) ///
 	mtitles("Tax Compliance" "Tax Amount" "Visited" "Visits" "Compliance" "Compliance") ///
 	indicate("Time FE = *2mo*""House FE = *house*""Stratum FE = *stratum*") ///
-	star(* 0.10 ** 0.05 *** 0.001) ///
+	/* star(* 0.10 ** 0.05 *** 0.001) */ ///
+	nostar ///
 	nogaps nonotes compress
 

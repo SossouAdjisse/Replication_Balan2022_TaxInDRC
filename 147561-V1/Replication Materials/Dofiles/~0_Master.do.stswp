@@ -59,7 +59,7 @@
 	do "${repldodir}/Tables_Figures/R2_Baseline+Chiefs/Table8R2.do" /* *R2 */
 	
 	// 	do "${repldodir}/Tables_Figures/R2_Baseline+Chiefs/Table8R2_new.do"
-	// 	do "${repldodir}/Tables_Figures/R2_Baseline+Chiefs/Table8R2_top5.do"
+// 	do "${repldodir}/Tables_Figures/R2_Baseline+Chiefs/Table8R2_top5.do"
 
 	**## 
 	do "${repldodir}/Tables_Figures/R3_8R3i/Table8R3_(8R3i).do" /* 8R3i */

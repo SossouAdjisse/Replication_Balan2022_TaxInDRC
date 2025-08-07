@@ -1,0 +1,135 @@
+.
+├── combined_data_ChiefChars_FromTableA8_A14_A15_A27.do
+├── FigureA12.do
+├── FigureA13.do
+├── FigureA15.do
+├── FigureA18_TableA38.do
+├── FigureA19.do
+├── FigureA20.do
+├── FigureA4.do
+├── FigureA5.do
+├── FigureA7_TableA23.do
+├── FigureA7_TableA23R1.do
+├── Figures1_A9_A10_A11_A14_R2.do
+├── Figures1_A9_A10_A11_A14.do
+├── Figures1_A9_A10_A11_A14R1.do
+├── FiguresA21_A22.do
+├── Power
+│   ├── Powers.do
+│   └── Statistics_for_powers.do
+├── R1_RI
+│   ├── Table4R1.do 
+│   ├── Table5R1.do
+│   ├── Table6R1.do
+│   ├── Table7R1.do
+│   ├── Table8R1.do
+│   └── Table9R1.do
+├── R1_RI_pvalue
+│   ├── Table4R1.do
+│   ├── Table5R1.do
+│   ├── Table6R1.do
+│   ├── Table7R1.do
+│   ├── Table8R1.do
+│   └── Table9R1.do
+├── R2_Baseline+Chiefs
+│   ├── Table4R2.do
+│   ├── Table6R2.do
+│   ├── Table7R2.do
+│   ├── Table8R2_new.do
+│   ├── Table8R2_top5.do
+│   └── Table8R2.do
+├── R2_Baseline+Chiefs_pvalue
+│   ├── Table4R2.do
+│   ├── Table6R2.do
+│   ├── Table7R2.do
+│   ├── Table8R2_new_pv.do
+│   └── Table8R2.do
+├── R3_8R3i
+│   ├── Table8P_Predition_Performance.do
+│   ├── Table8R2R3_top5.do
+│   ├── Table8R2R3.do
+│   └── Table8R3_(8R3i).do
+├── R3_8R3i_pvalue
+│   ├── Table8R2R3_top5_pv.do
+│   ├── Table8R2R3.do
+│   └── Table8R3_(8R3i).do
+├── R4_Baseline
+│   ├── Table4R4.do
+│   ├── Table6R4.do
+│   ├── Table7R4.do
+│   └── Table8R4.do
+├── R4_Baseline_pvalue
+│   ├── Table4R4.do
+│   ├── Table6R4.do
+│   ├── Table7R4.do
+│   └── Table8R4.do
+├── R5_8R3ii
+│   └── Table8R5_(8R3ii).do
+├── R5_8R3ii_pvalues
+│   └── Table8R5_(8R3ii).do
+├── Table1.do
+├── Table2.do
+├── Table3.do
+├── Table4.do
+├── Table4R12.do
+├── Table4R2_Sossou1.do
+├── Table4R4_new.do
+├── Table4R4_old.do
+├── Table4R5_new.do
+├── Table4R5.do
+├── Table5.do
+├── Table5R1_bad1.do
+├── Table6.do
+├── Table6R12.do
+├── Table7.do
+├── Table7R3.do
+├── Table8.do
+├── Table8LC_R1.do
+├── Table8R0.do
+├── Table8R11.do
+├── Table8R4.do
+├── Table8R6.do
+├── Table9.do
+├── TableA1.do
+├── TableA10.do
+├── TableA11.do
+├── TableA12.do
+├── TableA13.do
+├── TableA16.do
+├── TableA17.do
+├── TableA19.do
+├── TableA2.do
+├── TableA20.do
+├── TableA21.do
+├── TableA22.do
+├── TableA26.do
+├── TableA26R1.do
+├── TableA3.do
+├── TableA31.do
+├── TableA32.do
+├── TableA33.do
+├── TableA36.do
+├── TableA37.do
+├── TableA39.do
+├── TableA4.do
+├── TableA45.do
+├── TableA6.do
+├── TableA6R1.do
+├── TableA7.do
+├── TableA7R1_new.do
+├── TableA7R1.do
+├── TableA9.do
+├── Tables_Figures.txt
+├── TablesA14_A43_A44.do
+├── TablesA24_A25.do
+├── TablesA24_A25R1.do
+├── TablesA28_A29_A30.do
+├── TablesA28_A29_A30R1.do
+├── TablesA34_A35.do
+├── TablesA40_A41_A42.do
+├── TablesA5_A18_FigureA6.do
+├── TablesA5_A18_FigureA6R.do
+├── TablesA8_A14_A15_A27.do
+└── TablesA8_A14_A15_A27R.do
+
+12 directories, 121 files

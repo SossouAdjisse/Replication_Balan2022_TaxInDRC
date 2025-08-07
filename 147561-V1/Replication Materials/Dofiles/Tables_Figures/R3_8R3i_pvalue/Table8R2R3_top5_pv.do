@@ -292,11 +292,12 @@ gen chef_tenure_hi  = chef_tenure > 10
 
 	global covs_basic = "age_prop sex_prop employed salaried work_gov"	
 	/* social_norm transport_norm church_norm wed_fun_norm hh_size_norm trust_norm access_norm income_avg_norm liquid_avg_norm move_ave */
-	global covs_addition = "pubgoods sanctions  age_prop2 salongo salongo_hours"	
+	global covs_addition = "pubgoods sanctions  age_prop2"	/*salongo salongo_hours*/
 	global chief_chars = "age_chef_hi possessions_nb_chef_hi educ_yrs_chef_hi remoteness_hi chef_trust_gov_hi chef_trust_dgrkoc_hi col_view_gov_gen_hi col_view_gov_nbhd_hi col_gov_integrity_hi tmt_2016 chef_fam chef_tenure_hi"
 	
 	// global covs_pay_ease "age_prop sex_prop employed salaried age_chef_hi remoteness_hi chef_trust_gov_hi chef_trust_dgrkoc_hi"
-	global covs_pay_ease "sex_prop salaried age_chef_hi remoteness_hi chef_trust_gov_hi"
+	global covs_pay_ease  "age_prop sex_prop employed salaried age_chef_hi remoteness_hi chef_trust_gov_hi chef_trust_dgrkoc_hi tmt_2016"
+// 	"sex_prop salaried age_chef_hi remoteness_hi chef_trust_gov_hi" employed 
 
 	
 	//global covs_willingness "age_prop sex_prop  salaried possessions_nb_chef_hi chef_trust_dgrkoc_hi col_view_gov_nbhd_hi col_gov_integrity_hi tmt_2016 chef_fam chef_tenure_hi"
@@ -307,7 +308,11 @@ gen chef_tenure_hi  = chef_tenure > 10
 eststo clear
 
 ********** pay_ease
-capture drop p_pay_ease*
+// capture drop p_pay_ease*
+rename p_pay_ease p_pay_ease_orig
+
+// summ $covs_basic $chief_chars if t_cli==1 & pay_ease !=. & age_prop != . 
+
 eststo: xi: oprobit pay_ease $covs_pay_ease i.tribe i.house i.stratum i.time_FE_tdm_2mo_CvCLI if t_cli==1,cluster(a7)
 	predict ppay_ease*  if inlist(tmt,1,2,3)
 	gen p_pay_ease = 0 if (ppay_ease1 != .) & (ppay_ease2!=.) & (ppay_ease3!=.)
