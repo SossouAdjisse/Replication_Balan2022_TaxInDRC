@@ -101,18 +101,18 @@ drop _merge
 	estadd scalar Observations = `e(N)'
 	estadd scalar Clusters = `e(N_clust)'
 	
-/*
+
 	* Month FE - Compliance - No house FE - Polygon Mean
 	preserve
 		drop if time_FE_tdm_2mo_CvL==.
-		collapse (mean) taxes_paid trust_chief (min) time_FE_tdm_2mo_CvL (max) t_l t_l stratum,by(a7 tmt)
+		collapse (mean) taxes_paid trust_chief (min) time_FE_tdm_2mo_CvL (max) t_l t_c stratum,by(a7 tmt)
 		eststo: reg taxes_paid t_l trust_chief i.stratum i.time_FE_tdm_2mo_CvL if inlist(tmt,1,2), robust
 		su taxes_paid if t_c==1 & time_FE_tdm_2mo_CvL!=.
 		estadd local Mean=abs(round(`r(mean)',.001))
 		estadd scalar Observations = `e(N)'
 		*estadd scalar Clusters = `e(N_clust)'
 	restore
-*/
+
 	
 	
 	* Month FE - Compliance - House FE
@@ -173,11 +173,11 @@ drop _merge
 	estadd scalar Observations = `e(N)'
 	estadd scalar Clusters = `e(N_clust)'
 	
-/*
+
 	* Month FE - Revenues - No house FE - Polygon Mean
 	preserve
 		drop if time_FE_tdm_2mo_CvL==.
-		collapse (mean) taxes_paid_amt trust_chief (min) time_FE_tdm_2mo_CvL (max) t_l t_l stratum,by(a7 tmt)
+		collapse (mean) taxes_paid_amt trust_chief (min) time_FE_tdm_2mo_CvL (max) t_l t_c stratum,by(a7 tmt)
 		eststo: reg taxes_paid_amt t_l trust_chief i.stratum i.time_FE_tdm_2mo_CvL if inlist(tmt,1,2), robust
 		su taxes_paid_amt if t_c==1 & time_FE_tdm_2mo_CvL!=.
 		estadd local Mean=abs(round(`r(mean)',.001))
@@ -185,7 +185,7 @@ drop _merge
 		*estadd scalar Clusters = `e(N_clust)'
 	restore
 	
-*/
+
 
 	* Month FE - Revenues - House FE
 	eststo: reg taxes_paid_amt t_l   i.stratum i.house i.time_FE_tdm_2mo_CvL if inlist(tmt,1,2) & trust_chief != ., cl(a7)
