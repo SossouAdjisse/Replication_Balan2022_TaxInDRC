@@ -424,7 +424,7 @@ chef_type hh_head born_kga compound_chef compound_assis edu2 work_gov salongo_ac
 		nomtitles ///
 		mgroups("Visited Post Carto" "Compliance" "Visited Post Carto" "Compliance" "Visited Post Carto" "Compliance" "Visited Post Carto"  "Compliance", pattern(1 1 1 1 1 1  1 1) prefix(\multicolumn{@span}{c}{) suffix(}) span) ///
 		indicate("House FE = *house*""Stratum FE = *stratum*") ///
-		/*star(* 0.10 ** 0.05 *** 0.001)*/ ///
+		star(* 0.10 ** 0.05 *** 0.001)* ///
 		nogaps nonotes compress
 
 		* Magnitudes
@@ -498,14 +498,14 @@ chef_type hh_head born_kga compound_chef compound_assis edu2 work_gov salongo_ac
 			estadd scalar Observations = `e(N)'
 			
 		esttab using "${reploutdir}/chiefs_info_wtpR5.tex", ///
-		replace label b(%9.3f) se(%9.3f) booktabs nostar ///
+		replace label b(%9.3f) p(%9.3f) booktabs ///
 		keep (willingness p_willingness walls_final roof_final ravine_final) ///
 		order(willingness p_willingness walls_final roof_final ravine_final) ///
 		scalar(Clusters Mean  Clusters2 Mean2) sfmt(0 0 3 0 3) ///
 		nomtitles ///
 		mgroups("Visited Post Carto" "Compliance" "Visited Post Carto" "Compliance" "Visited Post Carto"  "Compliance" "Visited Post Carto" "Compliance", pattern(1 1 1 1 1 1 1 1) prefix(\multicolumn{@span}{c}{) suffix(}) span) ///
 		indicate("House FE = *house*""Stratum FE = *stratum*") ///
-		/*star(* 0.10 ** 0.05 *** 0.001)*/ ///
+		star(* 0.10 ** 0.05 *** 0.001) ///
 		nogaps nonotes compress
 		
 		//"Chiefs Chars Control = *$chief_chars*"
